@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "lastUpdate": "2025-01-06T10:00:00Z",
+  "categories": [
+    {
+      "categoryId": 1,
+      "categoryTitle": "Kotlin Programlama Dili",
+      "categoryDescription": "Kotlin dilinin temel ve ileri seviye özellikleri",
+      "order": 1,
+      "sections": [
+        {
+          "sectionId": 101,
+          "sectionTitle": "Değişkenler ve Veri Tipleri",
+          "sectionDescription": "Kotlin'de değişken tanımlama ve veri tipleri",
+          "order": 1,
+          "topics": [
+            {
+              "topicId": 1001,
+              "title": "var ve val",
+              "summary": "Kotlin'de değişken tanımlamak için kullanılan var ve val anahtar kelimeleri.",
+              "content": "## var ve val\n\nKotlin'de iki tür değişken tanımlama yöntemi vardır:\n\n- **val**: Değiştirilemez (immutable)\n- **var**: Değiştirilebilir (mutable)",
+              "difficulty": "easy",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Basit Örnek",
+                  "code": "val name = \"Ahmet\"\nvar age = 25\nage = 26",
+                  "explanation": "val ile tanımlanan değişkenler bir kez atanır."
+                }
+              ],
+              "keyPoints": [
+                "val = immutable",
+                "var = mutable",
+                "Mümkün olduğunca val kullan"
+              ],
+              "questions": [
+                {
+                  "questionId": 10001,
+                  "question": "Kotlin'de değiştirilemeyen değişken hangisidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": ["var", "val", "let", "const"],
+                  "correctAnswerIndex": 1,
+                  "explanation": "val ile tanımlanan değişkenler immutable'dır.",
+                  "tags": ["val", "var", "basics"]
+                }
+              ]
+            }
+          ],
+          "sectionMixedQuestions": []
+        }
+      ],
+      "interviewQuestions": []
+    }
+  ]
+}
