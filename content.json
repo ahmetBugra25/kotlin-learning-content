@@ -1,6 +1,6 @@
 {
-  "version": "1.0.3",
-  "lastUpdate": "2025-01-07T10:00:00Z",
+  "version": "1.0.0",
+  "lastUpdate": "2025-01-06T10:00:00Z",
   "categories": [
     {
       "categoryId": 1,
@@ -9,253 +9,3608 @@
       "order": 1,
       "sections": [
         {
-          "sectionId": 101,
-          "sectionTitle": "Kotlin'e Giriş",
-          "sectionDescription": "Kotlin dilinin temelleri",
-          "order": 1,
-          "topics": [
+        "sectionId": 101,
+        "sectionTitle": "Kotlin'e Giriş",
+        "sectionDescription": "Bu bölümde Kotlin programlama dilinin ne olduğu ve hangi alanlarda kullanıldığı hakkında temel bilgiler verilmektedir.",
+        "order": 1,
+        "topics": [
             {
-              "topicId": 1001,
-              "title": "Kotlin Nedir",
-              "summary": "Kotlin modern bir programlama dilidir",
-              "content": "## Kotlin Nedir\n\nKotlin, JetBrains tarafından geliştirilmiş modern bir programlama dilidir.\n\n### Özellikler\n\n- **Modern**: Güncel programlama paradigmalarını destekler\n- **Güvenli**: Null safety ile runtime hatalarını azaltır\n- **İnterop**: Java ile %100 uyumludur\n\n### Kullanım Alanları\n\n- Android uygulama geliştirme\n- Backend geliştirme\n- Multiplatform projeler",
-              "difficulty": "easy",
-              "order": 1,
-              "codeExamples": [
+            "topicId": 1001,
+            "title": "Kotlin Nedir",
+            "summary": "Kotlin, JetBrains tarafından geliştirilen, modern, güvenli ve okunabilirliği yüksek bir programlama dilidir. JVM üzerinde çalışır ve Java ile %100 uyumludur. Null safety, kısa söz dizimi ve fonksiyonel programlama desteği sayesinde hataları azaltır ve geliştirme sürecini hızlandırır. Günümüzde Android uygulama geliştirmenin resmi dili olarak kabul edilmektedir.",
+            "content": "## Kotlin Nedir?\n\nKotlin, JetBrains tarafından geliştirilmiş modern bir programlama dilidir.\n\n- Java ile %100 uyumludur\n- Null safety ile hataları azaltır\n- Daha az kod ile daha fazla iş yapılmasını sağlar\n\nAndroid geliştirme başta olmak üzere backend, web ve multiplatform projelerde kullanılır.",
+            "difficulty": "easy",
+            "order": 1,
+            "codeExamples": [
                 {
-                  "title": "Basit Hello World",
-                  "code": "fun main() {\n    println(\"Hello, Kotlin!\")\n}",
-                  "explanation": "Kotlin'de en basit program. main fonksiyonu programın başlangıç noktasıdır."
+                "title": "Basit Kotlin Kodu",
+                "code": "fun main() {\n    println(\"Hello Kotlin\")\n}",
+                "explanation": "Kotlin'de ana fonksiyon fun anahtar kelimesi ile tanımlanır ve println ile konsola çıktı verilir."
                 }
-              ],
-              "keyPoints": [
+            ],
+            "keyPoints": [
                 "JetBrains tarafından geliştirilmiştir",
-                "2011 yılında duyuruldu",
-                "2017'de Android'in resmi dili oldu",
-                "Açık kaynak kodludur"
-              ],
-              "questions": [
-                {
-                  "questionId": 10001,
-                  "question": "Kotlin hangi şirket tarafından geliştirilmiştir?",
-                  "questionType": "multiple_choice",
-                  "code": null,
-                  "difficulty": "easy",
-                  "options": [
-                    "Google",
-                    "JetBrains",
-                    "Oracle",
-                    "Microsoft"
-                  ],
-                  "correctAnswerIndex": 1,
-                  "explanation": "Kotlin, IntelliJ IDEA'yı geliştiren JetBrains şirketi tarafından geliştirilmiştir. Google tarafından Android'in resmi dili olarak kabul edilmiştir.",
-                  "tags": ["kotlin", "tarihçe", "temel"]
-                },
-                {
-                  "questionId": 10002,
-                  "question": "Kotlin hangi yıl Android'in resmi dili oldu?",
-                  "questionType": "multiple_choice",
-                  "code": null,
-                  "difficulty": "easy",
-                  "options": [
-                    "2011",
-                    "2015",
-                    "2017",
-                    "2019"
-                  ],
-                  "correctAnswerIndex": 2,
-                  "explanation": "Kotlin, Google I/O 2017'de Android'in resmi dili olarak duyuruldu. 2019'da ise Android geliştirmede öncelikli dil (Kotlin-first) haline geldi.",
-                  "tags": ["kotlin", "android", "tarihçe"]
-                },
-                {
-                  "questionId": 10003,
-                  "question": "Aşağıdaki kodun çıktısı ne olur?",
-                  "questionType": "multiple_choice",
-                  "code": "fun main() {\n    val language = \"Kotlin\"\n    println(\"Hello, $language!\")\n}",
-                  "difficulty": "easy",
-                  "options": [
-                    "Hello, $language!",
-                    "Hello, Kotlin!",
-                    "Syntax Error",
-                    "Hello, language!"
-                  ],
-                  "correctAnswerIndex": 1,
-                  "explanation": "Kotlin'de $ işareti ile string interpolation yapılır. $language ifadesi değişkenin değeri ile değiştirilir ve 'Hello, Kotlin!' çıktısı üretilir.",
-                  "tags": ["kotlin", "string", "interpolation"]
-                }
-              ]
+                "Java ile %100 uyumludur",
+                "Null safety özelliği vardır",
+                "Android'in resmi dilidir"
+            ],
+            "questions": []
             },
             {
-              "topicId": 1002,
-              "title": "var ve val",
-              "summary": "Kotlin'de değişken tanımlama: var (mutable) ve val (immutable)",
-              "content": "## var ve val\n\nKotlin'de iki tür değişken tanımlama yöntemi vardır:\n\n### val (Value - Immutable)\n\n- Bir kez atanır, değiştirilemez\n- Java'daki final'a benzer\n- Thread-safe\n- Functional programming prensiplerine uygun\n\n### var (Variable - Mutable)\n\n- Değeri değiştirilebilir\n- Gerektiğinde kullanılır\n\n**Best Practice:** Mümkün olduğunca val kullanın, sadece gerektiğinde var kullanın.",
-              "difficulty": "easy",
-              "order": 2,
-              "codeExamples": [
-                {
-                  "title": "val Örneği",
-                  "code": "val name = \"Ahmet\"\n// name = \"Mehmet\" // HATA! Val değiştirilemez",
-                  "explanation": "val ile tanımlanan değişkenler immutable'dır."
-                },
-                {
-                  "title": "var Örneği",
-                  "code": "var age = 25\nage = 26  // OK, var değiştirilebilir\nprintln(age)  // 26",
-                  "explanation": "var ile tanımlanan değişkenler mutable'dır."
-                }
-              ],
-              "keyPoints": [
-                "val = immutable (değiştirilemez)",
-                "var = mutable (değiştirilebilir)",
-                "val tercih edilmelidir (immutability)",
-                "val referansı değişmez ama içeriği değişebilir"
-              ],
-              "questions": [
-                {
-                  "questionId": 10004,
-                  "question": "Kotlin'de değiştirilemeyen değişken tanımlamak için hangi anahtar kelime kullanılır?",
-                  "questionType": "multiple_choice",
-                  "code": null,
-                  "difficulty": "easy",
-                  "options": [
-                    "var",
-                    "val",
-                    "const",
-                    "final"
-                  ],
-                  "correctAnswerIndex": 1,
-                  "explanation": "val (value) anahtar kelimesi immutable değişkenler için kullanılır. Bir kez atandıktan sonra değiştirilemez.",
-                  "tags": ["val", "var", "immutability"]
-                },
-                {
-                  "questionId": 10005,
-                  "question": "Aşağıdaki kodda hata veren satır hangisidir?",
-                  "questionType": "multiple_choice",
-                  "code": "val x = 10\nvar y = 20\nx = 15\ny = 25",
-                  "difficulty": "medium",
-                  "options": [
-                    "Satır 1: val x = 10",
-                    "Satır 2: var y = 20",
-                    "Satır 3: x = 15",
-                    "Satır 4: y = 25"
-                  ],
-                  "correctAnswerIndex": 2,
-                  "explanation": "Satır 3'te hata olur. val ile tanımlanan değişkenler immutable'dır, yani değiştirilemez. x'e yeniden değer atamaya çalışmak compile-time hatası verir.",
-                  "tags": ["val", "var", "error"]
-                },
-                {
-                  "questionId": 10006,
-                  "question": "Aşağıdaki kod bloğunun çıktısı ne olur?",
-                  "questionType": "multiple_choice",
-                  "code": "val list = mutableListOf(1, 2, 3)\nlist.add(4)\nprintln(list.size)",
-                  "difficulty": "medium",
-                  "options": [
-                    "3",
-                    "4",
-                    "Compile hatası",
-                    "Runtime hatası"
-                  ],
-                  "correctAnswerIndex": 1,
-                  "explanation": "Çıktı 4 olur. val ile tanımlanan list referansı değiştirilemez ama mutableListOf olduğu için içeriği değiştirilebilir. add() metodu çalışır ve size 4 döner. Bu val'in önemli bir detayıdır: referans immutable, içerik mutable olabilir.",
-                  "tags": ["val", "collections", "mutable"]
-                }
-              ]
+            "topicId": 1002,
+            "title": "Kotlin Nerelerde Kullanılır",
+            "summary": "Kotlin, başta Android mobil uygulama geliştirme olmak üzere birçok alanda kullanılır. Backend tarafında (Spring Boot, Ktor), masaüstü uygulamalarda, web geliştirmede (Kotlin/JS) ve çoklu platform projelerinde (Kotlin Multiplatform) tercih edilir. Java ile uyumlu olması sayesinde mevcut Java projelerine kolayca entegre edilebilir.",
+            "content": "",
+            "difficulty": "easy",
+            "order": 2,
+            "codeExamples": [],
+            "keyPoints": [
+                "Android uygulama geliştirme",
+                "Backend (Spring Boot, Ktor)",
+                "Web (Kotlin/JS)",
+                "Multiplatform projeler",
+                "Mevcut Java projeleri"
+            ],
+            "questions": []
             }
-          ],
-          "sectionMixedQuestions": [
-            {
-              "questionId": 10101,
-              "question": "Kotlin'de best practice olarak hangi değişken türü tercih edilmelidir?",
-              "questionType": "multiple_choice",
-              "code": null,
-              "difficulty": "medium",
-              "options": [
-                "Her zaman var kullanılmalı",
-                "Mümkün olduğunca val kullanılmalı",
-                "İkisi arasında fark yok",
-                "Her zaman const kullanılmalı"
-              ],
-              "correctAnswerIndex": 1,
-              "explanation": "Best practice olarak mümkün olduğunca val (immutable) kullanılmalıdır. Bu, kodu daha güvenli, okunabilir ve thread-safe yapar. Sadece değerin değişmesi gerektiğinde var kullanılmalıdır.",
-              "tags": ["best-practice", "val", "var"]
-            },
-            {
-              "questionId": 10102,
-              "question": "Kotlin'in Java'ya göre en önemli avantajlarından biri nedir?",
-              "questionType": "multiple_choice",
-              "code": null,
-              "difficulty": "easy",
-              "options": [
-                "Daha hızlı çalışır",
-                "Null safety özelliği",
-                "Daha az bellek kullanır",
-                "Sadece Android'de çalışır"
-              ],
-              "correctAnswerIndex": 1,
-              "explanation": "Kotlin'in en önemli avantajlarından biri null safety özelliğidir. Nullable ve non-nullable tipleri tip sisteminde ayırarak NullPointerException hatalarını compile-time'da yakalar.",
-              "tags": ["kotlin", "java", "null-safety"]
-            }
-          ]
+        ],
+        "sectionMixedQuestions": []
         },
         {
           "sectionId": 102,
           "sectionTitle": "Değişkenler ve Veri Tipleri",
-          "sectionDescription": "Kotlin'deki veri tipleri ve tür dönüşümleri",
+          "sectionDescription": "",
           "order": 2,
-          "topics": [],
+          "topics": [
+            {
+            "topicId": 1101,
+            "title": "var ve val",
+            "summary": "Kotlin'de değişken tanımlamak için var ve val anahtar kelimeleri kullanılır. var ile tanımlanan değişkenlerin değeri sonradan değiştirilebilirken, val ile tanımlanan değişkenler yalnızca bir kez atanabilir. Güvenli ve okunabilir kod yazımı için mümkün olduğunca val kullanılması önerilir.",
+            "content": "## var ve val\n\nKotlin'de değişken tanımlamak için iki temel anahtar kelime bulunur:\n\n- **val (value)**: Değeri sonradan değiştirilemeyen, immutable değişkenlerdir.\n- **var (variable)**: Değeri sonradan değiştirilebilen, mutable değişkenlerdir.\n\nKotlin'de best practice olarak, değişmeyecek değerler için **val**, gerçekten değişmesi gereken durumlarda **var** kullanılması önerilir. Bu yaklaşım hem kod güvenliğini artırır hem de hataları azaltır.\n\nÖnemli bir detay olarak; val ile tanımlanan bir referans değiştirilemez ancak eğer referans bir mutable nesne tutuyorsa, nesnenin içeriği değiştirilebilir.",
+            "difficulty": "easy",
+            "order": 1,
+            "codeExamples": [
+                {
+                "title": "Temel var ve val Kullanımı",
+                "code": "val name = \"Ahmet\"\nvar age = 25\n\nage = 26      // Geçerli\n// name = \"Mehmet\"  // HATA",
+                "explanation": "val ile tanımlanan name değişkeni yeniden atanamaz. var ile tanımlanan age değişkeni ise güncellenebilir."
+                },
+                {
+                "title": "val ve Mutable Nesne",
+                "code": "val numbers = mutableListOf(1, 2, 3)\nnumbers.add(4)\n\nprintln(numbers)",
+                "explanation": "numbers referansı val olsa bile, mutable bir liste tuttuğu için listenin içeriği değiştirilebilir."
+                }
+            ],
+            "keyPoints": [
+                "val değiştirilemez (immutable)",
+                "var değiştirilebilir (mutable)",
+                "Varsayılan olarak val tercih edilmelidir",
+                "val referansı değişmez, içeriği mutable olabilir",
+                "Daha güvenli ve okunabilir kod için val kullanımı önerilir"
+            ],
+            "questions": [
+                {
+                "questionId": 110101,
+                "question": "Kotlin'de değeri sonradan değiştirilemeyen değişken hangisidir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                    "var",
+                    "val",
+                    "let",
+                    "const"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "val anahtar kelimesi ile tanımlanan değişkenler immutable'dır ve bir kez atandıktan sonra değiştirilemez.",
+                "tags": ["val", "var", "basics"]
+                },
+                {
+                "questionId": 110102,
+                "question": "Aşağıdakilerden hangisi var için doğrudur?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                    "Bir kez atanır ve değiştirilemez",
+                    "Sadece sınıf içinde kullanılır",
+                    "Değeri sonradan değiştirilebilir",
+                    "Sadece sabit değerler için kullanılır"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "var ile tanımlanan değişkenlerin değeri program çalışırken değiştirilebilir.",
+                "tags": ["var", "basics"]
+                },
+                {
+                "questionId": 110103,
+                "question": "Aşağıdaki kodda hangi satır hata verir?",
+                "questionType": "multiple_choice",
+                "code": "val x = 10\nvar y = 20\nx = 15\ny = 25",
+                "difficulty": "medium",
+                "options": [
+                    "Satır 1",
+                    "Satır 2",
+                    "Satır 3",
+                    "Satır 4"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "x değişkeni val ile tanımlandığı için yeniden değer atanamaz. Bu nedenle Satır 3 compile-time hatası verir.",
+                "tags": ["val", "compile-error"]
+                },
+                {
+                "questionId": 110104,
+                "question": "Aşağıdakilerden hangisi Kotlin best practice'lerine daha uygundur?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                    "Her zaman var kullanmak",
+                    "Değişmeyecek değerler için val kullanmak",
+                    "Sadece global değişkenlerde val kullanmak",
+                    "val ve var arasında fark yoktur"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Değişmeyecek değerler için val kullanmak kod güvenliğini ve okunabilirliği artırır.",
+                "tags": ["best-practice", "val"]
+                },
+                {
+                "questionId": 110105,
+                "question": "val ile tanımlanan mutable bir liste için aşağıdakilerden hangisi doğrudur?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                    "Listeye eleman eklenemez",
+                    "Liste referansı değiştirilebilir",
+                    "Listenin içeriği değiştirilebilir",
+                    "Compile-time hatası oluşur"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "val referansı değiştirilemez ancak mutable bir nesne tutuyorsa, nesnenin içeriği değiştirilebilir.",
+                "tags": ["val", "collections", "mutable"]
+                }
+            ]
+            },
+            {
+            "topicId": 1102,
+            "title": "Int ve Long",
+            "summary": "Kotlin'de Int ve Long, tam sayı (integer) değerleri temsil eden veri tipleridir. Int 32-bit, Long ise 64-bit bellek alanı kullanır. Daha büyük sayılarla çalışılması gereken durumlarda Long tercih edilir. Kotlin'de sayı taşmalarını önlemek ve performansı korumak için uygun veri tipi seçilmelidir.",
+            "content": "## Int ve Long\n\nKotlin'de tam sayılar için en sık kullanılan veri tipleri **Int** ve **Long**'dur.\n\n- **Int**: 32-bit signed tam sayı tipidir. -2,147,483,648 ile 2,147,483,647 arasında değer alabilir.\n- **Long**: 64-bit signed tam sayı tipidir. Çok daha büyük sayılarla çalışmak için kullanılır.\n\nKotlin'de sayısal sabitler varsayılan olarak **Int** kabul edilir. Bir sayının Long olduğunu belirtmek için sonuna **L** veya **l** eklenmelidir.\n\nDoğru veri tipini seçmek hem bellek kullanımı hem de uygulama performansı açısından önemlidir.",
+            "difficulty": "easy",
+            "order": 2,
+            "codeExamples": [
+                {
+                "title": "Int ve Long Tanımlama",
+                "code": "val age: Int = 25\nval distance: Long = 1_000_000L",
+                "explanation": "Int 32-bit, Long 64-bit veri tipidir. Long değerlerde L takısı kullanılır."
+                },
+                {
+                "title": "Varsayılan Int Davranışı",
+                "code": "val number = 100\nval bigNumber = 10000000000L",
+                "explanation": "Kotlin'de sayısal sabitler varsayılan olarak Int kabul edilir. Daha büyük değerler için Long kullanılır."
+                }
+            ],
+            "keyPoints": [
+                "Int 32-bit tam sayı tipidir",
+                "Long 64-bit tam sayı tipidir",
+                "Varsayılan tam sayı tipi Int'tir",
+                "Long değerler L takısı ile belirtilir",
+                "Büyük sayılar için Long tercih edilmelidir"
+            ],
+            "questions": [
+                {
+                "questionId": 110201,
+                "question": "Kotlin'de varsayılan tam sayı veri tipi hangisidir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                    "Long",
+                    "Short",
+                    "Int",
+                    "Byte"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Kotlin'de sayısal sabitler varsayılan olarak Int veri tipi kabul edilir.",
+                "tags": ["int", "basics"]
+                },
+                {
+                "questionId": 110202,
+                "question": "Aşağıdakilerden hangisi Long tipinde bir değerdir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                    "100",
+                    "5000",
+                    "9999999999L",
+                    "42"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Long değerler L takısı ile belirtilir.",
+                "tags": ["long", "basics"]
+                },
+                {
+                "questionId": 110203,
+                "question": "Int veri tipinin maksimum değeri yaklaşık olarak hangisidir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                    "2 milyar",
+                    "4 milyar",
+                    "9 kentilyon",
+                    "Sınırsız"
+                ],
+                "correctAnswerIndex": 0,
+                "explanation": "Int 32-bit olduğu için maksimum değeri yaklaşık 2.1 milyardır.",
+                "tags": ["int", "range"]
+                },
+                {
+                "questionId": 110204,
+                "question": "Aşağıdaki kodlardan hangisi compile-time hatası verir?",
+                "questionType": "multiple_choice",
+                "code": "val number: Int = 10000000000",
+                "difficulty": "medium",
+                "options": [
+                    "Kod hata vermez",
+                    "Runtime hatası verir",
+                    "Compile-time hatası verir",
+                    "Long'a otomatik dönüşür"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "10000000000 Int aralığını aştığı için compile-time hatası oluşur.",
+                "tags": ["int", "error"]
+                },
+                {
+                "questionId": 110205,
+                "question": "Aşağıdakilerden hangisi Int yerine Long kullanılmasını gerektirir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                    "Kullanıcı yaşı",
+                    "Ürün adedi",
+                    "Dosya boyutu (byte)",
+                    "Sınıf öğrenci sayısı"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Dosya boyutları çok büyük olabileceği için Long kullanımı daha uygundur.",
+                "tags": ["long", "use-case"]
+                }
+            ]
+            },
+            {
+              "topicId": 1103,
+              "title": "Float ve Double",
+              "summary": "Float ve Double, Kotlin'de ondalıklı (virgüllü) sayıları temsil eden veri tipleridir. Float 32-bit, Double ise 64-bit hassasiyete sahiptir. Kotlin'de ondalıklı sayılar varsayılan olarak Double kabul edilir. Daha yüksek hassasiyet gereken durumlarda Double tercih edilir.",
+              "content": "## Float ve Double\n\nKotlin'de ondalıklı sayılarla çalışmak için **Float** ve **Double** veri tipleri kullanılır.\n\n- **Float**: 32-bit hassasiyete sahiptir. Daha az bellek kullanır ancak doğruluk düşüktür.\n- **Double**: 64-bit hassasiyete sahiptir. Daha yüksek doğruluk sunar ve Kotlin'de varsayılan ondalıklı sayı tipidir.\n\nFloat değerler tanımlanırken sonuna **F** veya **f** eklenmelidir. Aksi halde Kotlin bu değeri Double olarak kabul eder.\n\nFinansal hesaplamalar, ölçümler ve hassas sonuçlar gerektiren işlemlerde genellikle Double tercih edilir.",
+              "difficulty": "easy",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Float ve Double Tanımlama",
+                  "code": "val piDouble: Double = 3.14159\nval piFloat: Float = 3.14F",
+                  "explanation": "Float değerlerde F takısı zorunludur. Aksi halde değer Double kabul edilir."
+                },
+                {
+                  "title": "Varsayılan Double Davranışı",
+                  "code": "val number = 2.5\nval preciseNumber = 2.5F",
+                  "explanation": "Ondalıklı sayılar varsayılan olarak Double tipindedir."
+                }
+              ],
+              "keyPoints": [
+                "Float 32-bit hassasiyete sahiptir",
+                "Double 64-bit hassasiyete sahiptir",
+                "Varsayılan ondalıklı sayı tipi Double'dır",
+                "Float değerler F takısı ile belirtilir",
+                "Hassas hesaplamalar için Double tercih edilir"
+              ],
+              "questions": [
+                {
+                  "questionId": 110301,
+                  "question": "Kotlin'de varsayılan ondalıklı sayı veri tipi hangisidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Float",
+                    "Double",
+                    "Int",
+                    "Long"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Kotlin'de ondalıklı sayılar varsayılan olarak Double kabul edilir.",
+                  "tags": ["double", "basics"]
+                },
+                {
+                  "questionId": 110302,
+                  "question": "Aşağıdakilerden hangisi Float tipinde bir değerdir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "3.14",
+                    "2.5",
+                    "1.0",
+                    "3.14F"
+                  ],
+                  "correctAnswerIndex": 3,
+                  "explanation": "Float değerler F veya f takısı ile belirtilir.",
+                  "tags": ["float", "basics"]
+                },
+                {
+                  "questionId": 110303,
+                  "question": "Float ve Double arasındaki temel fark nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Float daha hassastır",
+                    "Double daha az bellek kullanır",
+                    "Double daha yüksek hassasiyet sunar",
+                    "Aralarında fark yoktur"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Double 64-bit olduğu için Float'a göre daha yüksek hassasiyet sunar.",
+                  "tags": ["precision", "comparison"]
+                },
+                {
+                  "questionId": 110304,
+                  "question": "Aşağıdaki kodlardan hangisi compile-time hatası verir?",
+                  "questionType": "multiple_choice",
+                  "code": "val value: Float = 2.5",
+                  "difficulty": "medium",
+                  "options": [
+                    "Kod hata vermez",
+                    "Runtime hatası verir",
+                    "Compile-time hatası verir",
+                    "Otomatik Float'a dönüşür"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "2.5 varsayılan olarak Double olduğu için Float'a atanamaz. F takısı gereklidir.",
+                  "tags": ["float", "error"]
+                },
+                {
+                  "questionId": 110305,
+                  "question": "Aşağıdaki kullanım senaryolarından hangisinde Double tercih edilmelidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Ekran parlaklığı değeri",
+                    "Sıcaklık ölçümü",
+                    "Para hesaplamaları",
+                    "Sayaç artışı"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Para ve hassas hesaplamalarda Double tercih edilir (daha doğrusu BigDecimal ama Float kullanılmamalıdır).",
+                  "tags": ["double", "use-case"]
+                }
+              ]
+            },
+            {
+              "topicId": 1104,
+              "title": "String",
+              "summary": "String, Kotlin'de metinsel ifadeleri temsil eden veri tipidir. Karakter dizilerinden oluşur ve immutable (değiştirilemez) yapıdadır. Kotlin'de String'ler güçlü fonksiyonlar, string interpolation ve çok satırlı yazım desteği sunar.",
+              "content": "## String\n\nKotlin'de **String**, metin verilerini temsil eder ve **immutable** bir veri tipidir. Yani bir String oluşturulduktan sonra içeriği değiştirilemez.\n\nKotlin String'leri birçok hazır fonksiyon ile birlikte gelir. Ayrıca **string interpolation** sayesinde değişkenler doğrudan metin içinde kullanılabilir.\n\nKotlin'de String oluşturmanın iki temel yolu vardır:\n\n- Çift tırnak (\" \") ile tek satırlı String\n- Üç tırnak (\"\"\" \"\"\") ile çok satırlı String\n\nString işlemleri güvenli, okunabilir ve performanslı bir şekilde yapılabilir.",
+              "difficulty": "easy",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "String Tanımlama",
+                  "code": "val name: String = \"Ahmet\"\nval city = \"Erzurum\"",
+                  "explanation": "String değerler çift tırnak içinde tanımlanır. Kotlin type inference sayesinde türü otomatik belirler."
+                },
+                {
+                  "title": "String Interpolation",
+                  "code": "val age = 25\nval message = \"Yaşım $age\"\nval result = \"5 + 3 = ${5 + 3}\"",
+                  "explanation": "$ işareti ile değişkenler, ${} ile ifadeler String içine gömülebilir."
+                },
+                {
+                  "title": "Çok Satırlı String",
+                  "code": "val text = \"\"\"\n    Kotlin öğreniyorum\n    Android geliştiriyorum\n\"\"\".trimIndent()",
+                  "explanation": "Üç tırnak kullanılarak çok satırlı String tanımlanabilir."
+                }
+              ],
+              "keyPoints": [
+                "String immutable bir veri tipidir",
+                "Metinsel veriler için kullanılır",
+                "String interpolation desteklenir",
+                "Çok satırlı String yazımı mümkündür",
+                "Birçok hazır fonksiyon içerir (length, contains, substring)"
+              ],
+              "questions": [
+                {
+                  "questionId": 110401,
+                  "question": "Kotlin'de String veri tipi hangi özelliğe sahiptir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Mutable",
+                    "Immutable",
+                    "Sadece okunur",
+                    "Null olabilir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Kotlin'de String immutable'dır, yani oluşturulduktan sonra değiştirilemez.",
+                  "tags": ["string", "basics"]
+                },
+                {
+                  "questionId": 110402,
+                  "question": "String interpolation için hangi sembol kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "#",
+                    "$",
+                    "%",
+                    "&"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Kotlin'de $ sembolü ile String interpolation yapılır.",
+                  "tags": ["string", "interpolation"]
+                },
+                {
+                  "questionId": 110403,
+                  "question": "Aşağıdaki kodun çıktısı ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": "val name = \"Ali\"\nprintln(\"Merhaba $name\")",
+                  "difficulty": "easy",
+                  "options": [
+                    "Merhaba name",
+                    "Merhaba $name",
+                    "Merhaba Ali",
+                    "Compile-time hatası"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "$name ifadesi String içine gömülür ve değeri yazdırılır.",
+                  "tags": ["string", "output"]
+                },
+                {
+                  "questionId": 110404,
+                  "question": "Çok satırlı String tanımlamak için hangi yapı kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "\" \"",
+                    "''' '''",
+                    "\"\"\" \"\"\"",
+                    "` `"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Kotlin'de üç tırnak (\"\"\" \"\"\") çok satırlı String tanımlamak için kullanılır.",
+                  "tags": ["string", "multiline"]
+                },
+                {
+                  "questionId": 110405,
+                  "question": "Aşağıdakilerden hangisi String fonksiyonu değildir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "length",
+                    "contains",
+                    "substring",
+                    "add"
+                  ],
+                  "correctAnswerIndex": 3,
+                  "explanation": "String sınıfında add() fonksiyonu yoktur.",
+                  "tags": ["string", "functions"]
+                }
+              ]
+            },
+            {
+              "topicId": 1105,
+              "title": "Boolean",
+              "summary": "Boolean, Kotlin'de mantıksal (doğru/yanlış) değerleri temsil eden veri tipidir. Sadece true veya false değerlerini alabilir ve genellikle koşul ifadelerinde, karşılaştırmalarda ve kontrol yapılarında kullanılır.",
+              "content": "## Boolean\n\nKotlin'de **Boolean** veri tipi, mantıksal ifadeleri temsil eder ve yalnızca iki değer alabilir: **true** veya **false**.\n\nBoolean'lar genellikle **if**, **when**, **while** gibi kontrol yapılarında ve karşılaştırma işlemlerinde kullanılır. Ayrıca mantıksal operatörlerle (&&, ||, !) birlikte güçlü kontrol mekanizmaları sağlar.\n\nBoolean ifadeler, uygulamanın akışını kontrol etmek için temel yapı taşlarından biridir.",
+              "difficulty": "easy",
+              "order": 5,
+              "codeExamples": [
+                {
+                  "title": "Boolean Tanımlama",
+                  "code": "val isActive: Boolean = true\nval isAdmin = false",
+                  "explanation": "Boolean değişkenler true veya false değerlerini alabilir."
+                },
+                {
+                  "title": "Karşılaştırma Sonucu Boolean",
+                  "code": "val age = 18\nval isAdult = age >= 18",
+                  "explanation": "Karşılaştırma işlemleri Boolean sonuç döner."
+                },
+                {
+                  "title": "Mantıksal Operatörler",
+                  "code": "val hasAccount = true\nval isLoggedIn = false\n\nval canAccess = hasAccount && isLoggedIn",
+                  "explanation": "&& (AND), || (OR) ve ! (NOT) operatörleri Boolean işlemlerinde kullanılır."
+                }
+              ],
+              "keyPoints": [
+                "Boolean sadece true veya false değerlerini alır",
+                "Kontrol yapılarının temelini oluşturur",
+                "Karşılaştırma işlemleri Boolean döner",
+                "Mantıksal operatörlerle birlikte kullanılır",
+                "Uygulama akışını kontrol etmek için kritiktir"
+              ],
+              "questions": [
+                {
+                  "questionId": 110501,
+                  "question": "Boolean veri tipi hangi değerleri alabilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "1 ve 0",
+                    "true ve false",
+                    "Evet ve Hayır",
+                    "On ve Off"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Boolean veri tipi sadece true ve false değerlerini alabilir.",
+                  "tags": ["boolean", "basics"]
+                },
+                {
+                  "questionId": 110502,
+                  "question": "Aşağıdaki karşılaştırmalardan hangisi Boolean döner?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "5 + 3",
+                    "10 * 2",
+                    "8 > 3",
+                    "7 - 4"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Karşılaştırma işlemleri Boolean (true/false) döner.",
+                  "tags": ["boolean", "comparison"]
+                },
+                {
+                  "questionId": 110503,
+                  "question": "Aşağıdaki kodun çıktısı ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": "val isOpen = true\nval isAdmin = false\nprintln(isOpen && isAdmin)",
+                  "difficulty": "medium",
+                  "options": [
+                    "true",
+                    "false",
+                    "Compile-time hatası",
+                    "Runtime hatası"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "&& operatörü AND işlemi yapar. true && false sonucu false olur.",
+                  "tags": ["boolean", "operators"]
+                },
+                {
+                  "questionId": 110504,
+                  "question": "Mantıksal OR işlemi hangi operatör ile yapılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "&&",
+                    "||",
+                    "!",
+                    "=="
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "|| operatörü mantıksal OR (veya) işlemi yapar.",
+                  "tags": ["boolean", "operators"]
+                },
+                {
+                  "questionId": 110505,
+                  "question": "Aşağıdakilerden hangisi Boolean operatörü değildir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "&&",
+                    "||",
+                    "!",
+                    "+"
+                  ],
+                  "correctAnswerIndex": 3,
+                  "explanation": "+ operatörü aritmetik işlemler içindir, Boolean işlemi yapmaz.",
+                  "tags": ["boolean", "operators"]
+                }
+              ]
+            },
+            {
+              "topicId": 1106,
+              "title": "Tip Dönüşümleri",
+              "summary": "Tip dönüşümleri, bir veri tipinin başka bir veri tipine çevrilmesi işlemidir. Kotlin'de veri kaybını ve hataları önlemek için otomatik dönüşümler yerine açık (explicit) tip dönüşümleri kullanılır.",
+              "content": "## Tip Dönüşümleri\n\nKotlin'de veri tipleri arasında **otomatik dönüşüm yapılmaz**. Bu, özellikle Java'dan gelen geliştiriciler için önemli bir farktır.\n\nKotlin, güvenliği artırmak için dönüşümlerin **açıkça belirtilmesini (explicit conversion)** ister. Bunun için her veri tipinin sağladığı dönüşüm fonksiyonları kullanılır.\n\nEn sık kullanılan dönüşüm fonksiyonları:\n- toInt()\n- toLong()\n- toFloat()\n- toDouble()\n- toString()\n- toBoolean()\n\nBu yaklaşım, runtime hatalarını azaltır ve kodun daha okunabilir olmasını sağlar.",
+              "difficulty": "easy",
+              "order": 6,
+              "codeExamples": [
+                {
+                  "title": "Sayısal Tip Dönüşümü",
+                  "code": "val number: Int = 10\nval longNumber: Long = number.toLong()",
+                  "explanation": "Int tipi doğrudan Long'a atanamaz, toLong() fonksiyonu kullanılmalıdır."
+                },
+                {
+                  "title": "String'den Sayıya Dönüşüm",
+                  "code": "val text = \"123\"\nval value = text.toInt()",
+                  "explanation": "String içeriği sayıya uygunsa toInt() ile dönüştürülebilir."
+                },
+                {
+                  "title": "Hatalı Dönüşüm Örneği",
+                  "code": "val text = \"abc\"\n// val number = text.toInt() // Runtime hatası",
+                  "explanation": "Sayısal olmayan bir String, toInt() ile dönüştürülürse runtime hatası oluşur."
+                },
+                {
+                  "title": "Güvenli Dönüşüm",
+                  "code": "val text = \"abc\"\nval number = text.toIntOrNull()",
+                  "explanation": "toIntOrNull() dönüşüm başarısız olursa null döner ve uygulama çökmez."
+                }
+              ],
+              "keyPoints": [
+                "Kotlin'de otomatik tip dönüşümü yoktur",
+                "Dönüşümler explicit olarak yapılır",
+                "toInt(), toDouble() gibi fonksiyonlar kullanılır",
+                "Hatalı dönüşümler runtime hatası oluşturur",
+                "toIntOrNull() gibi güvenli fonksiyonlar tercih edilmelidir"
+              ],
+              "questions": [
+                {
+                  "questionId": 110601,
+                  "question": "Kotlin'de Int bir değişken doğrudan Long'a atanabilir mi?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Evet, otomatik dönüşür",
+                    "Hayır, toLong() kullanılmalıdır",
+                    "Sadece val ile tanımlanırsa",
+                    "Sadece var ile tanımlanırsa"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Kotlin otomatik tip dönüşümüne izin vermez. Açık dönüşüm gerekir.",
+                  "tags": ["type-conversion", "basics"]
+                },
+                {
+                  "questionId": 110602,
+                  "question": "Aşağıdakilerden hangisi güvenli tip dönüşümü sağlar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "toInt()",
+                    "toLong()",
+                    "toIntOrNull()",
+                    "toDouble()"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "toIntOrNull() dönüşüm başarısız olursa null döner.",
+                  "tags": ["type-conversion", "null-safety"]
+                },
+                {
+                  "questionId": 110603,
+                  "question": "Aşağıdaki kod çalıştırıldığında ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": "val text = \"abc\"\nval number = text.toInt()\nprintln(number)",
+                  "difficulty": "medium",
+                  "options": [
+                    "0 yazdırır",
+                    "null yazdırır",
+                    "Compile-time hatası",
+                    "Runtime hatası"
+                  ],
+                  "correctAnswerIndex": 3,
+                  "explanation": "Sayısal olmayan bir String toInt() ile dönüştürülürse runtime hatası oluşur.",
+                  "tags": ["type-conversion", "runtime"]
+                },
+                {
+                  "questionId": 110604,
+                  "question": "Aşağıdakilerden hangisi String'e dönüşüm yapar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "toInt()",
+                    "toFloat()",
+                    "toString()",
+                    "toBoolean()"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "toString() metodu değeri String'e çevirir.",
+                  "tags": ["type-conversion", "string"]
+                },
+                {
+                  "questionId": 110605,
+                  "question": "Kotlin'de neden otomatik tip dönüşümü yoktur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Performans düşüklüğü",
+                    "Derleyici hatası",
+                    "Kod güvenliğini artırmak",
+                    "Java ile uyumsuzluk"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Açık tip dönüşümü, veri kaybını ve beklenmeyen hataları önler.",
+                  "tags": ["type-conversion", "best-practices"]
+                }
+              ]
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 103,
+          "sectionTitle": "Kontrol Yapıları",
+          "sectionDescription": "",
+          "order": 3,
+          "topics": [
+            {
+              "topicId": 1201,
+              "title": "if / else",
+              "summary": "if / else yapıları, Kotlin'de koşullu durumları kontrol etmek için kullanılır. Belirli bir şart sağlandığında çalışacak kod bloklarını tanımlamaya olanak tanır ve uygulama akışını yönlendirmek için temel bir kontrol mekanizmasıdır.",
+              "content": "## if / else\n\nKotlin'de **if / else**, belirli koşullara göre kodun çalışıp çalışmayacağını kontrol etmek için kullanılır.\n\nKoşul ifadesi her zaman **Boolean** (true / false) olmalıdır. Kotlin'de if yapısı sadece bir kontrol mekanizması değil, aynı zamanda **bir ifade (expression)** olarak da kullanılabilir. Bu sayede if bloğu bir değer döndürebilir.\n\nBu özellik, Kotlin kodlarını daha kısa ve okunabilir hale getirir.\n\nif / else yapıları tek başına veya iç içe (nested) şekilde kullanılabilir.",
+              "difficulty": "easy",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Basit if Kullanımı",
+                  "code": "val age = 20\n\nif (age >= 18) {\n    println(\"Reşit\")\n}",
+                  "explanation": "Koşul true ise if bloğu çalışır."
+                },
+                {
+                  "title": "if - else Kullanımı",
+                  "code": "val age = 16\n\nif (age >= 18) {\n    println(\"Reşit\")\n} else {\n    println(\"Reşit değil\")\n}",
+                  "explanation": "Koşul false olduğunda else bloğu çalışır."
+                },
+                {
+                  "title": "if Expression Olarak Kullanımı",
+                  "code": "val score = 75\n\nval result = if (score >= 60) {\n    \"Geçti\"\n} else {\n    \"Kaldı\"\n}",
+                  "explanation": "Kotlin'de if bir değer döndürebilir ve değişkene atanabilir."
+                },
+                {
+                  "title": "else if Kullanımı",
+                  "code": "val note = 85\n\nval grade = if (note >= 90) {\n    \"AA\"\n} else if (note >= 80) {\n    \"BB\"\n} else {\n    \"CC\"\n}",
+                  "explanation": "Birden fazla koşul else if ile kontrol edilebilir."
+                }
+              ],
+              "keyPoints": [
+                "Koşul mutlaka Boolean olmalıdır",
+                "if bir expression olarak kullanılabilir",
+                "else if ile çoklu koşullar kontrol edilir",
+                "Kod okunabilirliği için süslü parantez önerilir",
+                "Kontrol yapılarının temelidir"
+              ],
+              "questions": [
+                {
+                  "questionId": 120101,
+                  "question": "if koşulu hangi türde değer almalıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Int",
+                    "String",
+                    "Boolean",
+                    "Any"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "if koşulu true veya false dönen bir ifade olmalıdır.",
+                  "tags": ["if", "basics"]
+                },
+                {
+                  "questionId": 120102,
+                  "question": "Kotlin'de if yapısının önemli farkı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece kontrol yapısıdır",
+                    "Sadece döngülerle çalışır",
+                    "Bir ifade (expression) olarak değer döndürebilir",
+                    "Sadece else ile kullanılır"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Kotlin'de if bir expression'dır ve değer döndürebilir.",
+                  "tags": ["if", "expression"]
+                },
+                {
+                  "questionId": 120103,
+                  "question": "Aşağıdaki kodun çıktısı ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": "val x = 10\nval y = 20\n\nval max = if (x > y) x else y\nprintln(max)",
+                  "difficulty": "medium",
+                  "options": [
+                    "10",
+                    "20",
+                    "true",
+                    "Compile-time hatası"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "x > y false olduğu için else bloğu çalışır ve y değeri yazdırılır.",
+                  "tags": ["if", "expression"]
+                },
+                {
+                  "questionId": 120104,
+                  "question": "else if ne zaman kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Tek koşul varsa",
+                    "Birden fazla koşul kontrol edilecekse",
+                    "Sadece Boolean false ise",
+                    "if kullanılamıyorsa"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Birden fazla koşul kontrol edilecekse else if kullanılır.",
+                  "tags": ["if", "conditions"]
+                },
+                {
+                  "questionId": 120105,
+                  "question": "Aşağıdakilerden hangisi Kotlin'de geçerli bir if ifadesidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "if (x = 5)",
+                    "if x > 5",
+                    "if (x > 5) println(x)",
+                    "if x > 5 then"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Kotlin'de koşul parantez içinde yazılır ve doğru sözdizimi gerekir.",
+                  "tags": ["if", "syntax"]
+                }
+              ]
+            },            
+            {
+              "topicId": 1202,
+              "title": "when",
+              "summary": "when yapısı, Kotlin'de çoklu koşulları kontrol etmek için kullanılan güçlü bir kontrol yapısıdır. Java'daki switch yapısının gelişmiş bir versiyonudur ve hem değer hem de koşul bazlı kontroller yapabilir.",
+              "content": "## when\n\nKotlin'de **when**, bir değişkenin veya ifadenin farklı durumlara göre değerlendirilmesini sağlar. Java'daki switch yapısına benzer ancak çok daha esnek ve güçlüdür.\n\nwhen sadece sabit değerlerle değil; aralıklar, koleksiyonlar, tip kontrolleri ve Boolean koşullarla da çalışabilir. Ayrıca **if gibi bir expression** olarak kullanılarak değer döndürebilir.\n\nwhen yapısı, okunabilirliği artırır ve çoklu if-else bloklarının yerini alabilir.",
+              "difficulty": "easy",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "Basit when Kullanımı",
+                  "code": "val day = 3\n\nwhen (day) {\n    1 -> println(\"Pazartesi\")\n    2 -> println(\"Salı\")\n    3 -> println(\"Çarşamba\")\n    else -> println(\"Geçersiz gün\")\n}",
+                  "explanation": "Değer, eşleşen case'e göre çalışır."
+                },
+                {
+                  "title": "Birden Fazla Değerle when",
+                  "code": "val number = 2\n\nwhen (number) {\n    1, 3, 5 -> println(\"Tek\")\n    2, 4, 6 -> println(\"Çift\")\n}",
+                  "explanation": "Tek bir case içinde birden fazla değer kontrol edilebilir."
+                },
+                {
+                  "title": "when Expression Olarak Kullanımı",
+                  "code": "val score = 85\n\nval result = when (score) {\n    in 90..100 -> \"AA\"\n    in 80..89 -> \"BB\"\n    else -> \"CC\"\n}",
+                  "explanation": "when bir expression olarak değer döndürebilir."
+                },
+                {
+                  "title": "Koşulsuz when Kullanımı",
+                  "code": "val age = 20\n\nwhen {\n    age < 18 -> println(\"Reşit değil\")\n    age >= 18 -> println(\"Reşit\")\n}",
+                  "explanation": "Koşulsuz when, Boolean ifadelerle çalışır."
+                }
+              ],
+              "keyPoints": [
+                "switch yerine kullanılır",
+                "Birden fazla değeri aynı anda kontrol edebilir",
+                "Aralıklar (in) ile çalışabilir",
+                "Expression olarak değer döndürebilir",
+                "Koşulsuz when kullanımı mümkündür"
+              ],
+              "questions": [
+                {
+                  "questionId": 120201,
+                  "question": "when yapısı hangi kontrol yapısının yerine kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "if",
+                    "for",
+                    "switch",
+                    "while"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "when, Java'daki switch yapısının gelişmiş halidir.",
+                  "tags": ["when", "basics"]
+                },
+                {
+                  "questionId": 120202,
+                  "question": "Kotlin'de when yapısının önemli avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece sabit değerlerle çalışır",
+                    "Expression olarak değer döndürebilir",
+                    "Sadece Int ile çalışır",
+                    "if yerine kullanılamaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "when bir expression'dır ve değer döndürebilir.",
+                  "tags": ["when", "expression"]
+                },
+                {
+                  "questionId": 120203,
+                  "question": "Aşağıdaki kodun çıktısı ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": "val x = 7\n\nval result = when (x) {\n    in 1..5 -> \"Düşük\"\n    in 6..10 -> \"Yüksek\"\n    else -> \"Bilinmiyor\"\n}\nprintln(result)",
+                  "difficulty": "medium",
+                  "options": [
+                    "Düşük",
+                    "Yüksek",
+                    "Bilinmiyor",
+                    "Compile-time hatası"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "7 değeri 6..10 aralığında olduğu için \"Yüksek\" yazdırılır.",
+                  "tags": ["when", "range"]
+                },
+                {
+                  "questionId": 120204,
+                  "question": "Koşulsuz when ne zaman kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sabit değerler kontrol edilecekse",
+                    "Boolean ifadelerle kontrol yapılacaksa",
+                    "Sadece String değerler için",
+                    "when kullanılamıyorsa"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Koşulsuz when, Boolean ifadelerle çalışır.",
+                  "tags": ["when", "conditions"]
+                },
+                {
+                  "questionId": 120205,
+                  "question": "Aşağıdakilerden hangisi when yapısında kullanılabilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece Int",
+                    "Sadece String",
+                    "Sabit değerler",
+                    "Sabitler, aralıklar ve koşullar"
+                  ],
+                  "correctAnswerIndex": 3,
+                  "explanation": "when; sabitler, aralıklar, koleksiyonlar ve koşullarla çalışabilir.",
+                  "tags": ["when", "advanced"]
+                }
+              ]
+            },
+            {
+              "topicId": 1203,
+              "title": "for Döngüsü",
+              "summary": "for döngüsü, Kotlin'de belirli bir aralıkta veya koleksiyon üzerinde tekrar eden işlemleri gerçekleştirmek için kullanılır. Sayaç kontrollü ve koleksiyon tabanlı döngüler için en yaygın kullanılan yapıdır.",
+              "content": "## for Döngüsü\n\nKotlin'de **for döngüsü**, bir aralık (range) veya koleksiyon (Array, List, Set, Map) üzerinde dolaşmak için kullanılır.\n\nKotlin'de klasik index tabanlı for yerine daha okunabilir ve güvenli yapılar tercih edilir. Range ifadeleri, step, downTo ve until gibi anahtar kelimelerle güçlü bir kullanım sunar.\n\nfor döngüsü özellikle listeleme, veri işleme ve tekrar eden görevler için idealdir.",
+              "difficulty": "easy",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Basit for Döngüsü",
+                  "code": "for (i in 1..5) {\n    println(i)\n}",
+                  "explanation": "1'den 5'e kadar (5 dahil) döner."
+                },
+                {
+                  "title": "until Kullanımı",
+                  "code": "for (i in 0 until 5) {\n    println(i)\n}",
+                  "explanation": "0'dan 4'e kadar döner. 5 dahil değildir."
+                },
+                {
+                  "title": "step ve downTo Kullanımı",
+                  "code": "for (i in 10 downTo 0 step 2) {\n    println(i)\n}",
+                  "explanation": "10'dan 0'a doğru 2'şer azalarak döner."
+                },
+                {
+                  "title": "Koleksiyon Üzerinde for",
+                  "code": "val names = listOf(\"Ali\", \"Ayşe\", \"Mehmet\")\n\nfor (name in names) {\n    println(name)\n}",
+                  "explanation": "Liste elemanları üzerinde tek tek dolaşır."
+                }
+              ],
+              "keyPoints": [
+                "Range veya koleksiyon üzerinde çalışır",
+                "until, downTo ve step desteklenir",
+                "Index hatalarını azaltır",
+                "Okunabilir ve güvenlidir",
+                "Koleksiyon işlemlerinde sık kullanılır"
+              ],
+              "questions": [
+                {
+                  "questionId": 120301,
+                  "question": "Aşağıdaki for döngüsü kaç kez çalışır?",
+                  "questionType": "multiple_choice",
+                  "code": "for (i in 1..3) {\n    println(i)\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "2",
+                    "3",
+                    "4",
+                    "Sonsuz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "1..3 aralığı 1, 2 ve 3 değerlerini kapsar.",
+                  "tags": ["for", "range"]
+                },
+                {
+                  "questionId": 120302,
+                  "question": "until anahtar kelimesinin farkı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Başlangıç değerini almaz",
+                    "Bitiş değerini dahil etmez",
+                    "Sadece geriye doğru çalışır",
+                    "step ile kullanılamaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "until, bitiş değerini dahil etmez.",
+                  "tags": ["for", "until"]
+                },
+                {
+                  "questionId": 120303,
+                  "question": "Aşağıdaki kodun çıktısı ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": "for (i in 5 downTo 1) {\n    print(i)\n}",
+                  "difficulty": "medium",
+                  "options": [
+                    "12345",
+                    "54321",
+                    "01234",
+                    "Compile-time hatası"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "downTo geriye doğru sayar.",
+                  "tags": ["for", "downTo"]
+                },
+                {
+                  "questionId": 120304,
+                  "question": "Bir koleksiyon üzerinde dolaşmak için hangisi doğrudur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "for (i = 0; i < list.size; i++)",
+                    "for (item in list)",
+                    "while (list)",
+                    "loop (list)"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Kotlin'de koleksiyonlar doğrudan for-in ile gezilir.",
+                  "tags": ["for", "collections"]
+                },
+                {
+                  "questionId": 120305,
+                  "question": "step anahtar kelimesi ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Döngüyü durdurur",
+                    "Adım sayısını belirler",
+                    "Sadece ileri sayar",
+                    "Bitiş değerini değiştirir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "step, döngünün kaçar kaçar ilerleyeceğini belirler.",
+                  "tags": ["for", "step"]
+                }
+              ]
+            },
+            {
+              "topicId": 1204,
+              "title": "while / do-while Döngüsü",
+              "summary": "while ve do-while döngüleri, koşul doğru olduğu sürece çalışan kontrol yapılarıdır. while döngüsünde koşul başta kontrol edilirken, do-while döngüsünde döngü en az bir kez çalışır.",
+              "content": "## while ve do-while Döngüsü\n\nKotlin'de **while döngüsü**, koşul doğru olduğu sürece çalışır. Koşul döngünün başında kontrol edilir.\n\n**do-while döngüsü** ise koşulu sonda kontrol eder. Bu sayede döngü bloğu **en az bir kez** çalıştırılır.\n\nBu döngüler genellikle tekrar sayısı önceden bilinmeyen durumlarda, kullanıcıdan veri alma, API'den cevap bekleme gibi senaryolarda kullanılır.",
+              "difficulty": "easy",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "Basit while Döngüsü",
+                  "code": "var i = 1\n\nwhile (i <= 5) {\n    println(i)\n    i++\n}",
+                  "explanation": "Koşul doğru olduğu sürece döngü çalışır."
+                },
+                {
+                  "title": "Yanlış Koşulda while",
+                  "code": "var x = 10\n\nwhile (x < 5) {\n    println(x)\n}",
+                  "explanation": "Koşul baştan false olduğu için döngü hiç çalışmaz."
+                },
+                {
+                  "title": "do-while Döngüsü",
+                  "code": "var y = 10\n\ndo {\n    println(y)\n} while (y < 5)",
+                  "explanation": "Koşul false olsa bile do-while en az bir kez çalışır."
+                },
+                {
+                  "title": "Kullanıcıdan Veri Alma Senaryosu",
+                  "code": "var password: String\n\ndo {\n    password = readLine() ?: \"\"\n} while (password.length < 6)",
+                  "explanation": "Şifre en az 6 karakter olana kadar döngü devam eder."
+                }
+              ],
+              "keyPoints": [
+                "while döngüsünde koşul başta kontrol edilir",
+                "do-while döngüsü en az bir kez çalışır",
+                "Tekrar sayısı bilinmeyen durumlar için uygundur",
+                "Yanlış koşulda while hiç çalışmayabilir",
+                "Sonsuz döngülere dikkat edilmelidir"
+              ],
+              "questions": [
+                {
+                  "questionId": 120401,
+                  "question": "while döngüsünün temel özelliği nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "En az bir kez çalışır",
+                    "Koşul sonda kontrol edilir",
+                    "Koşul doğru olduğu sürece çalışır",
+                    "Sadece sayılarla çalışır"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "while döngüsü koşul true olduğu sürece çalışır.",
+                  "tags": ["while"]
+                },
+                {
+                  "questionId": 120402,
+                  "question": "Aşağıdaki kodun çıktısı ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": "var i = 5\n\nwhile (i < 3) {\n    println(i)\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "5",
+                    "3",
+                    "Hiçbir çıktı olmaz",
+                    "Sonsuz döngü"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Koşul baştan false olduğu için döngü çalışmaz.",
+                  "tags": ["while"]
+                },
+                {
+                  "questionId": 120403,
+                  "question": "do-while döngüsünün farkı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Koşul başta kontrol edilir",
+                    "Sadece Boolean ile çalışır",
+                    "En az bir kez çalışır",
+                    "Sonsuz döngü oluşturur"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "do-while koşuldan bağımsız olarak en az bir kez çalışır.",
+                  "tags": ["do-while"]
+                },
+                {
+                  "questionId": 120404,
+                  "question": "Aşağıdaki kod kaç kez çalışır?",
+                  "questionType": "multiple_choice",
+                  "code": "var x = 0\n\ndo {\n    x++\n} while (x < 3)",
+                  "difficulty": "medium",
+                  "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "Sonsuz"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "x değeri 0,1,2 iken döngü çalışır. Toplam 3 kez.",
+                  "tags": ["do-while"]
+                },
+                {
+                  "questionId": 120405,
+                  "question": "Sonsuz döngüye sebep olan durum hangisidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Koşulun hiç güncellenmemesi",
+                    "Koşulun false olması",
+                    "Koşulun başta kontrol edilmesi",
+                    "do-while kullanılması"
+                  ],
+                  "correctAnswerIndex": 0,
+                  "explanation": "Koşul değişmezse döngü sonsuza kadar devam edebilir.",
+                  "tags": ["while", "do-while"]
+                }
+              ]
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 104,
+          "sectionTitle": "Koleksiyonlar",
+          "sectionDescription": "",
+          "order": 4,
+          "topics": [
+            {
+              "topicId": 1301,
+              "title": "Array",
+              "summary": "Array, aynı türden birden fazla veriyi tek bir değişken altında saklamaya yarayan sabit boyutlu bir veri yapısıdır. Kotlin'de Array'ler index mantığıyla çalışır ve elemanlara 0'dan başlayarak erişilir.",
+              "content": "## Array (Dizi)\n\nArray, Kotlin'de belirli sayıda ve **aynı türde** veriyi saklamak için kullanılır. Array'lerin boyutu tanımlandıktan sonra değiştirilemez.\n\nHer eleman bir index numarasına sahiptir ve index'ler **0'dan başlar**. Array'ler genellikle sabit veri listeleri veya performansın önemli olduğu durumlarda tercih edilir.",
+              "difficulty": "easy",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Array Tanımlama",
+                  "code": "val numbers = arrayOf(1, 2, 3, 4, 5)",
+                  "explanation": "Integer türünde bir Array oluşturulur."
+                },
+                {
+                  "title": "Index ile Erişim",
+                  "code": "val cities = arrayOf(\"Ankara\", \"İstanbul\", \"İzmir\")\nprintln(cities[0])",
+                  "explanation": "Array'in ilk elemanına erişilir."
+                },
+                {
+                  "title": "Array Elemanı Güncelleme",
+                  "code": "val ages = arrayOf(18, 20, 25)\nages[1] = 21",
+                  "explanation": "Index kullanılarak eleman güncellenebilir."
+                },
+                {
+                  "title": "Array Boyutu",
+                  "code": "val names = arrayOf(\"Ali\", \"Veli\")\nprintln(names.size)",
+                  "explanation": "Array içindeki eleman sayısını verir."
+                },
+                {
+                  "title": "Döngü ile Array Gezme",
+                  "code": "val scores = arrayOf(60, 70, 80)\nfor (score in scores) {\n    println(score)\n}",
+                  "explanation": "for döngüsü ile tüm elemanlar gezilir."
+                }
+              ],
+              "keyPoints": [
+                "Array sabit boyutludur",
+                "Aynı türden veriler saklanır",
+                "Index'ler 0'dan başlar",
+                "size özelliği eleman sayısını verir",
+                "Elemanlar değiştirilebilir ama boyut değiştirilemez"
+              ],
+              "questions": [
+                {
+                  "questionId": 130101,
+                  "question": "Array nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Farklı türden verileri tutan yapı",
+                    "Sabit boyutlu veri koleksiyonu",
+                    "Sonsuz eleman tutan liste",
+                    "Sadece String tutan yapı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Array sabit boyutlu ve aynı türden verileri tutar.",
+                  "tags": ["array"]
+                },
+                {
+                  "questionId": 130102,
+                  "question": "Array index'leri kaçtan başlar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "1",
+                    "-1",
+                    "0",
+                    "2"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Kotlin'de Array index'leri 0'dan başlar.",
+                  "tags": ["array"]
+                },
+                {
+                  "questionId": 130103,
+                  "question": "Aşağıdaki kodun çıktısı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": "val arr = arrayOf(10, 20, 30)\nprintln(arr[1])",
+                  "difficulty": "easy",
+                  "options": [
+                    "10",
+                    "20",
+                    "30",
+                    "Hata verir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Index 1 ikinci elemanı temsil eder.",
+                  "tags": ["array"]
+                },
+                {
+                  "questionId": 130104,
+                  "question": "Array ile ilgili hangisi yanlıştır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Boyutu sonradan değiştirilebilir",
+                    "Elemanlara index ile erişilir",
+                    "Aynı türde veri tutar",
+                    "size özelliği vardır"
+                  ],
+                  "correctAnswerIndex": 0,
+                  "explanation": "Array'in boyutu tanımlandıktan sonra değiştirilemez.",
+                  "tags": ["array"]
+                },
+                {
+                  "questionId": 130105,
+                  "question": "Array hangi durumda daha uygundur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Eleman sayısı sürekli değişiyorsa",
+                    "Sabit ve küçük veri listesi varsa",
+                    "Farklı türler birlikte tutulacaksa",
+                    "Dinamik ekleme çıkarma yapılacaksa"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Array sabit boyutlu olduğu için değişmeyen veri listelerinde uygundur.",
+                  "tags": ["array"]
+                }
+              ]
+            },
+            {
+              "topicId": 1302,
+              "title": "List ve MutableList",
+              "summary": "List ve MutableList, Kotlin'de sıralı veri koleksiyonlarını temsil eder. List değiştirilemez (immutable) bir yapı sunarken, MutableList eleman ekleme, silme ve güncelleme gibi işlemlere izin verir.",
+              "content": "## List ve MutableList\n\nKotlin'de List ve MutableList, aynı türden birden fazla veriyi sıralı şekilde saklamak için kullanılır.\n\n- **List**: Değiştirilemez (immutable). Eleman ekleme, silme veya güncelleme yapılamaz.\n- **MutableList**: Değiştirilebilir (mutable). Eleman ekleme, silme ve güncelleme yapılabilir.\n\nBest practice olarak, eğer koleksiyon değişmeyecekse List kullanılması önerilir. Bu yaklaşım kod güvenliğini ve okunabilirliği artırır.",
+              "difficulty": "easy",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "List Tanımlama",
+                  "code": "val names = listOf(\"Ali\", \"Veli\", \"Ayşe\")",
+                  "explanation": "Değiştirilemez bir List oluşturulur."
+                },
+                {
+                  "title": "MutableList Tanımlama",
+                  "code": "val numbers = mutableListOf(1, 2, 3)",
+                  "explanation": "Değiştirilebilir bir MutableList oluşturulur."
+                },
+                {
+                  "title": "MutableList'e Eleman Ekleme",
+                  "code": "val cities = mutableListOf(\"Ankara\", \"İstanbul\")\ncities.add(\"İzmir\")",
+                  "explanation": "MutableList'e add() metodu ile eleman eklenir."
+                },
+                {
+                  "title": "MutableList Eleman Güncelleme",
+                  "code": "val ages = mutableListOf(18, 20, 25)\nages[1] = 21",
+                  "explanation": "Index kullanılarak eleman güncellenebilir."
+                },
+                {
+                  "title": "List Üzerinde Döngü",
+                  "code": "val scores = listOf(60, 70, 80)\nfor (score in scores) {\n    println(score)\n}",
+                  "explanation": "for döngüsü ile List elemanları gezilir."
+                }
+              ],
+              "keyPoints": [
+                "List immutable'dır, değiştirilemez",
+                "MutableList mutable'dır, değiştirilebilir",
+                "Index'ler 0'dan başlar",
+                "List güvenli ve okunabilir kod sağlar",
+                "Değişmeyecek koleksiyonlar için List tercih edilmelidir"
+              ],
+              "questions": [
+                {
+                  "questionId": 130201,
+                  "question": "List ve MutableList arasındaki temel fark nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "List daha hızlıdır",
+                    "MutableList sadece String tutar",
+                    "List değiştirilemez, MutableList değiştirilebilir",
+                    "Aralarında fark yoktur"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "List immutable, MutableList mutable bir koleksiyondur.",
+                  "tags": ["list", "mutablelist"]
+                },
+                {
+                  "questionId": 130202,
+                  "question": "Aşağıdakilerden hangisi eleman eklemeye izin verir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "listOf",
+                    "List",
+                    "MutableList",
+                    "Array"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "MutableList eleman ekleme ve silmeye izin verir.",
+                  "tags": ["mutablelist"]
+                },
+                {
+                  "questionId": 130203,
+                  "question": "Aşağıdaki kodda hangi satır hata verir?",
+                  "questionType": "multiple_choice",
+                  "code": "val list = listOf(1, 2, 3)\nlist.add(4)",
+                  "difficulty": "medium",
+                  "options": [
+                    "Satır 1",
+                    "Satır 2",
+                    "İkisi de çalışır",
+                    "Runtime hatası olur"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "listOf ile oluşturulan List immutable olduğu için add() kullanılamaz.",
+                  "tags": ["list"]
+                },
+                {
+                  "questionId": 130204,
+                  "question": "MutableList ile aşağıdakilerden hangisi yapılabilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Boyutunu değiştirmek",
+                    "Sadece okuma yapmak",
+                    "Sabit veri saklamak",
+                    "Sadece compile-time'da kullanmak"
+                  ],
+                  "correctAnswerIndex": 0,
+                  "explanation": "MutableList eleman ekleme, silme ve güncellemeye izin verir.",
+                  "tags": ["mutablelist"]
+                },
+                {
+                  "questionId": 130205,
+                  "question": "Best practice olarak hangisi önerilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Her zaman MutableList kullanmak",
+                    "Değişmeyecekse List kullanmak",
+                    "Array yerine her zaman MutableList kullanmak",
+                    "List kullanmamak"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Değişmeyecek koleksiyonlar için List kullanmak kod güvenliğini artırır.",
+                  "tags": ["best-practice", "list"]
+                }
+              ]
+            },
+            {
+              "topicId": 1303,
+              "title": "Set",
+              "summary": "Set, Kotlin'de benzersiz (unique) elemanlar tutan bir koleksiyon türüdür. Aynı elemandan birden fazla bulunmasına izin vermez ve genellikle tekrar eden verileri engellemek için kullanılır.",
+              "content": "## Set\n\nSet, aynı türden benzersiz elemanları saklamak için kullanılan bir koleksiyondur.\n\n- **Set**: Değiştirilemez (immutable)\n- **MutableSet**: Değiştirilebilir (mutable)\n\nSet'lerde elemanların sırası garanti edilmez. Aynı değer birden fazla kez eklenmeye çalışılırsa sadece bir tanesi saklanır.\n\nTekrar eden verileri otomatik olarak filtrelemek için ideal bir yapıdır.",
+              "difficulty": "easy",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Set Tanımlama",
+                  "code": "val numbers = setOf(1, 2, 3, 3, 4)",
+                  "explanation": "Set tekrar eden elemanları otomatik olarak tekilleştirir."
+                },
+                {
+                  "title": "MutableSet Tanımlama",
+                  "code": "val cities = mutableSetOf(\"Ankara\", \"İstanbul\")",
+                  "explanation": "Değiştirilebilir bir MutableSet oluşturulur."
+                },
+                {
+                  "title": "MutableSet'e Eleman Ekleme",
+                  "code": "val colors = mutableSetOf(\"Red\", \"Blue\")\ncolors.add(\"Green\")",
+                  "explanation": "add() metodu ile yeni eleman eklenebilir."
+                },
+                {
+                  "title": "Tekrar Eden Eleman Ekleme",
+                  "code": "val set = mutableSetOf(1, 2, 3)\nset.add(2)\nprintln(set.size)",
+                  "explanation": "Aynı eleman tekrar eklense bile Set içinde bir kez bulunur."
+                },
+                {
+                  "title": "Set Üzerinde Döngü",
+                  "code": "val fruits = setOf(\"Apple\", \"Banana\", \"Orange\")\nfor (fruit in fruits) {\n    println(fruit)\n}",
+                  "explanation": "for döngüsü ile Set elemanları gezilebilir."
+                }
+              ],
+              "keyPoints": [
+                "Set benzersiz elemanlar tutar",
+                "Aynı eleman Set içinde birden fazla kez bulunamaz",
+                "Set immutable, MutableSet mutable'dır",
+                "Eleman sırası garanti edilmez",
+                "Tekrar eden verileri engellemek için kullanılır"
+              ],
+              "questions": [
+                {
+                  "questionId": 130301,
+                  "question": "Set koleksiyonunun temel özelliği nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sıralı elemanlar tutar",
+                    "Tekrar eden elemanlara izin verir",
+                    "Benzersiz elemanlar tutar",
+                    "Sadece sayısal veri saklar"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Set aynı elemandan yalnızca bir tane tutar.",
+                  "tags": ["set"]
+                },
+                {
+                  "questionId": 130302,
+                  "question": "Aşağıdakilerden hangisi değiştirilebilir Set oluşturur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "setOf",
+                    "listOf",
+                    "mutableSetOf",
+                    "arrayOf"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "mutableSetOf ile MutableSet oluşturulur.",
+                  "tags": ["mutableset"]
+                },
+                {
+                  "questionId": 130303,
+                  "question": "Aşağıdaki kodun çıktısı ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": "val set = setOf(1, 2, 2, 3)\nprintln(set.size)",
+                  "difficulty": "medium",
+                  "options": [
+                    "2",
+                    "3",
+                    "4",
+                    "Compile hatası"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Set tekrar eden elemanları tekilleştirir, bu yüzden size 3 olur.",
+                  "tags": ["set"]
+                },
+                {
+                  "questionId": 130304,
+                  "question": "Set kullanmanın en uygun olduğu senaryo hangisidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sıralı veri gerektiğinde",
+                    "Index ile erişim gerektiğinde",
+                    "Tekrar eden verilerin engellenmesi gerektiğinde",
+                    "Elemanların sürekli güncellendiği durumlarda"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Set, tekrar eden elemanları otomatik olarak engeller.",
+                  "tags": ["set", "use-case"]
+                },
+                {
+                  "questionId": 130305,
+                  "question": "Set koleksiyonları hakkında hangisi doğrudur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Set index kullanır",
+                    "Set sıralı çalışır",
+                    "Set tekrar eden elemanları tutmaz",
+                    "Set sadece String saklar"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Set aynı elemanı birden fazla kez tutmaz.",
+                  "tags": ["set"]
+                }
+              ]
+            },
+            {
+              "topicId": 1304,
+              "title": "Map",
+              "summary": "Map, Kotlin'de anahtar-değer (key-value) mantığıyla çalışan bir koleksiyon türüdür. Her anahtar benzersizdir ve bir değere karşılık gelir. Verilere anahtar üzerinden hızlı erişim sağlar.",
+              "content": "## Map\n\nMap, verileri anahtar (key) ve değer (value) çiftleri halinde saklar.\n\n- **Map**: Değiştirilemez (immutable)\n- **MutableMap**: Değiştirilebilir (mutable)\n\nMap'lerde anahtarlar benzersizdir. Aynı anahtar tekrar eklenirse eski değer güncellenir. Android geliştirmede JSON verileri, ayarlar ve cache işlemlerinde sıkça kullanılır.",
+              "difficulty": "easy",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "Map Tanımlama",
+                  "code": "val ages = mapOf(\"Ahmet\" to 25, \"Mehmet\" to 30)",
+                  "explanation": "mapOf ile değiştirilemez bir Map oluşturulur."
+                },
+                {
+                  "title": "MutableMap Tanımlama",
+                  "code": "val scores = mutableMapOf(\"Math\" to 90, \"Physics\" to 85)",
+                  "explanation": "mutableMapOf ile değiştirilebilir bir Map oluşturulur."
+                },
+                {
+                  "title": "Map'ten Veri Okuma",
+                  "code": "val cities = mapOf(\"TR\" to \"Ankara\", \"FR\" to \"Paris\")\nprintln(cities[\"TR\"])",
+                  "explanation": "Anahtar kullanılarak değere erişilir."
+                },
+                {
+                  "title": "MutableMap'e Veri Ekleme",
+                  "code": "val prices = mutableMapOf(\"Apple\" to 5)\nprices[\"Banana\"] = 3",
+                  "explanation": "Yeni anahtar-değer çifti eklenir."
+                },
+                {
+                  "title": "Aynı Anahtarla Güncelleme",
+                  "code": "val map = mutableMapOf(\"A\" to 1)\nmap[\"A\"] = 2\nprintln(map[\"A\"])",
+                  "explanation": "Aynı anahtar tekrar eklenirse değer güncellenir."
+                }
+              ],
+              "keyPoints": [
+                "Map key-value yapısı ile çalışır",
+                "Anahtarlar benzersizdir",
+                "Map immutable, MutableMap mutable'dır",
+                "Anahtar ile hızlı veri erişimi sağlar",
+                "Android'de JSON ve ayar verilerinde sık kullanılır"
+              ],
+              "questions": [
+                {
+                  "questionId": 130401,
+                  "question": "Map koleksiyonunun temel özelliği nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sıralı elemanlar tutar",
+                    "Index ile erişim sağlar",
+                    "Anahtar-değer yapısıyla çalışır",
+                    "Tek tip veri saklar"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Map, anahtar-değer (key-value) yapısına sahiptir.",
+                  "tags": ["map"]
+                },
+                {
+                  "questionId": 130402,
+                  "question": "Aşağıdakilerden hangisi değiştirilebilir Map oluşturur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "mapOf",
+                    "listOf",
+                    "mutableMapOf",
+                    "setOf"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "mutableMapOf ile MutableMap oluşturulur.",
+                  "tags": ["mutablemap"]
+                },
+                {
+                  "questionId": 130403,
+                  "question": "Aşağıdaki kodun çıktısı ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": "val map = mapOf(\"A\" to 1, \"A\" to 2)\nprintln(map.size)",
+                  "difficulty": "medium",
+                  "options": [
+                    "1",
+                    "2",
+                    "Compile hatası",
+                    "Runtime hatası"
+                  ],
+                  "correctAnswerIndex": 0,
+                  "explanation": "Map anahtarları benzersizdir. Aynı anahtar tekrar kullanıldığında son değer geçerli olur.",
+                  "tags": ["map"]
+                },
+                {
+                  "questionId": 130404,
+                  "question": "Map'ten veri okumak için hangisi kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "map.getKey()",
+                    "map.value()",
+                    "map[key]",
+                    "map.indexOf()"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Map'te değerler anahtar kullanılarak map[key] şeklinde okunur.",
+                  "tags": ["map"]
+                },
+                {
+                  "questionId": 130405,
+                  "question": "Map kullanımı için en uygun senaryo hangisidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sıralı veri gerektiğinde",
+                    "Index ile erişim gerektiğinde",
+                    "Anahtar ile hızlı erişim gerektiğinde",
+                    "Tekrar eden veriler gerektiğinde"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Map, anahtar üzerinden hızlı erişim gereken durumlarda kullanılır.",
+                  "tags": ["map", "use-case"]
+                }
+              ]
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 105,
+          "sectionTitle": "Fonksiyonlar ve Null Safety",
+          "sectionDescription": "",
+          "order": 5,
+          "topics": [
+            {
+              "topicId": 1401,
+              "title": "Fonksiyonlar",
+              "summary": "Fonksiyonlar, belirli bir işi yapmak için yazılan ve gerektiğinde tekrar tekrar çağrılabilen kod bloklarıdır. Kotlin'de fonksiyonlar daha okunabilir, kısa ve güvenli bir yapı sunar.",
+              "content": "## Fonksiyonlar\n\nFonksiyonlar, kod tekrarını önlemek ve uygulamayı daha düzenli hale getirmek için kullanılır.\n\nKotlin'de fonksiyonlar `fun` anahtar kelimesi ile tanımlanır. Fonksiyonlar parametre alabilir, değer döndürebilir veya sadece işlem yapabilir.\n\nKotlin'in kısa söz dizimi sayesinde tek satırlık fonksiyonlar sade bir şekilde yazılabilir. Fonksiyonlar Android geliştirmede UI işlemleri, veri işleme ve iş mantığını ayırmak için sıkça kullanılır.",
+              "difficulty": "easy",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Parametresiz Fonksiyon",
+                  "code": "fun sayHello() {\n    println(\"Merhaba Kotlin\")\n}",
+                  "explanation": "Parametre almayan ve sadece işlem yapan basit bir fonksiyon."
+                },
+                {
+                  "title": "Parametre Alan Fonksiyon",
+                  "code": "fun greet(name: String) {\n    println(\"Merhaba $name\")\n}",
+                  "explanation": "Fonksiyon dışarıdan parametre alabilir."
+                },
+                {
+                  "title": "Geriye Değer Döndüren Fonksiyon",
+                  "code": "fun sum(a: Int, b: Int): Int {\n    return a + b\n}",
+                  "explanation": "Fonksiyon hesaplama yapıp bir değer döndürebilir."
+                },
+                {
+                  "title": "Tek Satırlık Fonksiyon",
+                  "code": "fun multiply(a: Int, b: Int): Int = a * b",
+                  "explanation": "Tek satırlık fonksiyonlarda return yazmaya gerek yoktur."
+                },
+                {
+                  "title": "Fonksiyon Çağırma",
+                  "code": "val result = sum(5, 3)\nprintln(result)",
+                  "explanation": "Fonksiyon çağrılarak dönen değer kullanılabilir."
+                }
+              ],
+              "keyPoints": [
+                "Fonksiyonlar fun anahtar kelimesi ile tanımlanır",
+                "Parametre alabilir veya almayabilir",
+                "Geriye değer döndürebilir",
+                "Kod tekrarını önler",
+                "Android projelerinde iş mantığını ayırmak için kullanılır"
+              ],
+              "questions": [
+                {
+                  "questionId": 140101,
+                  "question": "Kotlin'de fonksiyon tanımlamak için hangi anahtar kelime kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "function",
+                    "def",
+                    "fun",
+                    "method"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Kotlin'de fonksiyonlar fun anahtar kelimesi ile tanımlanır.",
+                  "tags": ["functions", "basics"]
+                },
+                {
+                  "questionId": 140102,
+                  "question": "Bir fonksiyonun geriye değer döndürmesi için ne yapılmalıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "println kullanılmalı",
+                    "return kullanılmalı",
+                    "val kullanılmalı",
+                    "var kullanılmalı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Fonksiyonlar return anahtar kelimesi ile değer döndürür.",
+                  "tags": ["functions", "return"]
+                },
+                {
+                  "questionId": 140103,
+                  "question": "Aşağıdaki fonksiyonlardan hangisi doğru tanımlanmıştır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "fun sum(a, b): Int",
+                    "fun sum(a: Int, b: Int): Int = a + b",
+                    "function sum(a: Int, b: Int)",
+                    "def sum(a: Int, b: Int)"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Kotlin'de parametre tipleri belirtilmeli ve fun anahtar kelimesi kullanılmalıdır.",
+                  "tags": ["functions", "syntax"]
+                },
+                {
+                  "questionId": 140104,
+                  "question": "Tek satırlık fonksiyonlarda hangisi kullanılmaz?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "return",
+                    "fun",
+                    "Parametreler",
+                    "Dönüş tipi"
+                  ],
+                  "correctAnswerIndex": 0,
+                  "explanation": "Tek satırlık fonksiyonlarda return anahtar kelimesi kullanılmaz.",
+                  "tags": ["functions"]
+                },
+                {
+                  "questionId": 140105,
+                  "question": "Fonksiyonların en büyük faydası nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Kod boyutunu artırmak",
+                    "Kod tekrarını azaltmak",
+                    "Daha fazla değişken oluşturmak",
+                    "Sadece çıktı almak"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Fonksiyonlar kod tekrarını azaltır ve düzenli kod yazılmasını sağlar.",
+                  "tags": ["functions", "best-practice"]
+                }
+              ]
+            },
+            {
+              "topicId": 1402,
+              "title": "Parametreler ve Geri Dönüş Tipleri",
+              "summary": "Parametreler, fonksiyonlara dışarıdan veri göndermeyi sağlar. Geri dönüş tipi ise fonksiyonun yaptığı işlemin sonucunda döndürdüğü veri tipini belirtir. Kotlin'de fonksiyonlar farklı parametreler alabilir ve farklı türlerde değerler döndürebilir.",
+              "content": "## Parametreler ve Geri Dönüş Tipleri\n\nFonksiyonlar, dışarıdan veri alabilmek için parametre kullanır. Parametrelerin türleri açıkça belirtilmelidir.\n\nGeri dönüş tipi, fonksiyonun yaptığı işlem sonucunda hangi türde bir değer döndüreceğini ifade eder. Eğer fonksiyon bir değer döndürmüyorsa dönüş tipi `Unit` olarak kabul edilir.\n\nKotlin'de varsayılan parametreler, isimli parametreler ve Unit dönüş tipi gibi modern özellikler bulunmaktadır.",
+              "difficulty": "easy",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "Tek Parametreli Fonksiyon",
+                  "code": "fun printAge(age: Int) {\n    println(age)\n}",
+                  "explanation": "Fonksiyon tek bir parametre alabilir."
+                },
+                {
+                  "title": "Birden Fazla Parametre",
+                  "code": "fun sum(a: Int, b: Int): Int {\n    return a + b\n}",
+                  "explanation": "Fonksiyon birden fazla parametre alabilir."
+                },
+                {
+                  "title": "Unit Dönüş Tipi",
+                  "code": "fun showMessage(message: String): Unit {\n    println(message)\n}",
+                  "explanation": "Değer döndürmeyen fonksiyonların dönüş tipi Unit'tir."
+                },
+                {
+                  "title": "Varsayılan Parametre",
+                  "code": "fun greet(name: String = \"Misafir\") {\n    println(\"Merhaba $name\")\n}",
+                  "explanation": "Parametreye varsayılan değer atanabilir."
+                },
+                {
+                  "title": "İsimli Parametre Kullanımı",
+                  "code": "greet(name = \"Ahmet\")",
+                  "explanation": "Parametreler isimleriyle çağrılabilir."
+                }
+              ],
+              "keyPoints": [
+                "Parametreler fonksiyonlara veri aktarır",
+                "Parametre tipleri belirtilmelidir",
+                "Fonksiyonlar değer döndürebilir veya Unit döndürür",
+                "Varsayılan parametreler kullanılabilir",
+                "İsimli parametreler okunabilirliği artırır"
+              ],
+              "questions": [
+                {
+                  "questionId": 140201,
+                  "question": "Fonksiyonlara dışarıdan veri göndermek için ne kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Return",
+                    "Parametre",
+                    "Variable",
+                    "Unit"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Fonksiyonlara veri parametreler aracılığıyla gönderilir.",
+                  "tags": ["parameters"]
+                },
+                {
+                  "questionId": 140202,
+                  "question": "Değer döndürmeyen fonksiyonların dönüş tipi nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Void",
+                    "Null",
+                    "Unit",
+                    "None"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Kotlin'de değer döndürmeyen fonksiyonların dönüş tipi Unit'tir.",
+                  "tags": ["unit"]
+                },
+                {
+                  "questionId": 140203,
+                  "question": "Aşağıdaki fonksiyonlardan hangisi varsayılan parametre kullanır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "fun test(a: Int)",
+                    "fun test(a: Int = 5)",
+                    "fun test(a)",
+                    "fun test(): Int"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Varsayılan parametre, parametreye başlangıç değeri verilerek tanımlanır.",
+                  "tags": ["default-parameters"]
+                },
+                {
+                  "questionId": 140204,
+                  "question": "İsimli parametrelerin en büyük avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Performansı artırmak",
+                    "Hafıza kullanımını azaltmak",
+                    "Kod okunabilirliğini artırmak",
+                    "Daha az parametre kullanmak"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "İsimli parametreler, fonksiyon çağrılarını daha okunabilir yapar.",
+                  "tags": ["named-parameters"]
+                },
+                {
+                  "questionId": 140205,
+                  "question": "Bir fonksiyonun dönüş tipini belirtmek için hangi sembol kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "=",
+                    "->",
+                    ":",
+                    "::"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Fonksiyon dönüş tipi iki nokta (:) ile belirtilir.",
+                  "tags": ["return-type"]
+                }
+              ]
+            },
+            {
+              "topicId": 1403,
+              "title": "Null Safety",
+              "summary": "Null Safety, Kotlin'in null referans hatalarını (NullPointerException) önlemek için sunduğu bir güvenlik mekanizmasıdır. Kotlin'de bir değişken varsayılan olarak null olamaz, bu da uygulamaların daha güvenli çalışmasını sağlar.",
+              "content": "## Null Safety\n\nKotlin'de değişkenler varsayılan olarak null olamaz. Eğer bir değişkenin null değer alabilmesini istiyorsak, tipinin sonuna `?` eklememiz gerekir.\n\nKotlin, null değerlerle güvenli çalışmak için çeşitli operatörler sunar:\n\n- `?` : Nullable değişken\n- `?.` : Safe call (güvenli çağrı)\n- `?:` : Elvis operatörü (varsayılan değer)\n- `!!` : Not-null assertion (risklidir)\n\nBu yapı sayesinde NullPointerException hataları büyük ölçüde engellenir.",
+              "difficulty": "medium",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Nullable Değişken",
+                  "code": "var name: String? = null",
+                  "explanation": "String? ifadesi değişkenin null olabileceğini belirtir."
+                },
+                {
+                  "title": "Safe Call (?.)",
+                  "code": "val length = name?.length",
+                  "explanation": "Eğer name null ise hata vermez, sonuç null olur."
+                },
+                {
+                  "title": "Elvis Operatörü (?:)",
+                  "code": "val length = name?.length ?: 0",
+                  "explanation": "Eğer name null ise varsayılan olarak 0 atanır."
+                },
+                {
+                  "title": "Not-Null Assertion (!!)",
+                  "code": "val length = name!!.length",
+                  "explanation": "name null ise uygulama çöker. Dikkatli kullanılmalıdır."
+                },
+                {
+                  "title": "if ile Null Kontrolü",
+                  "code": "if (name != null) {\n    println(name.length)\n}",
+                  "explanation": "Klasik null kontrolü yapılabilir."
+                }
+              ],
+              "keyPoints": [
+                "Kotlin'de değişkenler varsayılan olarak null olamaz",
+                "Nullable değişkenler ? ile tanımlanır",
+                "Safe call (?.) NullPointerException'ı önler",
+                "Elvis operatörü varsayılan değer sağlar",
+                "!! operatörü risklidir ve önerilmez"
+              ],
+              "questions": [
+                {
+                  "questionId": 140301,
+                  "question": "Kotlin'de bir değişkenin null olabilmesi için ne yapılmalıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "val kullanmak",
+                    "var kullanmak",
+                    "Tipin sonuna ? eklemek",
+                    "!! kullanmak"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Nullable değişkenler ? ile tanımlanır.",
+                  "tags": ["null-safety"]
+                },
+                {
+                  "questionId": 140302,
+                  "question": "Safe call operatörü hangisidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "!!",
+                    "?:",
+                    "?.",
+                    "::"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "?. operatörü null güvenli çağrı sağlar.",
+                  "tags": ["safe-call"]
+                },
+                {
+                  "questionId": 140303,
+                  "question": "Aşağıdaki kodda name null ise length değeri ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": "val name: String? = null\nval length = name?.length ?: 0",
+                  "difficulty": "medium",
+                  "options": [
+                    "null",
+                    "Hata verir",
+                    "0",
+                    "1"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Elvis operatörü sayesinde null durumda 0 atanır.",
+                  "tags": ["elvis-operator"]
+                },
+                {
+                  "questionId": 140304,
+                  "question": "!! operatörü ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Null kontrolü yapar",
+                    "Null ise varsayılan değer atar",
+                    "Null değilse çalışır, null ise crash olur",
+                    "Her zaman güvenlidir"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "!! operatörü null ise NullPointerException fırlatır.",
+                  "tags": ["not-null-assertion"]
+                },
+                {
+                  "questionId": 140305,
+                  "question": "Null Safety'nin temel amacı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Kod yazmayı zorlaştırmak",
+                    "Daha fazla değişken oluşturmak",
+                    "NullPointerException hatalarını önlemek",
+                    "Performansı düşürmek"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Null Safety, NullPointerException hatalarını minimize eder.",
+                  "tags": ["null-safety", "best-practice"]
+                }
+              ]
+            },
+            {
+              "topicId": 1404,
+              "title": "lateinit ve lazy",
+              "summary": "lateinit ve lazy, Kotlin'de değişkenlerin geç (sonradan) başlatılmasını sağlayan iki farklı yaklaşımdır. lateinit mutable değişkenler için kullanılırken, lazy immutable değişkenler için kullanılır.",
+              "content": "## lateinit ve lazy\n\nKotlin'de normalde bir değişken tanımlandığında hemen başlatılmalıdır. Ancak bazı durumlarda değişkenin değeri daha sonra atanır.\n\nBu durumlar için Kotlin iki çözüm sunar:\n\n- **lateinit**: var ile kullanılan, daha sonra başlatılacak değişkenler için\n- **lazy**: val ile kullanılan, ilk erişimde başlatılan değişkenler için\n\nAndroid geliştirmede özellikle ViewBinding, Activity ve Fragment yapılarında sıkça kullanılır.",
+              "difficulty": "medium",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "lateinit Kullanımı",
+                  "code": "lateinit var name: String\n\nfun initName() {\n    name = \"Ahmet\"\n}",
+                  "explanation": "lateinit, var ile kullanılır ve sonradan değer atanır."
+                },
+                {
+                  "title": "lateinit Kontrolü",
+                  "code": "if (::name.isInitialized) {\n    println(name)\n}",
+                  "explanation": "lateinit değişkenin başlatılıp başlatılmadığı kontrol edilebilir."
+                },
+                {
+                  "title": "lazy Kullanımı",
+                  "code": "val age: Int by lazy {\n    25\n}",
+                  "explanation": "lazy, değişken ilk kez kullanıldığında çalışır."
+                },
+                {
+                  "title": "lazy Çalışma Mantığı",
+                  "code": "val message: String by lazy {\n    println(\"Initialized\")\n    \"Merhaba\"\n}",
+                  "explanation": "lazy blok yalnızca ilk erişimde çalışır."
+                },
+                {
+                  "title": "Android Örneği (ViewBinding)",
+                  "code": "private lateinit var binding: ActivityMainBinding",
+                  "explanation": "Android'de ViewBinding genellikle lateinit ile tanımlanır."
+                }
+              ],
+              "keyPoints": [
+                "lateinit sadece var ile kullanılır",
+                "lazy sadece val ile kullanılır",
+                "lateinit primitive tiplerde kullanılamaz",
+                "lazy ilk erişimde çalışır",
+                "Android'de ViewBinding için yaygın olarak kullanılır"
+              ],
+              "questions": [
+                {
+                  "questionId": 140401,
+                  "question": "lateinit hangi değişken türü ile kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "val",
+                    "const",
+                    "var",
+                    "let"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "lateinit sadece var ile kullanılabilir.",
+                  "tags": ["lateinit"]
+                },
+                {
+                  "questionId": 140402,
+                  "question": "lazy hangi durumda çalışır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Uygulama başlarken",
+                    "Değişken tanımlandığında",
+                    "İlk erişildiğinde",
+                    "Fonksiyon çağrıldığında"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "lazy blok ilk erişimde çalışır.",
+                  "tags": ["lazy"]
+                },
+                {
+                  "questionId": 140403,
+                  "question": "Aşağıdakilerden hangisi lazy için doğrudur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "var ile kullanılır",
+                    "Null olabilir",
+                    "Sadece val ile kullanılır",
+                    "Her zaman hemen çalışır"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "lazy sadece val ile kullanılır.",
+                  "tags": ["lazy"]
+                },
+                {
+                  "questionId": 140404,
+                  "question": "lateinit ile ilgili hangisi yanlıştır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "var ile kullanılır",
+                    "Primitive tiplerde kullanılabilir",
+                    "Sonradan değer atanır",
+                    "Null Safety ile ilişkilidir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "lateinit primitive tiplerde (Int, Boolean vb.) kullanılamaz.",
+                  "tags": ["lateinit"]
+                },
+                {
+                  "questionId": 140405,
+                  "question": "Android'de ViewBinding genellikle nasıl tanımlanır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "val binding = ActivityMainBinding()",
+                    "lateinit var binding",
+                    "val binding by lazy",
+                    "var binding?"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ViewBinding genellikle lateinit var ile tanımlanır.",
+                  "tags": ["android", "viewbinding"]
+                }
+              ]
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 106,
+          "sectionTitle": "Nesne Yönelimli Programlama",
+          "sectionDescription": "",
+          "order": 6,
+          "topics": [
+            {
+              "topicId": 1501,
+              "title": "Sınıflara Giriş (Classlar)",
+              "summary": "Sınıflar (class), nesne tabanlı programlamanın temel yapı taşlarıdır. Kotlin'de sınıflar; özellikleri (property) ve davranışları (fonksiyon) bir arada tutarak gerçek hayattaki nesneleri temsil eder.",
+              "content": "## Sınıflara Giriş (Classlar)\n\nNesne tabanlı programlamada (OOP), sınıflar bir nesnenin taslağını (şablonunu) temsil eder. Bir sınıftan birden fazla nesne (object) oluşturulabilir.\n\nKotlin'de sınıflar `class` anahtar kelimesi ile tanımlanır. Sınıflar; değişkenler (property) ve fonksiyonlar (method) içerebilir.\n\nAndroid geliştirmede Activity, Fragment, ViewModel gibi tüm yapılar birer sınıftır.",
+              "difficulty": "easy",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Basit Sınıf Tanımı",
+                  "code": "class Person {\n    var name: String = \"\"\n    var age: Int = 0\n}",
+                  "explanation": "Person sınıfı iki property içerir."
+                },
+                {
+                  "title": "Nesne Oluşturma",
+                  "code": "val person = Person()\nperson.name = \"Ahmet\"\nperson.age = 25",
+                  "explanation": "Sınıftan bir nesne (object) oluşturulur."
+                },
+                {
+                  "title": "Sınıf İçinde Fonksiyon",
+                  "code": "class Car {\n    var brand: String = \"\"\n\n    fun drive() {\n        println(\"Araba sürülüyor\")\n    }\n}",
+                  "explanation": "Sınıf içinde fonksiyon tanımlanabilir."
+                },
+                {
+                  "title": "Fonksiyon Çağırma",
+                  "code": "val car = Car()\ncar.drive()",
+                  "explanation": "Sınıf fonksiyonları nesne üzerinden çağrılır."
+                },
+                {
+                  "title": "Birden Fazla Nesne",
+                  "code": "val p1 = Person()\nval p2 = Person()",
+                  "explanation": "Aynı sınıftan birden fazla nesne oluşturulabilir."
+                }
+              ],
+              "keyPoints": [
+                "Sınıflar OOP'nin temel yapı taşıdır",
+                "class anahtar kelimesi ile tanımlanır",
+                "Sınıflardan nesneler (object) oluşturulur",
+                "Sınıflar property ve fonksiyon içerir",
+                "Android'deki her yapı aslında bir sınıftır"
+              ],
+              "questions": [
+                {
+                  "questionId": 150101,
+                  "question": "Kotlin'de sınıf tanımlamak için hangi anahtar kelime kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "object",
+                    "class",
+                    "struct",
+                    "type"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Kotlin'de sınıflar class anahtar kelimesi ile tanımlanır.",
+                  "tags": ["class", "oop"]
+                },
+                {
+                  "questionId": 150102,
+                  "question": "Bir sınıftan oluşturulan örneğe ne ad verilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Method",
+                    "Property",
+                    "Object",
+                    "Package"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Sınıftan oluşturulan her örnek bir object'tir.",
+                  "tags": ["object", "oop"]
+                },
+                {
+                  "questionId": 150103,
+                  "question": "Aşağıdakilerden hangisi sınıf içinde bulunabilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece değişken",
+                    "Sadece fonksiyon",
+                    "Değişken ve fonksiyon",
+                    "Sadece constructor"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Sınıflar hem property hem fonksiyon içerebilir.",
+                  "tags": ["class"]
+                },
+                {
+                  "questionId": 150104,
+                  "question": "Aşağıdaki ifadelerden hangisi doğrudur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Bir sınıftan sadece bir nesne oluşturulur",
+                    "Sınıflar sadece veri tutar",
+                    "Bir sınıftan birden fazla nesne oluşturulabilir",
+                    "Sınıflar fonksiyon içeremez"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Aynı sınıftan birden fazla nesne oluşturulabilir.",
+                  "tags": ["oop"]
+                },
+                {
+                  "questionId": 150105,
+                  "question": "Android'de Activity ve Fragment ne tür yapılardır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Fonksiyon",
+                    "Değişken",
+                    "Sınıf",
+                    "Paket"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Activity ve Fragment, Kotlin'de sınıf olarak tanımlanır.",
+                  "tags": ["android", "class"]
+                }
+              ]
+            },
+            {
+              "topicId": 1502,
+              "title": "Constructor",
+              "summary": "Constructor, bir sınıftan nesne oluşturulurken çalışan özel bir yapıdır. Kotlin'de constructor'lar sayesinde sınıfın başlangıç değerleri belirlenir ve nesne oluşturma süreci kontrol altına alınır.",
+              "content": "## Constructor (Yapıcı Metot)\n\nConstructor, bir sınıftan nesne oluşturulduğu anda otomatik olarak çalışan özel bir fonksiyondur. Kotlin'de constructor kullanımı oldukça basittir ve genellikle sınıf başlığında tanımlanır.\n\nKotlin'de iki tür constructor vardır:\n- Primary Constructor (Birincil)\n- Secondary Constructor (İkincil)\n\nPrimary constructor sınıf başlığında tanımlanır ve en çok kullanılan yöntemdir. Secondary constructor ise ek senaryolar için kullanılır.\n\nAndroid geliştirmede model sınıfları, ViewModel'ler ve adapter yapıları constructor mantığına dayanır.",
+              "difficulty": "easy",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "Primary Constructor",
+                  "code": "class User(val name: String, val age: Int)",
+                  "explanation": "Primary constructor sınıf başlığında tanımlanır."
+                },
+                {
+                  "title": "Nesne Oluşturma",
+                  "code": "val user = User(\"Ahmet\", 25)",
+                  "explanation": "Constructor parametreleri nesne oluştururken gönderilir."
+                },
+                {
+                  "title": "Init Bloğu",
+                  "code": "class Product(val price: Int) {\n    init {\n        println(\"Ürün fiyatı: $price\")\n    }\n}",
+                  "explanation": "init bloğu constructor çalıştığında otomatik olarak tetiklenir."
+                },
+                {
+                  "title": "Secondary Constructor",
+                  "code": "class Car {\n    var brand: String\n\n    constructor(brand: String) {\n        this.brand = brand\n    }\n}",
+                  "explanation": "Secondary constructor, class içinde constructor anahtar kelimesi ile tanımlanır."
+                },
+                {
+                  "title": "Birden Fazla Constructor",
+                  "code": "class Person(val name: String) {\n    var age: Int = 0\n\n    constructor(name: String, age: Int) : this(name) {\n        this.age = age\n    }\n}",
+                  "explanation": "Secondary constructor, primary constructor'ı çağırmak zorundadır."
+                }
+              ],
+              "keyPoints": [
+                "Constructor nesne oluşturulurken çalışır",
+                "Primary constructor en çok kullanılan yöntemdir",
+                "init bloğu constructor ile birlikte çalışır",
+                "Secondary constructor ek senaryolar için kullanılır",
+                "Android model sınıfları constructor yapısını yoğun kullanır"
+              ],
+              "questions": [
+                {
+                  "questionId": 150201,
+                  "question": "Constructor ne zaman çalışır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sınıf tanımlandığında",
+                    "Fonksiyon çağrıldığında",
+                    "Nesne oluşturulduğunda",
+                    "Uygulama kapandığında"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Constructor, sınıftan nesne oluşturulduğu anda çalışır.",
+                  "tags": ["constructor", "oop"]
+                },
+                {
+                  "questionId": 150202,
+                  "question": "Primary constructor nerede tanımlanır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Fonksiyon içinde",
+                    "Sınıf başlığında",
+                    "init bloğunda",
+                    "Companion object içinde"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Primary constructor sınıf başlığında tanımlanır.",
+                  "tags": ["constructor"]
+                },
+                {
+                  "questionId": 150203,
+                  "question": "init bloğu ne zaman çalışır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Uygulama açıldığında",
+                    "Fonksiyon çağrıldığında",
+                    "Constructor çalıştığında",
+                    "Sınıf silindiğinde"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "init bloğu constructor ile birlikte otomatik olarak çalışır.",
+                  "tags": ["init", "constructor"]
+                },
+                {
+                  "questionId": 150204,
+                  "question": "Secondary constructor hangi anahtar kelime ile tanımlanır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "init",
+                    "class",
+                    "new",
+                    "constructor"
+                  ],
+                  "correctAnswerIndex": 3,
+                  "explanation": "Secondary constructor, constructor anahtar kelimesi ile tanımlanır.",
+                  "tags": ["constructor"]
+                },
+                {
+                  "questionId": 150205,
+                  "question": "Secondary constructor için aşağıdakilerden hangisi zorunludur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "init bloğu çağırmak",
+                    "Primary constructor'ı çağırmak",
+                    "open sınıf olmak",
+                    "abstract sınıf olmak"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Secondary constructor, primary constructor'ı çağırmak zorundadır.",
+                  "tags": ["oop", "constructor"]
+                }
+              ]
+            },
+            {
+              "topicId": 1503,
+              "title": "Encapsulation",
+              "summary": "Encapsulation (kapsülleme), nesneye ait verilerin doğrudan erişime kapatılması ve kontrollü bir şekilde dışarıya açılması prensibidir. Kotlin'de bu işlem access modifier'lar ve getter/setter yapıları ile sağlanır.",
+              "content": "## Encapsulation (Kapsülleme)\n\nEncapsulation, nesne yönelimli programlamanın (OOP) temel prensiplerinden biridir. Amaç, bir sınıfın iç detaylarını gizleyerek dış dünyaya yalnızca gerekli olan kısmı açmaktır.\n\nKotlin'de encapsulation genellikle **private**, **public**, **protected** gibi erişim belirleyiciler ve **getter/setter** yapıları ile uygulanır.\n\nBu yaklaşım sayesinde:\n- Kod güvenliği artar\n- Hatalı kullanımlar engellenir\n- Sınıflar daha sürdürülebilir hale gelir\n\nAndroid geliştirmede ViewModel, Repository ve Model sınıflarında encapsulation yoğun şekilde kullanılır.",
+              "difficulty": "medium",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Private Property Kullanımı",
+                  "code": "class User {\n    private var password: String = \"1234\"\n\n    fun checkPassword(input: String): Boolean {\n        return input == password\n    }\n}",
+                  "explanation": "password değişkeni private olduğu için dışarıdan doğrudan erişilemez."
+                },
+                {
+                  "title": "Public Getter - Private Setter",
+                  "code": "class Account {\n    var balance: Int = 0\n        private set\n}",
+                  "explanation": "balance değeri dışarıdan okunabilir ama değiştirilemez."
+                },
+                {
+                  "title": "Custom Getter ve Setter",
+                  "code": "class Product {\n    var price: Int = 0\n        get() = field\n        set(value) {\n            if (value >= 0) {\n                field = value\n            }\n        }\n}",
+                  "explanation": "Setter içinde kontrol yapılarak hatalı değer atamaları engellenir."
+                },
+                {
+                  "title": "Encapsulation ile Veri Koruma",
+                  "code": "class BankAccount {\n    private var balance: Int = 0\n\n    fun deposit(amount: Int) {\n        if (amount > 0) balance += amount\n    }\n\n    fun getBalance(): Int = balance\n}",
+                  "explanation": "balance sadece sınıf içinden değiştirilebilir, dışarıya kontrollü açılır."
+                }
+              ],
+              "keyPoints": [
+                "Encapsulation, veriyi gizleyip kontrollü açma prensibidir",
+                "private erişim belirleyicisi sık kullanılır",
+                "Getter ve setter ile kontrollü erişim sağlanır",
+                "Hatalı veri girişleri engellenir",
+                "Kodun güvenliği ve sürdürülebilirliği artar"
+              ],
+              "questions": [
+                {
+                  "questionId": 150301,
+                  "question": "Encapsulation'ın temel amacı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Kodu uzatmak",
+                    "Veriyi gizlemek ve kontrollü erişim sağlamak",
+                    "Daha fazla sınıf oluşturmak",
+                    "Sadece performansı artırmak"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Encapsulation, veriyi gizleyip kontrollü erişim sağlamak için kullanılır.",
+                  "tags": ["encapsulation", "oop"]
+                },
+                {
+                  "questionId": 150302,
+                  "question": "Bir değişkenin dışarıdan erişimini tamamen kapatmak için hangi access modifier kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "public",
+                    "protected",
+                    "internal",
+                    "private"
+                  ],
+                  "correctAnswerIndex": 3,
+                  "explanation": "private ile tanımlanan değişkenlere sadece sınıf içinden erişilebilir.",
+                  "tags": ["access-modifiers"]
+                },
+                {
+                  "questionId": 150303,
+                  "question": "Aşağıdaki yapılardan hangisi encapsulation örneğidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Tüm değişkenleri public yapmak",
+                    "private property + public method kullanmak",
+                    "Her sınıfı abstract yapmak",
+                    "Sadece data class kullanmak"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Veriyi private yapıp kontrollü metotlarla erişmek encapsulation'dır.",
+                  "tags": ["encapsulation"]
+                },
+                {
+                  "questionId": 150304,
+                  "question": "Aşağıdaki kodda balance neden private tanımlanmıştır?",
+                  "questionType": "multiple_choice",
+                  "code": "class Account {\n    private var balance = 0\n\n    fun deposit(amount: Int) {\n        balance += amount\n    }\n}",
+                  "difficulty": "medium",
+                  "options": [
+                    "Performans için",
+                    "Dışarıdan doğrudan değiştirilmesini engellemek için",
+                    "Derleme süresini kısaltmak için",
+                    "Zorunlu olduğu için"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Encapsulation sayesinde balance sadece kontrollü şekilde değiştirilebilir.",
+                  "tags": ["encapsulation", "security"]
+                },
+                {
+                  "questionId": 150305,
+                  "question": "Getter ve setter'ların temel görevi nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sınıf oluşturmak",
+                    "Veriyi silmek",
+                    "Değişkenlere kontrollü erişim sağlamak",
+                    "Inheritance sağlamak"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Getter ve setter, değişkenlere kontrollü erişim sağlar.",
+                  "tags": ["getter", "setter"]
+                }
+              ]
+            },
+            {
+              "topicId": 1504,
+              "title": "Inheritance",
+              "summary": "Inheritance (kalıtım), bir sınıfın başka bir sınıfın özelliklerini ve davranışlarını miras almasını sağlar. Kotlin'de kalıtım, kod tekrarını azaltmak ve sınıflar arasında hiyerarşik bir yapı kurmak için kullanılır.",
+              "content": "## Inheritance (Kalıtım)\n\nInheritance, nesne yönelimli programlamanın temel prensiplerinden biridir. Bir sınıfın başka bir sınıftan türemesini sağlar.\n\nKotlin'de bir sınıf varsayılan olarak **final**'dır. Kalıtım yapılabilmesi için **open** anahtar kelimesi kullanılır.\n\nAlt sınıflar (**child / subclass**), üst sınıfın (**parent / superclass**) public ve protected üyelerine erişebilir.\n\nAndroid geliştirmede Activity, Fragment, ViewModel gibi yapılar kalıtımın en yaygın kullanıldığı örneklerdir.",
+              "difficulty": "medium",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "Basit Kalıtım Örneği",
+                  "code": "open class Animal {\n    fun makeSound() {\n        println(\"Ses çıkarıyor\")\n    }\n}\n\nclass Dog : Animal() {\n    fun bark() {\n        println(\"Hav hav\")\n    }\n}",
+                  "explanation": "Dog sınıfı, Animal sınıfından kalıtım alır ve onun fonksiyonlarını kullanabilir."
+                },
+                {
+                  "title": "Constructor ile Kalıtım",
+                  "code": "open class Vehicle(val brand: String)\n\nclass Car(brand: String, val doors: Int) : Vehicle(brand)",
+                  "explanation": "Alt sınıf, üst sınıfın constructor'ına parametre gönderebilir."
+                },
+                {
+                  "title": "open ve override Kullanımı",
+                  "code": "open class Shape {\n    open fun draw() {\n        println(\"Şekil çiziliyor\")\n    }\n}\n\nclass Circle : Shape() {\n    override fun draw() {\n        println(\"Daire çiziliyor\")\n    }\n}",
+                  "explanation": "Bir fonksiyon override edilecekse üst sınıfta open olarak tanımlanmalıdır."
+                },
+                {
+                  "title": "super Anahtar Kelimesi",
+                  "code": "open class User {\n    open fun getRole() {\n        println(\"User\")\n    }\n}\n\nclass Admin : User() {\n    override fun getRole() {\n        super.getRole()\n        println(\"Admin\")\n    }\n}",
+                  "explanation": "super ile üst sınıfın fonksiyonuna erişilebilir."
+                }
+              ],
+              "keyPoints": [
+                "Kotlin'de sınıflar varsayılan olarak final'dır",
+                "Kalıtım için open anahtar kelimesi gerekir",
+                "Alt sınıf, üst sınıfın public ve protected üyelerine erişebilir",
+                "override edilen fonksiyonlar open olmalıdır",
+                "super anahtar kelimesi ile üst sınıfa erişilir"
+              ],
+              "questions": [
+                {
+                  "questionId": 150401,
+                  "question": "Kotlin'de bir sınıfın kalıtım alabilmesi için hangi anahtar kelime kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "abstract",
+                    "open",
+                    "inherit",
+                    "extends"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Kotlin'de sınıflar varsayılan olarak final'dır. Kalıtım için open kullanılmalıdır.",
+                  "tags": ["inheritance", "open"]
+                },
+                {
+                  "questionId": 150402,
+                  "question": "Aşağıdakilerden hangisi override edilebilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "final fonksiyon",
+                    "private fonksiyon",
+                    "open fonksiyon",
+                    "local fonksiyon"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Sadece open olarak tanımlanan fonksiyonlar override edilebilir.",
+                  "tags": ["override"]
+                },
+                {
+                  "questionId": 150403,
+                  "question": "super anahtar kelimesi ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Alt sınıfı çağırır",
+                    "Üst sınıfın üyelerine erişir",
+                    "Yeni nesne oluşturur",
+                    "Interface implement eder"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "super, üst sınıfın fonksiyon ve property'lerine erişmek için kullanılır.",
+                  "tags": ["super"]
+                },
+                {
+                  "questionId": 150404,
+                  "question": "Aşağıdaki kodda hata oluşmasının sebebi nedir?",
+                  "questionType": "multiple_choice",
+                  "code": "class A\n\nclass B : A()",
+                  "difficulty": "medium",
+                  "options": [
+                    "Constructor eksik",
+                    "A sınıfı open değil",
+                    "B sınıfı final",
+                    "override eksik"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "A sınıfı open olmadığı için kalıtım alınamaz.",
+                  "tags": ["inheritance", "error"]
+                },
+                {
+                  "questionId": 150405,
+                  "question": "Android'de aşağıdakilerden hangisi inheritance örneğidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Activity : AppCompatActivity",
+                    "Intent kullanımı",
+                    "SharedPreferences",
+                    "DataBinding"
+                  ],
+                  "correctAnswerIndex": 0,
+                  "explanation": "Activity'ler genellikle AppCompatActivity'den kalıtım alır.",
+                  "tags": ["android", "inheritance"]
+                }
+              ]
+            },
+            {
+              "topicId": 1505,
+              "title": "Polymorphism",
+              "summary": "Polymorphism (çok biçimlilik), aynı arayüz veya üst sınıf referansı ile farklı nesnelerin farklı davranışlar sergilemesini sağlar. Kotlin'de polymorphism, inheritance ve override mekanizmaları ile uygulanır.",
+              "content": "## Polymorphism (Çok Biçimlilik)\n\nPolymorphism, nesne yönelimli programlamanın temel prensiplerinden biridir. Aynı türden referanslar kullanılarak farklı nesnelerin kendi davranışlarını sergilemesini sağlar.\n\nKotlin'de polymorphism genellikle:\n- open ve override fonksiyonlar\n- Üst sınıf referansı ile alt sınıf nesnesi oluşturma\n- Interface ve abstract class yapıları\n\nüzerinden uygulanır.\n\nAndroid geliştirmede polymorphism; Adapter, ViewModel, Repository ve callback yapılarında sıkça kullanılır.",
+              "difficulty": "medium",
+              "order": 5,
+              "codeExamples": [
+                {
+                  "title": "Üst Sınıf Referansı ile Alt Sınıf Nesnesi",
+                  "code": "open class Animal {\n    open fun makeSound() {\n        println(\"Ses çıkarıyor\")\n    }\n}\n\nclass Cat : Animal() {\n    override fun makeSound() {\n        println(\"Miyav\")\n    }\n}\n\nclass Dog : Animal() {\n    override fun makeSound() {\n        println(\"Hav hav\")\n    }\n}",
+                  "explanation": "Animal referansı, farklı alt sınıf nesneleri için farklı çıktılar üretir."
+                },
+                {
+                  "title": "Polymorphism Kullanımı",
+                  "code": "fun animalSound(animal: Animal) {\n    animal.makeSound()\n}\n\nanimalSound(Cat())\nanimalSound(Dog())",
+                  "explanation": "Fonksiyon, Animal türü alır ama gelen nesneye göre davranış değişir."
+                },
+                {
+                  "title": "Liste Üzerinden Polymorphism",
+                  "code": "val animals: List<Animal> = listOf(Cat(), Dog())\n\nfor (animal in animals) {\n    animal.makeSound()\n}",
+                  "explanation": "Aynı liste içinde farklı alt sınıflar kendi davranışlarını sergiler."
+                },
+                {
+                  "title": "Android'de Polymorphism Örneği",
+                  "code": "open class BaseViewModel\n\nclass MainViewModel : BaseViewModel()\nclass DetailViewModel : BaseViewModel()",
+                  "explanation": "ViewModel'lar genellikle ortak bir üst sınıftan türetilir."
+                }
+              ],
+              "keyPoints": [
+                "Polymorphism, tek referans ile farklı davranışlar üretir",
+                "Inheritance polymorphism için temel şarttır",
+                "override edilen fonksiyonlar runtime'da çağrılır",
+                "Üst sınıf referansı alt sınıf nesnesini tutabilir",
+                "Kod esnekliği ve genişletilebilirliği artırır"
+              ],
+              "questions": [
+                {
+                  "questionId": 150501,
+                  "question": "Polymorphism neyi ifade eder?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Bir sınıfın tek görevi olmasını",
+                    "Aynı referans ile farklı davranışlar sergilenmesini",
+                    "Sınıfların birbirini çağırmasını",
+                    "Sadece interface kullanımını"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Polymorphism, aynı referans ile farklı nesnelerin farklı davranış göstermesidir.",
+                  "tags": ["polymorphism", "oop"]
+                },
+                {
+                  "questionId": 150502,
+                  "question": "Aşağıdakilerden hangisi polymorphism için gereklidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Data class",
+                    "Inheritance",
+                    "Singleton",
+                    "Companion object"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Polymorphism genellikle inheritance ve override ile sağlanır.",
+                  "tags": ["inheritance"]
+                },
+                {
+                  "questionId": 150503,
+                  "question": "Aşağıdaki kodun çıktısı ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": "open class A {\n    open fun print() {\n        println(\"A\")\n    }\n}\n\nclass B : A() {\n    override fun print() {\n        println(\"B\")\n    }\n}\n\nval obj: A = B()\nobj.print()",
+                  "difficulty": "medium",
+                  "options": [
+                    "A",
+                    "B",
+                    "Compile hatası",
+                    "Runtime hatası"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Runtime'da nesnenin gerçek tipi (B) çalışır.",
+                  "tags": ["runtime", "override"]
+                },
+                {
+                  "questionId": 150504,
+                  "question": "Override edilen fonksiyon ne zaman belirlenir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Compile time",
+                    "Runtime",
+                    "Build time",
+                    "Install time"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Polymorphism runtime binding kullanır.",
+                  "tags": ["runtime"]
+                },
+                {
+                  "questionId": 150505,
+                  "question": "Android'de Adapter yapılarında polymorphism neden kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "UI tasarlamak için",
+                    "Farklı item tiplerini yönetmek için",
+                    "Performansı düşürmek için",
+                    "Veritabanı bağlantısı için"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Adapter'larda farklı view type'lar polymorphism ile yönetilir.",
+                  "tags": ["android", "adapter"]
+                }
+              ]
+            },
+            {
+              "topicId": 1506,
+              "title": "Abstraction",
+              "summary": "Abstraction (soyutlama), bir nesnenin sadece gerekli özelliklerini dışarıya sunup detayları gizleme prensibidir. Kotlin'de abstraction, abstract class ve interface yapıları ile uygulanır.",
+              "content": "## Abstraction (Soyutlama)\n\nAbstraction, nesne yönelimli programlamanın en önemli prensiplerinden biridir. Amaç, **ne yapıldığını** göstermek, **nasıl yapıldığını** gizlemektir.\n\nKotlin'de abstraction iki temel yapı ile sağlanır:\n\n- **Abstract Class**: Gövdeli ve gövdesiz (abstract) fonksiyonlar içerebilir, state tutabilir.\n- **Interface**: Fonksiyon imzaları tanımlar, çoklu implementasyona izin verir.\n\nAndroid geliştirmede abstraction; Repository, DataSource, Callback, Listener ve Service yapılarında yoğun şekilde kullanılır.",
+              "difficulty": "medium",
+              "order": 6,
+              "codeExamples": [
+                {
+                  "title": "Abstract Class Örneği",
+                  "code": "abstract class Vehicle {\n    abstract fun move()\n\n    fun stop() {\n        println(\"Araç durdu\")\n    }\n}\n\nclass Car : Vehicle() {\n    override fun move() {\n        println(\"Araba hareket ediyor\")\n    }\n}",
+                  "explanation": "Abstract class hem gövdeli hem gövdesiz fonksiyonlar içerebilir."
+                },
+                {
+                  "title": "Interface Örneği",
+                  "code": "interface Flyable {\n    fun fly()\n}\n\nclass Bird : Flyable {\n    override fun fly() {\n        println(\"Kuş uçuyor\")\n    }\n}",
+                  "explanation": "Interface, sınıflara davranış kazandırmak için kullanılır."
+                },
+                {
+                  "title": "Abstract Property Kullanımı",
+                  "code": "abstract class Employee {\n    abstract val salary: Int\n}\n\nclass Developer : Employee() {\n    override val salary: Int = 30000\n}",
+                  "explanation": "Abstract class'lar abstract property tanımlayabilir."
+                },
+                {
+                  "title": "Android'de Abstraction Örneği",
+                  "code": "interface UserRepository {\n    fun getUsers(): List<String>\n}\n\nclass UserRepositoryImpl : UserRepository {\n    override fun getUsers(): List<String> {\n        return listOf(\"Ahmet\", \"Mehmet\")\n    }\n}",
+                  "explanation": "Repository pattern abstraction kullanılarak uygulanır."
+                }
+              ],
+              "keyPoints": [
+                "Abstraction, detayları gizleyip gerekli kısmı sunar",
+                "Abstract class hem state hem fonksiyon içerebilir",
+                "Interface çoklu implementasyona izin verir",
+                "Abstract class'tan nesne oluşturulamaz",
+                "Android mimarilerinde abstraction temel yapı taşıdır"
+              ],
+              "questions": [
+                {
+                  "questionId": 150601,
+                  "question": "Abstraction'ın temel amacı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Kodu uzatmak",
+                    "Detayları gizleyip gerekli yapıyı sunmak",
+                    "Daha fazla sınıf oluşturmak",
+                    "Performansı artırmak"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Abstraction, ne yapıldığını gösterip nasıl yapıldığını gizler.",
+                  "tags": ["abstraction", "oop"]
+                },
+                {
+                  "questionId": 150602,
+                  "question": "Abstract class ile ilgili hangisi doğrudur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Nesnesi oluşturulabilir",
+                    "Sadece abstract fonksiyon içerir",
+                    "Hem gövdeli hem gövdesiz fonksiyon içerebilir",
+                    "Çoklu kalıtımı destekler"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Abstract class'lar hem normal hem abstract fonksiyonlar içerebilir.",
+                  "tags": ["abstract-class"]
+                },
+                {
+                  "questionId": 150603,
+                  "question": "Interface'lerin en önemli avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "State tutabilmeleri",
+                    "Constructor içermeleri",
+                    "Çoklu implementasyona izin vermeleri",
+                    "Sadece Android'de çalışmaları"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Kotlin interface'leri çoklu implementasyona izin verir.",
+                  "tags": ["interface"]
+                },
+                {
+                  "questionId": 150604,
+                  "question": "Aşağıdakilerden hangisi abstraction örneğidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Concrete class kullanımı",
+                    "private değişken tanımlama",
+                    "Repository interface kullanımı",
+                    "Data class oluşturma"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Repository interface, abstraction'ın en yaygın kullanım alanlarından biridir.",
+                  "tags": ["android", "architecture"]
+                },
+                {
+                  "questionId": 150605,
+                  "question": "Android mimarilerinde abstraction neden önemlidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "UI tasarımı için",
+                    "Test edilebilirliği artırmak için",
+                    "APK boyutunu küçültmek için",
+                    "XML yazmamak için"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Abstraction sayesinde kod daha test edilebilir ve sürdürülebilir olur.",
+                  "tags": ["mvvm", "clean-architecture"]
+                }
+              ]
+            },
+            {
+              "topicId": 1507,
+              "title": "Visibility Modifiers",
+              "summary": "Visibility Modifiers (erişim belirleyiciler), sınıfların, fonksiyonların ve değişkenlerin nerelerden erişilebilir olduğunu belirler. Kotlin'de public, private, protected ve internal olmak üzere dört temel erişim belirleyici bulunur.",
+              "content": "## Visibility Modifiers (Erişim Belirleyiciler)\n\nVisibility modifiers, bir sınıfın veya üyenin (property, fonksiyon) hangi kapsamdan erişilebileceğini kontrol eder.\n\nKotlin'de dört temel erişim belirleyici vardır:\n\n- **public**: Her yerden erişilebilir (varsayılan)\n- **private**: Sadece tanımlandığı dosya veya sınıf içinden erişilebilir\n- **protected**: Sadece sınıf ve alt sınıflar tarafından erişilebilir\n- **internal**: Aynı module (modül) içerisinden erişilebilir\n\nDoğru visibility kullanımı, encapsulation ve abstraction prensiplerinin temelini oluşturur.",
+              "difficulty": "medium",
+              "order": 7,
+              "codeExamples": [
+                {
+                  "title": "Public (Varsayılan) Kullanımı",
+                  "code": "class User {\n    val name: String = \"Ahmet\"\n}",
+                  "explanation": "public varsayılan olduğu için name her yerden erişilebilir."
+                },
+                {
+                  "title": "Private Kullanımı",
+                  "code": "class Account {\n    private var balance: Int = 0\n\n    fun getBalance(): Int {\n        return balance\n    }\n}",
+                  "explanation": "balance sadece Account sınıfı içinden erişilebilir."
+                },
+                {
+                  "title": "Protected Kullanımı",
+                  "code": "open class Person {\n    protected val age: Int = 30\n}\n\nclass Employee : Person() {\n    fun printAge() {\n        println(age)\n    }\n}",
+                  "explanation": "protected üyeler alt sınıflar tarafından erişilebilir."
+                },
+                {
+                  "title": "Internal Kullanımı",
+                  "code": "internal class Logger {\n    fun log(message: String) {\n        println(message)\n    }\n}",
+                  "explanation": "internal tanımlanan sınıf sadece aynı module içinde erişilebilir."
+                },
+                {
+                  "title": "Constructor Visibility",
+                  "code": "class Singleton private constructor() {\n    companion object {\n        val instance = Singleton()\n    }\n}",
+                  "explanation": "private constructor ile dışarıdan nesne oluşturulması engellenir."
+                }
+              ],
+              "keyPoints": [
+                "Kotlin'de varsayılan visibility public'tir",
+                "private en dar erişim seviyesidir",
+                "protected sadece inheritance ile çalışır",
+                "internal module bazlı erişim sağlar",
+                "Doğru visibility kod güvenliğini artırır"
+              ],
+              "questions": [
+                {
+                  "questionId": 150701,
+                  "question": "Kotlin'de varsayılan visibility modifier hangisidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "private",
+                    "protected",
+                    "internal",
+                    "public"
+                  ],
+                  "correctAnswerIndex": 3,
+                  "explanation": "Kotlin'de herhangi bir modifier belirtilmezse varsayılan olarak public kabul edilir.",
+                  "tags": ["visibility", "public"]
+                },
+                {
+                  "questionId": 150702,
+                  "question": "Aynı module içinden erişim sağlayan visibility hangisidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "private",
+                    "protected",
+                    "internal",
+                    "public"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "internal modifier, sadece aynı module içinden erişime izin verir.",
+                  "tags": ["internal"]
+                },
+                {
+                  "questionId": 150703,
+                  "question": "protected modifier hangi durumda anlam kazanır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Top-level fonksiyonlarda",
+                    "Inheritance (kalıtım) durumunda",
+                    "Data class'larda",
+                    "Singleton yapısında"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "protected sadece sınıf ve alt sınıflar için geçerlidir.",
+                  "tags": ["protected", "inheritance"]
+                },
+                {
+                  "questionId": 150704,
+                  "question": "Aşağıdaki kodda hangi üyeye dışarıdan erişilemez?",
+                  "questionType": "multiple_choice",
+                  "code": "class Test {\n    private val a = 1\n    val b = 2\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "a",
+                    "b",
+                    "İkisine de erişilebilir",
+                    "Hiçbirine erişilemez"
+                  ],
+                  "correctAnswerIndex": 0,
+                  "explanation": "private tanımlanan a değişkenine sınıf dışından erişilemez.",
+                  "tags": ["private"]
+                },
+                {
+                  "questionId": 150705,
+                  "question": "Android projelerinde internal genellikle ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "UI bileşenleri",
+                    "Test edilebilirliği artırmak",
+                    "Module içi sınıfları sınırlamak",
+                    "Veritabanı tabloları"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "internal, module sınırları içinde erişimi kısıtlamak için kullanılır.",
+                  "tags": ["android", "module"]
+                }
+              ]
+            }
+
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 107,
+          "sectionTitle": "Fonksiyonel Programlama",
+          "sectionDescription": "",
+          "order": 7,
+          "topics": [
+            {
+              "topicId": 1601,
+              "title": "Lambda",
+              "summary": "Lambda, isimsiz (anonim) fonksiyonlardır ve fonksiyonel programlamanın temel yapı taşlarından biridir. Kotlin'de lambda ifadeleri, fonksiyonları değişken gibi kullanmayı ve daha okunabilir, esnek kod yazmayı sağlar.",
+              "content": "## Lambda\n\nLambda ifadeleri, kısa ve tek kullanımlık fonksiyonlar tanımlamak için kullanılır. Kotlin'de fonksiyonlar birer first-class citizen'dır, yani değişkenlere atanabilir, parametre olarak gönderilebilir ve fonksiyondan döndürülebilir.\n\nLambda yapısı:\n\n```\n{ parametreler -> işlem }\n```\n\nLambda'lar genellikle collection işlemleri, callback yapıları ve asenkron işlemlerde kullanılır.\n\nAndroid geliştirmede onClick listener'lar, adapter callback'leri ve higher-order function'lar lambda kullanımının en yaygın örnekleridir.",
+              "difficulty": "medium",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Basit Lambda Tanımı",
+                  "code": "val sum = { a: Int, b: Int -> a + b }\n\nprintln(sum(3, 5))",
+                  "explanation": "Lambda bir değişkene atanabilir ve fonksiyon gibi çağrılabilir."
+                },
+                {
+                  "title": "Tek Parametreli Lambda (it)",
+                  "code": "val printNumber: (Int) -> Unit = { println(it) }\n\nprintNumber(10)",
+                  "explanation": "Tek parametre varsa it anahtar kelimesi kullanılabilir."
+                },
+                {
+                  "title": "Fonksiyon Parametresi Olarak Lambda",
+                  "code": "fun calculate(a: Int, b: Int, operation: (Int, Int) -> Int): Int {\n    return operation(a, b)\n}\n\nval result = calculate(4, 2) { x, y -> x * y }",
+                  "explanation": "Fonksiyonlar parametre olarak lambda alabilir."
+                },
+                {
+                  "title": "Android'de Lambda Kullanımı",
+                  "code": "button.setOnClickListener {\n    println(\"Butona tıklandı\")\n}",
+                  "explanation": "Listener yapıları lambda ile sadeleşir."
+                }
+              ],
+              "keyPoints": [
+                "Lambda ifadeleri isimsiz fonksiyonlardır",
+                "Fonksiyonlar Kotlin'de first-class citizen'dır",
+                "Lambda'lar değişkene atanabilir",
+                "Fonksiyonlara parametre olarak gönderilebilir",
+                "Android callback'lerinde yaygın kullanılır"
+              ],
+              "questions": [
+                {
+                  "questionId": 160101,
+                  "question": "Lambda ifadesi nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "İsimli fonksiyon",
+                    "Anonim (isimsiz) fonksiyon",
+                    "Sadece Android'e özel yapı",
+                    "Class türü"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Lambda, isimsiz fonksiyonlardır.",
+                  "tags": ["lambda", "functional"]
+                },
+                {
+                  "questionId": 160102,
+                  "question": "Tek parametreli lambda'da hangi anahtar kelime kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "this",
+                    "param",
+                    "it",
+                    "self"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Tek parametreli lambda'da it kullanılır.",
+                  "tags": ["lambda"]
+                },
+                {
+                  "questionId": 160103,
+                  "question": "Aşağıdakilerden hangisi doğru lambda tanımıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "{ a, b => a + b }",
+                    "{ a: Int, b: Int -> a + b }",
+                    "(a, b) -> a + b",
+                    "lambda(a, b)"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Kotlin'de lambda tanımı bu şekildedir.",
+                  "tags": ["syntax"]
+                },
+                {
+                  "questionId": 160104,
+                  "question": "Lambda'lar genellikle hangi yapılarda kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "XML layout",
+                    "Callback ve collection işlemleri",
+                    "Manifest dosyası",
+                    "Gradle script"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Lambda'lar callback ve collection işlemlerinde yaygındır.",
+                  "tags": ["collections", "callback"]
+                },
+                {
+                  "questionId": 160105,
+                  "question": "Android'de lambda kullanımının avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Daha fazla kod yazmak",
+                    "Okunabilirliği ve sadeliği artırmak",
+                    "Sadece performans kazanmak",
+                    "Java uyumluluğunu kaldırmak"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Lambda, boilerplate kodu azaltır ve okunabilirliği artırır.",
+                  "tags": ["android", "lambda"]
+                }
+              ]
+            },
+            {
+              "topicId": 1602,
+              "title": "Map ve Filter",
+              "summary": "Map ve Filter, koleksiyonlar üzerinde veri dönüştürme ve filtreleme işlemleri yapmak için kullanılan fonksiyonel programlama araçlarıdır. Kotlin'de okunabilir ve temiz kod yazmayı sağlar.",
+              "content": "## Map ve Filter\n\nMap fonksiyonu, bir koleksiyondaki her elemanı dönüştürerek yeni bir koleksiyon oluşturur.\n\nFilter fonksiyonu ise belirli bir koşulu sağlayan elemanları seçerek yeni bir koleksiyon döndürür.\n\nBu fonksiyonlar orijinal koleksiyonu değiştirmez, immutable yapıyı korur.\n\nAndroid geliştirmede listeleme, arama, veri dönüştürme ve UI'ya uygun veri hazırlama işlemlerinde sıkça kullanılır.",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "Map Kullanımı",
+                  "code": "val numbers = listOf(1, 2, 3, 4)\n\nval doubled = numbers.map { it * 2 }\n\nprintln(doubled)",
+                  "explanation": "Map, listedeki her elemanı dönüştürür."
+                },
+                {
+                  "title": "Filter Kullanımı",
+                  "code": "val numbers = listOf(1, 2, 3, 4, 5)\n\nval evenNumbers = numbers.filter { it % 2 == 0 }\n\nprintln(evenNumbers)",
+                  "explanation": "Filter, koşulu sağlayan elemanları seçer."
+                },
+                {
+                  "title": "Map + Filter Birlikte",
+                  "code": "val numbers = listOf(1, 2, 3, 4, 5)\n\nval result = numbers.filter { it > 2 }.map { it * 10 }\n\nprintln(result)",
+                  "explanation": "Önce filtreleme sonra dönüştürme yapılır."
+                },
+                {
+                  "title": "Android Kullanım Senaryosu",
+                  "code": "val users = listOf(\"Ali\", \"Ayşe\", \"Mehmet\")\n\nval uiList = users.map { it.uppercase() }\n\nprintln(uiList)",
+                  "explanation": "UI'da gösterilecek veriler map ile dönüştürülür."
+                }
+              ],
+              "keyPoints": [
+                "Map koleksiyon elemanlarını dönüştürür",
+                "Filter koşula uyan elemanları seçer",
+                "Orijinal koleksiyon değişmez",
+                "Fonksiyonel ve okunabilir kod sağlar",
+                "Android projelerinde sık kullanılır"
+              ],
+              "questions": [
+                {
+                  "questionId": 160201,
+                  "question": "Map fonksiyonunun temel amacı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Elemanları silmek",
+                    "Elemanları dönüştürmek",
+                    "Listeyi sıralamak",
+                    "Listeyi ters çevirmek"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Map, her elemanı dönüştürerek yeni bir koleksiyon oluşturur.",
+                  "tags": ["map"]
+                },
+                {
+                  "questionId": 160202,
+                  "question": "Filter fonksiyonu ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Elemanları değiştirir",
+                    "Koşula uyan elemanları seçer",
+                    "Listeyi kopyalar",
+                    "Listeyi sıralar"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Filter, verilen koşulu sağlayan elemanları döndürür.",
+                  "tags": ["filter"]
+                },
+                {
+                  "questionId": 160203,
+                  "question": "Aşağıdaki kodun çıktısı nedir?\n\nnumbers.filter { it > 3 }.map { it * 2 }",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "[2, 4, 6]",
+                    "[8, 10]",
+                    "[4, 6, 8]",
+                    "[6, 8, 10]"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Önce 3'ten büyükler seçilir, sonra 2 ile çarpılır.",
+                  "tags": ["map", "filter"]
+                },
+                {
+                  "questionId": 160204,
+                  "question": "Map ve Filter kullanıldığında koleksiyon nasıl etkilenir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Orijinal liste değişir",
+                    "Orijinal liste silinir",
+                    "Yeni bir liste oluşturulur",
+                    "Sadece ilk eleman değişir"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Map ve Filter yeni bir koleksiyon döndürür.",
+                  "tags": ["collections"]
+                },
+                {
+                  "questionId": 160205,
+                  "question": "Map & Filter Android'de en çok nerede kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Manifest dosyasında",
+                    "Gradle ayarlarında",
+                    "UI için veri hazırlamada",
+                    "XML layout içinde"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Veriyi UI'ya uygun hale getirmek için sıkça kullanılır.",
+                  "tags": ["android", "functional"]
+                }
+              ]
+            },
+            {
+              "topicId": 1603,
+              "title": "Scope Fonksiyonları",
+              "summary": "Scope fonksiyonları, bir nesne üzerinde geçici bir kapsam (scope) oluşturarak daha okunabilir ve düzenli kod yazmayı sağlar. Kotlin'de let, run, apply, also ve with olmak üzere beş adet scope fonksiyonu bulunur.",
+              "content": "## Scope Fonksiyonları\n\nScope fonksiyonları bir nesne ile birlikte çalışırken tekrar tekrar nesne adını yazma ihtiyacını ortadan kaldırır.\n\nBu fonksiyonlar, nesneye erişim şekline (this / it) ve geri dönüş tipine göre birbirinden ayrılır.\n\nAndroid geliştirmede null kontrolü, view binding, nesne yapılandırma ve zincirleme işlemler için sıkça kullanılır.\n\n### Scope Fonksiyonları Özeti\n- let → it kullanır, sonuç döndürür\n- run → this kullanır, sonuç döndürür\n- apply → this kullanır, nesnenin kendisini döndürür\n- also → it kullanır, nesnenin kendisini döndürür\n- with → this kullanır, sonuç döndürür (extension değildir)",
+              "difficulty": "medium",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "let Kullanımı",
+                  "code": "val name: String? = \"Ahmet\"\n\nname?.let {\n    println(it.uppercase())\n}",
+                  "explanation": "let genellikle null kontrolü için kullanılır."
+                },
+                {
+                  "title": "run Kullanımı",
+                  "code": "val user = \"Kotlin\"\n\nval length = user.run {\n    this.length\n}\n\nprintln(length)",
+                  "explanation": "run, this ile erişim sağlar ve sonuç döndürür."
+                },
+                {
+                  "title": "apply Kullanımı",
+                  "code": "val list = mutableListOf<String>().apply {\n    add(\"A\")\n    add(\"B\")\n}",
+                  "explanation": "apply nesneyi yapılandırmak için kullanılır."
+                },
+                {
+                  "title": "also Kullanımı",
+                  "code": "val numbers = mutableListOf(1, 2, 3)\n    .also { println(\"Liste oluşturuldu: $it\") }",
+                  "explanation": "also yan işlemler (log, debug) için idealdir."
+                },
+                {
+                  "title": "with Kullanımı",
+                  "code": "val user = StringBuilder()\n\nwith(user) {\n    append(\"Hello \")\n    append(\"Kotlin\")\n}\n\nprintln(user.toString())",
+                  "explanation": "with bir nesneyle blok halinde çalışmayı sağlar."
+                }
+              ],
+              "keyPoints": [
+                "Scope fonksiyonları kod okunabilirliğini artırır",
+                "let ve also -> it kullanır",
+                "run, apply, with -> this kullanır",
+                "apply ve also nesnenin kendisini döndürür",
+                "Android projelerinde ViewBinding ve null kontrolünde yaygındır"
+              ],
+              "questions": [
+                {
+                  "questionId": 160301,
+                  "question": "Hangi scope fonksiyonu null kontrolü için en sık kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "apply",
+                    "with",
+                    "let",
+                    "also"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "let genellikle nullable nesnelerle kullanılır.",
+                  "tags": ["scope", "let"]
+                },
+                {
+                  "questionId": 160302,
+                  "question": "Hangi scope fonksiyonu nesnenin kendisini döndürür?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "run",
+                    "apply",
+                    "with",
+                    "let"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "apply yapılandırma sonrası nesnenin kendisini döndürür.",
+                  "tags": ["apply"]
+                },
+                {
+                  "questionId": 160303,
+                  "question": "this anahtar kelimesiyle çalışan scope fonksiyonları hangileridir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "let ve also",
+                    "apply ve run",
+                    "let ve run",
+                    "also ve with"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "apply ve run this ile erişim sağlar.",
+                  "tags": ["scope"]
+                },
+                {
+                  "questionId": 160304,
+                  "question": "Log veya debug amaçlı en uygun scope fonksiyonu hangisidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "run",
+                    "with",
+                    "also",
+                    "let"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "also yan işlemler için tasarlanmıştır.",
+                  "tags": ["also"]
+                },
+                {
+                  "questionId": 160305,
+                  "question": "with fonksiyonunun diğerlerinden farkı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Extension fonksiyon olması",
+                    "Nesnenin kendisini döndürmesi",
+                    "Extension olmaması",
+                    "Null kontrolü yapması"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "with extension değildir, nesne parametre olarak verilir.",
+                  "tags": ["with"]
+                }
+              ]
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 1700,
+          "sectionTitle": "Hata Yönetimi",
+          "sectionDescription": "Uygulama çalışırken oluşabilecek hataların yakalanması, yönetilmesi ve debug edilmesi",
+          "order": 7,
+          "topics": [
+            {
+              "topicId": 1701,
+              "title": "try-catch",
+              "summary": "try-catch yapısı, çalışma zamanında (runtime) oluşabilecek hataları yakalayarak uygulamanın çökmesini engeller. Kotlin'de hataya neden olabilecek kodlar try bloğuna yazılır ve oluşan hata catch bloğunda ele alınır.",
+              "content": "## try-catch\n\ntry-catch, özellikle kullanıcı girdileri, network işlemleri ve dosya okuma gibi riskli işlemlerde kullanılır.\n\nKotlin'de birden fazla catch bloğu tanımlanabilir ve finally bloğu isteğe bağlıdır.\n\ntry-catch bir expression olarak da kullanılabilir ve değer döndürebilir.",
+              "difficulty": "easy",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Basit try-catch Kullanımı",
+                  "code": "try {\n    val number = \"10a\".toInt()\n} catch (e: NumberFormatException) {\n    println(\"Hatalı sayı formatı\")\n}",
+                  "explanation": "String değeri Int'e çevrilirken hata oluşur ve catch bloğu çalışır."
+                },
+                {
+                  "title": "try-catch Expression",
+                  "code": "val result = try {\n    10 / 2\n} catch (e: Exception) {\n    0\n}",
+                  "explanation": "try-catch bir değer döndürebilir."
+                }
+              ],
+              "keyPoints": [
+                "Runtime hatalarını yakalamak için kullanılır",
+                "Birden fazla catch bloğu yazılabilir",
+                "finally isteğe bağlıdır",
+                "try-catch expression olarak kullanılabilir"
+              ],
+              "questions": [
+                {
+                  "questionId": 170101,
+                  "question": "try-catch yapısının temel amacı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Compile-time hataları yakalamak",
+                    "Runtime hataları yakalamak",
+                    "Performansı artırmak",
+                    "Değişken tanımlamak"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "try-catch runtime sırasında oluşan hataları yakalamak için kullanılır.",
+                  "tags": ["try-catch"]
+                }
+              ]
+            },
+            {
+              "topicId": 1702,
+              "title": "Exception",
+              "summary": "Exception, uygulama çalışırken meydana gelen beklenmeyen hataları temsil eden nesnelerdir. Kotlin'de tüm exception'lar Exception sınıfından türetilir.",
+              "content": "## Exception\n\nException'lar programın normal akışını bozar.\n\nKotlin'de checked exception yoktur, bu da kodu daha sade hale getirir.\n\nGeliştirici isterse kendi custom exception sınıflarını da oluşturabilir.",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "Exception Fırlatma",
+                  "code": "fun divide(a: Int, b: Int): Int {\n    if (b == 0) {\n        throw IllegalArgumentException(\"Bölen 0 olamaz\")\n    }\n    return a / b\n}",
+                  "explanation": "Hatalı durumlarda manuel olarak exception fırlatılabilir."
+                }
+              ],
+              "keyPoints": [
+                "Tüm exception'lar Exception sınıfından türetilir",
+                "Kotlin'de checked exception yoktur",
+                "throw ile manuel exception fırlatılabilir",
+                "Custom exception tanımlanabilir"
+              ],
+              "questions": [
+                {
+                  "questionId": 170201,
+                  "question": "Kotlin'de checked exception var mı?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Evet",
+                    "Hayır",
+                    "Sadece Android'de var",
+                    "Sadece JVM'de var"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Kotlin'de checked exception yoktur.",
+                  "tags": ["exception"]
+                }
+              ]
+            },
+            {
+              "topicId": 1703,
+              "title": "Debug Mantığı",
+              "summary": "Debug mantığı, uygulamada oluşan hataların nedenini bulmak ve çözmek için kullanılan sistematik yaklaşımdır. Loglama, breakpoint ve stack trace analizi bu sürecin temel parçalarıdır.",
+              "content": "## Debug Mantığı\n\nDebug sürecinde hatanın nerede ve neden oluştuğu analiz edilir.\n\nAndroid Studio debugger, Logcat ve stack trace bu süreçte en önemli araçlardır.\n\nHataları sadece çözmek değil, tekrar oluşmasını engellemek de hedeflenir.",
+              "difficulty": "medium",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Log ile Debug",
+                  "code": "Log.d(\"DEBUG\", \"Butona tıklandı\")",
+                  "explanation": "Log mesajları uygulamanın akışını takip etmek için kullanılır."
+                }
+              ],
+              "keyPoints": [
+                "Breakpoint ile kod adım adım çalıştırılabilir",
+                "Stack trace hatanın kaynağını gösterir",
+                "Loglama debug sürecini kolaylaştırır",
+                "Hatanın kök nedeni bulunmalıdır"
+              ],
+              "questions": [
+                {
+                  "questionId": 170301,
+                  "question": "Stack trace neyi gösterir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "UI hatalarını",
+                    "Memory kullanımını",
+                    "Hatanın oluştuğu çağrı zincirini",
+                    "Network trafiğini"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Stack trace hatanın hangi method çağrılarında oluştuğunu gösterir.",
+                  "tags": ["debug"]
+                }
+              ]
+            }
+          ],
           "sectionMixedQuestions": []
         }
       ],
-      "interviewQuestions": [
-        {
-          "questionId": 10201,
-          "question": "Kotlin'de val ve var arasındaki farkı açıklayın. Hangisini ne zaman kullanmalısınız?",
-          "questionType": "multiple_choice",
-          "code": null,
-          "difficulty": "medium",
-          "options": [
-            "val immutable, var mutable. Performans için her zaman var kullanılmalı.",
-            "val immutable, var mutable. Thread-safety ve kod güvenliği için mümkün olduğunca val tercih edilmeli.",
-            "val compile-time constant, var runtime variable. Sadece sabit değerler için val kullanılır.",
-            "İkisi arasında performans farkı yok, sadece kod okunabilirliği için tercih edilir."
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "val (value) immutable, var (variable) mutable değişkenler içindir. Functional programming prensipleri ve thread-safety açısından değişmeyecek değerler için val kullanılmalıdır. Bu, kodu daha güvenli, anlaşılır ve bakımı kolay yapar. Sadece değerin değişmesi gerektiğinde var kullanılmalıdır.",
-          "tags": ["interview", "val", "var", "best-practices"]
-        },
-        {
-          "questionId": 10202,
-          "question": "Kotlin'in null safety özelliği nedir ve nasıl çalışır?",
-          "questionType": "multiple_choice",
-          "code": null,
-          "difficulty": "hard",
-          "options": [
-            "Null değerleri otomatik olarak 0'a çevirir",
-            "Nullable ve non-nullable tipleri ayırarak null hatalarını compile-time'da yakalar",
-            "Runtime'da null kontrolü yapar",
-            "Null değerlere izin vermez"
-          ],
-          "correctAnswerIndex": 1,
-          "explanation": "Kotlin'in type system'i nullable (String?) ve non-nullable (String) tipleri ayırır. Non-nullable tipler null değer alamaz ve bu compile-time'da kontrol edilir. Bu sayede NullPointerException hataları büyük ölçüde önlenir. Nullable tiplerde ise ?., !!, let gibi operatörler kullanılır.",
-          "tags": ["interview", "null-safety", "type-system"]
-        }
-      ]
+      "interviewQuestions": []
     },
     {
       "categoryId": 2,
       "categoryTitle": "Android Temelleri",
       "categoryDescription": "Android uygulama geliştirmenin temel kavramları",
       "order": 2,
-      "sections": [
-        {
-          "sectionId": 201,
-          "sectionTitle": "Android'e Giriş",
-          "sectionDescription": "Android platformuna giriş",
-          "order": 1,
-          "topics": [],
-          "sectionMixedQuestions": []
-        }
-      ],
+      "sections": [],
+      "interviewQuestions": []
+    },
+    {
+      "categoryId": 3,
+      "categoryTitle": "Android Orta - İleri Seviye",
+      "categoryDescription": "Modern Android geliştirme teknikleri",
+      "order": 3,
+      "sections": [],
       "interviewQuestions": []
     }
   ]
