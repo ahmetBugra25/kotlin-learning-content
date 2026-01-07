@@ -4131,8 +4131,1550 @@
       "categoryTitle": "Android Orta - İleri Seviye",
       "categoryDescription": "Modern Android geliştirme teknikleri",
       "order": 3,
-      "sections": [],
+      "sections": [
+        {
+        "sectionId": 3100,
+        "sectionTitle": "RecyclerView",
+        "sectionDescription": "Liste ve grid yapılarında performanslı veri gösterimi için kullanılan RecyclerView bileşeninin detaylı incelenmesi",
+        "order": 1,
+        "topics": [
+          {
+            "topicId": 3101,
+            "title": "RecyclerView Mantığı",
+            "summary": "RecyclerView, büyük veri listelerini performanslı şekilde göstermek için kullanılan modern bir listeleme bileşenidir. Görünmeyen item'ları yeniden kullanarak (recycle) bellek ve performans avantajı sağlar.",
+            "content": "## RecyclerView Mantığı\n\nRecyclerView, View recycling mantığı ile çalışır.\n\nEkranda görünmeyen item'lar yok edilmez, yeniden kullanılır.\n\nBu yapı özellikle uzun listelerde yüksek performans sağlar.",
+            "difficulty": "medium",
+            "order": 1,
+            "codeExamples": [
+              {
+                "title": "RecyclerView Tanımı",
+                "code": "val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)\nrecyclerView.layoutManager = LinearLayoutManager(this)",
+                "explanation": "RecyclerView için LayoutManager tanımlaması."
+              }
+            ],
+            "keyPoints": [
+              "View recycling kullanır",
+              "Performanslıdır",
+              "Büyük listeler için uygundur",
+              "LayoutManager ile çalışır"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3102,
+            "title": "Adapter",
+            "summary": "Adapter, RecyclerView ile veri kaynağı arasındaki bağlantıyı sağlar. Her bir item için hangi layout'un kullanılacağını ve verinin nasıl bağlanacağını belirler.",
+            "content": "## Adapter\n\nAdapter, RecyclerView'ın kalbidir.\n\nVeri setini ViewHolder ile bağlar.\n\nonCreateViewHolder, onBindViewHolder ve getItemCount metotlarını içerir.",
+            "difficulty": "medium",
+            "order": 2,
+            "codeExamples": [
+              {
+                "title": "Adapter Yapısı",
+                "code": "class MyAdapter(private val list: List<String>) : RecyclerView.Adapter<MyViewHolder>() {\n    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {\n        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false)\n        return MyViewHolder(view)\n    }\n\n    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {\n        holder.bind(list[position])\n    }\n\n    override fun getItemCount() = list.size\n}",
+                "explanation": "RecyclerView Adapter temel yapısı."
+              }
+            ],
+            "keyPoints": [
+              "Veri ile UI arasındaki köprüdür",
+              "ViewHolder kullanır",
+              "Performans için gereklidir",
+              "Liste güncellemelerini yönetir"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3103,
+            "title": "ViewHolder",
+            "summary": "ViewHolder, RecyclerView item'larının görünüm referanslarını tutarak findViewById çağrılarını minimize eder ve performansı artırır.",
+            "content": "## ViewHolder\n\nHer item için ViewHolder oluşturulur.\n\nView referanslarını cache'ler.\n\nRecyclerView performansının temel parçalarındandır.",
+            "difficulty": "easy",
+            "order": 3,
+            "codeExamples": [
+              {
+                "title": "ViewHolder Tanımı",
+                "code": "class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {\n    fun bind(text: String) {\n        itemView.findViewById<TextView>(R.id.textView).text = text\n    }\n}",
+                "explanation": "RecyclerView ViewHolder örneği."
+              }
+            ],
+            "keyPoints": [
+              "View referanslarını tutar",
+              "Performansı artırır",
+              "Adapter ile birlikte çalışır",
+              "Her item için kullanılır"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3104,
+            "title": "DiffUtil (Opsiyonel)",
+            "summary": "DiffUtil, RecyclerView listelerindeki değişiklikleri minimum maliyetle hesaplayarak sadece değişen item'ların güncellenmesini sağlar.",
+            "content": "## DiffUtil\n\nListe güncellemelerinde performans sağlar.\n\nnotifyDataSetChanged yerine önerilir.\n\nÖzellikle büyük listelerde fark yaratır.",
+            "difficulty": "hard",
+            "order": 4,
+            "codeExamples": [
+              {
+                "title": "DiffUtil Kullanımı",
+                "code": "class MyDiffUtil : DiffUtil.ItemCallback<Item>() {\n    override fun areItemsTheSame(oldItem: Item, newItem: Item) = oldItem.id == newItem.id\n\n    override fun areContentsTheSame(oldItem: Item, newItem: Item) = oldItem == newItem\n}",
+                "explanation": "DiffUtil ile liste karşılaştırma."
+              }
+            ],
+            "keyPoints": [
+              "Performanslı liste güncelleme sağlar",
+              "Sadece değişen item'ları günceller",
+              "notifyDataSetChanged yerine kullanılır",
+              "Large listelerde önerilir"
+            ],
+            "questions": []
+          }
+        ],
+        "sectionMixedQuestions": []
+      },
+      {
+        "sectionId": 3200,
+        "sectionTitle": "Fragment & Navigation",
+        "sectionDescription": "Fragment yapısı ve Android Navigation Component kullanarak ekranlar arası geçişlerin yönetilmesi",
+        "order": 2,
+        "topics": [
+          {
+            "topicId": 3201,
+            "title": "Fragment",
+            "summary": "Fragment, bir Activity içerisinde yer alan, kendi yaşam döngüsüne sahip modüler UI bileşenleridir. Tek bir Activity içinde birden fazla Fragment kullanılabilir.",
+            "content": "## Fragment\n\nFragment'ler yeniden kullanılabilir UI parçalarıdır.\n\nActivity'lere bağımlı olarak çalışırlar.\n\nModern Android mimarisinde tek Activity - çok Fragment yaklaşımı yaygındır.",
+            "difficulty": "medium",
+            "order": 1,
+            "codeExamples": [
+              {
+                "title": "Fragment Tanımı",
+                "code": "class HomeFragment : Fragment(R.layout.fragment_home)",
+                "explanation": "Basit bir Fragment tanımı."
+              }
+            ],
+            "keyPoints": [
+              "Activity içinde çalışır",
+              "Modüler UI sağlar",
+              "Kendi lifecycle'ına sahiptir",
+              "Yeniden kullanılabilir"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3202,
+            "title": "Fragment Lifecycle",
+            "summary": "Fragment Lifecycle, Fragment'in oluşturulmasından yok edilmesine kadar geçen yaşam döngüsünü ifade eder. Activity lifecycle'dan daha karmaşıktır.",
+            "content": "## Fragment Lifecycle\n\nonCreate, onCreateView, onViewCreated, onDestroyView gibi metotlar içerir.\n\nUI ve veri işlemleri doğru lifecycle aşamasında yapılmalıdır.",
+            "difficulty": "medium",
+            "order": 2,
+            "codeExamples": [
+              {
+                "title": "Lifecycle Metodu",
+                "code": "override fun onViewCreated(view: View, savedInstanceState: Bundle?) {\n    super.onViewCreated(view, savedInstanceState)\n}",
+                "explanation": "UI işlemleri için önerilen lifecycle metodu."
+              }
+            ],
+            "keyPoints": [
+              "Activity lifecycle'dan farklıdır",
+              "onDestroyView kritik öneme sahiptir",
+              "Memory leak riskleri vardır",
+              "Doğru kullanım performansı artırır"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3203,
+            "title": "Navigation Component",
+            "summary": "Navigation Component, Fragment'ler arası geçişleri güvenli, okunabilir ve merkezi bir şekilde yönetmeyi sağlar.",
+            "content": "## Navigation Component\n\nNavigation Graph ile ekranlar tanımlanır.\n\nBackStack otomatik yönetilir.\n\nFragment geçişleri sadeleşir.",
+            "difficulty": "medium",
+            "order": 3,
+            "codeExamples": [
+              {
+                "title": "Fragment Geçişi",
+                "code": "findNavController().navigate(R.id.action_home_to_detail)",
+                "explanation": "Navigation Component ile ekran geçişi."
+              }
+            ],
+            "keyPoints": [
+              "Merkezi navigasyon yönetimi",
+              "BackStack otomatik yönetilir",
+              "Fragment geçişleri kolaylaşır",
+              "Best practice olarak önerilir"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3204,
+            "title": "Safe Args",
+            "summary": "Safe Args, Navigation Component ile Fragment'ler arasında tip güvenli veri aktarımı yapılmasını sağlar.",
+            "content": "## Safe Args\n\nCompile-time güvenlik sağlar.\n\nYanlış key kullanımını engeller.\n\nParcelable ve Serializable destekler.",
+            "difficulty": "hard",
+            "order": 4,
+            "codeExamples": [
+              {
+                "title": "Safe Args Kullanımı",
+                "code": "val action = HomeFragmentDirections.actionHomeToDetail(userId)\nfindNavController().navigate(action)",
+                "explanation": "Safe Args ile veri gönderme."
+              }
+            ],
+            "keyPoints": [
+              "Tip güvenlidir",
+              "Runtime hataları azaltır",
+              "Navigation Component ile çalışır",
+              "Önerilen veri aktarım yöntemidir"
+            ],
+            "questions": []
+          }
+        ],
+        "sectionMixedQuestions": []
+      },
+      {
+        "sectionId": 3300,
+        "sectionTitle": "Veritabanı (Room)",
+        "sectionDescription": "Android uygulamalarda yerel veritabanı kullanımı ve Room kütüphanesinin temel bileşenleri",
+        "order": 3,
+        "topics": [
+          {
+            "topicId": 3301,
+            "title": "SQLite Temelleri",
+            "summary": "SQLite, Android cihazlarda yerleşik olarak bulunan hafif ve ilişkisel bir veritabanıdır. Tablolar, satırlar ve sütunlar üzerinden veri saklar. Android'de uzun süreli ve kalıcı veri saklamak için kullanılır.",
+            "content": "## SQLite Temelleri\n\nSQLite ilişkisel bir veritabanıdır.\n\nSQL sorguları ile veri ekleme, silme, güncelleme ve okuma işlemleri yapılır.\n\nRoom, SQLite üzerinde çalışan bir soyutlama katmanıdır.",
+            "difficulty": "medium",
+            "order": 1,
+            "codeExamples": [],
+            "keyPoints": [
+              "Android'e gömülü gelir",
+              "İlişkisel veritabanıdır",
+              "SQL tabanlıdır",
+              "Room altyapı olarak SQLite kullanır"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3302,
+            "title": "Entity",
+            "summary": "Entity, Room veritabanında bir tabloyu temsil eden Kotlin sınıfıdır. Her Entity sınıfı bir tabloya, her property ise bir sütuna karşılık gelir.",
+            "content": "## Entity\n\n@Entity anotasyonu ile tanımlanır.\n\nPrimary key zorunludur.\n\nVeritabanı şemasını temsil eder.",
+            "difficulty": "medium",
+            "order": 2,
+            "codeExamples": [
+              {
+                "title": "Entity Örneği",
+                "code": "@Entity\ndata class User(\n    @PrimaryKey(autoGenerate = true) val id: Int = 0,\n    val name: String,\n    val age: Int\n)",
+                "explanation": "User tablosunu temsil eden bir Entity sınıfı."
+              }
+            ],
+            "keyPoints": [
+              "Tabloyu temsil eder",
+              "PrimaryKey zorunludur",
+              "data class olarak tanımlanır",
+              "@Entity anotasyonu kullanılır"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3303,
+            "title": "DAO",
+            "summary": "DAO (Data Access Object), veritabanı işlemlerinin tanımlandığı arayüzdür. SQL sorguları bu katmanda yazılır ve veriye erişim buradan sağlanır.",
+            "content": "## DAO\n\n@Dao anotasyonu ile tanımlanır.\n\nInsert, Delete, Update ve Query metotları içerir.\n\nVeri erişim katmanıdır.",
+            "difficulty": "medium",
+            "order": 3,
+            "codeExamples": [
+              {
+                "title": "DAO Örneği",
+                "code": "@Dao\ninterface UserDao {\n    @Insert\n    suspend fun insert(user: User)\n\n    @Query(\"SELECT * FROM User\")\n    suspend fun getAllUsers(): List<User>\n}",
+                "explanation": "User tablosu için DAO tanımı."
+              }
+            ],
+            "keyPoints": [
+              "Veri erişim katmanıdır",
+              "SQL sorguları burada yazılır",
+              "Interface olarak tanımlanır",
+              "Suspend fonksiyonlarla çalışabilir"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3304,
+            "title": "Database",
+            "summary": "Database sınıfı, Room veritabanının ana erişim noktasıdır. Entity ve DAO'ları bir araya getirir ve singleton olarak kullanılır.",
+            "content": "## Database\n\n@Database anotasyonu ile tanımlanır.\n\nAbstract class olmalıdır.\n\nVeritabanı versiyonlamasını yönetir.",
+            "difficulty": "medium",
+            "order": 4,
+            "codeExamples": [
+              {
+                "title": "Database Tanımı",
+                "code": "@Database(entities = [User::class], version = 1)\nabstract class AppDatabase : RoomDatabase() {\n    abstract fun userDao(): UserDao\n}",
+                "explanation": "Room Database tanımı."
+              }
+            ],
+            "keyPoints": [
+              "RoomDatabase'den türetilir",
+              "Singleton olarak kullanılır",
+              "DAO'lara erişim sağlar",
+              "Version yönetimi içerir"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3305,
+            "title": "CRUD İşlemleri",
+            "summary": "CRUD işlemleri, Create (Ekle), Read (Oku), Update (Güncelle) ve Delete (Sil) işlemlerini ifade eder. Room ile bu işlemler anotasyonlar sayesinde kolayca yapılır.",
+            "content": "## CRUD İşlemleri\n\nInsert, Query, Update ve Delete anotasyonları kullanılır.\n\nSuspend fonksiyonlarla arka planda çalıştırılmalıdır.",
+            "difficulty": "medium",
+            "order": 5,
+            "codeExamples": [
+              {
+                "title": "CRUD Örneği",
+                "code": "@Update\nsuspend fun updateUser(user: User)\n\n@Delete\nsuspend fun deleteUser(user: User)",
+                "explanation": "Room ile güncelleme ve silme işlemleri."
+              }
+            ],
+            "keyPoints": [
+              "CRUD = Create, Read, Update, Delete",
+              "Room anotasyonları ile yapılır",
+              "Suspend fonksiyon önerilir",
+              "Ana thread bloklanmamalıdır"
+            ],
+            "questions": []
+          }
+        ],
+        "sectionMixedQuestions": []
+      },
+      {
+        "sectionId": 3400,
+        "sectionTitle": "MVVM Mimarisi",
+        "sectionDescription": "Android uygulamalarda sürdürülebilir, test edilebilir ve okunabilir mimari yapı kurmak için kullanılan MVVM yaklaşımı",
+        "order": 4,
+        "topics": [
+          {
+            "topicId": 3401,
+            "title": "MVVM Nedir",
+            "summary": "MVVM (Model-View-ViewModel), kullanıcı arayüzü ile iş mantığını birbirinden ayırmayı amaçlayan bir mimari tasarım desenidir. Kodun daha okunabilir, test edilebilir ve sürdürülebilir olmasını sağlar.",
+            "content": "## MVVM Nedir\n\nMVVM üç ana bileşenden oluşur:\n\n- Model: Veri katmanı\n- View: UI katmanı\n- ViewModel: İş mantığı ve state yönetimi\n\nAndroid'de Google tarafından önerilen mimaridir.",
+            "difficulty": "medium",
+            "order": 1,
+            "codeExamples": [],
+            "keyPoints": [
+              "Katmanlı mimari sağlar",
+              "UI ve iş mantığını ayırır",
+              "Test edilebilirliği artırır",
+              "Modern Android için önerilir"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3402,
+            "title": "ViewModel",
+            "summary": "ViewModel, UI ile ilişkili verileri saklayan ve yöneten bileşendir. Configuration change (ekran döndürme gibi) durumlarında verinin kaybolmasını engeller.",
+            "content": "## ViewModel\n\nViewModel, lifecycle-aware bir bileşendir.\n\nUI logic burada tutulur.\n\nActivity ve Fragment'tan bağımsızdır.",
+            "difficulty": "medium",
+            "order": 2,
+            "codeExamples": [
+              {
+                "title": "ViewModel Tanımı",
+                "code": "class MainViewModel : ViewModel() {\n    val counter = MutableLiveData<Int>()\n}",
+                "explanation": "Basit bir ViewModel örneği."
+              }
+            ],
+            "keyPoints": [
+              "Lifecycle-aware çalışır",
+              "UI verisini tutar",
+              "Configuration change'lerde silinmez",
+              "Business logic içerir"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3403,
+            "title": "LiveData",
+            "summary": "LiveData, lifecycle-aware ve gözlemlenebilir bir veri tutucudur. UI katmanı, veri değişikliklerini otomatik olarak takip eder.",
+            "content": "## LiveData\n\nObserver pattern kullanır.\n\nLifecycle'a duyarlıdır.\n\nMemory leak riskini azaltır.",
+            "difficulty": "medium",
+            "order": 3,
+            "codeExamples": [
+              {
+                "title": "LiveData Kullanımı",
+                "code": "viewModel.counter.observe(viewLifecycleOwner) {\n    textView.text = it.toString()\n}",
+                "explanation": "LiveData gözlemlenmesi."
+              }
+            ],
+            "keyPoints": [
+              "Observer pattern kullanır",
+              "Lifecycle-aware'dır",
+              "UI otomatik güncellenir",
+              "Thread-safe veri akışı sağlar"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3404,
+            "title": "Repository",
+            "summary": "Repository, veri kaynaklarını (API, Room, Cache) tek bir noktadan yöneten katmandır. ViewModel'in veri kaynağına doğrudan erişmesini engeller.",
+            "content": "## Repository\n\nTek sorumluluk prensibini destekler.\n\nVeri kaynaklarını soyutlar.\n\nViewModel ile data source arasında köprü görevi görür.",
+            "difficulty": "medium",
+            "order": 4,
+            "codeExamples": [
+              {
+                "title": "Repository Örneği",
+                "code": "class UserRepository(private val dao: UserDao) {\n    suspend fun getUsers() = dao.getAllUsers()\n}",
+                "explanation": "Room kullanan basit bir Repository örneği."
+              }
+            ],
+            "keyPoints": [
+              "Veri kaynaklarını soyutlar",
+              "ViewModel bağımlılığını azaltır",
+              "Test yazımını kolaylaştırır",
+              "Clean Architecture'a uygundur"
+            ],
+            "questions": []
+          }
+        ],
+        "sectionMixedQuestions": []
+      },
+      {
+        "sectionId": 3500,
+        "sectionTitle": "Networking",
+        "sectionDescription": "Android uygulamalarda internet üzerinden veri alışverişi yapmak için kullanılan temel networking kavramları ve araçlar",
+        "order": 5,
+        "topics": [
+          {
+            "topicId": 3501,
+            "title": "REST API",
+            "summary": "REST API, istemci ve sunucu arasında HTTP protokolü üzerinden veri alışverişi yapılmasını sağlayan mimari bir yaklaşımdır. Genellikle JSON formatında veri iletimi kullanılır.",
+            "content": "## REST API\n\nREST, stateless bir mimaridir.\n\nKaynaklar URL üzerinden erişilir.\n\nMobil uygulamalar backend servislerle genellikle REST API üzerinden haberleşir.",
+            "difficulty": "medium",
+            "order": 1,
+            "codeExamples": [],
+            "keyPoints": [
+              "Stateless mimari kullanır",
+              "HTTP protokolü üzerinden çalışır",
+              "JSON en yaygın veri formatıdır",
+              "Mobil-backend iletişimin temelidir"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3502,
+            "title": "Retrofit",
+            "summary": "Retrofit, Android ve Java/Kotlin projelerinde REST API çağrılarını kolay ve güvenli şekilde yapmayı sağlayan popüler bir networking kütüphanesidir.",
+            "content": "## Retrofit\n\nInterface tabanlı çalışır.\n\nHTTP isteklerini annotation'lar ile tanımlar.\n\nOkHttp üzerine kuruludur.",
+            "difficulty": "medium",
+            "order": 2,
+            "codeExamples": [
+              {
+                "title": "Retrofit Interface",
+                "code": "interface ApiService {\n    @GET(\"users\")\n    suspend fun getUsers(): List<User>\n}",
+                "explanation": "Basit bir Retrofit API tanımı."
+              }
+            ],
+            "keyPoints": [
+              "Interface tabanlıdır",
+              "Coroutine ve RxJava desteği vardır",
+              "OkHttp ile birlikte çalışır",
+              "API çağrılarını sadeleştirir"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3503,
+            "title": "HTTP İstek Türleri",
+            "summary": "HTTP istek türleri, istemcinin sunucuya ne tür bir işlem yapmak istediğini belirtir. En yaygın olanları GET, POST, PUT ve DELETE'tir.",
+            "content": "## HTTP İstek Türleri\n\nGET: Veri almak\nPOST: Veri göndermek\nPUT: Veri güncellemek\nDELETE: Veri silmek",
+            "difficulty": "easy",
+            "order": 3,
+            "codeExamples": [
+              {
+                "title": "POST İsteği",
+                "code": "@POST(\"users\")\nsuspend fun createUser(@Body user: User): Response<User>",
+                "explanation": "Retrofit ile POST isteği örneği."
+              }
+            ],
+            "keyPoints": [
+              "GET veri almak için kullanılır",
+              "POST veri ekler",
+              "PUT veri günceller",
+              "DELETE veri siler"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3504,
+            "title": "JSON Parsing",
+            "summary": "JSON Parsing, sunucudan gelen JSON formatındaki verinin Kotlin nesnelerine dönüştürülmesi işlemidir. Retrofit genellikle Gson veya Moshi ile birlikte kullanılır.",
+            "content": "## JSON Parsing\n\nJSON, anahtar-değer yapısına sahiptir.\n\nModel class'lar ile parse edilir.\n\nOtomatik dönüşüm sağlar.",
+            "difficulty": "medium",
+            "order": 4,
+            "codeExamples": [
+              {
+                "title": "Data Class",
+                "code": "data class User(\n    val id: Int,\n    val name: String\n)",
+                "explanation": "JSON verisini temsil eden data class."
+              }
+            ],
+            "keyPoints": [
+              "JSON en yaygın veri formatıdır",
+              "Data class ile eşleştirilir",
+              "Gson / Moshi kullanılır",
+              "Retrofit ile otomatik parse edilir"
+            ],
+            "questions": []
+          }
+        ],
+        "sectionMixedQuestions": []
+      },
+      {
+        "sectionId": 3600,
+        "sectionTitle": "Firebase",
+        "sectionDescription": "Google Firebase kullanarak backend ihtiyacı olmadan kimlik doğrulama, veritabanı, dosya depolama ve güvenlik yönetimi",
+        "order": 6,
+        "topics": [
+          {
+            "topicId": 3601,
+            "title": "Authentication",
+            "summary": "Firebase Authentication, kullanıcıların e-posta/şifre, Google, Facebook gibi yöntemlerle güvenli bir şekilde giriş yapmasını sağlayan kimlik doğrulama servisidir.",
+            "content": "## Authentication\n\nKullanıcı yönetimini kolaylaştırır.\n\nHazır giriş yöntemleri sunar.\n\nBackend yazmaya gerek kalmaz.",
+            "difficulty": "medium",
+            "order": 1,
+            "codeExamples": [
+              {
+                "title": "Email ile Giriş",
+                "code": "FirebaseAuth.getInstance()\n    .signInWithEmailAndPassword(email, password)",
+                "explanation": "Firebase ile e-posta ve şifre kullanarak giriş işlemi."
+              }
+            ],
+            "keyPoints": [
+              "Hazır authentication altyapısı sunar",
+              "Email, Google, Facebook desteği vardır",
+              "Güvenli kullanıcı yönetimi sağlar",
+              "Kolay entegrasyon sunar"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3602,
+            "title": "Firestore",
+            "summary": "Firestore, NoSQL tabanlı, gerçek zamanlı veri senkronizasyonu sağlayan bulut veritabanıdır. Koleksiyon ve doküman yapısı ile çalışır.",
+            "content": "## Firestore\n\nNoSQL mimarisi kullanır.\n\nGerçek zamanlı veri güncellemeleri sunar.\n\nOffline desteklidir.",
+            "difficulty": "medium",
+            "order": 2,
+            "codeExamples": [
+              {
+                "title": "Veri Ekleme",
+                "code": "FirebaseFirestore.getInstance()\n    .collection(\"users\")\n    .add(user)",
+                "explanation": "Firestore'a veri ekleme örneği."
+              }
+            ],
+            "keyPoints": [
+              "NoSQL tabanlıdır",
+              "Gerçek zamanlı çalışır",
+              "Offline desteği vardır",
+              "Koleksiyon-doküman yapısı kullanır"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3603,
+            "title": "Storage",
+            "summary": "Firebase Storage, kullanıcıların yüklediği görsel, video ve dosyaları güvenli bir şekilde saklamak için kullanılan bulut depolama servisidir.",
+            "content": "## Storage\n\nDosya depolama için kullanılır.\n\nBüyük dosyalar için uygundur.\n\nAuthentication ile entegre çalışır.",
+            "difficulty": "medium",
+            "order": 3,
+            "codeExamples": [
+              {
+                "title": "Dosya Yükleme",
+                "code": "FirebaseStorage.getInstance()\n    .reference\n    .child(\"images/photo.jpg\")\n    .putFile(uri)",
+                "explanation": "Firebase Storage'a dosya yükleme."
+              }
+            ],
+            "keyPoints": [
+              "Dosya ve medya depolama sağlar",
+              "Güvenli erişim sunar",
+              "Authentication ile birlikte çalışır",
+              "Yüksek ölçeklenebilirlik sunar"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3604,
+            "title": "Security Rules",
+            "summary": "Firebase Security Rules, Firestore ve Storage üzerinde kimlerin hangi verilere erişebileceğini tanımlamak için kullanılan güvenlik kurallarıdır.",
+            "content": "## Security Rules\n\nYetkilendirme ve doğrulama sağlar.\n\nAuthentication bilgileri ile çalışır.\n\nVeri güvenliği için kritiktir.",
+            "difficulty": "hard",
+            "order": 4,
+            "codeExamples": [
+              {
+                "title": "Basit Firestore Kuralı",
+                "code": "allow read, write: if request.auth != null;",
+                "explanation": "Sadece giriş yapmış kullanıcıların erişmesine izin veren kural."
+              }
+            ],
+            "keyPoints": [
+              "Veri güvenliğini sağlar",
+              "Authentication ile entegredir",
+              "Yetkisiz erişimi engeller",
+              "Prod ortamda mutlaka tanımlanmalıdır"
+            ],
+            "questions": []
+          }
+        ],
+        "sectionMixedQuestions": []
+      },
+      {
+        "sectionId": 3700,
+        "sectionTitle": "Konum & Harita",
+        "sectionDescription": "Android uygulamalarda kullanıcı konumunu almak, harita üzerinde göstermek ve rota işlemleri yapmak",
+        "order": 7,
+        "topics": [
+          {
+            "topicId": 3701,
+            "title": "Google Maps",
+            "summary": "Google Maps SDK, Android uygulamalarında harita gösterimi ve harita üzerinde etkileşimli işlemler yapılmasını sağlayan resmi Google servisidir.",
+            "content": "## Google Maps\n\nGoogle Maps SDK kullanılarak harita uygulamaya entegre edilir.\n\nAPI Key gerektirir.\n\nMarker, kamera hareketleri ve rota çizimi desteklenir.",
+            "difficulty": "medium",
+            "order": 1,
+            "codeExamples": [
+              {
+                "title": "Harita Hazırlama",
+                "code": "override fun onMapReady(googleMap: GoogleMap) {\n    map = googleMap\n}",
+                "explanation": "Google Maps hazır olduğunda çağrılan metot."
+              }
+            ],
+            "keyPoints": [
+              "Google Maps SDK kullanılır",
+              "API Key zorunludur",
+              "Harita etkileşimleri desteklenir",
+              "Modern uygulamalarda yaygındır"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3702,
+            "title": "Location Permission",
+            "summary": "Android'de kullanıcı konumuna erişmek için runtime permission mekanizması kullanılır. Kullanıcının açık izni olmadan konum bilgisi alınamaz.",
+            "content": "## Location Permission\n\nACCESS_FINE_LOCATION ve ACCESS_COARSE_LOCATION izinleri kullanılır.\n\nAndroid 6.0 sonrası runtime permission zorunludur.",
+            "difficulty": "medium",
+            "order": 2,
+            "codeExamples": [
+              {
+                "title": "Permission Kontrolü",
+                "code": "if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)\n    != PackageManager.PERMISSION_GRANTED) {\n    requestPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 100)\n}",
+                "explanation": "Konum izni kontrolü ve isteme."
+              }
+            ],
+            "keyPoints": [
+              "Runtime permission zorunludur",
+              "Kullanıcı onayı gerekir",
+              "Fine ve Coarse location farkı vardır",
+              "Yanlış kullanım crash'e yol açabilir"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3703,
+            "title": "Marker",
+            "summary": "Marker, Google Maps üzerinde belirli bir konumu işaretlemek için kullanılan görsel işaretleyicilerdir.",
+            "content": "## Marker\n\nHarita üzerinde konum göstermek için kullanılır.\n\nBaşlık ve açıklama eklenebilir.",
+            "difficulty": "easy",
+            "order": 3,
+            "codeExamples": [
+              {
+                "title": "Marker Ekleme",
+                "code": "val location = LatLng(41.0082, 28.9784)\nmap.addMarker(MarkerOptions().position(location).title(\"İstanbul\"))",
+                "explanation": "Harita üzerine marker ekleme."
+              }
+            ],
+            "keyPoints": [
+              "Konum işaretlemek için kullanılır",
+              "Başlık ve açıklama eklenebilir",
+              "Kullanıcı etkileşimine açıktır",
+              "Birden fazla marker eklenebilir"
+            ],
+            "questions": []
+          },
+          {
+            "topicId": 3704,
+            "title": "Route",
+            "summary": "Route (rota), iki veya daha fazla nokta arasındaki yolun harita üzerinde çizilmesini ifade eder. Genellikle Directions API ile birlikte kullanılır.",
+            "content": "## Route\n\nPolyline kullanılarak çizilir.\n\nDirections API ile rota bilgisi alınır.\n\nNavigasyon uygulamalarında yaygındır.",
+            "difficulty": "hard",
+            "order": 4,
+            "codeExamples": [
+              {
+                "title": "Polyline Çizimi",
+                "code": "map.addPolyline(\n    PolylineOptions().add(startLatLng, endLatLng)\n)",
+                "explanation": "İki nokta arasında rota çizimi."
+              }
+            ],
+            "keyPoints": [
+              "Polyline ile çizilir",
+              "Directions API gerektirir",
+              "Navigasyon uygulamalarında kullanılır",
+              "Performans dikkat edilmelidir"
+            ],
+            "questions": []
+          }
+        ],
+        "sectionMixedQuestions": []
+      }
+      ],
       "interviewQuestions": []
+    },
+    {
+      "categoryId": 4,
+      "categoryTitle": "Android İleri Seviye & Profesyonel",
+      "categoryDescription": "Modern Android uygulamalarında performans, ölçeklenebilirlik ve profesyonel mimari kurmak için ileri seviye konular",
+      "order": 4,
+      "sections": [
+        {
+          "sectionId": 4100,
+          "sectionTitle": "Coroutines & Asenkron Programlama",
+          "sectionDescription": "Android uygulamalarda asenkron işlemleri güvenli, okunabilir ve performanslı şekilde yönetmek için Kotlin Coroutines kullanımı",
+          "order": 1,
+          "topics": [
+            {
+              "topicId": 4101,
+              "title": "Asenkron Programlama Nedir",
+              "summary": "Asenkron programlama, uzun süren işlemlerin (network, veritabanı vb.) ana thread'i bloklamadan arka planda çalıştırılmasını sağlar. Android'de UI performansı için kritik öneme sahiptir.",
+              "content": "## Asenkron Programlama\n\nAndroid'de ana thread UI işlemlerini yürütür.\n\nUzun süren işlemler ANR hatasına yol açabilir.\n\nAsenkron yapı performans ve kullanıcı deneyimi sağlar.",
+              "difficulty": "medium",
+              "order": 1,
+              "codeExamples": [],
+              "keyPoints": [
+                "UI thread bloklanmamalıdır",
+                "Network ve DB işlemleri arka planda çalışmalıdır",
+                "Yanlış kullanım ANR hatasına sebep olur",
+                "Asenkron yapı UX'i iyileştirir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4102,
+              "title": "Coroutine Nedir",
+              "summary": "Coroutine, Kotlin tarafından sunulan hafif ve güçlü bir asenkron programlama çözümüdür. Callback ve Thread karmaşasını ortadan kaldırır.",
+              "content": "## Coroutine\n\nCoroutine'ler lightweight yapılardır.\n\nThread yönetimini geliştiriciden alır.\n\nOkunabilir ve güvenli kod yazmayı sağlar.",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "Basit Coroutine",
+                  "code": "GlobalScope.launch {\n    delay(1000)\n    println(\"Coroutine çalıştı\")\n}",
+                  "explanation": "Basit bir coroutine başlatma örneği."
+                }
+              ],
+              "keyPoints": [
+                "Thread'e göre daha hafiftir",
+                "Callback hell'i ortadan kaldırır",
+                "Suspend fonksiyonlar kullanılır",
+                "Modern Android'in temelidir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4103,
+              "title": "Suspend Fonksiyonlar",
+              "summary": "Suspend fonksiyonlar, coroutine içerisinde çalışabilen ve execution'ı askıya alabilen özel fonksiyonlardır.",
+              "content": "## Suspend Fonksiyonlar\n\nSuspend fonksiyonlar coroutine context içinde çağrılır.\n\nThread bloklamaz.\n\nAsenkron işlemler için kullanılır.",
+              "difficulty": "medium",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Suspend Fonksiyon",
+                  "code": "suspend fun fetchData() {\n    delay(1000)\n}",
+                  "explanation": "Suspend fonksiyon örneği."
+                }
+              ],
+              "keyPoints": [
+                "Sadece coroutine içinde çağrılır",
+                "Thread'i bloklamaz",
+                "delay() gibi suspend fonksiyonlar içerir",
+                "Asenkron yapının temelidir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4104,
+              "title": "Coroutine Scope & Dispatcher",
+              "summary": "Coroutine Scope, coroutine'in yaşam döngüsünü; Dispatcher ise hangi thread üzerinde çalışacağını belirler.",
+              "content": "## Scope & Dispatcher\n\nScope lifecycle ile ilişkilidir.\n\nDispatcher thread yönetimini sağlar.",
+              "difficulty": "hard",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "Dispatcher Kullanımı",
+                  "code": "viewModelScope.launch(Dispatchers.IO) {\n    repository.getData()\n}",
+                  "explanation": "IO dispatcher ile coroutine çalıştırma."
+                }
+              ],
+              "keyPoints": [
+                "viewModelScope lifecycle-aware'dır",
+                "Dispatchers.IO: network & DB",
+                "Dispatchers.Main: UI",
+                "Yanlış dispatcher crash'e yol açabilir"
+              ],
+              "questions": []
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 4200,
+          "sectionTitle": "Flow & StateFlow",
+          "sectionDescription": "Kotlin Flow ile reaktif veri akışı yönetimi ve StateFlow kullanarak UI state yönetimi",
+          "order": 2,
+          "topics": [
+            {
+              "topicId": 4201,
+              "title": "Flow Nedir",
+              "summary": "Flow, Kotlin Coroutines tabanlı soğuk (cold) veri akışı sağlayan reaktif bir yapıdır. Zaman içerisinde birden fazla veri yayını yapabilir.",
+              "content": "## Flow Nedir\n\nFlow, async data stream sağlar.\n\nCold stream'dir (collect edilmeden çalışmaz).\n\nCoroutine ile uyumludur.",
+              "difficulty": "medium",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Basit Flow",
+                  "code": "fun numbersFlow(): Flow<Int> = flow {\n    emit(1)\n    emit(2)\n    emit(3)\n}",
+                  "explanation": "Basit bir Flow örneği."
+                }
+              ],
+              "keyPoints": [
+                "Cold stream'dir",
+                "Coroutine tabanlıdır",
+                "Birden fazla değer yayabilir",
+                "Asenkron veri akışı sağlar"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4202,
+              "title": "Flow Collect",
+              "summary": "collect, Flow'dan gelen verileri dinlemek ve işlemek için kullanılan suspend fonksiyondur.",
+              "content": "## Collect\n\nFlow collect edilmeden çalışmaz.\n\nSuspend fonksiyondur.\n\nCoroutine scope içinde çağrılır.",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "Flow Collect",
+                  "code": "lifecycleScope.launch {\n    numbersFlow().collect {\n        println(it)\n    }\n}",
+                  "explanation": "Flow collect örneği."
+                }
+              ],
+              "keyPoints": [
+                "Suspend fonksiyondur",
+                "Coroutine scope gerektirir",
+                "Flow başlatır",
+                "UI lifecycle ile birlikte çalışır"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4203,
+              "title": "StateFlow Nedir",
+              "summary": "StateFlow, her zaman güncel bir state tutan ve yeni observer'lara son değeri anında ileten sıcak (hot) bir Flow türüdür.",
+              "content": "## StateFlow\n\nHot stream'dir.\n\nHer zaman bir initial değeri vardır.\n\nUI state yönetimi için idealdir.",
+              "difficulty": "medium",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "StateFlow Tanımı",
+                  "code": "private val _uiState = MutableStateFlow(0)\nval uiState: StateFlow<Int> = _uiState",
+                  "explanation": "StateFlow tanımlama."
+                }
+              ],
+              "keyPoints": [
+                "Hot stream'dir",
+                "Initial value zorunludur",
+                "Son değeri saklar",
+                "UI state için kullanılır"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4204,
+              "title": "Flow vs LiveData",
+              "summary": "Flow ve LiveData benzer amaçlara hizmet etse de Flow daha esnek ve güçlüdür. Modern Android geliştirmede Flow tercih edilir.",
+              "content": "## Flow vs LiveData\n\nFlow coroutine tabanlıdır.\n\nLiveData lifecycle-aware'dır.\n\nStateFlow lifecycle bağımsızdır.",
+              "difficulty": "hard",
+              "order": 4,
+              "codeExamples": [],
+              "keyPoints": [
+                "Flow daha esnektir",
+                "LiveData XML uyumludur",
+                "StateFlow lifecycle'dan bağımsızdır",
+                "Modern projelerde Flow önerilir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4205,
+              "title": "ViewModel + StateFlow Kullanımı",
+              "summary": "StateFlow genellikle ViewModel içinde tanımlanır ve UI tarafından observe edilir.",
+              "content": "## ViewModel + StateFlow\n\nUI state ViewModel'de tutulur.\n\nLifecycle ile collect edilir.",
+              "difficulty": "hard",
+              "order": 5,
+              "codeExamples": [
+                {
+                  "title": "StateFlow Observe",
+                  "code": "lifecycleScope.launch {\n    viewModel.uiState.collect {\n        textView.text = it.toString()\n    }\n}",
+                  "explanation": "UI tarafında StateFlow collect edilmesi."
+                }
+              ],
+              "keyPoints": [
+                "StateFlow ViewModel'de tutulur",
+                "UI sadece observe eder",
+                "Tek yönlü data flow sağlar",
+                "MVVM ile uyumludur"
+              ],
+              "questions": []
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 4300,
+          "sectionTitle": "Dependency Injection (Hilt)",
+          "sectionDescription": "Bağımlılıkları merkezi ve yönetilebilir şekilde sağlamak için kullanılan Hilt tabanlı Dependency Injection yapısı",
+          "order": 3,
+          "topics": [
+            {
+              "topicId": 4301,
+              "title": "Dependency Injection Nedir",
+              "summary": "Dependency Injection (DI), bir sınıfın ihtiyaç duyduğu bağımlılıkları kendisinin oluşturması yerine dışarıdan almasını sağlayan tasarım desenidir.",
+              "content": "## Dependency Injection Nedir\n\nDI, sıkı bağımlılıkları azaltır.\n\nKodun test edilebilirliğini artırır.\n\nBakımı ve ölçeklenebilirliği kolaylaştırır.",
+              "difficulty": "medium",
+              "order": 1,
+              "codeExamples": [],
+              "keyPoints": [
+                "Sıkı bağımlılığı azaltır",
+                "Test yazımını kolaylaştırır",
+                "Kod tekrarını önler",
+                "Clean Architecture için gereklidir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4302,
+              "title": "Hilt Nedir",
+              "summary": "Hilt, Android için geliştirilmiş, Dagger üzerine kurulu resmi Dependency Injection kütüphanesidir.",
+              "content": "## Hilt Nedir\n\nGoogle tarafından önerilir.\n\nAndroid bileşenleriyle entegredir.\n\nBoilerplate kodu azaltır.",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "Hilt Kurulumu",
+                  "code": "@HiltAndroidApp\nclass MyApplication : Application()",
+                  "explanation": "Application seviyesinde Hilt başlatma."
+                }
+              ],
+              "keyPoints": [
+                "Dagger tabanlıdır",
+                "Android'e özeldir",
+                "Otomatik lifecycle yönetimi sağlar",
+                "Resmi DI çözümüdür"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4303,
+              "title": "Hilt Modülleri",
+              "summary": "Hilt modülleri, bağımlılıkların nasıl oluşturulacağını tanımlayan sınıflardır.",
+              "content": "## Hilt Modülleri\n\n@Module anotasyonu ile tanımlanır.\n\n@Provides veya @Binds kullanılır.\n\nSingleton gibi scope'lar desteklenir.",
+              "difficulty": "hard",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Hilt Module Örneği",
+                  "code": "@Module\n@InstallIn(SingletonComponent::class)\nobject NetworkModule {\n\n    @Provides\n    fun provideApi(): ApiService {\n        return ApiService.create()\n    }\n}",
+                  "explanation": "Basit bir Hilt modül tanımı."
+                }
+              ],
+              "keyPoints": [
+                "Bağımlılık tanımı yapılır",
+                "Singleton scope desteklenir",
+                "Merkezi yapı sağlar",
+                "Test için mock edilebilir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4304,
+              "title": "Hilt ile ViewModel Kullanımı",
+              "summary": "Hilt, ViewModel bağımlılıklarını otomatik olarak sağlayarak constructor injection kullanımını mümkün kılar.",
+              "content": "## ViewModel + Hilt\n\nConstructor injection desteklenir.\n\n@HiltViewModel anotasyonu kullanılır.",
+              "difficulty": "hard",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "Hilt ViewModel",
+                  "code": "@HiltViewModel\nclass MainViewModel @Inject constructor(\n    private val repository: UserRepository\n) : ViewModel()",
+                  "explanation": "Hilt ile ViewModel injection."
+                }
+              ],
+              "keyPoints": [
+                "Constructor injection kullanılır",
+                "ViewModel daha test edilebilir olur",
+                "Boilerplate azalır",
+                "MVVM ile tam uyumludur"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4305,
+              "title": "Hilt Scope'ları",
+              "summary": "Hilt scope'ları, bağımlılıkların yaşam döngüsünü belirlemek için kullanılır.",
+              "content": "## Hilt Scope\n\n@Singleton\n\n@ActivityScoped\n\n@ViewModelScoped gibi scope'lar vardır.",
+              "difficulty": "hard",
+              "order": 5,
+              "codeExamples": [],
+              "keyPoints": [
+                "Lifecycle bazlı yönetim sağlar",
+                "Bellek kullanımını optimize eder",
+                "Yanlış instance oluşumunu önler",
+                "Performansı artırır"
+              ],
+              "questions": []
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 4400,
+          "sectionTitle": "Clean Architecture",
+          "sectionDescription": "Uygulamanın katmanlara ayrılarak daha sürdürülebilir, test edilebilir ve ölçeklenebilir hale getirilmesini sağlayan mimari yaklaşım",
+          "order": 4,
+          "topics": [
+            {
+              "topicId": 4401,
+              "title": "Clean Architecture Nedir",
+              "summary": "Clean Architecture, uygulamayı katmanlara ayırarak bağımlılıkların tek yönlü olmasını sağlayan bir mimari yaklaşımdır.",
+              "content": "## Clean Architecture Nedir\n\nBu mimari, iş kurallarını framework ve UI bağımlılıklarından ayırır.\n\nMerkezde domain katmanı bulunur.\n\nDış katmanlar iç katmanlara bağımlıdır, tersi mümkün değildir.",
+              "difficulty": "hard",
+              "order": 1,
+              "codeExamples": [],
+              "keyPoints": [
+                "Katmanlı yapı sunar",
+                "Bağımlılıklar tek yönlüdür",
+                "İş mantığı UI'dan bağımsızdır",
+                "Test yazımı kolaylaşır"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4402,
+              "title": "Katmanlar (Presentation, Domain, Data)",
+              "summary": "Clean Architecture, uygulamayı üç ana katmana ayırır: Presentation, Domain ve Data.",
+              "content": "## Clean Architecture Katmanları\n\n- Presentation: UI ve ViewModel\n- Domain: UseCase ve Entity\n- Data: Repository ve veri kaynakları\n\nHer katmanın sorumluluğu nettir.",
+              "difficulty": "hard",
+              "order": 2,
+              "codeExamples": [],
+              "keyPoints": [
+                "Presentation UI logic içerir",
+                "Domain saf Kotlin'dir",
+                "Data veri kaynaklarını yönetir",
+                "Katmanlar arası bağımlılık sınırlandırılmıştır"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4403,
+              "title": "Domain Katmanı",
+              "summary": "Domain katmanı, uygulamanın iş kurallarını ve UseCase yapılarını içerir.",
+              "content": "## Domain Katmanı\n\nFramework bağımlılığı yoktur.\n\nSaf Kotlin kodu içerir.\n\nUygulamanın kalbidir.",
+              "difficulty": "hard",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "UseCase Örneği",
+                  "code": "class GetUsersUseCase(private val repository: UserRepository) {\n    suspend operator fun invoke() = repository.getUsers()\n}",
+                  "explanation": "Domain katmanında bir UseCase örneği."
+                }
+              ],
+              "keyPoints": [
+                "Framework bağımsızdır",
+                "Business logic burada yer alır",
+                "Test edilmesi çok kolaydır",
+                "Uzun vadede stabil yapı sağlar"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4404,
+              "title": "Data Katmanı",
+              "summary": "Data katmanı, veri kaynaklarını (API, Room, Cache) yöneten katmandır.",
+              "content": "## Data Katmanı\n\nRepository implementasyonları burada bulunur.\n\nRemote ve local data source'lar ayrılır.",
+              "difficulty": "hard",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "Repository Implementasyonu",
+                  "code": "class UserRepositoryImpl(\n    private val api: ApiService\n) : UserRepository {\n    override suspend fun getUsers() = api.getUsers()\n}",
+                  "explanation": "Data katmanında repository implementasyonu."
+                }
+              ],
+              "keyPoints": [
+                "Veri kaynaklarını soyutlar",
+                "API ve Room ayrımı yapılır",
+                "Domain ile interface üzerinden konuşur",
+                "Mocklama kolaydır"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4405,
+              "title": "Presentation Katmanı",
+              "summary": "Presentation katmanı, UI ve kullanıcı etkileşimlerini yöneten katmandır.",
+              "content": "## Presentation Katmanı\n\nActivity, Fragment ve ViewModel içerir.\n\nSadece UI logic bulunur.",
+              "difficulty": "medium",
+              "order": 5,
+              "codeExamples": [
+                {
+                  "title": "ViewModel + UseCase",
+                  "code": "@HiltViewModel\nclass MainViewModel @Inject constructor(\n    private val getUsersUseCase: GetUsersUseCase\n) : ViewModel()",
+                  "explanation": "Presentation katmanında ViewModel örneği."
+                }
+              ],
+              "keyPoints": [
+                "UI ile sınırlıdır",
+                "Business logic içermez",
+                "UseCase kullanır",
+                "MVVM ile birlikte çalışır"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4406,
+              "title": "Clean Architecture + MVVM",
+              "summary": "Clean Architecture, MVVM ile birlikte kullanıldığında güçlü ve sürdürülebilir bir yapı ortaya çıkar.",
+              "content": "## Clean Architecture + MVVM\n\nMVVM, Presentation katmanında kullanılır.\n\nUseCase'ler ViewModel tarafından çağrılır.",
+              "difficulty": "hard",
+              "order": 6,
+              "codeExamples": [],
+              "keyPoints": [
+                "Modern Android için ideal yapı",
+                "Test edilebilirlik maksimumdur",
+                "Büyük projelerde tercih edilir",
+                "Senior seviye mimaridir"
+              ],
+              "questions": []
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 4500,
+          "sectionTitle": "Coroutines",
+          "sectionDescription": "Asenkron işlemleri daha okunabilir, güvenli ve performanslı şekilde yönetmek için kullanılan Kotlin Coroutine yapısı",
+          "order": 5,
+          "topics": [
+            {
+              "topicId": 4501,
+              "title": "Coroutines Nedir",
+              "summary": "Coroutines, uzun süren işlemleri (network, database vb.) ana thread'i bloklamadan çalıştırmayı sağlayan Kotlin'in asenkron programlama çözümüdür.",
+              "content": "## Coroutines Nedir\n\nCoroutines, callback ve RxJava gibi yapılara modern bir alternatiftir.\n\nKodun senkron gibi okunmasını sağlar ancak asenkron çalışır.\n\nAndroid'de performans ve kullanıcı deneyimi için kritik öneme sahiptir.",
+              "difficulty": "medium",
+              "order": 1,
+              "codeExamples": [],
+              "keyPoints": [
+                "Asenkron işlemleri basitleştirir",
+                "Callback hell sorununu çözer",
+                "Okunabilir kod yapısı sağlar",
+                "Android tarafından resmi olarak desteklenir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4502,
+              "title": "CoroutineScope ve Lifecycle",
+              "summary": "CoroutineScope, coroutine'lerin hangi yaşam döngüsüne bağlı çalışacağını belirler.",
+              "content": "## CoroutineScope\n\nAndroid'de en sık kullanılan scope'lar:\n\n- viewModelScope\n- lifecycleScope\n- GlobalScope (önerilmez)\n\nLifecycle-aware scope'lar memory leak riskini azaltır.",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "viewModelScope Kullanımı",
+                  "code": "viewModelScope.launch {\n    val users = repository.getUsers()\n}",
+                  "explanation": "ViewModel yok edildiğinde coroutine otomatik iptal edilir."
+                }
+              ],
+              "keyPoints": [
+                "Lifecycle'a duyarlı çalışır",
+                "Memory leak riskini azaltır",
+                "GlobalScope önerilmez",
+                "UI güvenliğini artırır"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4503,
+              "title": "Dispatchers",
+              "summary": "Dispatchers, coroutine'in hangi thread üzerinde çalışacağını belirler.",
+              "content": "## Dispatchers\n\n- Dispatchers.Main → UI işlemleri\n- Dispatchers.IO → Network / Database\n- Dispatchers.Default → CPU yoğun işlemler\n\nYanlış dispatcher kullanımı performans sorunlarına yol açar.",
+              "difficulty": "medium",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Dispatcher Kullanımı",
+                  "code": "withContext(Dispatchers.IO) {\n    dao.getAllUsers()\n}",
+                  "explanation": "IO işlemleri ana thread dışında çalıştırılır."
+                }
+              ],
+              "keyPoints": [
+                "Thread yönetimini kolaylaştırır",
+                "UI thread bloklanmaz",
+                "Doğru dispatcher performansı artırır",
+                "Yanlış kullanım ANR'a sebep olabilir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4504,
+              "title": "launch ve async",
+              "summary": "launch ve async, coroutine başlatmak için kullanılan iki temel builder'dır.",
+              "content": "## launch vs async\n\n- launch → Sonuç dönmez\n- async → Deferred<T> döner\n\nasync genellikle paralel işlemler için kullanılır.",
+              "difficulty": "medium",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "async / await",
+                  "code": "val result = async { api.getData() }\nresult.await()",
+                  "explanation": "async sonucu await ile alınır."
+                }
+              ],
+              "keyPoints": [
+                "launch fire-and-forget",
+                "async sonuç döner",
+                "await ile senkron bekleme yapılır",
+                "Yanlış kullanım memory leak doğurabilir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4505,
+              "title": "Exception Handling",
+              "summary": "Coroutine'lerde hata yönetimi structured concurrency prensibine göre yapılır.",
+              "content": "## Coroutine Exception Handling\n\ntry-catch ve CoroutineExceptionHandler kullanılır.\n\nSupervisorJob ile child coroutine hataları izole edilebilir.",
+              "difficulty": "hard",
+              "order": 5,
+              "codeExamples": [
+                {
+                  "title": "try-catch Kullanımı",
+                  "code": "viewModelScope.launch {\n    try {\n        api.getData()\n    } catch (e: Exception) {\n        // hata yönetimi\n    }\n}",
+                  "explanation": "Coroutine içinde hata yakalama."
+                }
+              ],
+              "keyPoints": [
+                "Structured concurrency önemlidir",
+                "Hatalar scope'a yayılabilir",
+                "SupervisorJob izolasyon sağlar",
+                "Doğru hata yönetimi crash'i önler"
+              ],
+              "questions": []
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 4600,
+          "sectionTitle": "Testing",
+          "sectionDescription": "Android uygulamalarda hataları erken yakalamak, sürdürülebilir ve güvenilir kod yazmak için kullanılan test yaklaşımları",
+          "order": 6,
+          "topics": [
+            {
+              "topicId": 4601,
+              "title": "Testing Nedir ve Neden Önemlidir",
+              "summary": "Testing, yazılan kodun beklenen şekilde çalışıp çalışmadığını doğrulamak için yapılan kontrollü test süreçleridir. Hataları erken yakalamayı ve kod kalitesini artırmayı sağlar.",
+              "content": "## Testing Nedir\n\nTest yazmak, uygulamanın davranışlarını otomatik olarak kontrol etmeyi sağlar.\n\nBüyük projelerde regresyon hatalarını önler.\n\nProfesyonel yazılım geliştirme süreçlerinin vazgeçilmezidir.",
+              "difficulty": "medium",
+              "order": 1,
+              "codeExamples": [],
+              "keyPoints": [
+                "Hataları erken yakalar",
+                "Kod kalitesini artırır",
+                "Refactor sürecini güvenli hale getirir",
+                "Profesyonel projelerde zorunludur"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4602,
+              "title": "Unit Test",
+              "summary": "Unit Test, uygulamadaki en küçük test edilebilir birimlerin (fonksiyon, ViewModel vb.) izole şekilde test edilmesini sağlar.",
+              "content": "## Unit Test\n\nAndroid'de genellikle ViewModel ve business logic test edilir.\n\nJUnit ve Mockito sık kullanılan araçlardır.\n\nUI'dan bağımsız çalışır.",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "ViewModel Unit Test",
+                  "code": "@Test\nfun counter_increases_correctly() {\n    val vm = MainViewModel()\n    vm.increase()\n    assertEquals(1, vm.counter.value)\n}",
+                  "explanation": "ViewModel fonksiyonunun doğru çalıştığını test eder."
+                }
+              ],
+              "keyPoints": [
+                "UI bağımsız test edilir",
+                "Hızlı çalışır",
+                "ViewModel için idealdir",
+                "Regression hatalarını önler"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4603,
+              "title": "Mocking (Mockito)",
+              "summary": "Mocking, gerçek bağımlılıkların yerine sahte (mock) nesneler kullanarak test yazmayı sağlar.",
+              "content": "## Mocking\n\nRepository, API veya database bağımlılıkları mock'lanır.\n\nTest izolasyonu sağlar.\n\nMockito Android'de sık kullanılır.",
+              "difficulty": "hard",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Mockito Kullanımı",
+                  "code": "val repo = mock(UserRepository::class.java)\n`when`(repo.getUsers()).thenReturn(listOf())",
+                  "explanation": "Repository davranışı taklit edilir."
+                }
+              ],
+              "keyPoints": [
+                "Bağımlılıkları izole eder",
+                "Test senaryolarını kontrol etmeyi sağlar",
+                "Gerçek API çağrısı yapılmaz",
+                "Test stabilitesini artırır"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4604,
+              "title": "UI Test (Espresso)",
+              "summary": "UI Test, uygulamanın kullanıcı arayüzünün doğru çalışıp çalışmadığını otomatik olarak test etmeyi sağlar.",
+              "content": "## UI Test\n\nEspresso Android'in resmi UI test aracıdır.\n\nKullanıcı etkileşimlerini simüle eder.\n\nGerçek cihaz veya emülatör üzerinde çalışır.",
+              "difficulty": "hard",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "Espresso Örneği",
+                  "code": "onView(withId(R.id.button)).perform(click())",
+                  "explanation": "Butona tıklama işlemi test edilir."
+                }
+              ],
+              "keyPoints": [
+                "Gerçek kullanıcı davranışını test eder",
+                "UI hatalarını yakalar",
+                "Yavaş çalışır ama etkilidir",
+                "Release öncesi kritik öneme sahiptir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4605,
+              "title": "Test Pyramid",
+              "summary": "Test Pyramid, test stratejisinde hangi test türüne ne kadar ağırlık verilmesi gerektiğini tanımlar.",
+              "content": "## Test Pyramid\n\n- Unit Test → Çok\n- Integration Test → Orta\n- UI Test → Az\n\nBu yapı test maliyetini optimize eder.",
+              "difficulty": "medium",
+              "order": 5,
+              "codeExamples": [],
+              "keyPoints": [
+                "Unit test ağırlıklı olmalı",
+                "UI test sayısı sınırlı tutulmalı",
+                "Bakım maliyetini düşürür",
+                "Doğru test stratejisi sağlar"
+              ],
+              "questions": []
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 4700,
+          "sectionTitle": "Performance & Memory Management",
+          "sectionDescription": "Android uygulamalarda performans sorunlarını tespit etmek, bellek yönetimini doğru yapmak ve ANR/crash risklerini azaltmak",
+          "order": 7,
+          "topics": [
+            {
+              "topicId": 4701,
+              "title": "Performance Nedir",
+              "summary": "Performance, bir Android uygulamasının hızlı, akıcı ve kaynakları verimli kullanarak çalışmasıdır. Kötü performans kullanıcı kaybına yol açar.",
+              "content": "## Performance\n\nAndroid'de performans; CPU, memory, disk ve network kullanımına bağlıdır.\n\nAkıcı UI için ana thread'in bloklanmaması gerekir.\n\nGoogle Play puanlamasını doğrudan etkiler.",
+              "difficulty": "medium",
+              "order": 1,
+              "codeExamples": [],
+              "keyPoints": [
+                "Akıcı UI kullanıcı deneyimini artırır",
+                "Ana thread bloklanmamalıdır",
+                "Performans doğrudan Play Store puanını etkiler",
+                "Profiling ile ölçülmelidir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4702,
+              "title": "ANR (Application Not Responding)",
+              "summary": "ANR, ana thread uzun süre bloklandığında Android tarafından uygulamanın durdurulmasıdır.",
+              "content": "## ANR\n\nGenellikle network, database veya heavy işlem ana thread'de yapıldığında oluşur.\n\n5 saniyeden uzun UI bloklanması ANR sebebidir.",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "Yanlış Kullanım",
+                  "code": "Thread.sleep(6000)",
+                  "explanation": "Ana thread'de bekleme ANR oluşturur."
+                }
+              ],
+              "keyPoints": [
+                "Ana thread bloklanmamalı",
+                "Uzun işlemler background thread'e taşınmalı",
+                "Coroutines / WorkManager kullanılmalı",
+                "ANR Play Console'da raporlanır"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4703,
+              "title": "Memory Leak",
+              "summary": "Memory leak, artık kullanılmayan nesnelerin bellekten temizlenmemesi durumudur ve uygulamanın yavaşlamasına veya çökmesine neden olur.",
+              "content": "## Memory Leak\n\nEn sık nedenler:\n\n- Static Activity referansı\n- Yanlış Context kullanımı\n- Lifecycle'a bağlı olmayan observer'lar",
+              "difficulty": "hard",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Yanlış Context Kullanımı",
+                  "code": "object Manager {\n    lateinit var context: Context\n}",
+                  "explanation": "Activity context'i tutulursa leak oluşur."
+                }
+              ],
+              "keyPoints": [
+                "Context dikkatli kullanılmalı",
+                "Lifecycle-aware bileşenler tercih edilmeli",
+                "LeakCanary ile tespit edilebilir",
+                "Static referanslardan kaçınılmalı"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4704,
+              "title": "Garbage Collection",
+              "summary": "Garbage Collector, kullanılmayan nesneleri bellekten otomatik olarak temizleyen mekanizmadır.",
+              "content": "## Garbage Collection\n\nSık GC çalışması performans düşüşüne neden olur.\n\nAşırı nesne oluşturmak GC baskısı yaratır.",
+              "difficulty": "medium",
+              "order": 4,
+              "codeExamples": [],
+              "keyPoints": [
+                "Aşırı nesne üretiminden kaçınılmalı",
+                "Reusable objeler tercih edilmeli",
+                "GC UI thread'i etkileyebilir",
+                "Profiling ile izlenmelidir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4705,
+              "title": "Android Profiler",
+              "summary": "Android Profiler, CPU, memory ve network kullanımını analiz etmek için kullanılan resmi Android Studio aracıdır.",
+              "content": "## Android Profiler\n\nGerçek zamanlı performans ölçümü sağlar.\n\nMemory leak ve ANR analizinde kullanılır.",
+              "difficulty": "medium",
+              "order": 5,
+              "codeExamples": [],
+              "keyPoints": [
+                "CPU, Memory, Network analiz edilir",
+                "Gerçek cihazda ölçüm önerilir",
+                "Bottleneck tespiti yapılır",
+                "Performans iyileştirme için şarttır"
+              ],
+              "questions": []
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 4800,
+          "sectionTitle": "Modularization (Multi-Module Android)",
+          "sectionDescription": "Büyük Android projelerinde kodun yönetilebilirliğini, test edilebilirliğini ve build performansını artırmak için kullanılan çok modüllü mimari yaklaşımı",
+          "order": 8,
+          "topics": [
+            {
+              "topicId": 4801,
+              "title": "Modularization Nedir",
+              "summary": "Modularization, bir Android uygulamasını bağımsız ve yeniden kullanılabilir modüllere bölme yaklaşımıdır. Büyük projelerde karmaşıklığı azaltır.",
+              "content": "## Modularization Nedir\n\nUygulama tek bir module yerine birden fazla module ayrılır.\n\nHer modül belirli bir sorumluluğa sahiptir.\n\nTakım çalışmasını ve ölçeklenebilirliği artırır.",
+              "difficulty": "medium",
+              "order": 1,
+              "codeExamples": [],
+              "keyPoints": [
+                "Kod karmaşıklığını azaltır",
+                "Takım çalışmasını kolaylaştırır",
+                "Bağımlılık yönetimini iyileştirir",
+                "Büyük projeler için idealdir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4802,
+              "title": "Module Türleri",
+              "summary": "Android projelerinde farklı amaçlara hizmet eden çeşitli modül türleri bulunur.",
+              "content": "## Module Türleri\n\n- App Module\n- Library Module\n- Feature Module (Dynamic Feature)\n\nHer modül farklı sorumluluklar üstlenir.",
+              "difficulty": "easy",
+              "order": 2,
+              "codeExamples": [],
+              "keyPoints": [
+                "App module uygulamanın giriş noktasıdır",
+                "Library module yeniden kullanılabilir kod içerir",
+                "Feature module opsiyonel özellikler sunar",
+                "Dynamic Feature ile indirme boyutu küçülür"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4803,
+              "title": "Gradle Module Yapısı",
+              "summary": "Multi-module projelerde Gradle, modüller arası bağımlılıkları ve build sürecini yönetir.",
+              "content": "## Gradle Module Yapısı\n\nsettings.gradle dosyası modülleri tanımlar.\n\nModüller arası bağımlılıklar implementation(project()) ile eklenir.",
+              "difficulty": "medium",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Module Bağımlılığı",
+                  "code": "implementation(project(\":core\"))",
+                  "explanation": "core modülünü app modülüne dahil eder."
+                }
+              ],
+              "keyPoints": [
+                "Modüller arası bağımlılık açıkça tanımlanır",
+                "Yanlış bağımlılık circular dependency oluşturabilir",
+                "Build süresi optimize edilir",
+                "Gradle yapılandırması kritik öneme sahiptir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4804,
+              "title": "Clean Architecture ile Modularization",
+              "summary": "Clean Architecture, modüller arası bağımlılıkların tek yönlü olmasını sağlar ve kodun test edilebilirliğini artırır.",
+              "content": "## Clean Architecture & Modules\n\nGenellikle şu yapı kullanılır:\n\n- data\n- domain\n- ui\n\nDomain katmanı hiçbir Android bağımlılığı içermez.",
+              "difficulty": "hard",
+              "order": 4,
+              "codeExamples": [],
+              "keyPoints": [
+                "Bağımlılıklar içe doğru olmalıdır",
+                "Domain katmanı saf Kotlin içerir",
+                "Test yazımı kolaylaşır",
+                "Uzun vadeli sürdürülebilirlik sağlar"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 4805,
+              "title": "Modularization Avantajları ve Dezavantajları",
+              "summary": "Multi-module mimari birçok avantaj sunsa da yanlış kullanımda karmaşıklık yaratabilir.",
+              "content": "## Avantajlar & Dezavantajlar\n\nAvantajlar:\n- Daha hızlı build\n- Daha temiz kod\n\nDezavantajlar:\n- İlk kurulum karmaşıktır\n- Küçük projeler için gereksiz olabilir",
+              "difficulty": "medium",
+              "order": 5,
+              "codeExamples": [],
+              "keyPoints": [
+                "Büyük projelerde ciddi fayda sağlar",
+                "Küçük projelerde overengineering olabilir",
+                "Doğru planlama şarttır",
+                "Senior seviye mimari bilgisidir"
+              ],
+              "questions": []
+            }
+          ],
+          "sectionMixedQuestions": []
+        }
+      ]
     }
   ]
 }
