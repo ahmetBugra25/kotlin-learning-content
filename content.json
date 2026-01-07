@@ -1,6 +1,6 @@
 {
-  "version": "1.0.1",
-  "lastUpdate": "2025-01-06T15:00:00Z",
+  "version": "1.0.3",
+  "lastUpdate": "2025-01-07T10:00:00Z",
   "categories": [
     {
       "categoryId": 1,
@@ -10,34 +10,236 @@
       "sections": [
         {
           "sectionId": 101,
-          "sectionTitle": "Değişkenler ve Veri Tipleri",
-          "sectionDescription": "Kotlin'de değişken tanımlama ve veri tipleri",
+          "sectionTitle": "Kotlin'e Giriş",
+          "sectionDescription": "Kotlin dilinin temelleri",
           "order": 1,
           "topics": [
             {
               "topicId": 1001,
-              "title": "var ve val",
-              "summary": "Kotlin'de değişken tanımlamak için kullanılan var ve val anahtar kelimeleri.",
-              "content": "## var ve val\n\nKotlin'de iki tür değişken tanımlama yöntemi vardır:\n\n- **val**: Değiştirilemez (immutable)\n- **var**: Değiştirilebilir (mutable)",
+              "title": "Kotlin Nedir",
+              "summary": "Kotlin modern bir programlama dilidir",
+              "content": "## Kotlin Nedir\n\nKotlin, JetBrains tarafından geliştirilmiş modern bir programlama dilidir.\n\n### Özellikler\n\n- **Modern**: Güncel programlama paradigmalarını destekler\n- **Güvenli**: Null safety ile runtime hatalarını azaltır\n- **İnterop**: Java ile %100 uyumludur\n\n### Kullanım Alanları\n\n- Android uygulama geliştirme\n- Backend geliştirme\n- Multiplatform projeler",
               "difficulty": "easy",
               "order": 1,
-              "codeExamples": [],
-              "keyPoints": ["val = immutable", "var = mutable"],
-              "questions": []
+              "codeExamples": [
+                {
+                  "title": "Basit Hello World",
+                  "code": "fun main() {\n    println(\"Hello, Kotlin!\")\n}",
+                  "explanation": "Kotlin'de en basit program. main fonksiyonu programın başlangıç noktasıdır."
+                }
+              ],
+              "keyPoints": [
+                "JetBrains tarafından geliştirilmiştir",
+                "2011 yılında duyuruldu",
+                "2017'de Android'in resmi dili oldu",
+                "Açık kaynak kodludur"
+              ],
+              "questions": [
+                {
+                  "questionId": 10001,
+                  "question": "Kotlin hangi şirket tarafından geliştirilmiştir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Google",
+                    "JetBrains",
+                    "Oracle",
+                    "Microsoft"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Kotlin, IntelliJ IDEA'yı geliştiren JetBrains şirketi tarafından geliştirilmiştir. Google tarafından Android'in resmi dili olarak kabul edilmiştir.",
+                  "tags": ["kotlin", "tarihçe", "temel"]
+                },
+                {
+                  "questionId": 10002,
+                  "question": "Kotlin hangi yıl Android'in resmi dili oldu?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "2011",
+                    "2015",
+                    "2017",
+                    "2019"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Kotlin, Google I/O 2017'de Android'in resmi dili olarak duyuruldu. 2019'da ise Android geliştirmede öncelikli dil (Kotlin-first) haline geldi.",
+                  "tags": ["kotlin", "android", "tarihçe"]
+                },
+                {
+                  "questionId": 10003,
+                  "question": "Aşağıdaki kodun çıktısı ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": "fun main() {\n    val language = \"Kotlin\"\n    println(\"Hello, $language!\")\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hello, $language!",
+                    "Hello, Kotlin!",
+                    "Syntax Error",
+                    "Hello, language!"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Kotlin'de $ işareti ile string interpolation yapılır. $language ifadesi değişkenin değeri ile değiştirilir ve 'Hello, Kotlin!' çıktısı üretilir.",
+                  "tags": ["kotlin", "string", "interpolation"]
+                }
+              ]
+            },
+            {
+              "topicId": 1002,
+              "title": "var ve val",
+              "summary": "Kotlin'de değişken tanımlama: var (mutable) ve val (immutable)",
+              "content": "## var ve val\n\nKotlin'de iki tür değişken tanımlama yöntemi vardır:\n\n### val (Value - Immutable)\n\n- Bir kez atanır, değiştirilemez\n- Java'daki final'a benzer\n- Thread-safe\n- Functional programming prensiplerine uygun\n\n### var (Variable - Mutable)\n\n- Değeri değiştirilebilir\n- Gerektiğinde kullanılır\n\n**Best Practice:** Mümkün olduğunca val kullanın, sadece gerektiğinde var kullanın.",
+              "difficulty": "easy",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "val Örneği",
+                  "code": "val name = \"Ahmet\"\n// name = \"Mehmet\" // HATA! Val değiştirilemez",
+                  "explanation": "val ile tanımlanan değişkenler immutable'dır."
+                },
+                {
+                  "title": "var Örneği",
+                  "code": "var age = 25\nage = 26  // OK, var değiştirilebilir\nprintln(age)  // 26",
+                  "explanation": "var ile tanımlanan değişkenler mutable'dır."
+                }
+              ],
+              "keyPoints": [
+                "val = immutable (değiştirilemez)",
+                "var = mutable (değiştirilebilir)",
+                "val tercih edilmelidir (immutability)",
+                "val referansı değişmez ama içeriği değişebilir"
+              ],
+              "questions": [
+                {
+                  "questionId": 10004,
+                  "question": "Kotlin'de değiştirilemeyen değişken tanımlamak için hangi anahtar kelime kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "var",
+                    "val",
+                    "const",
+                    "final"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "val (value) anahtar kelimesi immutable değişkenler için kullanılır. Bir kez atandıktan sonra değiştirilemez.",
+                  "tags": ["val", "var", "immutability"]
+                },
+                {
+                  "questionId": 10005,
+                  "question": "Aşağıdaki kodda hata veren satır hangisidir?",
+                  "questionType": "multiple_choice",
+                  "code": "val x = 10\nvar y = 20\nx = 15\ny = 25",
+                  "difficulty": "medium",
+                  "options": [
+                    "Satır 1: val x = 10",
+                    "Satır 2: var y = 20",
+                    "Satır 3: x = 15",
+                    "Satır 4: y = 25"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Satır 3'te hata olur. val ile tanımlanan değişkenler immutable'dır, yani değiştirilemez. x'e yeniden değer atamaya çalışmak compile-time hatası verir.",
+                  "tags": ["val", "var", "error"]
+                },
+                {
+                  "questionId": 10006,
+                  "question": "Aşağıdaki kod bloğunun çıktısı ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": "val list = mutableListOf(1, 2, 3)\nlist.add(4)\nprintln(list.size)",
+                  "difficulty": "medium",
+                  "options": [
+                    "3",
+                    "4",
+                    "Compile hatası",
+                    "Runtime hatası"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Çıktı 4 olur. val ile tanımlanan list referansı değiştirilemez ama mutableListOf olduğu için içeriği değiştirilebilir. add() metodu çalışır ve size 4 döner. Bu val'in önemli bir detayıdır: referans immutable, içerik mutable olabilir.",
+                  "tags": ["val", "collections", "mutable"]
+                }
+              ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+              "questionId": 10101,
+              "question": "Kotlin'de best practice olarak hangi değişken türü tercih edilmelidir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Her zaman var kullanılmalı",
+                "Mümkün olduğunca val kullanılmalı",
+                "İkisi arasında fark yok",
+                "Her zaman const kullanılmalı"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Best practice olarak mümkün olduğunca val (immutable) kullanılmalıdır. Bu, kodu daha güvenli, okunabilir ve thread-safe yapar. Sadece değerin değişmesi gerektiğinde var kullanılmalıdır.",
+              "tags": ["best-practice", "val", "var"]
+            },
+            {
+              "questionId": 10102,
+              "question": "Kotlin'in Java'ya göre en önemli avantajlarından biri nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Daha hızlı çalışır",
+                "Null safety özelliği",
+                "Daha az bellek kullanır",
+                "Sadece Android'de çalışır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Kotlin'in en önemli avantajlarından biri null safety özelliğidir. Nullable ve non-nullable tipleri tip sisteminde ayırarak NullPointerException hatalarını compile-time'da yakalar.",
+              "tags": ["kotlin", "java", "null-safety"]
+            }
+          ]
         },
         {
           "sectionId": 102,
-          "sectionTitle": "Fonksiyonlar",
-          "sectionDescription": "Kotlin'de fonksiyon tanımlama ve kullanımı",
+          "sectionTitle": "Değişkenler ve Veri Tipleri",
+          "sectionDescription": "Kotlin'deki veri tipleri ve tür dönüşümleri",
           "order": 2,
           "topics": [],
           "sectionMixedQuestions": []
         }
       ],
-      "interviewQuestions": []
+      "interviewQuestions": [
+        {
+          "questionId": 10201,
+          "question": "Kotlin'de val ve var arasındaki farkı açıklayın. Hangisini ne zaman kullanmalısınız?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "val immutable, var mutable. Performans için her zaman var kullanılmalı.",
+            "val immutable, var mutable. Thread-safety ve kod güvenliği için mümkün olduğunca val tercih edilmeli.",
+            "val compile-time constant, var runtime variable. Sadece sabit değerler için val kullanılır.",
+            "İkisi arasında performans farkı yok, sadece kod okunabilirliği için tercih edilir."
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "val (value) immutable, var (variable) mutable değişkenler içindir. Functional programming prensipleri ve thread-safety açısından değişmeyecek değerler için val kullanılmalıdır. Bu, kodu daha güvenli, anlaşılır ve bakımı kolay yapar. Sadece değerin değişmesi gerektiğinde var kullanılmalıdır.",
+          "tags": ["interview", "val", "var", "best-practices"]
+        },
+        {
+          "questionId": 10202,
+          "question": "Kotlin'in null safety özelliği nedir ve nasıl çalışır?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Null değerleri otomatik olarak 0'a çevirir",
+            "Nullable ve non-nullable tipleri ayırarak null hatalarını compile-time'da yakalar",
+            "Runtime'da null kontrolü yapar",
+            "Null değerlere izin vermez"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Kotlin'in type system'i nullable (String?) ve non-nullable (String) tipleri ayırır. Non-nullable tipler null değer alamaz ve bu compile-time'da kontrol edilir. Bu sayede NullPointerException hataları büyük ölçüde önlenir. Nullable tiplerde ise ?., !!, let gibi operatörler kullanılır.",
+          "tags": ["interview", "null-safety", "type-system"]
+        }
+      ]
     },
     {
       "categoryId": 2,
@@ -49,23 +251,6 @@
           "sectionId": 201,
           "sectionTitle": "Android'e Giriş",
           "sectionDescription": "Android platformuna giriş",
-          "order": 1,
-          "topics": [],
-          "sectionMixedQuestions": []
-        }
-      ],
-      "interviewQuestions": []
-    },
-    {
-      "categoryId": 3,
-      "categoryTitle": "Android Orta - İleri Seviye",
-      "categoryDescription": "Modern Android geliştirme teknikleri ve mimariler",
-      "order": 3,
-      "sections": [
-        {
-          "sectionId": 301,
-          "sectionTitle": "MVVM Mimarisi",
-          "sectionDescription": "Model-View-ViewModel pattern",
           "order": 1,
           "topics": [],
           "sectionMixedQuestions": []
