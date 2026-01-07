@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "lastUpdate": "2025-01-06T10:00:00Z",
+  "version": "1.0.1",
+  "lastUpdate": "2025-01-06T15:00:00Z",
   "categories": [
     {
       "categoryId": 1,
@@ -21,33 +21,53 @@
               "content": "## var ve val\n\nKotlin'de iki tür değişken tanımlama yöntemi vardır:\n\n- **val**: Değiştirilemez (immutable)\n- **var**: Değiştirilebilir (mutable)",
               "difficulty": "easy",
               "order": 1,
-              "codeExamples": [
-                {
-                  "title": "Basit Örnek",
-                  "code": "val name = \"Ahmet\"\nvar age = 25\nage = 26",
-                  "explanation": "val ile tanımlanan değişkenler bir kez atanır."
-                }
-              ],
-              "keyPoints": [
-                "val = immutable",
-                "var = mutable",
-                "Mümkün olduğunca val kullan"
-              ],
-              "questions": [
-                {
-                  "questionId": 10001,
-                  "question": "Kotlin'de değiştirilemeyen değişken hangisidir?",
-                  "questionType": "multiple_choice",
-                  "code": null,
-                  "difficulty": "easy",
-                  "options": ["var", "val", "let", "const"],
-                  "correctAnswerIndex": 1,
-                  "explanation": "val ile tanımlanan değişkenler immutable'dır.",
-                  "tags": ["val", "var", "basics"]
-                }
-              ]
+              "codeExamples": [],
+              "keyPoints": ["val = immutable", "var = mutable"],
+              "questions": []
             }
           ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 102,
+          "sectionTitle": "Fonksiyonlar",
+          "sectionDescription": "Kotlin'de fonksiyon tanımlama ve kullanımı",
+          "order": 2,
+          "topics": [],
+          "sectionMixedQuestions": []
+        }
+      ],
+      "interviewQuestions": []
+    },
+    {
+      "categoryId": 2,
+      "categoryTitle": "Android Temelleri",
+      "categoryDescription": "Android uygulama geliştirmenin temel kavramları",
+      "order": 2,
+      "sections": [
+        {
+          "sectionId": 201,
+          "sectionTitle": "Android'e Giriş",
+          "sectionDescription": "Android platformuna giriş",
+          "order": 1,
+          "topics": [],
+          "sectionMixedQuestions": []
+        }
+      ],
+      "interviewQuestions": []
+    },
+    {
+      "categoryId": 3,
+      "categoryTitle": "Android Orta - İleri Seviye",
+      "categoryDescription": "Modern Android geliştirme teknikleri ve mimariler",
+      "order": 3,
+      "sections": [
+        {
+          "sectionId": 301,
+          "sectionTitle": "MVVM Mimarisi",
+          "sectionDescription": "Model-View-ViewModel pattern",
+          "order": 1,
+          "topics": [],
           "sectionMixedQuestions": []
         }
       ],
