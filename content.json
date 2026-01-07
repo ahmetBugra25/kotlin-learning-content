@@ -3602,7 +3602,528 @@
       "categoryTitle": "Android Temelleri",
       "categoryDescription": "Android uygulama geliştirmenin temel kavramları",
       "order": 2,
-      "sections": [],
+      "sections": [
+        {
+          "sectionId": 2100,
+          "sectionTitle": "Android’e Giriş",
+          "sectionDescription": "Android işletim sisteminin temel yapısı ve Android uygulama geliştirmenin genel mantığı",
+          "order": 1,
+          "topics": [
+            {
+              "topicId": 2101,
+              "title": "Android Nedir",
+              "summary": "Android, Google tarafından geliştirilen, Linux tabanlı, açık kaynaklı bir mobil işletim sistemidir. Akıllı telefonlar, tabletler, TV’ler ve giyilebilir cihazlarda yaygın olarak kullanılır. Android uygulamaları genellikle Kotlin veya Java dili ile geliştirilir.",
+              "content": "## Android Nedir\n\nAndroid, mobil cihazlar için geliştirilmiş bir işletim sistemidir.\n\nAçık kaynaklı yapısı sayesinde birçok üretici tarafından özelleştirilerek kullanılır.\n\nAndroid uygulamaları, Android SDK ve Android Studio kullanılarak geliştirilir.\n\nGoogle Play Store, Android uygulamalarının dağıtıldığı resmi platformdur.",
+              "difficulty": "easy",
+              "order": 1,
+              "codeExamples": [],
+              "keyPoints": [
+                "Linux tabanlı bir işletim sistemidir",
+                "Google tarafından geliştirilir",
+                "Açık kaynaklıdır",
+                "Kotlin ve Java ile uygulama geliştirilir",
+                "Google Play Store üzerinden dağıtılır"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2102,
+              "title": "Android Proje Yapısı",
+              "summary": "Android proje yapısı, uygulamanın kod, kaynak dosyaları ve konfigürasyonlarının düzenli bir şekilde tutulmasını sağlar. Android Studio’da oluşturulan her proje belirli klasör ve dosya yapısına sahiptir.",
+              "content": "## Android Proje Yapısı\n\nAndroid projeleri modüler bir yapıya sahiptir.\n\nTemel olarak Java/Kotlin kodları, XML arayüz dosyaları ve uygulama ayarları ayrı klasörlerde tutulur.\n\nBu yapı, büyük projelerin daha yönetilebilir olmasını sağlar.",
+              "difficulty": "easy",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "Temel Proje Yapısı",
+                  "code": "app/\n ├─ java/ (veya kotlin/)\n │   └─ MainActivity.kt\n ├─ res/\n │   ├─ layout/\n │   ├─ drawable/\n │   └─ values/\n └─ AndroidManifest.xml",
+                  "explanation": "Android projelerinde temel klasör ve dosyaların genel görünümü."
+                }
+              ],
+              "keyPoints": [
+                "java/kotlin: Uygulama kodları",
+                "res/layout: XML arayüz dosyaları",
+                "res/drawable: Görseller",
+                "res/values: Renk, stil ve string tanımları",
+                "AndroidManifest.xml: Uygulama yapılandırması"
+              ],
+              "questions": []
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+
+            "sectionId": 2200,
+            "sectionTitle": "Layout & UI",
+            "sectionDescription": "Android uygulamalarda kullanıcı arayüzü oluşturma ve layout yapıları",
+            "order": 2,
+            "topics": [
+            {
+              "topicId": 2201,
+              "title": "XML Nedir",
+              "summary": "XML, Android'de kullanıcı arayüzlerini tanımlamak için kullanılan işaretleme dilidir. Görünümlerin hiyerarşisi, boyutları ve özellikleri XML dosyaları içerisinde tanımlanır.",
+              "content": "## XML Nedir\n\nAndroid'de UI genellikle XML dosyaları ile oluşturulur.\n\nBu yapı, tasarım ve iş mantığını ayırarak kodun daha okunabilir olmasını sağlar.",
+              "difficulty": "easy",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Basit XML Örneği",
+                  "code": "<TextView\n    android:layout_width=\"wrap_content\"\n    android:layout_height=\"wrap_content\"\n    android:text=\"Merhaba Android\" />",
+                  "explanation": "Basit bir TextView tanımı."
+                }
+              ],
+              "keyPoints": [
+                "UI XML ile tanımlanır",
+                "Koddan bağımsızdır",
+                "Okunabilirliği artırır"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2202,
+              "title": "View Nedir",
+              "summary": "View, Android'de ekranda görünen en temel UI bileşenidir. Button, TextView, EditText gibi tüm arayüz elemanları View sınıfından türetilir.",
+              "content": "## View Nedir\n\nView, kullanıcı ile etkileşime giren temel bileşendir.\n\nTüm UI elemanları View veya ViewGroup'tan türetilir.",
+              "difficulty": "easy",
+              "order": 2,
+              "codeExamples": [],
+              "keyPoints": [
+                "UI'nin temel yapı taşıdır",
+                "Tıklama ve dokunma olaylarını alır",
+                "ViewGroup içinde yer alır"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2203,
+              "title": "LinearLayout",
+              "summary": "LinearLayout, View'leri yatay veya dikey olarak sıralayan bir layout türüdür. orientation özelliği ile dizilim yönü belirlenir.",
+              "content": "## LinearLayout\n\nBasit ve anlaşılır bir layout yapısıdır.\n\nİç içe kullanımı performans sorunlarına yol açabilir.",
+              "difficulty": "easy",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "LinearLayout Örneği",
+                  "code": "<LinearLayout\n    android:orientation=\"vertical\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\">\n\n    <TextView />\n    <Button />\n</LinearLayout>",
+                  "explanation": "Dikey dizilimli LinearLayout."
+                }
+              ],
+              "keyPoints": [
+                "orientation: vertical / horizontal",
+                "Basit dizilimler için idealdir",
+                "Derin hiyerarşiden kaçınılmalı"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2204,
+              "title": "ConstraintLayout",
+              "summary": "ConstraintLayout, View'leri birbirine ve parent'a göre konumlandırmaya olanak tanıyan güçlü bir layout türüdür. Performans açısından en çok önerilen layout yapısıdır.",
+              "content": "## ConstraintLayout\n\nEsnek ve performanslıdır.\n\nTek layout içinde karmaşık arayüzler oluşturulabilir.",
+              "difficulty": "medium",
+              "order": 4,
+              "codeExamples": [],
+              "keyPoints": [
+                "Performans dostudur",
+                "Karmaşık UI'lar için idealdir",
+                "Constraint mantığı kullanır"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2205,
+              "title": "Nested Layout",
+              "summary": "Nested Layout, layoutların iç içe kullanılmasıdır. Karmaşık arayüzlerde okunabilirliği artırabilir ancak aşırı kullanımı performans sorunlarına yol açar.",
+              "content": "## Nested Layout\n\nİç içe layout kullanımı dikkatli yapılmalıdır.\n\nConstraintLayout bu ihtiyacı büyük ölçüde azaltır.",
+              "difficulty": "medium",
+              "order": 5,
+              "codeExamples": [],
+              "keyPoints": [
+                "İç içe layout yapısıdır",
+                "Performansı olumsuz etkileyebilir",
+                "Alternatif olarak ConstraintLayout önerilir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2206,
+              "title": "View Binding",
+              "summary": "View Binding, XML'de tanımlanan view'lara güvenli ve kolay erişim sağlayan bir özelliktir. findViewById kullanımını ortadan kaldırır.",
+              "content": "## View Binding\n\nDerleme zamanında binding sınıfları oluşturur.\n\nNull safety sağlar ve kodu sadeleştirir.",
+              "difficulty": "easy",
+              "order": 6,
+              "codeExamples": [
+                {
+                  "title": "View Binding Kullanımı",
+                  "code": "val binding = ActivityMainBinding.inflate(layoutInflater)\nsetContentView(binding.root)\n\nbinding.textView.text = \"Merhaba\"",
+                  "explanation": "View Binding ile view erişimi."
+                }
+              ],
+              "keyPoints": [
+                "findViewById ihtiyacını kaldırır",
+                "Null safety sağlar",
+                "Kod okunabilirliğini artırır"
+              ],
+              "questions": []
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 2300,
+          "sectionTitle": "Activity & Lifecycle",
+          "sectionDescription": "Android uygulamalarda Activity kavramı, yaşam döngüsü ve Context kullanımı",
+          "order": 3,
+          "topics": [
+            {
+              "topicId": 2301,
+              "title": "Activity Nedir",
+              "summary": "Activity, Android uygulamalarda kullanıcıya gösterilen tek bir ekranı temsil eder. Uygulama içerisindeki her ekran genellikle bir Activity veya Fragment tarafından yönetilir.",
+              "content": "## Activity Nedir\n\nActivity, kullanıcı ile etkileşime girilen temel bileşendir.\n\nBir uygulama birden fazla Activity içerebilir ve Activity'ler arasında Intent kullanılarak geçiş yapılır.\n\nActivity, Android işletim sistemi tarafından belirli bir yaşam döngüsüne göre yönetilir.",
+              "difficulty": "easy",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Basit Activity Tanımı",
+                  "code": "class MainActivity : AppCompatActivity() {\n    override fun onCreate(savedInstanceState: Bundle?) {\n        super.onCreate(savedInstanceState)\n        setContentView(R.layout.activity_main)\n    }\n}",
+                  "explanation": "Bir Activity'nin temel yapısı ve onCreate metodu."
+                }
+              ],
+              "keyPoints": [
+                "Her Activity bir ekranı temsil eder",
+                "AppCompatActivity'den türetilir",
+                "Intent ile Activity geçişleri yapılır",
+                "Yaşam döngüsü metotlarına sahiptir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2302,
+              "title": "Lifecycle Metotları",
+              "summary": "Lifecycle metotları, Activity'nin oluşturulmasından yok edilmesine kadar geçen sürede hangi aşamalardan geçtiğini belirler. Bu metotlar sayesinde kaynak yönetimi doğru şekilde yapılır.",
+              "content": "## Lifecycle Metotları\n\nAndroid, Activity'nin durumuna göre belirli lifecycle metotlarını çağırır.\n\nBu metotlar, uygulamanın arka plana alınması, tekrar açılması veya kapatılması gibi durumlarda çalışır.\n\nDoğru lifecycle yönetimi performans ve stabilite açısından kritik öneme sahiptir.",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "Lifecycle Metotları Örneği",
+                  "code": "override fun onStart() {\n    super.onStart()\n}\n\noverride fun onResume() {\n    super.onResume()\n}\n\noverride fun onPause() {\n    super.onPause()\n}\n\noverride fun onDestroy() {\n    super.onDestroy()\n}",
+                  "explanation": "Activity yaşam döngüsünde sık kullanılan metotlar."
+                }
+              ],
+              "keyPoints": [
+                "onCreate: Activity oluşturulur",
+                "onStart / onResume: Activity görünür ve aktif",
+                "onPause / onStop: Activity arka plana alınır",
+                "onDestroy: Activity yok edilir",
+                "Kaynaklar lifecycle'a göre yönetilmelidir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2303,
+              "title": "Context",
+              "summary": "Context, Android uygulamasının mevcut durumunu ve ortam bilgisini temsil eder. Kaynaklara erişim, Activity başlatma ve sistem servislerini kullanmak için gereklidir.",
+              "content": "## Context\n\nContext, uygulama hakkında bilgi sağlar.\n\nActivity, Application ve Service gibi sınıflar Context türevleridir.\n\nYanlış Context kullanımı memory leak gibi sorunlara yol açabilir.",
+              "difficulty": "medium",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Context Kullanımı",
+                  "code": "Toast.makeText(this, \"Merhaba\", Toast.LENGTH_SHORT).show()",
+                  "explanation": "Activity context kullanılarak Toast gösterilmesi."
+                }
+              ],
+              "keyPoints": [
+                "Kaynaklara erişim sağlar",
+                "Activity ve Application Context farkı vardır",
+                "Yanlış kullanım memory leak oluşturabilir",
+                "Toast, Intent ve Dialog işlemlerinde kullanılır"
+              ],
+              "questions": []
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 2400,
+          "sectionTitle": "Kullanıcı Etkileşimi",
+          "sectionDescription": "Kullanıcının uygulama ile etkileşime girmesini sağlayan temel UI bileşenleri",
+          "order": 4,
+          "topics": [
+            {
+              "topicId": 2401,
+              "title": "Button",
+              "summary": "Button, kullanıcının bir aksiyon başlatmasını sağlayan temel UI bileşenidir. Genellikle tıklama (click) olayları ile birlikte kullanılır.",
+              "content": "## Button\n\nButton, kullanıcıdan aksiyon almak için kullanılır.\n\nTıklama olayları click listener aracılığıyla yakalanır.\n\nXML üzerinden veya kod ile özelleştirilebilir.",
+              "difficulty": "easy",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Button Tanımı",
+                  "code": "<Button\n    android:id=\"@+id/btnSave\"\n    android:layout_width=\"wrap_content\"\n    android:layout_height=\"wrap_content\"\n    android:text=\"Kaydet\" />",
+                  "explanation": "XML ile Button tanımlama."
+                }
+              ],
+              "keyPoints": [
+                "Kullanıcı aksiyonu için kullanılır",
+                "Click listener ile çalışır",
+                "XML ve koddan kontrol edilebilir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2402,
+              "title": "EditText",
+              "summary": "EditText, kullanıcıdan metin girişi almak için kullanılan bir UI bileşenidir. Formlar ve veri giriş ekranlarında yaygın olarak kullanılır.",
+              "content": "## EditText\n\nEditText, kullanıcıdan veri almak için kullanılır.\n\ninputType ile klavye türü belirlenebilir.\n\nGirilen veri String olarak alınır.",
+              "difficulty": "easy",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "EditText Kullanımı",
+                  "code": "<EditText\n    android:id=\"@+id/etName\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"wrap_content\"\n    android:hint=\"İsim giriniz\" />",
+                  "explanation": "Basit EditText tanımı."
+                }
+              ],
+              "keyPoints": [
+                "Kullanıcıdan metin alır",
+                "inputType ile klavye ayarlanır",
+                "Genellikle form ekranlarında kullanılır"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2403,
+              "title": "Click Listener",
+              "summary": "Click Listener, kullanıcı bir View'a tıkladığında çalışacak kod bloğunu tanımlamak için kullanılır. En yaygın kullanılan etkileşim yöntemidir.",
+              "content": "## Click Listener\n\nClick listener sayesinde kullanıcı etkileşimleri yakalanır.\n\nKotlin'de lambda yapısı ile daha sade yazılabilir.",
+              "difficulty": "easy",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Click Listener Örneği",
+                  "code": "button.setOnClickListener {\n    println(\"Butona tıklandı\")\n}",
+                  "explanation": "Lambda kullanılarak click listener tanımı."
+                }
+              ],
+              "keyPoints": [
+                "Kullanıcı etkileşimini yakalar",
+                "Lambda ile sade kullanım",
+                "Tüm View'lar için geçerlidir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2404,
+              "title": "AlertDialog",
+              "summary": "AlertDialog, kullanıcıya bilgi vermek veya onay almak için kullanılan açılır pencere yapısıdır. Kritik aksiyonlar öncesinde sıkça tercih edilir.",
+              "content": "## AlertDialog\n\nAlertDialog, kullanıcıdan onay veya seçim almak için kullanılır.\n\nBaşlık, mesaj ve butonlar içerir.",
+              "difficulty": "medium",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "AlertDialog Örneği",
+                  "code": "AlertDialog.Builder(this)\n    .setTitle(\"Uyarı\")\n    .setMessage(\"Silmek istiyor musunuz?\")\n    .setPositiveButton(\"Evet\", null)\n    .setNegativeButton(\"Hayır\", null)\n    .show()",
+                  "explanation": "Basit bir AlertDialog oluşturma."
+                }
+              ],
+              "keyPoints": [
+                "Kullanıcıdan onay almak için kullanılır",
+                "Pozitif ve negatif butonlar içerir",
+                "Context gerektirir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2405,
+              "title": "Toast / Snackbar",
+              "summary": "Toast ve Snackbar, kullanıcıya kısa süreli bilgilendirme mesajları göstermek için kullanılır. Snackbar, Toast'a göre daha etkileşimli ve modern bir çözümdür.",
+              "content": "## Toast / Snackbar\n\nToast kısa süreli mesaj gösterir.\n\nSnackbar, aksiyon butonu eklemeye izin verir ve genellikle View ile ilişkilidir.",
+              "difficulty": "easy",
+              "order": 5,
+              "codeExamples": [
+                {
+                  "title": "Toast ve Snackbar",
+                  "code": "Toast.makeText(this, \"Kayıt başarılı\", Toast.LENGTH_SHORT).show()\n\nSnackbar.make(view, \"Silindi\", Snackbar.LENGTH_LONG)\n    .setAction(\"Geri Al\") { }\n    .show()",
+                  "explanation": "Toast ve Snackbar kullanım örneği."
+                }
+              ],
+              "keyPoints": [
+                "Toast kısa bilgilendirme için kullanılır",
+                "Snackbar daha etkileşimlidir",
+                "Snackbar aksiyon alabilir"
+              ],
+              "questions": []
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 2500,
+          "sectionTitle": "Intent & Veri Aktarımı",
+          "sectionDescription": "Activity’ler arası geçiş ve veri aktarımı için kullanılan Intent yapıları",
+          "order": 5,
+          "topics": [
+            {
+              "topicId": 2501,
+              "title": "Explicit Intent",
+              "summary": "Explicit Intent, hangi Activity’nin açılacağını açıkça belirttiğimiz intent türüdür. Uygulama içindeki Activity geçişlerinde en sık kullanılan yöntemdir.",
+              "content": "## Explicit Intent\n\nExplicit Intent, hedef Activity'nin doğrudan belirtildiği intent türüdür.\n\nGenellikle aynı uygulama içerisindeki ekranlar arasında geçiş yapmak için kullanılır.",
+              "difficulty": "easy",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Explicit Intent Kullanımı",
+                  "code": "val intent = Intent(this, DetailActivity::class.java)\nstartActivity(intent)",
+                  "explanation": "MainActivity'den DetailActivity'e geçiş."
+                }
+              ],
+              "keyPoints": [
+                "Hedef Activity açıkça belirtilir",
+                "Uygulama içi geçişlerde kullanılır",
+                "En yaygın intent türüdür"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2502,
+              "title": "Implicit Intent",
+              "summary": "Implicit Intent, hangi uygulamanın açılacağını belirtmeden, yapılmak istenen işlemi tanımlar. Sistem, bu isteği karşılayabilecek uygulamayı kullanıcıya sunar.",
+              "content": "## Implicit Intent\n\nImplicit Intent, belirli bir aksiyon ve veri ile çalışır.\n\nTelefon araması, tarayıcı açma veya paylaşım işlemlerinde sıkça kullanılır.",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "Implicit Intent Örneği",
+                  "code": "val intent = Intent(Intent.ACTION_VIEW)\nintent.data = Uri.parse(\"https://www.google.com\")\nstartActivity(intent)",
+                  "explanation": "Tarayıcı açmak için implicit intent kullanımı."
+                }
+              ],
+              "keyPoints": [
+                "Hedef uygulama belirtilmez",
+                "Aksiyon ve data ile çalışır",
+                "Sistem uygun uygulamayı seçer"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2503,
+              "title": "Bundle",
+              "summary": "Bundle, key-value mantığıyla çalışan ve Activity’ler arasında veri taşımak için kullanılan bir yapıdır. Intent ile birlikte kullanılır.",
+              "content": "## Bundle\n\nBundle, küçük ve basit verilerin taşınması için idealdir.\n\nVeriler key-value şeklinde saklanır.",
+              "difficulty": "easy",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Bundle ile Veri Gönderme",
+                  "code": "val bundle = Bundle()\nbundle.putString(\"username\", \"Ahmet\")\nintent.putExtras(bundle)\nstartActivity(intent)",
+                  "explanation": "Bundle kullanarak veri aktarımı."
+                }
+              ],
+              "keyPoints": [
+                "Key-value mantığı ile çalışır",
+                "Intent ile birlikte kullanılır",
+                "Küçük veriler için uygundur"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2504,
+              "title": "Serializable / Parcelable",
+              "summary": "Serializable ve Parcelable, karmaşık nesneleri Activity’ler arasında taşımak için kullanılan yöntemlerdir. Parcelable, Android için daha performanslı bir çözümdür.",
+              "content": "## Serializable / Parcelable\n\nSerializable Java tabanlıdır ve kullanımı kolaydır.\n\nParcelable ise Android’e özeldir ve daha hızlıdır.\n\nBüyük veri transferlerinde Parcelable tercih edilmelidir.",
+              "difficulty": "medium",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "Parcelable Kullanımı",
+                  "code": "@Parcelize\ndata class User(val name: String, val age: Int) : Parcelable",
+                  "explanation": "Parcelable veri sınıfı tanımı."
+                }
+              ],
+              "keyPoints": [
+                "Serializable kullanımı kolaydır",
+                "Parcelable daha performanslıdır",
+                "Karmaşık nesneler için kullanılır",
+                "Android projelerinde Parcelable önerilir"
+              ],
+              "questions": []
+            }
+          ],
+          "sectionMixedQuestions": []
+        },
+        {
+          "sectionId": 2600,
+          "sectionTitle": "Veri Saklama",
+          "sectionDescription": "Android uygulamalarda kullanıcı verilerinin yerel olarak saklanması yöntemleri",
+          "order": 6,
+          "topics": [
+            {
+              "topicId": 2601,
+              "title": "SharedPreferences",
+              "summary": "SharedPreferences, küçük ve basit verileri anahtar-değer (key-value) mantığıyla saklamak için kullanılan hafif bir veri saklama yöntemidir. Genellikle kullanıcı ayarları ve basit konfigürasyonlar için tercih edilir.",
+              "content": "## SharedPreferences\n\nSharedPreferences, kalıcı veri saklama sağlar.\n\nUygulama kapatılsa bile veriler korunur.\n\nBoolean, Int, Float, Long ve String gibi basit veri tiplerini destekler.",
+              "difficulty": "easy",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "SharedPreferences Kullanımı",
+                  "code": "val prefs = getSharedPreferences(\"MyPrefs\", Context.MODE_PRIVATE)\nprefs.edit().putString(\"username\", \"Ahmet\").apply()",
+                  "explanation": "SharedPreferences ile veri kaydetme."
+                }
+              ],
+              "keyPoints": [
+                "Key-value yapısı kullanır",
+                "Küçük veriler için uygundur",
+                "Kalıcı veri saklar",
+                "Basit ve hızlıdır"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2602,
+              "title": "Internal Storage",
+              "summary": "Internal Storage, uygulamaya özel dosyaların cihazın dahili hafızasında saklanmasını sağlar. Bu veriler yalnızca ilgili uygulama tarafından erişilebilir.",
+              "content": "## Internal Storage\n\nInternal Storage güvenli bir veri saklama yöntemidir.\n\nDosyalar uygulamaya özeldir ve başka uygulamalar erişemez.\n\nUygulama silindiğinde veriler de silinir.",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "Internal Storage Dosya Yazma",
+                  "code": "openFileOutput(\"data.txt\", Context.MODE_PRIVATE).use {\n    it.write(\"Merhaba\".toByteArray())\n}",
+                  "explanation": "Internal Storage'a dosya yazma örneği."
+                }
+              ],
+              "keyPoints": [
+                "Uygulamaya özeldir",
+                "Güvenlidir",
+                "Dosya bazlı veri saklar",
+                "Uygulama silinince veriler silinir"
+              ],
+              "questions": []
+            },
+            {
+              "topicId": 2603,
+              "title": "External Storage (Kavramsal)",
+              "summary": "External Storage, cihazın ortak depolama alanını kullanarak veri saklamayı ifade eder. Diğer uygulamalar ve kullanıcı tarafından erişilebilir olduğu için güvenlik açısından dikkatli kullanılmalıdır.",
+              "content": "## External Storage\n\nExternal Storage genellikle medya dosyaları için kullanılır.\n\nAndroid 10 ve sonrası sürümlerde scoped storage kavramı ile erişim kısıtlanmıştır.\n\nİzin (permission) gerektirebilir.",
+              "difficulty": "medium",
+              "order": 3,
+              "codeExamples": [],
+              "keyPoints": [
+                "Ortak depolama alanıdır",
+                "Diğer uygulamalar erişebilir",
+                "Permission gerektirebilir",
+                "Medya dosyaları için uygundur"
+              ],
+              "questions": []
+            }
+          ],
+          "sectionMixedQuestions": []
+        }
+      ],
       "interviewQuestions": []
     },
     {
