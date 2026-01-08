@@ -4691,7 +4691,258 @@
         ]
         }
       ],
-      "interviewQuestions": []
+      "interviewQuestions": [
+        {
+          "questionId": 90001,
+          "question": "Kotlin'de değiştirilemeyen değişken hangisidir?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": ["var", "val", "let", "const"],
+          "correctAnswerIndex": 1,
+          "explanation": "val immutable değişkenler için kullanılır.",
+          "tags": ["val", "variables"]
+        },
+        {
+          "questionId": 90002,
+          "question": "Aşağıdaki veri tiplerinden hangisi kesirli sayı tutar?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": ["Int", "Long", "Float", "Boolean"],
+          "correctAnswerIndex": 2,
+          "explanation": "Float ve Double kesirli sayılar içindir.",
+          "tags": ["float", "double"]
+        },
+        {
+          "questionId": 90003,
+          "question": "when yapısı neyin alternatifidir?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": ["for", "while", "if-else zinciri", "try-catch"],
+          "correctAnswerIndex": 2,
+          "explanation": "when, if-else zincirlerinin daha okunabilir halidir.",
+          "tags": ["when"]
+        },
+        {
+          "questionId": 90004,
+          "question": "Aşağıdaki döngülerden hangisi koşul yanlış olsa bile en az bir kez çalışır?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": ["for", "while", "do-while", "repeat"],
+          "correctAnswerIndex": 2,
+          "explanation": "do-while döngüsü en az bir kez çalışır.",
+          "tags": ["loop"]
+        },
+        {
+          "questionId": 90005,
+          "question": "Hangi koleksiyon türü benzersiz (unique) elemanlar tutar?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": ["List", "Array", "Set", "Map"],
+          "correctAnswerIndex": 2,
+          "explanation": "Set aynı elemandan birden fazla tutmaz.",
+          "tags": ["set"]
+        },
+        {
+          "questionId": 90006,
+          "question": "Map koleksiyonunda veriler nasıl tutulur?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "Sadece değer",
+            "Index ve değer",
+            "Key - Value",
+            "Liste şeklinde"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Map key-value yapısıyla çalışır.",
+          "tags": ["map"]
+        },
+        {
+          "questionId": 90007,
+          "question": "Fonksiyonun bir değer döndürmesini sağlayan yapı hangisidir?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": ["print", "return", "break", "continue"],
+          "correctAnswerIndex": 1,
+          "explanation": "return fonksiyondan değer döndürür.",
+          "tags": ["functions"]
+        },
+        {
+          "questionId": 90008,
+          "question": "Nullable bir değişken nasıl tanımlanır?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": ["String name", "String! name", "String? name", "nullable String"],
+          "correctAnswerIndex": 2,
+          "explanation": "Kotlin'de nullable değişkenler '?' ile tanımlanır.",
+          "tags": ["null_safety"]
+        },
+        {
+          "questionId": 90009,
+          "question": "Elvis operatörü (?:) ne işe yarar?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "Null kontrolü yapar",
+            "Exception fırlatır",
+            "Null ise varsayılan değer döndürür",
+            "Tip dönüşümü yapar"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Null durumunda alternatif değer döndürür.",
+          "tags": ["elvis"]
+        },
+        {
+          "questionId": 90010,
+          "question": "lateinit ile ilgili hangisi doğrudur?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "val ile kullanılır",
+            "Primitive tiplerde kullanılır",
+            "Sonradan initialize edilir",
+            "Nullable olmak zorundadır"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "lateinit, non-null var değişkenlerde kullanılır.",
+          "tags": ["lateinit"]
+        },
+        {
+          "questionId": 90011,
+          "question": "Bir sınıfın miras alınabilmesi için hangi anahtar kelime gerekir?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": ["abstract", "open", "override", "protected"],
+          "correctAnswerIndex": 1,
+          "explanation": "Kotlin'de sınıflar varsayılan olarak final'dır.",
+          "tags": ["inheritance"]
+        },
+        {
+          "questionId": 90012,
+          "question": "Encapsulation'ın temel amacı nedir?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "Performans artırmak",
+            "Veriyi gizlemek",
+            "Kod kısaltmak",
+            "UI ayırmak"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Encapsulation veri güvenliği sağlar.",
+          "tags": ["encapsulation"]
+        },
+        {
+          "questionId": 90013,
+          "question": "Polymorphism neyi ifade eder?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "Çoklu constructor",
+            "Aynı metodun farklı davranışı",
+            "Veri gizleme",
+            "Tek sorumluluk"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Override edilen fonksiyonlar polymorphism örneğidir.",
+          "tags": ["polymorphism"]
+        },
+        {
+          "questionId": 90014,
+          "question": "Lambda nedir?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "İsimsiz sınıf",
+            "İsimsiz fonksiyon",
+            "Interface",
+            "Değişken"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Lambda isimsiz fonksiyonlardır.",
+          "tags": ["lambda"]
+        },
+        {
+          "questionId": 90015,
+          "question": "map fonksiyonu ne yapar?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "Filtreler",
+            "Dönüştürür",
+            "Siler",
+            "Sıralar"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "map her elemanı dönüştürür.",
+          "tags": ["map"]
+        },
+        {
+          "questionId": 90016,
+          "question": "let scope fonksiyonu genellikle ne için kullanılır?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "Nesne oluşturmak",
+            "Yan etki",
+            "Null kontrolü",
+            "Thread yönetimi"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "let genellikle nullable işlemler için kullanılır.",
+          "tags": ["scope"]
+        },
+        {
+          "questionId": 90017,
+          "question": "Exception fırlatmak için hangi anahtar kelime kullanılır?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": ["throw", "throws", "catch", "error"],
+          "correctAnswerIndex": 0,
+          "explanation": "throw exception fırlatır.",
+          "tags": ["exception"]
+        },
+        {
+          "questionId": 90018,
+          "question": "finally bloğu ne zaman çalışır?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "Sadece hata olunca",
+            "Sadece try başarılıysa",
+            "Her durumda",
+            "Hiçbir zaman"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "finally her koşulda çalışır.",
+          "tags": ["finally"]
+        },
+        {
+          "questionId": 90019,
+          "question": "Stack trace neyi gösterir?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "UI hatasını",
+            "Hata oluşan method zincirini",
+            "Performansı",
+            "Bellek durumunu"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Stack trace hata yolunu gösterir.",
+          "tags": ["debug"]
+        },
+        {
+          "questionId": 90020,
+          "question": "Kotlin'de try-catch bir expression olabilir mi?",
+          "questionType": "multiple_choice",
+          "difficulty": "hard",
+          "options": ["Hayır", "Sadece Java'da", "Evet", "Sadece finally ile"],
+          "correctAnswerIndex": 2,
+          "explanation": "Kotlin'de try-catch değer döndürebilir.",
+          "tags": ["try_catch"]
+        }
+      ]
     },
     {
       "categoryId": 2,
