@@ -737,7 +737,168 @@
               ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+          {
+            "questionId": 12001,
+            "question": "Kotlin'de değiştirilemeyen (immutable) değişken tanımlamak için hangi anahtar kelime kullanılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "var",
+              "val",
+              "let",
+              "const"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "val ile tanımlanan değişkenler immutable'dır ve bir kez değer atandıktan sonra değiştirilemez.",
+            "tags": ["val", "var"]
+          },
+          {
+            "questionId": 12002,
+            "question": "Aşağıdaki kodlardan hangisi derleme (compile-time) hatası verir?",
+            "questionType": "multiple_choice",
+            "code": "val number = 10\nnumber = 20",
+            "difficulty": "easy",
+            "options": [
+              "Kod hatasız çalışır",
+              "Runtime hatası verir",
+              "Compile-time hatası verir",
+              "Sadece uyarı verir"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "val ile tanımlanan değişkenlere yeniden değer atanamaz. Bu nedenle compile-time hatası oluşur.",
+            "tags": ["val", "compile-error"]
+          },
+          {
+            "questionId": 12003,
+            "question": "Kotlin'de aşağıdaki tam sayı tiplerinden hangisi daha fazla bellek kullanır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Int",
+              "Short",
+              "Long",
+              "Byte"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Long 64-bit, Int ise 32-bit bellek kullanır. Bu nedenle Long daha fazla bellek tüketir.",
+            "tags": ["int", "long"]
+          },
+          {
+            "questionId": 12004,
+            "question": "Aşağıdaki ifadelerden hangisi Double veri tipine aittir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "10",
+              "10L",
+              "10.5",
+              "true"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Ondalıklı (kesirli) sayılar varsayılan olarak Double tipindedir.",
+            "tags": ["double", "float"]
+          },
+          {
+            "questionId": 12005,
+            "question": "Kotlin'de Float tipinde bir sayı tanımlamak için hangi kullanım doğrudur?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "val x = 10.5",
+              "val x = 10.5D",
+              "val x = 10.5F",
+              "val x = Float(10.5)"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Kotlin'de Float tanımlamak için sayı sonuna 'F' eklenmelidir.",
+            "tags": ["float", "double"]
+          },
+          {
+            "questionId": 12006,
+            "question": "Kotlin'de String birleştirme için hangi yöntem kullanılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "+ operatörü",
+              "$ operatörü",
+              "& operatörü",
+              "% operatörü"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "String'ler + operatörü ile birleştirilebilir. Ayrıca string template de kullanılabilir.",
+            "tags": ["string"]
+          },
+          {
+            "questionId": 12007,
+            "question": "Aşağıdaki kodun çıktısı ne olur?",
+            "questionType": "multiple_choice",
+            "code": "val name = \"Ahmet\"\nprintln(\"Merhaba $name\")",
+            "difficulty": "easy",
+            "options": [
+              "Merhaba name",
+              "Merhaba $name",
+              "Merhaba Ahmet",
+              "Compile hatası"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "String template sayesinde $name ifadesi değişkenin değeriyle değiştirilir.",
+            "tags": ["string", "template"]
+          },
+          {
+            "questionId": 12008,
+            "question": "Kotlin'de Boolean veri tipi hangi değerleri alabilir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "0 ve 1",
+              "\"true\" ve \"false\"",
+              "true ve false",
+              "yes ve no"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Boolean veri tipi yalnızca true veya false değerlerini alır.",
+            "tags": ["boolean"]
+          },
+          {
+            "questionId": 12009,
+            "question": "Aşağıdaki dönüşümlerden hangisi Kotlin'de doğrudur?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "val x: Int = \"10\"",
+              "val x = 10.toString()",
+              "val x: String = 10",
+              "val x = Int(\"10\")"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Kotlin'de tip dönüşümleri açık yapılır. toString() doğru bir kullanımdır.",
+            "tags": ["type-conversion"]
+          },
+          {
+            "questionId": 12010,
+            "question": "Kotlin'de neden otomatik (implicit) tip dönüşümü yoktur?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Performansı düşürdüğü için",
+              "Okunabilirliği azalttığı için",
+              "Tip güvenliğini artırmak için",
+              "Sadece Java uyumluluğu için"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Kotlin, tip güvenliğini artırmak ve olası hataları önlemek için implicit type casting yapmaz.",
+            "tags": ["type-safety", "conversion"]
+          }
+        ]
         },
         {
           "sectionId": 103,
@@ -1222,7 +1383,168 @@
               ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+          {
+            "questionId": 13001,
+            "question": "Kotlin'de if yapısı hakkında aşağıdakilerden hangisi doğrudur?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Sadece koşul kontrolü için kullanılır, değer döndüremez",
+              "Sadece Boolean döndürür",
+              "Bir ifade (expression) olarak değer döndürebilir",
+              "Sadece Java uyumluluğu için vardır"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Kotlin'de if bir expression'dır ve bir değer döndürebilir.",
+            "tags": ["if", "else"]
+          },
+          {
+            "questionId": 13002,
+            "question": "Aşağıdaki kodun çıktısı ne olur?",
+            "questionType": "multiple_choice",
+            "code": "val x = 10\nval result = if (x > 5) \"Büyük\" else \"Küçük\"\nprintln(result)",
+            "difficulty": "easy",
+            "options": [
+              "Küçük",
+              "Büyük",
+              "true",
+              "Compile-time hatası"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "x değeri 5'ten büyük olduğu için if bloğu çalışır ve \"Büyük\" yazdırılır.",
+            "tags": ["if", "else"]
+          },
+          {
+            "questionId": 13003,
+            "question": "Kotlin'de when yapısı için aşağıdakilerden hangisi doğrudur?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Sadece switch yerine kullanılır",
+              "Sadece Int tipleriyle çalışır",
+              "Hem koşul hem değer döndürebilir",
+              "Sadece Boolean döndürür"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "when, Kotlin'de güçlü bir kontrol yapısıdır ve expression olarak değer döndürebilir.",
+            "tags": ["when"]
+          },
+          {
+            "questionId": 13004,
+            "question": "Aşağıdaki when bloğunun çıktısı ne olur?",
+            "questionType": "multiple_choice",
+            "code": "val day = 3\nval result = when(day) {\n    1 -> \"Pazartesi\"\n    2 -> \"Salı\"\n    3 -> \"Çarşamba\"\n    else -> \"Bilinmiyor\"\n}\nprintln(result)",
+            "difficulty": "easy",
+            "options": [
+              "Salı",
+              "Çarşamba",
+              "Pazartesi",
+              "Bilinmiyor"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "day değeri 3 olduğu için when bloğunda \"Çarşamba\" çalışır.",
+            "tags": ["when"]
+          },
+          {
+            "questionId": 13005,
+            "question": "Aşağıdaki for döngüsü kaç kez çalışır?",
+            "questionType": "multiple_choice",
+            "code": "for (i in 1..5) {\n    println(i)\n}",
+            "difficulty": "easy",
+            "options": [
+              "4",
+              "5",
+              "6",
+              "Sonsuz"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "1..5 aralığı her iki sınırı da dahil eder, döngü 5 kez çalışır.",
+            "tags": ["for"]
+          },
+          {
+            "questionId": 13006,
+            "question": "Kotlin'de aşağıdaki aralıklardan hangisi 5 değerini içermez?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "1..5",
+              "1 until 5",
+              "5 downTo 1",
+              "1..10"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "until üst sınırı dahil etmez, bu nedenle 5 değeri aralığa dahil değildir.",
+            "tags": ["for", "range"]
+          },
+          {
+            "questionId": 13007,
+            "question": "Aşağıdaki while döngüsü ile ilgili hangisi doğrudur?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "En az bir kez çalışır",
+              "Koşul sağlanmazsa hiç çalışmaz",
+              "Sadece Int ile çalışır",
+              "for döngüsünden daha hızlıdır"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "while döngüsünde koşul başta kontrol edilir, koşul false ise döngü hiç çalışmaz.",
+            "tags": ["while"]
+          },
+          {
+            "questionId": 13008,
+            "question": "Aşağıdaki kodun çıktısı ne olur?",
+            "questionType": "multiple_choice",
+            "code": "var i = 0\nwhile (i < 3) {\n    print(i)\n    i++\n}",
+            "difficulty": "easy",
+            "options": [
+              "012",
+              "123",
+              "03",
+              "Sonsuz döngü"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "i değeri 0'dan başlayarak 3'e kadar artırılır ve ekrana 012 yazdırılır.",
+            "tags": ["while"]
+          },
+          {
+            "questionId": 13009,
+            "question": "Kotlin'de if-else yerine when kullanmanın avantajı nedir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Daha hızlı çalışır",
+              "Daha az bellek kullanır",
+              "Daha okunabilir ve genişletilebilir yapı sunar",
+              "Sadece Boolean destekler"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "when, çoklu koşullarda kodun okunabilirliğini ve bakımını artırır.",
+            "tags": ["when", "if"]
+          },
+          {
+            "questionId": 13010,
+            "question": "Kotlin'de for döngüsünde index'e erişmek için hangi yapı kullanılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "withIndex()",
+              "getIndex()",
+              "indexOf()",
+              "forEachIndex()"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "withIndex() fonksiyonu, eleman ve index bilgisine birlikte erişim sağlar.",
+            "tags": ["for", "index"]
+          }
+        ]
         },
         {
           "sectionId": 104,
@@ -1727,7 +2049,168 @@
               ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+          {
+            "questionId": 14001,
+            "question": "Kotlin'de Array ile List arasındaki temel fark nedir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Array immutable, List mutable'dır",
+              "Array sabit boyutludur, List dinamik boyutludur",
+              "Array sadece Int tutar",
+              "List sadece String tutar"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Array sabit boyutludur, List ise dinamik olarak büyüyüp küçülebilir.",
+            "tags": ["array", "list"]
+          },
+          {
+            "questionId": 14002,
+            "question": "Aşağıdaki Array tanımının çıktısı ne olur?",
+            "questionType": "multiple_choice",
+            "code": "val numbers = arrayOf(1, 2, 3)\nprintln(numbers[1])",
+            "difficulty": "easy",
+            "options": [
+              "1",
+              "2",
+              "3",
+              "Compile-time hatası"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Array indexleri 0'dan başlar, index 1 değeri 2'dir.",
+            "tags": ["array"]
+          },
+          {
+            "questionId": 14003,
+            "question": "Kotlin'de List ile ilgili aşağıdakilerden hangisi doğrudur?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Eleman eklenip çıkarılabilir",
+              "Sadece MutableList ile eleman eklenebilir",
+              "Index yapısı yoktur",
+              "Sadece Int tutar"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "List immutable'dır, eleman ekleme/çıkarma işlemleri MutableList ile yapılır.",
+            "tags": ["list", "mutablelist"]
+          },
+          {
+            "questionId": 14004,
+            "question": "Aşağıdaki kodun çıktısı ne olur?",
+            "questionType": "multiple_choice",
+            "code": "val list = mutableListOf(10, 20)\nlist.add(30)\nprintln(list.size)",
+            "difficulty": "easy",
+            "options": [
+              "2",
+              "3",
+              "30",
+              "Hata verir"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "MutableList'e eleman eklenebilir, toplam eleman sayısı 3 olur.",
+            "tags": ["mutablelist"]
+          },
+          {
+            "questionId": 14005,
+            "question": "Set koleksiyonunun temel özelliği nedir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Index yapısı vardır",
+              "Aynı elemandan birden fazla olabilir",
+              "Tekrarlı elemanlara izin vermez",
+              "Sıralı çalışmak zorundadır"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Set, duplicate (tekrarlı) elemanlara izin vermez.",
+            "tags": ["set"]
+          },
+          {
+            "questionId": 14006,
+            "question": "Aşağıdaki Set tanımının çıktısı ne olur?",
+            "questionType": "multiple_choice",
+            "code": "val set = setOf(1, 2, 2, 3)\nprintln(set.size)",
+            "difficulty": "medium",
+            "options": [
+              "4",
+              "3",
+              "2",
+              "Hata verir"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Set tekrarlı elemanları kabul etmez, sadece 1,2,3 tutulur.",
+            "tags": ["set"]
+          },
+          {
+            "questionId": 14007,
+            "question": "Map koleksiyonunda veriler nasıl tutulur?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Index - Value",
+              "Key - Value",
+              "Value - Value",
+              "Key - Key"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Map yapısı key-value (anahtar-değer) mantığıyla çalışır.",
+            "tags": ["map"]
+          },
+          {
+            "questionId": 14008,
+            "question": "Aşağıdaki Map kullanımında ekrana ne yazdırılır?",
+            "questionType": "multiple_choice",
+            "code": "val map = mapOf(\"a\" to 1, \"b\" to 2)\nprintln(map[\"b\"])",
+            "difficulty": "easy",
+            "options": [
+              "a",
+              "1",
+              "2",
+              "null"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "\"b\" anahtarının karşılığı 2'dir.",
+            "tags": ["map"]
+          },
+          {
+            "questionId": 14009,
+            "question": "MutableMap ile ilgili aşağıdakilerden hangisi doğrudur?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "code": null,
+            "options": [
+              "Yeni key-value eklenemez",
+              "Sadece okunabilir",
+              "Key-value ekleme ve silme yapılabilir",
+              "Index kullanır"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "MutableMap, Map'in değiştirilebilir versiyonudur.",
+            "tags": ["map", "mutablemap"]
+          },
+          {
+            "questionId": 14010,
+            "question": "Aşağıdaki koleksiyonlardan hangisi benzersiz veri tutmak için en uygundur?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Array",
+              "List",
+              "Set",
+              "Map"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Set yapısı duplicate elemanları otomatik olarak engeller.",
+            "tags": ["set", "collections"]
+          }
+        ]
         },
         {
           "sectionId": 105,
@@ -2232,7 +2715,162 @@
               ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+          {
+            "questionId": 16001,
+            "question": "Kotlin'de nullable bir değişken nasıl tanımlanır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "String name",
+              "String! name",
+              "String? name",
+              "nullable String name"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Kotlin'de nullable değişkenler '?' işareti ile tanımlanır.",
+            "tags": ["null_safety", "nullable"]
+          },
+          {
+            "questionId": 16002,
+            "question": "Aşağıdaki kodun çıktısı ne olur?",
+            "questionType": "multiple_choice",
+            "code": "fun printLength(text: String?) {\n    println(text?.length)\n}\n\nprintLength(null)",
+            "difficulty": "easy",
+            "options": [
+              "0",
+              "null",
+              "Compile-time hatası",
+              "Runtime hatası"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Safe call (?.) kullanıldığı için null durumda hata oluşmaz ve null yazdırılır.",
+            "tags": ["safe_call", "null_safety"]
+          },
+          {
+            "questionId": 16003,
+            "question": "Elvis operatörü (?:) ne amaçla kullanılır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Null kontrolü yapmak",
+              "Exception fırlatmak",
+              "Null durumunda varsayılan değer vermek",
+              "Tip dönüşümü yapmak"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Elvis operatörü, ifade null ise alternatif bir değer döndürmek için kullanılır.",
+            "tags": ["elvis_operator", "null_safety"]
+          },
+          {
+            "questionId": 16004,
+            "question": "Aşağıdaki kod çalıştığında ne olur?",
+            "questionType": "multiple_choice",
+            "code": "val name: String? = null\nprintln(name!!)",
+            "difficulty": "medium",
+            "options": [
+              "null yazdırılır",
+              "Boş string yazdırılır",
+              "Compile-time hatası",
+              "NullPointerException"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "!! operatörü null olmayan varsayımı yapar. Değer null olduğu için runtime'da NullPointerException fırlatılır.",
+            "tags": ["not_null_assertion", "exception"]
+          },
+          {
+            "questionId": 16005,
+            "question": "Aşağıdakilerden hangisi lateinit için doğrudur?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Primitive tiplerde kullanılabilir",
+              "val ile kullanılabilir",
+              "Nullable değişkenlerde kullanılır",
+              "Sonradan initialize edilen non-null değişkenler için kullanılır"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "lateinit, non-null ve sonradan initialize edilecek var değişkenler için kullanılır.",
+            "tags": ["lateinit"]
+          },
+          {
+            "questionId": 16006,
+            "question": "Aşağıdaki kod neden hatalıdır?",
+            "questionType": "multiple_choice",
+            "code": "lateinit var age: Int",
+            "difficulty": "medium",
+            "options": [
+              "var yerine val kullanılması gerekir",
+              "lateinit sadece String için geçerlidir",
+              "Primitive tiplerde kullanılamaz",
+              "Int nullable olmadığı için"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "lateinit primitive tiplerde kullanılamaz, sadece reference type'lar için geçerlidir.",
+            "tags": ["lateinit", "primitive"]
+          },
+          {
+            "questionId": 16007,
+            "question": "lazy delegate ile ilgili aşağıdakilerden hangisi doğrudur?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Her erişimde yeniden hesaplanır",
+              "Sadece var ile kullanılabilir",
+              "İlk erişimde initialize edilir",
+              "Nullable değişkenler için zorunludur"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "lazy, değişkeni ilk erişimde initialize eder ve sonucu saklar.",
+            "tags": ["lazy"]
+          },
+          {
+            "questionId": 16008,
+            "question": "Aşağıdaki kodun çıktısı nedir?",
+            "questionType": "multiple_choice",
+            "code": "val number: Int? = null\nval result = number ?: 10\nprintln(result)",
+            "difficulty": "easy",
+            "options": [
+              "null",
+              "0",
+              "10",
+              "Compile-time hatası"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "number null olduğu için Elvis operatörü 10 değerini döndürür.",
+            "tags": ["elvis_operator"]
+          },
+          {
+            "questionId": 16009,
+            "question": "Fonksiyon parametreleri nullable olabilir mi?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Hayır",
+              "Sadece varsayılan parametrelerde",
+              "Evet, '?' kullanılarak",
+              "Sadece lateinit ile"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Fonksiyon parametreleri nullable olabilir ve '?' ile belirtilir.",
+            "tags": ["function", "nullable"]
+          },
+          {
+            "questionId": 16010,
+            "question": "lateinit ve lazy arasındaki temel fark nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "hard",
+            "options": [
+              "lateinit thread-safe'dir, lazy değildir",
+              "lateinit var ile, lazy val ile kullanılır",
+              "lazy nullable değişkenler içindir",
+              "lateinit ilk erişimde initialize olur"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "lateinit yalnızca var ile kullanılır, lazy ise val ile ve ilk erişimde initialize edilir.",
+            "tags": ["lateinit", "lazy", "difference"]
+          }
+        ]
         },
         {
           "sectionId": 106,
@@ -3090,7 +3728,159 @@
             }
 
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+          {
+            "questionId": 17001,
+            "question": "Kotlin'de bir sınıf (class) nasıl tanımlanır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "class MyClass {}",
+              "MyClass class {}",
+              "define class MyClass {}",
+              "object MyClass {}"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Kotlin'de sınıflar 'class' anahtar kelimesi ile tanımlanır.",
+            "tags": ["class", "oop"]
+          },
+          {
+            "questionId": 17002,
+            "question": "Primary constructor aşağıdakilerden hangisidir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "class User { constructor(name: String) {} }",
+              "class User(name: String)",
+              "fun constructor() {}",
+              "init(name: String)"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Primary constructor, class tanımının yanında parantez içinde tanımlanır.",
+            "tags": ["constructor", "primary_constructor"]
+          },
+          {
+            "questionId": 17003,
+            "question": "Encapsulation'ın temel amacı nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Kodun daha hızlı çalışmasını sağlamak",
+              "Sınıflar arası kalıtım sağlamak",
+              "Veriyi dış müdahalelere karşı korumak",
+              "Aynı isimli fonksiyonları kullanmak"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Encapsulation, sınıf içindeki veriyi private yaparak kontrollü erişim sağlamayı amaçlar.",
+            "tags": ["encapsulation", "oop"]
+          },
+          {
+            "questionId": 17004,
+            "question": "Aşağıdaki visibility modifier'lardan hangisi sadece aynı sınıf içinde erişime izin verir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "public",
+              "internal",
+              "protected",
+              "private"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "private, yalnızca tanımlandığı sınıf içinde erişilebilir.",
+            "tags": ["visibility", "private"]
+          },
+          {
+            "questionId": 17005,
+            "question": "Kotlin'de inheritance (kalıtım) için hangi anahtar kelime kullanılır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "extends",
+              "inherits",
+              ":",
+              "implements"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Kotlin'de bir sınıf başka bir sınıftan ':' operatörü ile türetilir.",
+            "tags": ["inheritance"]
+          },
+          {
+            "questionId": 17006,
+            "question": "Bir sınıfın miras alınabilmesi için hangi anahtar kelime ile işaretlenmesi gerekir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "abstract",
+              "open",
+              "public",
+              "override"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Kotlin'de sınıflar varsayılan olarak final'dır. Miras alınabilmesi için open olarak tanımlanmalıdır.",
+            "tags": ["open", "inheritance"]
+          },
+          {
+            "questionId": 17007,
+            "question": "Polymorphism aşağıdakilerden hangisini ifade eder?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Bir sınıfın birden fazla constructor'a sahip olması",
+              "Aynı fonksiyonun farklı davranışlar sergilemesi",
+              "Sınıfların gizlenmesi",
+              "Verilerin kapsüllenmesi"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Polymorphism, aynı isimli fonksiyonların farklı sınıflarda farklı davranışlar göstermesidir.",
+            "tags": ["polymorphism"]
+          },
+          {
+            "questionId": 17008,
+            "question": "Aşağıdakilerden hangisi abstraction için doğrudur?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Abstract class instance alınabilir",
+              "Abstract fonksiyonların gövdesi olmak zorundadır",
+              "Detayları gizleyip sadece gerekli yapıyı sunar",
+              "Sadece interface ile yapılır"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Abstraction, karmaşık detayları gizleyerek kullanıcıya sade bir yapı sunar.",
+            "tags": ["abstraction"]
+          },
+          {
+            "questionId": 17009,
+            "question": "Aşağıdaki kodda hangi OOP prensibi uygulanmaktadır?",
+            "questionType": "multiple_choice",
+            "code": "open class Animal {\n    open fun sound() {}\n}\n\nclass Dog : Animal() {\n    override fun sound() {}\n}",
+            "difficulty": "hard",
+            "options": [
+              "Encapsulation",
+              "Inheritance",
+              "Polymorphism",
+              "Abstraction"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Aynı fonksiyonun (sound) farklı sınıflarda farklı şekilde override edilmesi polymorphism örneğidir.",
+            "tags": ["polymorphism", "override"]
+          },
+          {
+            "questionId": 17010,
+            "question": "protected visibility modifier ne anlama gelir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Her yerden erişilebilir",
+              "Sadece aynı dosya içinden erişilebilir",
+              "Sadece aynı sınıf ve alt sınıflardan erişilebilir",
+              "Sadece aynı modülden erişilebilir"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "protected, tanımlandığı sınıf ve o sınıftan türeyen alt sınıflar tarafından erişilebilir.",
+            "tags": ["protected", "visibility"]
+          }
+        ]
         },
         {
           "sectionId": 107,
@@ -3461,7 +4251,160 @@
               ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+          {
+            "questionId": 18001,
+            "question": "Lambda expression nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "İsimsiz bir sınıf",
+              "İsimsiz bir fonksiyon",
+              "Bir interface türü",
+              "Bir veri tipi"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Lambda, isimsiz fonksiyonlardır ve genellikle kısa işlemler için kullanılır.",
+            "tags": ["lambda", "functional"]
+          },
+          {
+            "questionId": 18002,
+            "question": "Aşağıdakilerden hangisi geçerli bir lambda tanımıdır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "{ x, y -> x + y }",
+              "(x, y) => x + y",
+              "lambda x y { x + y }",
+              "fun(x, y) = x + y"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Kotlin'de lambda tanımı { parametreler -> işlem } şeklindedir.",
+            "tags": ["lambda", "syntax"]
+          },
+          {
+            "questionId": 18003,
+            "question": "map fonksiyonunun temel amacı nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Listeyi filtrelemek",
+              "Liste elemanlarını dönüştürmek",
+              "Listeyi sıralamak",
+              "Liste elemanlarını silmek"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "map, koleksiyonun her elemanını dönüştürerek yeni bir liste oluşturur.",
+            "tags": ["map", "collections"]
+          },
+          {
+            "questionId": 18004,
+            "question": "filter fonksiyonu ne yapar?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Elemanları dönüştürür",
+              "Belirli koşula uyanları seçer",
+              "Elemanları gruplar",
+              "Listeyi ters çevirir"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "filter, verilen koşulu sağlayan elemanlardan yeni bir koleksiyon oluşturur.",
+            "tags": ["filter"]
+          },
+          {
+            "questionId": 18005,
+            "question": "Aşağıdaki kodun çıktısı ne olur?",
+            "questionType": "multiple_choice",
+            "code": "val numbers = listOf(1, 2, 3, 4)\nval result = numbers.map { it * 2 }\nprintln(result)",
+            "difficulty": "medium",
+            "options": [
+              "[1, 2, 3, 4]",
+              "[2, 4, 6, 8]",
+              "[1, 4, 9, 16]",
+              "Compile-time hatası"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "map her elemanı 2 ile çarpar ve yeni bir liste döndürür.",
+            "tags": ["map"]
+          },
+          {
+            "questionId": 18006,
+            "question": "Aşağıdaki scope fonksiyonlarından hangisi 'this' kullanır?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "let",
+              "also",
+              "apply",
+              "filter"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "apply ve run scope fonksiyonlarında context object 'this' ile temsil edilir.",
+            "tags": ["scope_functions", "apply"]
+          },
+          {
+            "questionId": 18007,
+            "question": "let scope fonksiyonunun temel kullanım amacı nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Nesneyi yapılandırmak",
+              "Yan etkiler oluşturmak",
+              "Null kontrolü ve dönüşüm",
+              "Thread yönetimi"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "let genellikle null kontrolü ve nesne üzerinde işlem yapmak için kullanılır.",
+            "tags": ["let", "null_safety"]
+          },
+          {
+            "questionId": 18008,
+            "question": "Aşağıdaki kodda hangi scope fonksiyonu kullanılmıştır?",
+            "questionType": "multiple_choice",
+            "code": "val user = User().apply {\n    name = \"Ahmet\"\n    age = 25\n}",
+            "difficulty": "medium",
+            "options": [
+              "let",
+              "run",
+              "also",
+              "apply"
+            ],
+            "correctAnswerIndex": 3,
+            "explanation": "apply, nesneyi yapılandırmak için kullanılır ve this referansını kullanır.",
+            "tags": ["apply", "scope_functions"]
+          },
+          {
+            "questionId": 18009,
+            "question": "also scope fonksiyonunun ayırt edici özelliği nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "hard",
+            "options": [
+              "this kullanır",
+              "Yeni bir nesne döndürür",
+              "Yan etkiler (logging gibi) için kullanılır",
+              "Null-safe değildir"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "also genellikle loglama gibi yan etkiler için kullanılır ve it referansını kullanır.",
+            "tags": ["also"]
+          },
+          {
+            "questionId": 18010,
+            "question": "map ve filter birlikte kullanıldığında ne sağlar?",
+            "questionType": "multiple_choice",
+            "difficulty": "hard",
+            "options": [
+              "Koleksiyonu sıralar",
+              "Koleksiyonu optimize eder",
+              "Filtrelenmiş veriyi dönüştürür",
+              "Sadece performans artışı sağlar"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Önce filter ile elemanlar seçilir, ardından map ile dönüştürülür. Bu, fonksiyonel programlamanın temel desenidir.",
+            "tags": ["map", "filter", "functional"]
+          }
+        ]
         },
         {
           "sectionId": 1700,
@@ -3592,7 +4535,160 @@
               ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+          {
+            "questionId": 19001,
+            "question": "Kotlin'de hata yakalamak için hangi yapı kullanılır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "if-else",
+              "try-catch",
+              "when",
+              "throw-catch"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Kotlin'de runtime hataları yakalamak için try-catch bloğu kullanılır.",
+            "tags": ["try_catch", "exception"]
+          },
+          {
+            "questionId": 19002,
+            "question": "Aşağıdakilerden hangisi runtime exception örneğidir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Syntax error",
+              "NullPointerException",
+              "Import hatası",
+              "Derleme uyarısı"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "NullPointerException, uygulama çalışırken oluşan bir runtime exception'dır.",
+            "tags": ["runtime_exception"]
+          },
+          {
+            "questionId": 19003,
+            "question": "Aşağıdaki kodda hangi durumda exception oluşur?",
+            "questionType": "multiple_choice",
+            "code": "val number = 10\nprintln(number / 0)",
+            "difficulty": "easy",
+            "options": [
+              "Compile-time",
+              "ArithmeticException",
+              "NullPointerException",
+              "Hiçbir hata oluşmaz"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Sıfıra bölme işlemi ArithmeticException fırlatır.",
+            "tags": ["exception", "arithmetic"]
+          },
+          {
+            "questionId": 19004,
+            "question": "Kotlin'de finally bloğunun amacı nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Sadece hata oluştuğunda çalışır",
+              "Exception fırlatmak için kullanılır",
+              "Her durumda çalışır",
+              "Sadece try başarılıysa çalışır"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "finally bloğu, exception oluşsa da oluşmasa da her zaman çalışır.",
+            "tags": ["finally"]
+          },
+          {
+            "questionId": 19005,
+            "question": "Aşağıdaki kodun çıktısı ne olur?",
+            "questionType": "multiple_choice",
+            "code": "try {\n    val list = listOf(1, 2, 3)\n    println(list[5])\n} catch (e: Exception) {\n    println(\"Hata\")\n}",
+            "difficulty": "medium",
+            "options": [
+              "5",
+              "Compile-time hatası",
+              "Hata",
+              "Uygulama kapanır"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "IndexOutOfBoundsException oluşur ve catch bloğu çalışır.",
+            "tags": ["try_catch", "index"]
+          },
+          {
+            "questionId": 19006,
+            "question": "Exception fırlatmak için hangi anahtar kelime kullanılır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "throw",
+              "throws",
+              "exception",
+              "error"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Kotlin'de exception fırlatmak için throw anahtar kelimesi kullanılır.",
+            "tags": ["throw"]
+          },
+          {
+            "questionId": 19007,
+            "question": "Aşağıdakilerden hangisi debug sürecinde en çok kullanılan yöntemlerden biridir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Uygulamayı silip tekrar kurmak",
+              "Print/Log kullanmak",
+              "Random değerler denemek",
+              "Kodları silmek"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Log veya print kullanımı, hata ayıklamada temel ve etkili bir yöntemdir.",
+            "tags": ["debug", "log"]
+          },
+          {
+            "questionId": 19008,
+            "question": "Stack trace neyi ifade eder?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Uygulamanın performansını",
+              "Hatanın oluştuğu method zincirini",
+              "Bellek kullanımını",
+              "UI hatalarını"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Stack trace, hatanın hangi method çağrıları sonucunda oluştuğunu gösterir.",
+            "tags": ["stacktrace", "debug"]
+          },
+          {
+            "questionId": 19009,
+            "question": "Kotlin'de try-catch bir ifade (expression) olarak kullanılabilir mi?",
+            "questionType": "multiple_choice",
+            "difficulty": "hard",
+            "options": [
+              "Hayır",
+              "Sadece Java'da",
+              "Evet",
+              "Sadece finally ile"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Kotlin'de try-catch bir expression'dır ve değer döndürebilir.",
+            "tags": ["expression", "try_catch"]
+          },
+          {
+            "questionId": 19010,
+            "question": "En sağlıklı debug yaklaşımı aşağıdakilerden hangisidir?",
+            "questionType": "multiple_choice",
+            "difficulty": "hard",
+            "options": [
+              "Deneme-yanılma",
+              "Breakpoint ve adım adım inceleme",
+              "Kodun tamamını yazmak",
+              "Exception'ları görmezden gelmek"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Breakpoint kullanarak kodu adım adım incelemek, hatanın kök nedenini bulmada en etkili yöntemdir.",
+            "tags": ["debug", "breakpoint"]
+          }
+        ]
         }
       ],
       "interviewQuestions": []
