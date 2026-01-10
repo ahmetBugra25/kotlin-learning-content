@@ -4997,7 +4997,53 @@
               "questions": []
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+            "questionId": 21001,
+            "question": "Android nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Sadece bir mobil uygulama",
+              "Bir programlama dili",
+              "Linux tabanlı bir mobil işletim sistemi",
+              "Sadece Google’a ait bir telefon markası"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Android, Linux çekirdeği üzerine kurulmuş açık kaynaklı bir mobil işletim sistemidir.",
+            "tags": ["android", "intro"]
+          },
+          {
+            "questionId": 21002,
+            "question": "Android Studio'da bir Android projesi oluşturulduğunda uygulamanın giriş noktası hangi dosyadır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "MainActivity.kt",
+              "AndroidManifest.xml",
+              "build.gradle",
+              "settings.gradle"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "AndroidManifest.xml uygulamanın temel bileşenlerini ve giriş noktalarını tanımlar.",
+            "tags": ["manifest", "project_structure"]
+          },
+          {
+            "questionId": 21003,
+            "question": "Aşağıdakilerden hangisi Android proje yapısında uygulama arayüzlerinin (UI) tanımlandığı klasördür?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "java",
+              "res/layout",
+              "manifest",
+              "gradle"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "XML tabanlı arayüz dosyaları res/layout klasörü altında bulunur.",
+            "tags": ["layout", "ui"]
+          }
+          ]
         },
         {
 
@@ -5115,7 +5161,148 @@
               "questions": []
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+            "questionId": 22001,
+            "question": "Android'de XML dosyalarının temel amacı nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Uygulama mantığını yazmak",
+              "Veritabanı işlemlerini yapmak",
+              "Kullanıcı arayüzünü tanımlamak",
+              "Ağ isteklerini yönetmek"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "XML, Android'de UI bileşenlerini ve yerleşimlerini tanımlamak için kullanılır."
+          },
+          {
+            "questionId": 22002,
+            "question": "Android'de View kavramı neyi ifade eder?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Sadece butonları",
+              "Ekranda görünen tüm UI bileşenlerini",
+              "Sadece layout dosyalarını",
+              "Arka plan işlemlerini"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "TextView, Button, ImageView gibi tüm UI bileşenleri View sınıfından türetilir."
+          },
+          {
+            "questionId": 22003,
+            "question": "LinearLayout'un temel özelliği nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Ögeleri serbestçe konumlandırır",
+              "Ögeleri yatay veya dikey sırayla dizer",
+              "Sadece tek View alır",
+              "Sadece ConstraintLayout içinde çalışır"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "LinearLayout, orientation özelliğiyle View'ları dikey veya yatay dizer."
+          },
+          {
+            "questionId": 22004,
+            "question": "ConstraintLayout kullanmanın en büyük avantajı nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Daha fazla nested layout gerektirir",
+              "Performansı düşürür",
+              "Daha esnek ve performanslı UI tasarımı sağlar",
+              "Sadece basit ekranlarda kullanılır"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "ConstraintLayout, karmaşık UI'ları daha az hiyerarşi ile oluşturur."
+          },
+          {
+            "questionId": 22005,
+            "question": "Nested Layout ne anlama gelir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Tek bir View kullanılması",
+              "Layout içinde başka layout'ların bulunması",
+              "Sadece ConstraintLayout kullanılması",
+              "XML kullanılmadan UI oluşturulması"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Nested Layout, performansı olumsuz etkileyebilecek derin view hiyerarşisi oluşturur."
+          },
+          {
+            "questionId": 22006,
+            "question": "Aşırı nested layout kullanımının olası sonucu nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Uygulamanın daha hızlı çalışması",
+              "Daha az bellek kullanımı",
+              "UI performansının düşmesi",
+              "Kod okunabilirliğinin artması"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Derin view hiyerarşisi ölçüm ve çizim sürelerini uzatır."
+          },
+          {
+            "questionId": 22007,
+            "question": "View Binding'in temel amacı nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "XML yerine Java/Kotlin kullanmak",
+              "findViewById kullanımını ortadan kaldırmak",
+              "UI performansını düşürmek",
+              "Sadece Fragment'larda çalışmak"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "View Binding, type-safe bir şekilde View'lara erişmeyi sağlar."
+          },
+          {
+            "questionId": 22008,
+            "question": "View Binding kullanmanın avantajlarından biri değildir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "NullPointerException riskini azaltır",
+              "Tip güvenliği sağlar",
+              "Runtime'da view hatalarını artırır",
+              "Kod okunabilirliğini artırır"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "View Binding, runtime hataları azaltmayı hedefler."
+          },
+          {
+            "questionId": 22009,
+            "question": "ConstraintLayout'ta View'ların konumu nasıl belirlenir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Sabit piksel değerleriyle",
+              "Parent'a ve diğer View'lara constraint vererek",
+              "Sadece orientation kullanarak",
+              "Gravity özelliğiyle"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "ConstraintLayout, constraint sistemiyle esnek yerleşim sağlar."
+          },
+          {
+            "questionId": 22010,
+            "question": "Modern Android UI tasarımında hangi yaklaşım önerilir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Çok sayıda nested LinearLayout",
+              "ConstraintLayout kullanımı",
+              "AbsoluteLayout kullanımı",
+              "Sabit ekran boyutuna göre tasarım"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "ConstraintLayout, performans ve esneklik açısından önerilen yaklaşımdır."
+          }
+          ]
         },
         {
           "sectionId": 2300,
@@ -5191,7 +5378,148 @@
               "questions": []
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+            "questionId": 23001,
+            "question": "Android'de Activity nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Veritabanı işlemlerini yöneten sınıf",
+              "Kullanıcı arayüzünü temsil eden temel bileşen",
+              "Arka planda çalışan servis",
+              "Sadece Fragment barındıran yapı"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Activity, kullanıcıyla etkileşime girilen tek bir ekranı temsil eder."
+          },
+          {
+            "questionId": 23002,
+            "question": "Bir Activity ilk kez başlatıldığında ilk çağrılan lifecycle metodu hangisidir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "onStart()",
+              "onResume()",
+              "onCreate()",
+              "onRestart()"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "onCreate(), Activity'nin ilk oluşturulduğu yerdir."
+          },
+          {
+            "questionId": 23003,
+            "question": "onStart() metodu ne zaman çağrılır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Activity ekrandan tamamen kaybolduğunda",
+              "Activity kullanıcıya görünür hale geldiğinde",
+              "Activity kapatıldığında",
+              "Uygulama arka plana alındığında"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "onStart(), Activity görünür olduğunda çağrılır."
+          },
+          {
+            "questionId": 23004,
+            "question": "Kullanıcı Activity ile aktif olarak etkileşime geçtiğinde hangi metot çağrılır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "onPause()",
+              "onStop()",
+              "onResume()",
+              "onDestroy()"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "onResume(), Activity foreground'dayken çalışır."
+          },
+          {
+            "questionId": 23005,
+            "question": "Başka bir Activity açıldığında mevcut Activity için hangi metot çağrılır?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "onResume()",
+              "onPause()",
+              "onDestroy()",
+              "onRestart()"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "onPause(), Activity kısmen görünmez olduğunda çağrılır."
+          },
+          {
+            "questionId": 23006,
+            "question": "Activity tamamen görünmez hale geldiğinde hangi lifecycle metodu çalışır?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "onPause()",
+              "onStop()",
+              "onStart()",
+              "onCreate()"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "onStop(), Activity ekranda görünmediğinde çağrılır."
+          },
+          {
+            "questionId": 23007,
+            "question": "onDestroy() metodu ne zaman çağrılır?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Activity arka plana alındığında",
+              "Kullanıcı geri tuşuna bastığında veya sistem Activity'yi yok ettiğinde",
+              "Ekran döndüğünde",
+              "Uygulama ilk açıldığında"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "onDestroy(), Activity tamamen yok edilmeden önce çağrılır."
+          },
+          {
+            "questionId": 23008,
+            "question": "Context nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Sadece UI bileşenlerini temsil eder",
+              "Uygulama ortamı hakkında bilgi sağlayan yapıdır",
+              "Veritabanı bağlantısını yöneten sınıf",
+              "Sadece Activity içinde kullanılan nesne"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Context, uygulamanın çalıştığı ortam hakkında bilgi verir."
+          },
+          {
+            "questionId": 23009,
+            "question": "Aşağıdakilerden hangisi Context örneğidir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "ViewModel",
+              "Intent",
+              "Activity",
+              "LiveData"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Activity, Context sınıfından türetilmiştir."
+          },
+          {
+            "questionId": 23010,
+            "question": "Yanlış Context kullanımı neye yol açabilir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Daha hızlı uygulama",
+              "Memory leak",
+              "Daha az bellek kullanımı",
+              "Daha iyi UI performansı"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Yanlış Context referansları memory leak'e neden olabilir."
+          }
+          ]
         },
         {
           "sectionId": 2400,
@@ -5305,7 +5633,148 @@
               "questions": []
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+            "questionId": 24001,
+            "question": "Android'de Button bileşeni ne için kullanılır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Kullanıcıdan metin almak için",
+              "Kullanıcı etkileşimini tetiklemek için",
+              "Veri saklamak için",
+              "Ekranlar arası geçişi otomatik yapmak için"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Button, kullanıcıdan gelen tıklama gibi etkileşimleri yakalamak için kullanılır."
+          },
+          {
+            "questionId": 24002,
+            "question": "EditText bileşeninin temel amacı nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Metin göstermek",
+              "Buton oluşturmak",
+              "Kullanıcıdan veri girişi almak",
+              "Mesaj göstermek"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "EditText, kullanıcıdan yazı girişi almak için kullanılan UI bileşenidir."
+          },
+          {
+            "questionId": 24003,
+            "question": "Bir Button'a tıklama olayını yakalamak için en yaygın kullanılan yöntem hangisidir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "setOnClickListener",
+              "setOnTouchListener",
+              "setOnFocusChangeListener",
+              "setOnScrollChangeListener"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "setOnClickListener, tıklama olaylarını yakalamak için kullanılır."
+          },
+          {
+            "questionId": 24004,
+            "question": "Kotlin'de bir Click Listener genellikle hangi yapı ile tanımlanır?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Interface implementasyonu",
+              "Lambda expression",
+              "Abstract class",
+              "Data class"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Kotlin'de click listener'lar genellikle lambda ile yazılır."
+          },
+          {
+            "questionId": 24005,
+            "question": "AlertDialog ne amaçla kullanılır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Arka planda işlem yapmak için",
+              "Kullanıcıdan onay veya bilgi almak için",
+              "Toast mesajı göstermek için",
+              "Yeni Activity başlatmak için"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "AlertDialog, kullanıcıya uyarı, onay veya seçenek sunmak için kullanılır."
+          },
+          {
+            "questionId": 24006,
+            "question": "AlertDialog.Builder hangi bileşenle birlikte kullanılır?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Service",
+              "Context",
+              "ViewModel",
+              "RecyclerView"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "AlertDialog oluşturmak için Context gereklidir."
+          },
+          {
+            "questionId": 24007,
+            "question": "Toast mesajlarının temel özelliği nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Kullanıcıdan cevap alır",
+              "Ekranı tamamen kaplar",
+              "Kısa süreli ve geçici mesaj gösterir",
+              "Buton içerir"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Toast mesajları kısa süreli bilgilendirme mesajlarıdır."
+          },
+          {
+            "questionId": 24008,
+            "question": "Snackbar, Toast'a göre hangi avantajı sunar?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Daha uzun süre görünür",
+              "Arka planda çalışır",
+              "Action (geri al gibi) eklenebilir",
+              "Context gerektirmez"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Snackbar, kullanıcıya aksiyon sunabilme özelliği ile Toast'tan ayrılır."
+          },
+          {
+            "questionId": 24009,
+            "question": "EditText içinden alınan metni String'e çevirmek için hangi metot kullanılır?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "getText()",
+              "text",
+              "text.toString()",
+              "valueOf()"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "EditText.text.toString() ile String değeri alınır."
+          },
+          {
+            "questionId": 24010,
+            "question": "Kullanıcı etkileşimlerinde yanlış Context kullanımı neye sebep olabilir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Daha hızlı UI",
+              "Memory leak",
+              "Daha az bellek kullanımı",
+              "Lifecycle hatalarını engeller"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Yanlış Context kullanımı memory leak'e yol açabilir."
+          }
+          ]
         },
         {
           "sectionId": 2500,
@@ -5399,7 +5868,148 @@
               "questions": []
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+            "questionId": 25001,
+            "question": "Explicit Intent ne için kullanılır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Sistemde uygun uygulamayı bulmak için",
+              "Belirli bir Activity veya Component'i başlatmak için",
+              "Broadcast göndermek için",
+              "Arka planda servis çalıştırmak için"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Explicit Intent, hedef Activity veya Component'in açıkça belirtildiği intent türüdür."
+          },
+          {
+            "questionId": 25002,
+            "question": "Implicit Intent'in temel farkı nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Hedef Activity adı zorunludur",
+              "Sadece uygulama içinde çalışır",
+              "Hedefi sistem belirler",
+              "Veri taşıyamaz"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Implicit Intent'te hangi uygulamanın çalışacağına Android sistemi karar verir."
+          },
+          {
+            "questionId": 25003,
+            "question": "Bir Activity'den diğerine veri göndermek için en sık kullanılan yöntem hangisidir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "SharedPreferences",
+              "Intent extras",
+              "Database",
+              "Singleton"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Intent.putExtra() ile Activity'ler arası veri aktarımı yapılır."
+          },
+          {
+            "questionId": 25004,
+            "question": "Intent ile gönderilen küçük ve basit veriler genellikle nerede tutulur?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "ViewModel",
+              "Bundle",
+              "Room Database",
+              "Service"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Intent verileri Bundle içerisinde taşır."
+          },
+          {
+            "questionId": 25005,
+            "question": "Bundle temel olarak ne işe yarar?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "UI çizmek",
+              "Lifecycle yönetmek",
+              "Key-Value şeklinde veri taşımak",
+              "Thread yönetmek"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Bundle, key-value mantığıyla veri taşımak için kullanılır."
+          },
+          {
+            "questionId": 25006,
+            "question": "Aşağıdakilerden hangisi Implicit Intent kullanımına örnektir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Yeni Activity başlatmak",
+              "Uygulama içi sayfa açmak",
+              "Telefon arama ekranını açmak",
+              "Fragment değiştirmek"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Telefon arama, tarayıcı açma gibi işlemler implicit intent ile yapılır."
+          },
+          {
+            "questionId": 25007,
+            "question": "Serializable ve Parcelable arasındaki temel fark nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Serializable daha hızlıdır",
+              "Parcelable Android'e özeldir ve daha performanslıdır",
+              "Parcelable Java'ya özeldir",
+              "İkisi de aynıdır"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Parcelable Android'e özeldir ve Serializable'a göre daha performanslıdır."
+          },
+          {
+            "questionId": 25008,
+            "question": "Büyük veri nesneleri Intent ile taşınırken hangisi tercih edilmelidir?",
+            "questionType": "multiple_choice",
+            "difficulty": "hard",
+            "options": [
+              "Serializable",
+              "Parcelable",
+              "Bundle",
+              "Global değişken"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Parcelable, performans açısından büyük veri transferlerinde tercih edilir."
+          },
+          {
+            "questionId": 25009,
+            "question": "Yanlış veri aktarımı aşağıdakilerden hangisine sebep olabilir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Compile error",
+              "Memory leak",
+              "App crash (Runtime exception)",
+              "UI donması"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Yanlış key veya null veri alma işlemleri runtime crash'e yol açabilir."
+          },
+          {
+            "questionId": 25010,
+            "question": "Intent ile veri alırken kullanılan metot hangisidir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "getIntent()",
+              "receiveExtra()",
+              "fetchData()",
+              "loadBundle()"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Activity içinde getIntent() ile gelen intent alınır ve extras okunur."
+          }
+          ]
         },
         {
           "sectionId": 2600,
@@ -5468,10 +6078,432 @@
               "questions": []
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+            "questionId": 26001,
+            "question": "SharedPreferences temel olarak ne için kullanılır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Büyük dosyaları saklamak",
+              "Kullanıcı ayarları ve küçük veriler saklamak",
+              "Veritabanı işlemleri yapmak",
+              "Geçici UI verileri tutmak"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "SharedPreferences, key-value şeklinde küçük ve basit verileri saklamak için kullanılır."
+          },
+          {
+            "questionId": 26002,
+            "question": "Aşağıdakilerden hangisi SharedPreferences için uygun bir veri örneğidir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Profil fotoğrafı",
+              "Kullanıcı giriş durumu (true/false)",
+              "Video dosyası",
+              "Liste halinde ürünler"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Boolean, String, Int gibi küçük veriler SharedPreferences için uygundur."
+          },
+          {
+            "questionId": 26003,
+            "question": "Internal Storage'un temel özelliği nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Diğer uygulamalar tarafından erişilebilir",
+              "Sadece uygulamanın kendisi erişebilir",
+              "İnternet bağlantısı gerektirir",
+              "Kullanıcı silemez"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Internal Storage, uygulamaya özel bir alandır ve başka uygulamalar erişemez."
+          },
+          {
+            "questionId": 26004,
+            "question": "Uygulama silindiğinde Internal Storage'taki veriler ne olur?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Cihazda kalır",
+              "Cloud'a taşınır",
+              "Otomatik olarak silinir",
+              "External Storage'a aktarılır"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Uygulama kaldırıldığında Internal Storage içindeki tüm veriler silinir."
+          },
+          {
+            "questionId": 26005,
+            "question": "External Storage hangi tür veriler için daha uygundur?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Geçici ayarlar",
+              "Kullanıcıya ait büyük medya dosyaları",
+              "Şifreler",
+              "Token bilgileri"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Fotoğraf, video gibi büyük ve kullanıcıya ait dosyalar External Storage'ta tutulur."
+          },
+          {
+            "questionId": 26006,
+            "question": "External Storage kullanırken genellikle neye ihtiyaç duyulur?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "Internet izni",
+              "Location izni",
+              "Storage izni",
+              "Camera izni"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "External Storage erişimi için runtime storage izinleri gerekebilir."
+          },
+          {
+            "questionId": 26007,
+            "question": "Kullanıcı uygulamayı silse bile dosyaların kalmasını istiyorsak hangi yöntem tercih edilir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "SharedPreferences",
+              "Internal Storage",
+              "External Storage",
+              "ViewModel"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "External Storage verileri uygulama silinse bile cihazda kalabilir."
+          },
+          {
+            "questionId": 26008,
+            "question": "Güvenlik açısından en güvenli veri saklama yöntemi hangisidir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "options": [
+              "External Storage",
+              "SharedPreferences",
+              "Internal Storage",
+              "Cache"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Internal Storage yalnızca uygulama tarafından erişilebilir olduğu için daha güvenlidir."
+          },
+          {
+            "questionId": 26009,
+            "question": "SharedPreferences verileri hangi yapıda saklar?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "Liste",
+              "JSON",
+              "Key-Value",
+              "Tablo"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "SharedPreferences key-value mantığıyla çalışır."
+          },
+          {
+            "questionId": 26010,
+            "question": "Aşağıdakilerden hangisi veri saklama yöntemleri arasında kavramsal olarak yer alır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "options": [
+              "RecyclerView",
+              "External Storage",
+              "Intent",
+              "Fragment"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "External Storage, Android'de veri saklama yöntemlerinden biridir."
+          }
+          ]
         }
       ],
-      "interviewQuestions": []
+      "interviewQuestions": [
+        {
+          "questionId": 20001,
+          "question": "Android nedir?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "Bir programlama dili",
+            "Bir mobil işletim sistemi",
+            "Bir UI kütüphanesi",
+            "Bir veritabanı sistemi"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Android, Linux tabanlı açık kaynaklı bir mobil işletim sistemidir."
+        },
+        {
+          "questionId": 20002,
+          "question": "Android uygulamasının giriş noktası hangi dosyada tanımlanır?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "MainActivity.kt",
+            "AndroidManifest.xml",
+            "build.gradle",
+            "res/layout"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Uygulamanın bileşenleri ve giriş noktaları AndroidManifest.xml dosyasında tanımlanır."
+        },
+        {
+          "questionId": 20003,
+          "question": "XML Android'de ne için kullanılır?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "Veritabanı işlemleri",
+            "UI tasarımı",
+            "Network işlemleri",
+            "Thread yönetimi"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "XML, Android'de arayüz (UI) tasarlamak için kullanılır."
+        },
+        {
+          "questionId": 20004,
+          "question": "Android'de View nedir?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "Bir ekran",
+            "Bir UI bileşeni",
+            "Bir veritabanı",
+            "Bir servis"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "View, ekranda görünen temel UI bileşenidir."
+        },
+        {
+          "questionId": 20005,
+          "question": "LinearLayout'un temel özelliği nedir?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "Bileşenleri üst üste dizer",
+            "Bileşenleri yatay veya dikey sıralar",
+            "Serbest konumlandırma sağlar",
+            "Sadece tek View alır"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "LinearLayout, View'ları yatay veya dikey olarak sıralar."
+        },
+        {
+          "questionId": 20006,
+          "question": "ConstraintLayout neden tercih edilir?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "Daha yavaş çalıştığı için",
+            "Daha az esneklik sağladığı için",
+            "Performanslı ve esnek olduğu için",
+            "Sadece küçük projelerde kullanıldığı için"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "ConstraintLayout, düz ve performanslı UI yapıları kurmayı sağlar."
+        },
+        {
+          "questionId": 20007,
+          "question": "View Binding'in temel avantajı nedir?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "Daha fazla XML yazmak",
+            "findViewById ihtiyacını kaldırmak",
+            "UI performansını düşürmek",
+            "Sadece Fragment'ta çalışmak"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "View Binding, type-safe erişim sağlayarak findViewById ihtiyacını ortadan kaldırır."
+        },
+        {
+          "questionId": 20008,
+          "question": "Activity nedir?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "Bir UI bileşeni",
+            "Bir ekranı temsil eden bileşen",
+            "Bir veritabanı",
+            "Bir servis"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Activity, kullanıcıya gösterilen bir ekranı temsil eder."
+        },
+        {
+          "questionId": 20009,
+          "question": "Activity lifecycle'da ilk çağrılan metot hangisidir?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "onStart",
+            "onResume",
+            "onCreate",
+            "onPause"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "onCreate(), Activity ilk oluşturulduğunda çağrılır."
+        },
+        {
+          "questionId": 20010,
+          "question": "Context ne işe yarar?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "UI çizmek",
+            "Uygulama ortamına erişmek",
+            "Veritabanı oluşturmak",
+            "Thread başlatmak"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Context, uygulama ortamı ve kaynaklara erişim sağlar."
+        },
+        {
+          "questionId": 20011,
+          "question": "Kullanıcı tıklamalarını yakalamak için hangi yapı kullanılır?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "Intent",
+            "Click Listener",
+            "Context",
+            "Fragment"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Click Listener, kullanıcı etkileşimlerini yakalar."
+        },
+        {
+          "questionId": 20012,
+          "question": "Toast ve Snackbar arasındaki temel fark nedir?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "Snackbar etkileşimlidir",
+            "Toast daha uzun sürer",
+            "Toast buton içerir",
+            "Snackbar arka planda çalışır"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "Snackbar, kullanıcıya aksiyon (buton) sunabilir."
+        },
+        {
+          "questionId": 20013,
+          "question": "Explicit Intent ne için kullanılır?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "Sisteme görev bırakmak",
+            "Belirli Activity başlatmak",
+            "Dosya okumak",
+            "Veri saklamak"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Explicit Intent, hedef Activity'nin açıkça belirtildiği intent türüdür."
+        },
+        {
+          "questionId": 20014,
+          "question": "Implicit Intent hangi durumda kullanılır?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "Uygulama içi ekran geçişi",
+            "Telefon araması yapmak",
+            "Fragment değiştirmek",
+            "View Binding kullanmak"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Telefon arama, tarayıcı açma gibi işlemler implicit intent ile yapılır."
+        },
+        {
+          "questionId": 20015,
+          "question": "Intent ile taşınan veriler nerede tutulur?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "SharedPreferences",
+            "Bundle",
+            "Room",
+            "ViewModel"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Intent verileri Bundle içinde taşır."
+        },
+        {
+          "questionId": 20016,
+          "question": "Parcelable neden Serializable'dan daha çok tercih edilir?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "Daha kolay yazıldığı için",
+            "Daha güvenli olduğu için",
+            "Daha performanslı olduğu için",
+            "Sadece Kotlin'de çalıştığı için"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Parcelable, Android'e özel ve daha performanslıdır."
+        },
+        {
+          "questionId": 20017,
+          "question": "SharedPreferences hangi tür veriler için uygundur?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "Büyük dosyalar",
+            "Kullanıcı ayarları",
+            "Video kayıtları",
+            "Liste verileri"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "SharedPreferences küçük ve basit ayar verileri için kullanılır."
+        },
+        {
+          "questionId": 20018,
+          "question": "Internal Storage'un en önemli özelliği nedir?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "Herkese açık olması",
+            "Uygulamaya özel olması",
+            "Cloud ile senkron çalışması",
+            "İzin gerektirmesi"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Internal Storage sadece uygulamaya özeldir."
+        },
+        {
+          "questionId": 20019,
+          "question": "External Storage genellikle ne için kullanılır?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "Şifre saklamak",
+            "Uygulama ayarları",
+            "Fotoğraf ve video dosyaları",
+            "Token bilgileri"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "External Storage kullanıcıya ait büyük dosyalar için uygundur."
+        },
+        {
+          "questionId": 20020,
+          "question": "Yanlış veri saklama yöntemi kullanımı neye yol açabilir?",
+          "questionType": "multiple_choice",
+          "difficulty": "hard",
+          "options": [
+            "Compile error",
+            "UI renk hatası",
+            "Güvenlik ve performans sorunları",
+            "XML parse hatası"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Yanlış saklama yöntemi güvenlik açıklarına ve performans problemlerine yol açabilir."
+        }
+      ]
     },
     {
       "categoryId": 3,
