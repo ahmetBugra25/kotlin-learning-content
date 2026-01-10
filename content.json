@@ -5174,7 +5174,8 @@
                 "Ağ isteklerini yönetmek"
               ],
               "correctAnswerIndex": 2,
-              "explanation": "XML, Android'de UI bileşenlerini ve yerleşimlerini tanımlamak için kullanılır."
+              "explanation": "XML, Android'de UI bileşenlerini ve yerleşimlerini tanımlamak için kullanılır.",
+              "tags": ["xml", "ui"]
             },
             {
               "questionId": 22002,
