@@ -6606,7 +6606,148 @@
             "questions": []
           }
         ],
-        "sectionMixedQuestions": []
+        "sectionMixedQuestions": [
+          {
+          "questionId": 31001,
+          "question": "RecyclerView’un temel amacı nedir?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "Tek bir View göstermek",
+            "Az sayıda veriyi statik göstermek",
+            "Büyük veri listelerini performanslı göstermek",
+            "Fragment geçişlerini yönetmek"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "RecyclerView, büyük veri listelerini minimum bellek kullanımıyla performanslı şekilde göstermek için tasarlanmıştır."
+        },
+        {
+          "questionId": 31002,
+          "question": "RecyclerView neden ListView’a göre daha avantajlıdır?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "Daha az kod yazıldığı için",
+            "View recycling ve esneklik sağladığı için",
+            "Sadece yatay çalıştığı için",
+            "XML gerektirmediği için"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "RecyclerView, View recycling, ViewHolder pattern ve esnek layout yapıları sayesinde daha performanslıdır."
+        },
+        {
+          "questionId": 31003,
+          "question": "RecyclerView’da item’ların nasıl görüneceğini belirleyen yapı hangisidir?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "Activity",
+            "Adapter",
+            "ViewHolder",
+            "LayoutManager"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Adapter, veri ile View’ları bağlayan ve item görünümünü yöneten sınıftır."
+        },
+        {
+          "questionId": 31004,
+          "question": "ViewHolder’ın temel görevi nedir?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "Veri çekmek",
+            "UI çizmek",
+            "View referanslarını tutmak",
+            "Listeyi sıralamak"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "ViewHolder, itemView içindeki View referanslarını tutarak performansı artırır."
+        },
+        {
+          "questionId": 31005,
+          "question": "RecyclerView’da ViewHolder kullanmanın temel faydası nedir?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "Daha fazla bellek kullanmak",
+            "findViewById çağrılarını azaltmak",
+            "Thread sayısını artırmak",
+            "Veriyi cache’lemek"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "ViewHolder, findViewById çağrılarını minimize ederek performansı artırır."
+        },
+        {
+          "questionId": 31006,
+          "question": "Adapter içinde hangi metot item sayısını belirtir?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "onBindViewHolder",
+            "onCreateViewHolder",
+            "getItemCount",
+            "notifyDataSetChanged"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "getItemCount(), RecyclerView’a kaç item gösterileceğini bildirir."
+        },
+        {
+          "questionId": 31007,
+          "question": "onCreateViewHolder metodu ne zaman çağrılır?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "Her veri değiştiğinde",
+            "Yeni bir View oluşturulması gerektiğinde",
+            "Scroll durduğunda",
+            "Liste sıfırlandığında"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "onCreateViewHolder, yeni bir ViewHolder oluşturulması gerektiğinde çağrılır."
+        },
+        {
+          "questionId": 31008,
+          "question": "onBindViewHolder metodunun görevi nedir?",
+          "questionType": "multiple_choice",
+          "difficulty": "easy",
+          "options": [
+            "Layout inflate etmek",
+            "ViewHolder oluşturmak",
+            "Veriyi ViewHolder’a bağlamak",
+            "RecyclerView’u başlatmak"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "onBindViewHolder, veriyi ilgili ViewHolder’a bağlar."
+        },
+        {
+          "questionId": 31009,
+          "question": "RecyclerView’da farklı liste düzenleri için hangi yapı kullanılır?",
+          "questionType": "multiple_choice",
+          "difficulty": "medium",
+          "options": [
+            "Adapter",
+            "ViewHolder",
+            "LayoutManager",
+            "DiffUtil"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "LayoutManager, RecyclerView’un item’ları nasıl yerleştireceğini belirler."
+        },
+        {
+          "questionId": 31010,
+          "question": "Aşağıdakilerden hangisi RecyclerView performansını artıran bir yaklaşımdır?",
+          "questionType": "multiple_choice",
+          "difficulty": "hard",
+          "options": [
+            "Her seferinde yeni Adapter oluşturmak",
+            "notifyDataSetChanged kullanmak",
+            "ViewHolder pattern kullanmak",
+            "Nested RecyclerView kullanmak"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "ViewHolder pattern, gereksiz View oluşturmayı azaltarak performansı artırır."
+        }
+        ]
       },
       {
         "sectionId": 3200,
