@@ -4971,7 +4971,120 @@
                 "Kotlin ve Java ile uygulama geliştirilir",
                 "Google Play Store üzerinden dağıtılır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 210101,
+                  "question": "Android işletim sistemi hangi şirket tarafından geliştirilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Apple",
+                    "Microsoft",
+                    "Google",
+                    "Samsung"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Android, Google tarafından geliştirilen açık kaynaklı bir mobil işletim sistemidir.",
+                  "tags": ["android", "temel"]
+                },
+                {
+                  "questionId": 210102,
+                  "question": "Android hangi işletim sistemi çekirdeğini kullanır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Windows NT",
+                    "Linux",
+                    "macOS",
+                    "Unix"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Android, Linux tabanlı bir işletim sistemidir ve Linux çekirdeğini kullanır.",
+                  "tags": ["android", "linux"]
+                },
+                {
+                  "questionId": 210103,
+                  "question": "Android uygulamaları hangi programlama dilleri ile geliştirilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Swift ve Objective-C",
+                    "C# ve VB.NET",
+                    "Kotlin ve Java",
+                    "Python ve Ruby"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Android uygulamaları genellikle Kotlin veya Java dili ile geliştirilir. Google, resmi olarak Kotlin'i tercih etmektedir.",
+                  "tags": ["android", "kotlin", "java"]
+                },
+                {
+                  "questionId": 210104,
+                  "question": "Android uygulamalarının resmi dağıtım platformu hangisidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "App Store",
+                    "Microsoft Store",
+                    "Google Play Store",
+                    "Amazon Appstore"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Google Play Store, Android uygulamalarının dağıtıldığı resmi platformdur.",
+                  "tags": ["android", "play_store"]
+                },
+                {
+                  "questionId": 210105,
+                  "question": "Android'in açık kaynaklı olması ne anlama gelir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Herkes ücretsiz kullanabilir ama değiştiremez",
+                    "Sadece Google geliştirebilir",
+                    "Kaynak kodları açıktır ve özelleştirilebilir",
+                    "Sadece büyük şirketler kullanabilir"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Açık kaynaklı olması, Android'in kaynak kodlarının herkese açık olduğu ve cihaz üreticileri tarafından özelleştirilebileceği anlamına gelir.",
+                  "tags": ["android", "open_source"]
+                },
+                {
+                  "questionId": 210106,
+                  "question": "Android uygulamaları geliştirmek için hangi IDE kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Visual Studio",
+                    "Xcode",
+                    "Android Studio",
+                    "Eclipse"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Android Studio, Google'ın resmi olarak desteklediği ve Android SDK'sını içeren entegre geliştirme ortamıdır.",
+                  "tags": ["android", "android_studio"]
+                },
+                {
+                  "questionId": 210107,
+                  "question": "Android hangi tür cihazlarda kullanılmaz?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Akıllı telefonlar",
+                    "Tabletler",
+                    "iPhone",
+                    "Akıllı TV'ler"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "iPhone cihazları iOS işletim sistemini kullanır. Android, akıllı telefonlar, tabletler, TV'ler ve giyilebilir cihazlarda kullanılır.",
+                  "tags": ["android", "devices"]
+                }
+              ]
             },
             {
               "topicId": 2102,
@@ -4994,13 +5107,302 @@
                 "res/values: Renk, stil ve string tanımları",
                 "AndroidManifest.xml: Uygulama yapılandırması"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 210201,
+                  "question": "Android projelerinde uygulama kodları hangi klasörde bulunur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "res/",
+                    "java/ veya kotlin/",
+                    "drawable/",
+                    "manifest/"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Uygulama kodları (Activity, Fragment vb.) java/ veya kotlin/ klasöründe tutulur.",
+                  "tags": ["android", "proje_yapisi"]
+                },
+                {
+                  "questionId": 210202,
+                  "question": "XML arayüz dosyaları hangi klasörde bulunur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "res/drawable/",
+                    "res/values/",
+                    "res/layout/",
+                    "java/"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "XML arayüz (layout) dosyaları res/layout/ klasöründe tutulur.",
+                  "tags": ["android", "layout", "xml"]
+                },
+                {
+                  "questionId": 210203,
+                  "question": "AndroidManifest.xml dosyasının amacı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece Activity'leri tanımlar",
+                    "Uygulama görsellerini saklar",
+                    "Uygulama yapılandırması ve izinlerini tanımlar",
+                    "Kod derlemesini sağlar"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "AndroidManifest.xml, uygulamanın temel yapılandırmasını, Activity'leri, Service'leri, izinleri ve diğer bileşenleri tanımlar.",
+                  "tags": ["android", "manifest"]
+                },
+                {
+                  "questionId": 210204,
+                  "question": "res/drawable klasörü ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "String değerler",
+                    "Görseller ve çizilebilir kaynaklar",
+                    "Kod dosyaları",
+                    "Veritabanı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "res/drawable/ klasörü, görseller, icon'lar ve diğer çizilebilir kaynaklar için kullanılır.",
+                  "tags": ["android", "drawable", "resources"]
+                },
+                {
+                  "questionId": 210205,
+                  "question": "res/values klasöründe hangi dosyalar bulunur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece renkler",
+                    "Sadece string'ler",
+                    "Renk, stil, string ve boyut tanımları",
+                    "Sadece Activity'ler"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "res/values/ klasöründe strings.xml, colors.xml, styles.xml, dimens.xml gibi kaynak dosyaları bulunur.",
+                  "tags": ["android", "values", "resources"]
+                },
+                {
+                  "questionId": 210206,
+                  "question": "Aşağıdaki proje yapısında MainActivity.kt dosyası hangi klasördedir?",
+                  "questionType": "multiple_choice",
+                  "code": "app/\n ├─ kotlin/\n │   └─ MainActivity.kt\n ├─ res/\n │   ├─ layout/\n │   └─ drawable/\n └─ AndroidManifest.xml",
+                  "difficulty": "easy",
+                  "options": [
+                    "res/layout/",
+                    "kotlin/",
+                    "res/drawable/",
+                    "AndroidManifest/"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "MainActivity.kt, uygulama kodlarının bulunduğu kotlin/ klasöründedir.",
+                  "tags": ["android", "proje_yapisi"]
+                },
+                {
+                  "questionId": 210207,
+                  "question": "Android projelerinin modüler yapıda olmasının avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Daha hızlı derleme",
+                    "Daha küçük APK boyutu",
+                    "Büyük projelerin daha yönetilebilir olması",
+                    "Daha az bellek kullanımı"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Modüler yapı, kod, kaynak ve konfigürasyonların ayrı tutulmasını sağlayarak büyük projelerin daha kolay yönetilmesini sağlar.",
+                  "tags": ["android", "modular"]
+                },
+                {
+                  "questionId": 210208,
+                  "question": "Bir Android projesinde build.gradle dosyasının rolü nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Arayüz tasarımı",
+                    "Proje bağımlılıkları ve derleme ayarları",
+                    "Veritabanı şeması",
+                    "Kullanıcı izinleri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "build.gradle dosyası, projenin bağımlılıklarını (dependency), minimum SDK versiyonunu, hedef SDK'yı ve derleme ayarlarını içerir.",
+                  "tags": ["android", "gradle", "build"]
+                }
+              ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+              "questionId": 210001,
+              "question": "Android uygulamalarını geliştirmek için hangi IDE ve hangi diller kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Xcode, Swift",
+                "Android Studio, Kotlin/Java",
+                "Visual Studio, C#",
+                "Eclipse, Python"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Android uygulamaları Android Studio IDE'si kullanılarak Kotlin veya Java ile geliştirilir.",
+              "tags": ["android", "ide", "kotlin"]
+            },
+            {
+              "questionId": 210002,
+              "question": "Android'in açık kaynaklı olması geliştiricilere nasıl bir avantaj sağlar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece bedava kullanım",
+                "Kaynak kodları inceleyip özelleştirebilme",
+                "Daha hızlı çalışma",
+                "Otomatik güncelleme"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Açık kaynak, geliştiricilerin Android kaynak kodlarını incelemesine ve cihaz üreticilerinin özelleştirmesine olanak tanır.",
+              "tags": ["android", "open_source"]
+            },
+            {
+              "questionId": 210003,
+              "question": "Bir Android projesinde uygulama izinleri nerede tanımlanır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "MainActivity.kt",
+                "build.gradle",
+                "AndroidManifest.xml",
+                "strings.xml"
+              ],
+              "correctAnswerIndex": 2,
+              "explanation": "Uygulama izinleri (permissions) AndroidManifest.xml dosyasında tanımlanır.",
+              "tags": ["android", "permissions", "manifest"]
+            },
+            {
+              "questionId": 210004,
+              "question": "res/layout ve res/values klasörlerinin ortak özelliği nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "İkisi de kod dosyası içerir",
+                "İkisi de kaynak (resource) dosyası içerir",
+                "İkisi de görsel içerir",
+                "İkisi de Java dosyası içerir"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Her ikisi de res/ klasörü altında kaynak dosyaları içerir. layout XML arayüzleri, values ise string, renk gibi değerleri tutar.",
+              "tags": ["android", "resources"]
+            },
+            {
+              "questionId": 210005,
+              "question": "Android'de Linux çekirdeği kullanılmasının avantajı nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece performans artışı",
+                "Güvenlik, bellek yönetimi ve donanım soyutlaması",
+                "Sadece açık kaynak lisansı",
+                "Sadece çoklu görev desteği"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Linux çekirdeği, güvenlik, bellek yönetimi, süreç yönetimi ve donanım soyutlaması gibi temel işlevler sağlar.",
+              "tags": ["android", "linux", "kernel"]
+            },
+            {
+              "questionId": 210006,
+              "question": "Aşağıdakilerden hangisi Android Studio'nun bir parçası değildir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Layout Editor",
+                "Emulator",
+                "Xcode Interface Builder",
+                "Gradle Build System"
+              ],
+              "correctAnswerIndex": 2,
+              "explanation": "Xcode Interface Builder, Apple'ın iOS geliştirme aracıdır ve Android Studio'nun bir parçası değildir.",
+              "tags": ["android", "android_studio"]
+            },
+            {
+              "questionId": 210007,
+              "question": "Bir Android uygulamasının APK dosyası nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Android kaynak kodu",
+                "Android uygulama paketi (yüklenebilir dosya)",
+                "Android proje dosyası",
+                "Android manifest dosyası"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "APK (Android Package Kit), Android uygulamalarının dağıtım ve kurulum formatıdır.",
+              "tags": ["android", "apk"]
+            },
+            {
+              "questionId": 210008,
+              "question": "MainActivity.kt ve activity_main.xml dosyaları arasındaki ilişki nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "İkisi de aynı dosyadır",
+                "MainActivity.kt kodu, activity_main.xml arayüzünü kullanır",
+                "activity_main.xml kodu, MainActivity.kt'yi çağırır",
+                "Hiçbir ilişki yoktur"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "MainActivity.kt (kod), activity_main.xml (arayüz) dosyasını setContentView() ile bağlar ve kullanır.",
+              "tags": ["android", "activity", "layout"]
+            },
+            {
+              "questionId": 210009,
+              "question": "Google Play Store'a uygulama yüklemek için hangi dosya formatı kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "EXE",
+                "APK veya AAB",
+                "IPA",
+                "ZIP"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Google Play Store'a APK (Android Package) veya AAB (Android App Bundle) formatında uygulama yüklenir.",
+              "tags": ["android", "play_store", "apk"]
+            },
+            {
+              "questionId": 210010,
+              "question": "Android projelerinde build.gradle ve AndroidManifest.xml'in ortak önemi nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "İkisi de sadece görsel tasarım içerir",
+                "İkisi de proje yapılandırması için kritiktir",
+                "İkisi de veritabanı yönetir",
+                "İkisi de kod derlemesi yapar"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "build.gradle derleme ayarlarını ve bağımlılıkları, AndroidManifest.xml ise uygulama bileşenlerini ve izinleri yapılandırır. İkisi de proje için kritik öneme sahiptir.",
+              "tags": ["android", "configuration"]
+            }
+          ]
         },
         {
-
             "sectionId": 2200,
             "sectionTitle": "Layout & UI",
             "sectionDescription": "Android uygulamalarda kullanıcı arayüzü oluşturma ve layout yapıları",
@@ -5025,7 +5427,56 @@
                 "Koddan bağımsızdır",
                 "Okunabilirliği artırır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 220101,
+                  "question": "Android'de kullanıcı arayüzü hangi dil ile tanımlanır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "JSON",
+                    "HTML",
+                    "XML",
+                    "CSS"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Android'de UI genellikle XML (eXtensible Markup Language) ile tanımlanır.",
+                  "tags": ["xml", "ui"]
+                },
+                {
+                  "questionId": 220102,
+                  "question": "XML ile UI tanımlamanın avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Daha hızlı çalışır",
+                    "Tasarım ve iş mantığını ayırır",
+                    "Daha az bellek kullanır",
+                    "Otomatik güncelleme sağlar"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "XML kullanımı, tasarım ve kod mantığını ayırarak kodun daha okunabilir ve yönetilebilir olmasını sağlar.",
+                  "tags": ["xml", "separation"]
+                },
+                {
+                  "questionId": 220103,
+                  "question": "Aşağıdaki XML kodunda TextView'in genişliği ne kadardır?",
+                  "questionType": "multiple_choice",
+                  "code": "<TextView\n    android:layout_width=\"wrap_content\"\n    android:layout_height=\"wrap_content\"\n    android:text=\"Merhaba\" />",
+                  "difficulty": "medium",
+                  "options": [
+                    "Ekranın tamamı kadar",
+                    "İçeriği kadar",
+                    "Sabit 100dp",
+                    "Parent kadar"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "wrap_content, view'in genişliğini/yüksekliğini içeriği kadar yapar.",
+                  "tags": ["xml", "wrap_content"]
+                }
+              ]
             },
             {
               "topicId": 2202,
@@ -5040,7 +5491,56 @@
                 "Tıklama ve dokunma olaylarını alır",
                 "ViewGroup içinde yer alır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 220201,
+                  "question": "View nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Veritabanı tablosu",
+                    "Ekranda görünen temel UI bileşeni",
+                    "Network isteği",
+                    "Dosya sistemi"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "View, Android'de ekranda görünen en temel UI bileşenidir.",
+                  "tags": ["view", "ui"]
+                },
+                {
+                  "questionId": 220202,
+                  "question": "Aşağıdakilerden hangisi View sınıfından türemez?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Button",
+                    "TextView",
+                    "Activity",
+                    "EditText"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Activity bir UI bileşeni değildir. Button, TextView, EditText gibi tüm UI elemanları View sınıfından türer.",
+                  "tags": ["view", "inheritance"]
+                },
+                {
+                  "questionId": 220203,
+                  "question": "ViewGroup nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece metin gösteren view",
+                    "Diğer view'leri içeren özel bir View",
+                    "Veritabanı grubu",
+                    "Sadece resim gösteren view"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ViewGroup, diğer view'leri içerebilen özel bir View türüdür. LinearLayout, ConstraintLayout gibi layout'lar ViewGroup'tur.",
+                  "tags": ["viewgroup", "layout"]
+                }
+              ]
             },
             {
               "topicId": 2203,
@@ -5061,7 +5561,72 @@
                 "Basit dizilimler için idealdir",
                 "Derin hiyerarşiden kaçınılmalı"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 220301,
+                  "question": "LinearLayout'ta orientation özelliği ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Renk belirler",
+                    "Yatay veya dikey dizilim belirler",
+                    "Boyut belirler",
+                    "Arka plan belirler"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "orientation özelliği ile view'lerin yatay (horizontal) veya dikey (vertical) dizilimi belirlenir.",
+                  "tags": ["linearlayout", "orientation"]
+                },
+                {
+                  "questionId": 220302,
+                  "question": "Aşağıdaki LinearLayout'ta view'ler nasıl dizilir?",
+                  "questionType": "multiple_choice",
+                  "code": "<LinearLayout\n    android:orientation=\"vertical\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\">\n\n    <TextView />\n    <Button />\n</LinearLayout>",
+                  "difficulty": "easy",
+                  "options": [
+                    "Yan yana yatay",
+                    "Alt alta dikey",
+                    "Üst üste",
+                    "Rastgele"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "orientation=\"vertical\" olduğu için view'ler alt alta dikey olarak dizilir.",
+                  "tags": ["linearlayout", "vertical"]
+                },
+                {
+                  "questionId": 220303,
+                  "question": "LinearLayout'un performans açısından dezavantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Çok az view alır",
+                    "İç içe kullanımda performans düşer",
+                    "Sadece yatay çalışır",
+                    "Renk desteklemez"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Derin hiyerarşi (nested layout) oluşturulduğunda performans sorunlarına yol açar.",
+                  "tags": ["linearlayout", "performance"]
+                },
+                {
+                  "questionId": 220304,
+                  "question": "LinearLayout hangi basit UI'lar için idealdir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Karmaşık form ekranları",
+                    "Basit liste ve dikey/yatay dizilimler",
+                    "3D grafikler",
+                    "Video oynatıcı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "LinearLayout basit, düz dizilimler için idealdir. Karmaşık UI'lar için ConstraintLayout önerilir.",
+                  "tags": ["linearlayout", "use_case"]
+                }
+              ]
             },
             {
               "topicId": 2204,
@@ -5076,7 +5641,88 @@
                 "Karmaşık UI'lar için idealdir",
                 "Constraint mantığı kullanır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 220401,
+                  "question": "ConstraintLayout'un en büyük avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece basit UI'lar oluşturur",
+                    "Performanslı ve esnek UI oluşturur",
+                    "Sadece liste gösterir",
+                    "XML kullanmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ConstraintLayout, karmaşık UI'ları tek layout içinde performanslı şekilde oluşturmaya olanak tanır.",
+                  "tags": ["constraintlayout", "performance"]
+                },
+                {
+                  "questionId": 220402,
+                  "question": "ConstraintLayout'ta view'ler nasıl konumlandırılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece parent'a göre",
+                    "Sadece dikey dizilim",
+                    "Birbirine ve parent'a göre constraint'lerle",
+                    "Otomatik rastgele"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "ConstraintLayout'ta view'ler birbirine veya parent'a göre constraint (kısıtlama) ile konumlandırılır.",
+                  "tags": ["constraintlayout", "constraint"]
+                },
+                {
+                  "questionId": 220403,
+                  "question": "ConstraintLayout hangi layout ihtiyacını azaltır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "RecyclerView",
+                    "Nested (iç içe) layout",
+                    "Fragment",
+                    "Activity"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ConstraintLayout sayesinde karmaşık UI'lar tek layout içinde oluşturulabildiği için nested layout ihtiyacı azalır.",
+                  "tags": ["constraintlayout", "nested"]
+                },
+                {
+                  "questionId": 220404,
+                  "question": "Android Studio'da ConstraintLayout ile görsel tasarım yapan araç nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Emulator",
+                    "Layout Editor",
+                    "Logcat",
+                    "Gradle"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Android Studio'nun Layout Editor'ü ile ConstraintLayout'lar görsel olarak tasarlanabilir.",
+                  "tags": ["constraintlayout", "layout_editor"]
+                },
+                {
+                  "questionId": 220405,
+                  "question": "ConstraintLayout hangi tür projeler için en çok önerilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece metin tabanlı uygulamalar",
+                    "Karmaşık ve çok ekranlı modern uygulamalar",
+                    "Sadece oyun uygulamaları",
+                    "Sadece widget'lar"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ConstraintLayout, performansı ve esnekliği sayesinde modern ve karmaşık Android uygulamaları için en çok önerilen layout türüdür.",
+                  "tags": ["constraintlayout", "best_practice"]
+                }
+              ]
             },
             {
               "topicId": 2205,
@@ -5091,7 +5737,56 @@
                 "Performansı olumsuz etkileyebilir",
                 "Alternatif olarak ConstraintLayout önerilir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 220501,
+                  "question": "Nested Layout ne demektir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Tek layout kullanımı",
+                    "Layout'ların iç içe kullanılması",
+                    "View'sız layout",
+                    "Sadece XML'siz layout"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Nested Layout, layout'ların iç içe kullanılması anlamına gelir.",
+                  "tags": ["nested_layout"]
+                },
+                {
+                  "questionId": 220502,
+                  "question": "Aşırı nested layout kullanımının dezavantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Daha az bellek kullanır",
+                    "Performansı olumsuz etkiler",
+                    "Daha hızlı çalışır",
+                    "Kod kısalır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Derin layout hiyerarşisi, view çizim süresini artırarak performansı olumsuz etkiler.",
+                  "tags": ["nested_layout", "performance"]
+                },
+                {
+                  "questionId": 220503,
+                  "question": "Nested layout yerine hangi yapı önerilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Daha fazla nested layout",
+                    "ConstraintLayout",
+                    "Sadece kod ile UI",
+                    "XML kullanmamak"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ConstraintLayout, karmaşık UI'ları tek layout içinde oluşturabildiği için nested layout ihtiyacını azaltır.",
+                  "tags": ["nested_layout", "alternative"]
+                }
+              ]
             },
             {
               "topicId": 2206,
@@ -5112,10 +5807,252 @@
                 "Null safety sağlar",
                 "Kod okunabilirliğini artırır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 220601,
+                  "question": "View Binding'in amacı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Veritabanı bağlantısı",
+                    "XML'deki view'lara güvenli erişim",
+                    "Network isteği",
+                    "Animasyon oluşturma"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "View Binding, XML'de tanımlanan view'lara güvenli ve kolay erişim sağlar.",
+                  "tags": ["view_binding"]
+                },
+                {
+                  "questionId": 220602,
+                  "question": "View Binding hangi eski yöntemi ortadan kaldırır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "setContentView",
+                    "findViewById",
+                    "onCreate",
+                    "inflate"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "View Binding, findViewById kullanımını ortadan kaldırarak daha güvenli kod yazmamızı sağlar.",
+                  "tags": ["view_binding", "findviewbyid"]
+                },
+                {
+                  "questionId": 220603,
+                  "question": "View Binding ne zaman oluşturulur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Runtime'da",
+                    "Derleme zamanında (compile-time)",
+                    "Uygulama ilk açıldığında",
+                    "Manuel olarak"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "View Binding sınıfları derleme zamanında otomatik olarak oluşturulur.",
+                  "tags": ["view_binding", "compile_time"]
+                },
+                {
+                  "questionId": 220604,
+                  "question": "Aşağıdaki View Binding kodunda binding.textView ne tür bir nesnedir?",
+                  "questionType": "multiple_choice",
+                  "code": "val binding = ActivityMainBinding.inflate(layoutInflater)\nbinding.textView.text = \"Merhaba\"",
+                  "difficulty": "easy",
+                  "options": [
+                    "String",
+                    "TextView",
+                    "Button",
+                    "Int"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "View Binding ile XML'deki textView ID'sine sahip TextView nesnesine doğrudan erişilir.",
+                  "tags": ["view_binding", "textview"]
+                },
+                {
+                  "questionId": 220605,
+                  "question": "View Binding'in null safety sağlaması ne anlama gelir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "View'ler asla null olamaz",
+                    "Derleme zamanında view varlığı garanti edilir",
+                    "Sadece nullable view'ler kullanılır",
+                    "Null kontrolü yapmaya gerek kalmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "View Binding, XML'de tanımlı view'lere tür güvenli erişim sağlar ve yanlış ID kullanımını derleme zamanında engeller.",
+                  "tags": ["view_binding", "null_safety"]
+                }
+              ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+              "questionId": 220001,
+              "question": "Android'de UI tanımlamak için XML kullanmanın kod yazımından farkı nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Hiçbir fark yok",
+                "XML tasarım ve mantığı ayırır",
+                "XML daha yavaştır",
+                "XML kullanılamaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "XML ile UI tasarımı, Kotlin/Java kodundan ayrılarak daha okunabilir ve yönetilebilir olur.",
+              "tags": ["xml", "separation"]
+            },
+            {
+              "questionId": 220002,
+              "question": "LinearLayout yerine ConstraintLayout kullanmanın performans avantajı nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Hiçbir fark yok",
+                "Nested layout ihtiyacını azaltır ve performansı artırır",
+                "Sadece daha az kod yazılır",
+                "Sadece görsel olarak daha güzeldir"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "ConstraintLayout, karmaşık UI'ları tek layout içinde oluşturarak nested layout kullanımını ve dolayısıyla performans kaybını azaltır.",
+              "tags": ["constraintlayout", "performance"]
+            },
+            {
+              "questionId": 220003,
+              "question": "findViewById yerine View Binding kullanmanın avantajı nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Daha hızlı çalışır",
+                "Null safety ve tür güvenliği sağlar",
+                "Daha az bellek kullanır",
+                "XML'e ihtiyaç kalmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "View Binding, findViewById'a göre null safety ve tür güvenliği sağlar, böylece derleme zamanında hata yakalanır.",
+              "tags": ["view_binding", "findviewbyid"]
+            },
+            {
+              "questionId": 220004,
+              "question": "wrap_content ve match_parent arasındaki fark nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Hiçbir fark yok",
+                "wrap_content içeriği kadar, match_parent parent kadar",
+                "wrap_content daha büyük",
+                "match_parent sadece yükseklik içindir"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "wrap_content view'i içeriği kadar yapar, match_parent ise parent'ın boyutu kadar yapar.",
+              "tags": ["layout_params"]
+            },
+            {
+              "questionId": 220005,
+              "question": "ViewGroup ve View arasındaki temel fark nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "ViewGroup diğer view'leri içerebilir, View içeremez",
+                "ViewGroup sadece metin gösterir",
+                "View daha büyüktür",
+                "Hiçbir fark yok"
+              ],
+              "correctAnswerIndex": 0,
+              "explanation": "ViewGroup, diğer view'leri (child view) içerebilen özel bir View türüdür. LinearLayout, ConstraintLayout gibi layout'lar ViewGroup'tur.",
+              "tags": ["viewgroup", "view"]
+            },
+            {
+              "questionId": 220006,
+              "question": "Bir ekranda 5 seviye nested LinearLayout kullanmanın sonucu ne olur?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Daha hızlı çalışır",
+                "Performans düşer, layout render süresi artar",
+                "Hiçbir etkisi olmaz",
+                "Daha az bellek kullanır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Derin nested layout hiyerarşisi, view ölçüm ve çizim süresini artırarak performans düşüşüne yol açar.",
+              "tags": ["nested_layout", "performance"]
+            },
+            {
+              "questionId": 220007,
+              "question": "ConstraintLayout'ta bir view'i ekranın ortasına konumlandırmak için ne yapılmalıdır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Hiçbir şey yapılmaz, otomatik ortalanır",
+                "Tüm kenarları parent'a constraint'lenir",
+                "Sadece left constraint'i verilir",
+                "LinearLayout kullanılır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "ConstraintLayout'ta bir view'i ortalamak için tüm kenarları (top, bottom, start, end) parent'a constraint'lenir.",
+              "tags": ["constraintlayout", "centering"]
+            },
+            {
+              "questionId": 220008,
+              "question": "LinearLayout orientation=\"horizontal\" durumunda view'ler nasıl dizilir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Alt alta dikey",
+                "Yan yana yatay",
+                "Üst üste",
+                "Rastgele"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "orientation=\"horizontal\" olduğunda view'ler yan yana yatay olarak dizilir.",
+              "tags": ["linearlayout", "horizontal"]
+            },
+            {
+              "questionId": 220009,
+              "question": "View Binding'i projeye dahil etmek için hangi dosyada ayar yapılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "AndroidManifest.xml",
+                "build.gradle (Module: app)",
+                "strings.xml",
+                "MainActivity.kt"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "View Binding, build.gradle (Module: app) dosyasında viewBinding { enabled = true } şeklinde etkinleştirilir.",
+              "tags": ["view_binding", "gradle"]
+            },
+            {
+              "questionId": 220010,
+              "question": "Modern Android uygulamalarında UI oluşturmak için en çok önerilen layout ve binding yöntemi hangisidir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "LinearLayout + findViewById",
+                "ConstraintLayout + View Binding",
+                "FrameLayout + findViewById",
+                "RelativeLayout + findViewById"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Modern Android geliştirmede ConstraintLayout (performans için) ve View Binding (güvenli view erişimi için) birlikte kullanımı önerilir.",
+              "tags": ["best_practice", "modern_android"]
+            }
+          ]
         },
         {
           "sectionId": 2300,
