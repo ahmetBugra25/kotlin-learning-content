@@ -8029,7 +8029,56 @@
               "Büyük listeler için uygundur",
               "LayoutManager ile çalışır"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 311001,
+                "question": "RecyclerView hangi problemi çözmek için tasarlanmıştır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Tek View göstermek",
+                  "Animasyon eklemek",
+                  "Büyük veri listelerini verimli göstermek",
+                  "Fragment geçişi yapmak"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "RecyclerView, büyük veri listelerini minimum bellek ve yüksek performansla göstermek için geliştirilmiştir.",
+                "tags": ["recyclerview", "temel"]
+              },
+              {
+                "questionId": 311002,
+                "question": "RecyclerView’da View’lar nasıl yeniden kullanılır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Yeni View oluşturarak",
+                  "ViewHolder cache mekanizmasıyla",
+                  "Fragment yeniden başlatılarak",
+                  "LayoutInflater ile sürekli inflate ederek"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "RecyclerView, ViewHolder’ları yeniden kullanarak performansı artırır.",
+                "tags": ["recyclerview", "performance"]
+              },
+              {
+                "questionId": 311003,
+                "question": "RecyclerView’da LayoutManager neden zorunludur?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "hard",
+                "options": [
+                  "Veri kaynağı belirlemek için",
+                  "Item click yönetimi için",
+                  "Item’ların ekranda nasıl yerleşeceğini belirlemek için",
+                  "Lifecycle kontrolü için"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "LayoutManager olmadan RecyclerView item’ların nasıl yerleşeceğini bilemez.",
+                "tags": ["layoutmanager", "recyclerview"]
+              }
+            ]
           },
           {
             "topicId": 3102,
@@ -8051,7 +8100,72 @@
               "Performans için gereklidir",
               "Liste güncellemelerini yönetir"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 312001,
+                "question": "Adapter’ın temel görevi nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "UI tasarlamak",
+                  "Veri ile View’ları bağlamak",
+                  "Lifecycle yönetmek",
+                  "Navigation yapmak"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Adapter, veri kaynağı ile RecyclerView item’ları arasında köprü görevi görür.",
+                "tags": ["adapter", "recyclerview"]
+              },
+              {
+                "questionId": 312002,
+                "question": "RecyclerView.Adapter içinde zorunlu olan metot hangisidir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "onCreate",
+                  "getItemCount",
+                  "onPause",
+                  "onDestroy"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "getItemCount(), RecyclerView’da kaç item olacağını belirtir ve zorunludur.",
+                "tags": ["adapter", "method"]
+              },
+              {
+                "questionId": 312003,
+                "question": "onCreateViewHolder metodu ne zaman çağrılır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Her scroll’da",
+                  "Yeni ViewHolder oluşturulması gerektiğinde",
+                  "Liste güncellendiğinde",
+                  "Activity destroy edildiğinde"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "onCreateViewHolder, yeni bir ViewHolder oluşturulması gerektiğinde çağrılır.",
+                "tags": ["adapter", "viewholder"]
+              },
+              {
+                "questionId": 312004,
+                "question": "ListAdapter neden normal Adapter’a göre tercih edilir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "hard",
+                "options": [
+                  "Daha az kod yazıldığı için",
+                  "DiffUtil’u otomatik yönettiği için",
+                  "XML gerektirmediği için",
+                  "Fragment ile çalıştığı için"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "ListAdapter, DiffUtil entegrasyonunu otomatik yaparak performanslı liste güncellemeleri sağlar.",
+                "tags": ["listadapter", "diffutil"]
+              }
+            ]
           },
           {
             "topicId": 3103,
@@ -8073,7 +8187,56 @@
               "Adapter ile birlikte çalışır",
               "Her item için kullanılır"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 313001,
+                "question": "ViewHolder’ın temel amacı nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Veri saklamak",
+                  "View referanslarını tutmak",
+                  "Navigation yönetmek",
+                  "Fragment oluşturmak"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "ViewHolder, View referanslarını tutarak tekrar tekrar findViewById çağrılmasını önler.",
+                "tags": ["viewholder", "performance"]
+              },
+              {
+                "questionId": 313002,
+                "question": "ViewHolder performansa nasıl katkı sağlar?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Bellek kullanımını artırarak",
+                  "UI thread’i bloke ederek",
+                  "View aramalarını azaltarak",
+                  "Veri kopyalayarak"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "ViewHolder, View aramalarını azaltarak RecyclerView performansını artırır.",
+                "tags": ["viewholder", "optimization"]
+              },
+              {
+                "questionId": 313003,
+                "question": "RecyclerView’da ViewHolder kullanılmazsa ne olur?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "hard",
+                "options": [
+                  "Uygulama crash olur",
+                  "Performans düşer",
+                  "Liste görünmez",
+                  "Adapter çalışmaz"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "ViewHolder kullanılmazsa sürekli View araması yapılır ve performans ciddi şekilde düşer.",
+                "tags": ["viewholder", "performance"]
+              }
+            ]
           },
           {
             "topicId": 3104,
@@ -8095,10 +8258,252 @@
               "notifyDataSetChanged yerine kullanılır",
               "Large listelerde önerilir"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 314001,
+                "question": "DiffUtil’un temel amacı nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Liste sıralamak",
+                  "Veri saklamak",
+                  "Liste farklarını hesaplamak",
+                  "UI çizmek"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "DiffUtil, eski ve yeni liste arasındaki farkları hesaplar.",
+                "tags": ["diffutil", "recyclerview"]
+              },
+              {
+                "questionId": 314002,
+                "question": "DiffUtil hangi durumda performans avantajı sağlar?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Tüm liste değiştiğinde",
+                  "Sadece birkaç item değiştiğinde",
+                  "Liste boşken",
+                  "Tek item varken"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Sadece değişen item’lar güncellendiği için performans artar.",
+                "tags": ["diffutil", "performance"]
+              },
+              {
+                "questionId": 314003,
+                "question": "areItemsTheSame metodu neyi kontrol eder?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "İçerik eşitliğini",
+                  "Referans eşitliğini",
+                  "Item kimliğini",
+                  "Liste boyutunu"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "areItemsTheSame, iki item’ın aynı kimliğe sahip olup olmadığını kontrol eder.",
+                "tags": ["diffutil", "callback"]
+              },
+              {
+                "questionId": 314004,
+                "question": "areContentsTheSame ne zaman false döner?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "hard",
+                "options": [
+                  "Item ID değiştiğinde",
+                  "Liste boşken",
+                  "Item içeriği değiştiğinde",
+                  "Adapter null olduğunda"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Item’ın içeriği değiştiğinde areContentsTheSame false döner.",
+                "tags": ["diffutil", "update"]
+              },
+              {
+                "questionId": 314005,
+                "question": "DiffUtil yanlış kullanılırsa ne olur?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "hard",
+                "options": [
+                  "Crash oluşur",
+                  "Yanlış animasyonlar görülür",
+                  "Uygulama açılmaz",
+                  "Veri silinir"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Yanlış karşılaştırmalar UI’da hatalı animasyonlara neden olabilir.",
+                "tags": ["diffutil", "bug"]
+              }
+            ]
           }
         ],
-        "sectionMixedQuestions": []
+        "sectionMixedQuestions": [
+          {
+            "questionId": 310001,
+            "question": "RecyclerView’un temel amacı nedir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Tek bir View göstermek",
+              "Az sayıda veriyi statik göstermek",
+              "Büyük veri listelerini performanslı göstermek",
+              "Fragment geçişlerini yönetmek"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "RecyclerView, büyük veri listelerini minimum bellek kullanımıyla performanslı şekilde göstermek için tasarlanmıştır.",
+            "tags": ["recyclerview", "temel"]
+          },
+          {
+            "questionId": 310002,
+            "question": "RecyclerView’da liste düzenini belirleyen bileşen hangisidir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Adapter",
+              "ViewHolder",
+              "LayoutManager",
+              "DiffUtil"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "LayoutManager, RecyclerView’daki item’ların dikey, yatay veya grid şeklinde nasıl yerleşeceğini belirler.",
+            "tags": ["layoutmanager", "recyclerview"]
+          },
+          {
+            "questionId": 310003,
+            "question": "Adapter’ın temel görevi nedir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Veri saklamak",
+              "View’ları çizmek",
+              "Veri ile View’ları bağlamak",
+              "Lifecycle yönetmek"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Adapter, veri kaynağı ile RecyclerView item’ları arasındaki bağlantıyı sağlar.",
+            "tags": ["adapter", "recyclerview"]
+          },
+          {
+            "questionId": 310004,
+            "question": "ViewHolder neden kullanılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "UI tasarımı yapmak için",
+              "Veritabanı bağlantısı için",
+              "findViewById çağrılarını azaltmak için",
+              "Fragment yönetimi için"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "ViewHolder, View referanslarını tutarak gereksiz findViewById çağrılarını azaltır ve performansı artırır.",
+            "tags": ["viewholder", "performance"]
+          },
+          {
+            "questionId": 310005,
+            "question": "RecyclerView.Adapter içinde zorunlu olan metot hangisidir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "onClick",
+              "getItemCount",
+              "onResume",
+              "notifyDataSetChanged"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "getItemCount(), RecyclerView’ın kaç item göstereceğini belirtir ve zorunludur.",
+            "tags": ["adapter", "method"]
+          },
+          {
+            "questionId": 310006,
+            "question": "onBindViewHolder metodu ne zaman çağrılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "RecyclerView oluşturulurken",
+              "Yeni ViewHolder oluşturulurken",
+              "Item ekrana bağlanırken",
+              "Liste temizlenirken"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "onBindViewHolder, item ekrana bağlanırken verinin ViewHolder’a aktarılması için çağrılır.",
+            "tags": ["adapter", "binding"]
+          },
+          {
+            "questionId": 310007,
+            "question": "notifyDataSetChanged neden önerilmez?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Deprecated olduğu için",
+              "Senkron çalıştığı için",
+              "Tüm listeyi yeniden çizdiği için",
+              "Sadece küçük listelerde çalıştığı için"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "notifyDataSetChanged tüm listeyi yeniler, bu da performans kaybına yol açar.",
+            "tags": ["performance", "recyclerview"]
+          },
+          {
+            "questionId": 310008,
+            "question": "DiffUtil’un temel amacı nedir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Listeyi sıralamak",
+              "Veri kaydetmek",
+              "Liste farklarını hesaplamak",
+              "View oluşturmak"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "DiffUtil, eski ve yeni liste arasındaki farkları hesaplayarak sadece değişen item’ların güncellenmesini sağlar.",
+            "tags": ["diffutil", "performance"]
+          },
+          {
+            "questionId": 310009,
+            "question": "DiffUtil kullanmanın en büyük avantajı nedir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "hard",
+            "options": [
+              "Kodun kısalması",
+              "Bellek kullanımının artması",
+              "Daha az UI güncellemesi",
+              "Lifecycle yönetimi"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "DiffUtil, sadece değişen item’ları güncelleyerek performansı ciddi şekilde artırır.",
+            "tags": ["diffutil", "optimization"]
+          },
+          {
+            "questionId": 310010,
+            "question": "RecyclerView neden ListView’a göre daha performanslıdır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "hard",
+            "options": [
+              "Daha az XML kullanır",
+              "View recycling ve ViewHolder zorunlu olduğu için",
+              "Sadece küçük listelerde çalıştığı için",
+              "Fragment ile çalıştığı için"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "RecyclerView, zorunlu ViewHolder ve gelişmiş recycling mekanizması sayesinde ListView’dan daha performanslıdır.",
+            "tags": ["recyclerview", "performance"]
+          }
+        ]
       },
       {
         "sectionId": 3200,
@@ -8126,7 +8531,72 @@
               "Kendi lifecycle'ına sahiptir",
               "Yeniden kullanılabilir"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 320101,
+                "question": "Fragment nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Bağımsız çalışan bir Activity",
+                  "Activity içinde çalışan modüler UI bileşeni",
+                  "Sadece arka plan işlemleri için kullanılan sınıf",
+                  "Veritabanı yönetim sınıfı"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Fragment, Activity içerisinde çalışan ve kendi yaşam döngüsüne sahip modüler UI bileşenidir.",
+                "tags": ["fragment", "ui", "temel"]
+              },
+              {
+                "questionId": 320102,
+                "question": "Modern Android mimarisinde önerilen yapı hangisidir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Çok Activity - az Fragment",
+                  "Tek Activity - çok Fragment",
+                  "Her ekran için ayrı Activity",
+                  "Fragment kullanmamak"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Google, modern mimaride tek Activity içinde birden fazla Fragment kullanılmasını önerir.",
+                "tags": ["fragment", "architecture", "best_practice"]
+              },
+              {
+                "questionId": 320103,
+                "question": "Fragment’ler neden yeniden kullanılabilir kabul edilir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Statik oldukları için",
+                  "Activity’den bağımsız çalıştıkları için",
+                  "Farklı Activity’lerde kullanılabildikleri için",
+                  "Sadece XML içerdiği için"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Fragment’ler farklı Activity’lerde veya farklı layout yapılarında yeniden kullanılabilir.",
+                "tags": ["fragment", "reusability", "ui"]
+              },
+              {
+                "questionId": 320104,
+                "question": "Fragment doğrudan ekranda çalışabilir mi?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "hard",
+                "options": [
+                  "Evet",
+                  "Hayır, Activity’ye ihtiyaç duyar",
+                  "Sadece Navigation Component ile",
+                  "Sadece XML içinde"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Fragment’ler tek başına çalışamaz, mutlaka bir Activity’ye bağlı olmalıdır.",
+                "tags": ["fragment", "activity", "lifecycle"]
+              }
+            ]
           },
           {
             "topicId": 3202,
@@ -8148,7 +8618,72 @@
               "Memory leak riskleri vardır",
               "Doğru kullanım performansı artırır"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 320201,
+                "question": "Fragment lifecycle neden Activity lifecycle’dan daha karmaşıktır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Daha az metodu olduğu için",
+                  "View lifecycle ve Fragment lifecycle ayrı olduğu için",
+                  "Sadece XML ile çalıştığı için",
+                  "Async çalıştığı için"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Fragment’lerde View lifecycle ve Fragment lifecycle ayrı yönetildiği için daha karmaşıktır.",
+                "tags": ["fragment_lifecycle", "lifecycle", "temel"]
+              },
+              {
+                "questionId": 320202,
+                "question": "UI işlemleri için Fragment’te en uygun lifecycle metodu hangisidir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "onCreate",
+                  "onAttach",
+                  "onViewCreated",
+                  "onDestroy"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "onViewCreated, View tamamen hazır olduktan sonra çağrıldığı için UI işlemleri burada yapılmalıdır.",
+                "tags": ["fragment_lifecycle", "ui", "best_practice"]
+              },
+              {
+                "questionId": 320203,
+                "question": "onDestroyView metodunun temel amacı nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Fragment’i tamamen yok etmek",
+                  "View referanslarını temizlemek",
+                  "Activity’yi kapatmak",
+                  "Navigation işlemini durdurmak"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "onDestroyView, View ile ilgili referansların temizlenmesi için kullanılır.",
+                "tags": ["fragment_lifecycle", "memory", "view"]
+              },
+              {
+                "questionId": 320204,
+                "question": "Fragment lifecycle yanlış yönetilirse en büyük risk nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "hard",
+                "options": [
+                  "Crash",
+                  "Memory leak",
+                  "Navigation hatası",
+                  "Veri kaybı"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Yanlış lifecycle yönetimi memory leak oluşmasına neden olabilir.",
+                "tags": ["fragment_lifecycle", "memory_leak", "advanced"]
+              }
+            ]
           },
           {
             "topicId": 3203,
@@ -8170,7 +8705,72 @@
               "Fragment geçişleri kolaylaşır",
               "Best practice olarak önerilir"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 320301,
+                "question": "Navigation Component’in temel amacı nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Veritabanı yönetmek",
+                  "Fragment’ler arası geçişleri merkezi şekilde yönetmek",
+                  "UI tasarlamak",
+                  "Network isteklerini yönetmek"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Navigation Component, Fragment’ler arası geçişleri merkezi, güvenli ve okunabilir şekilde yönetmek için kullanılır.",
+                "tags": ["navigation_component", "navigation", "temel"]
+              },
+              {
+                "questionId": 320302,
+                "question": "Navigation Component hangi dosya ile ekran geçişlerini tanımlar?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "AndroidManifest.xml",
+                  "navigation_graph.xml",
+                  "styles.xml",
+                  "build.gradle"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Navigation Graph XML dosyası, Fragment’ler ve aralarındaki geçişleri tanımlar.",
+                "tags": ["navigation_component", "navigation_graph", "xml"]
+              },
+              {
+                "questionId": 320303,
+                "question": "Navigation Component kullanmanın en büyük avantajlarından biri nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Daha fazla kod yazmak",
+                  "BackStack yönetimini otomatik yapması",
+                  "Performansı düşürmesi",
+                  "Sadece Activity ile çalışması"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Navigation Component, BackStack yönetimini otomatik yaparak hata riskini azaltır.",
+                "tags": ["navigation_component", "backstack", "advantage"]
+              },
+              {
+                "questionId": 320304,
+                "question": "findNavController() fonksiyonu ne için kullanılır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "hard",
+                "options": [
+                  "View oluşturmak",
+                  "Fragment silmek",
+                  "Navigation işlemini başlatmak",
+                  "Layout inflate etmek"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "findNavController(), Navigation Component üzerinden ekran geçişlerini başlatmak için kullanılır.",
+                "tags": ["navigation_component", "navcontroller", "advanced"]
+              }
+            ]
           },
           {
             "topicId": 3204,
@@ -8192,10 +8792,236 @@
               "Navigation Component ile çalışır",
               "Önerilen veri aktarım yöntemidir"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 320301,
+                "question": "Navigation Component’in temel amacı nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Veritabanı yönetmek",
+                  "Fragment’ler arası geçişleri merkezi şekilde yönetmek",
+                  "UI tasarlamak",
+                  "Network isteklerini yönetmek"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Navigation Component, Fragment’ler arası geçişleri merkezi, güvenli ve okunabilir şekilde yönetmek için kullanılır.",
+                "tags": ["navigation_component", "navigation", "temel"]
+              },
+              {
+                "questionId": 320302,
+                "question": "Navigation Component hangi dosya ile ekran geçişlerini tanımlar?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "AndroidManifest.xml",
+                  "navigation_graph.xml",
+                  "styles.xml",
+                  "build.gradle"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Navigation Graph XML dosyası, Fragment’ler ve aralarındaki geçişleri tanımlar.",
+                "tags": ["navigation_component", "navigation_graph", "xml"]
+              },
+              {
+                "questionId": 320303,
+                "question": "Navigation Component kullanmanın en büyük avantajlarından biri nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Daha fazla kod yazmak",
+                  "BackStack yönetimini otomatik yapması",
+                  "Performansı düşürmesi",
+                  "Sadece Activity ile çalışması"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Navigation Component, BackStack yönetimini otomatik yaparak hata riskini azaltır.",
+                "tags": ["navigation_component", "backstack", "advantage"]
+              },
+              {
+                "questionId": 320304,
+                "question": "findNavController() fonksiyonu ne için kullanılır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "hard",
+                "options": [
+                  "View oluşturmak",
+                  "Fragment silmek",
+                  "Navigation işlemini başlatmak",
+                  "Layout inflate etmek"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "findNavController(), Navigation Component üzerinden ekran geçişlerini başlatmak için kullanılır.",
+                "tags": ["navigation_component", "navcontroller", "advanced"]
+              }
+            ]
           }
         ],
-        "sectionMixedQuestions": []
+        "sectionMixedQuestions": [
+          {
+            "questionId": 320001,
+            "question": "Fragment’lerin en büyük avantajı nedir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Daha fazla kod yazmak",
+              "Modüler ve yeniden kullanılabilir UI sunması",
+              "Sadece XML kullanması",
+              "Activity ihtiyacını kaldırması"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Fragment’ler modüler yapıları sayesinde yeniden kullanılabilir UI sunar.",
+            "tags": ["fragment", "ui", "modular"]
+          },
+          {
+            "questionId": 320002,
+            "question": "Navigation Component neden önerilir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "BackStack yönetimini otomatik yaptığı için",
+              "Daha yavaş çalıştığı için",
+              "Sadece XML kullandığı için",
+              "Activity’leri kaldırdığı için"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "Navigation Component, BackStack yönetimini otomatik yaparak hata riskini azaltır.",
+            "tags": ["navigation_component", "best_practice"]
+          },
+          {
+            "questionId": 320003,
+            "question": "Fragment’te memory leak riski en çok hangi durumda oluşur?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "onCreate içinde işlem yapmak",
+              "View referanslarını onDestroyView’da temizlememek",
+              "Navigation kullanmak",
+              "Safe Args kullanmak"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "View referansları onDestroyView’da temizlenmezse memory leak oluşabilir.",
+            "tags": ["fragment", "memory_leak", "lifecycle"]
+          },
+          {
+            "questionId": 320004,
+            "question": "Safe Args kullanmanın temel faydası nedir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Daha hızlı navigation",
+              "Tip güvenli veri aktarımı",
+              "Daha az XML",
+              "Daha az Fragment"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Safe Args, Fragment’ler arası veri aktarımında tip güvenliği sağlar.",
+            "tags": ["safe_args", "type_safety"]
+          },
+          {
+            "questionId": 320005,
+            "question": "Navigation Graph nerede tanımlanır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Java/Kotlin sınıfında",
+              "res/navigation klasöründe",
+              "AndroidManifest.xml içinde",
+              "res/layout içinde"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Navigation Graph, res/navigation klasörü altında XML olarak tanımlanır.",
+            "tags": ["navigation_graph", "xml", "navigation"]
+          },
+          {
+            "questionId": 320006,
+            "question": "Fragment’ler hangi bileşene bağımlıdır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Service",
+              "BroadcastReceiver",
+              "Activity",
+              "ViewModel"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Fragment’ler çalışabilmek için bir Activity’ye ihtiyaç duyar.",
+            "tags": ["fragment", "activity", "dependency"]
+          },
+          {
+            "questionId": 320007,
+            "question": "Navigation Component kullanmadan Fragment geçişi nasıl yapılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "hard",
+            "options": [
+              "Intent ile",
+              "FragmentTransaction ile",
+              "Safe Args ile",
+              "ViewBinding ile"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Navigation Component olmadan FragmentTransaction kullanılarak geçiş yapılır.",
+            "tags": ["fragment", "fragment_transaction", "navigation"]
+          },
+          {
+            "questionId": 320008,
+            "question": "Safe Args olmadan veri aktarımı genellikle ne ile yapılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Intent extras",
+              "Bundle",
+              "ViewModel",
+              "SharedPreferences"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Fragment’ler arasında veri aktarımı genellikle Bundle ile yapılır.",
+            "tags": ["bundle", "fragment", "data_transfer"]
+          },
+          {
+            "questionId": 320009,
+            "question": "Navigation Component BackStack’i nasıl yönetir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Manuel",
+              "Otomatik",
+              "Service ile",
+              "Broadcast ile"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Navigation Component BackStack’i otomatik olarak yönetir.",
+            "tags": ["navigation_component", "backstack"]
+          },
+          {
+            "questionId": 320010,
+            "question": "Safe Args neden compile-time güvenlik sağlar?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "hard",
+            "options": [
+              "Reflection kullandığı için",
+              "Otomatik key oluşturduğu için",
+              "Generated class’lar ile çalıştığı için",
+              "Runtime kontrol yaptığı için"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Safe Args, compile-time’da oluşturulan sınıflar sayesinde tip güvenliği sağlar.",
+            "tags": ["safe_args", "compile_time", "advanced"]
+          }
+        ]
       },
       {
         "sectionId": 3300,
