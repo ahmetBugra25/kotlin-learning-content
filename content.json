@@ -6080,7 +6080,88 @@
                 "Intent ile Activity geçişleri yapılır",
                 "Yaşam döngüsü metotlarına sahiptir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 230101,
+                  "question": "Activity nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Veritabanı tablosu",
+                    "Kullanıcıya gösterilen tek bir ekran",
+                    "Sadece arka plan servisi",
+                    "Network bağlantısı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Activity, Android uygulamalarda kullanıcıya gösterilen tek bir ekranı temsil eder.",
+                  "tags": ["activity", "temel"]
+                },
+                {
+                  "questionId": 230102,
+                  "question": "Activity hangi sınıftan türetilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Fragment",
+                    "View",
+                    "AppCompatActivity",
+                    "Context"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Modern Android uygulamalarında Activity'ler genellikle AppCompatActivity sınıfından türetilir.",
+                  "tags": ["activity", "inheritance"]
+                },
+                {
+                  "questionId": 230103,
+                  "question": "Activity'ler arasında geçiş yapmak için ne kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Toast",
+                    "Intent",
+                    "Bundle",
+                    "Context"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Activity'ler arasında geçiş yapmak için Intent kullanılır.",
+                  "tags": ["activity", "intent"]
+                },
+                {
+                  "questionId": 230104,
+                  "question": "Aşağıdaki kodda onCreate metodunun amacı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": "class MainActivity : AppCompatActivity() {\n    override fun onCreate(savedInstanceState: Bundle?) {\n        super.onCreate(savedInstanceState)\n        setContentView(R.layout.activity_main)\n    }\n}",
+                  "difficulty": "medium",
+                  "options": [
+                    "Activity'yi yok eder",
+                    "Activity'yi başlatır ve ilk kurulumu yapar",
+                    "Activity'yi arka plana alır",
+                    "Sadece log basar"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "onCreate metodu, Activity oluşturulduğunda çağrılır ve ilk kurulum işlemleri burada yapılır. setContentView ile layout bağlanır.",
+                  "tags": ["activity", "oncreate"]
+                },
+                {
+                  "questionId": 230105,
+                  "question": "Bir uygulamada kaç tane Activity bulunabilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece 1 tane",
+                    "En fazla 3 tane",
+                    "Birden fazla olabilir",
+                    "Activity olmadan da uygulama çalışır"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Bir Android uygulaması birden fazla Activity içerebilir. Her Activity farklı bir ekranı temsil edebilir.",
+                  "tags": ["activity", "multiple"]
+                }
+              ]
             },
             {
               "topicId": 2302,
@@ -6103,7 +6184,88 @@
                 "onDestroy: Activity yok edilir",
                 "Kaynaklar lifecycle'a göre yönetilmelidir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 230201,
+                  "question": "Activity ilk oluşturulduğunda hangi lifecycle metodu çağrılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "onStart()",
+                    "onResume()",
+                    "onCreate()",
+                    "onDestroy()"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "onCreate() metodu, Activity ilk oluşturulduğunda çağrılır ve temel kurulum işlemleri burada yapılır.",
+                  "tags": ["lifecycle", "oncreate"]
+                },
+                {
+                  "questionId": 230202,
+                  "question": "Activity görünür hale geldiğinde hangi metot çağrılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "onCreate()",
+                    "onStart()",
+                    "onPause()",
+                    "onDestroy()"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "onStart() metodu, Activity görünür hale geldiğinde (kullanıcı ekranı görebildiğinde) çağrılır.",
+                  "tags": ["lifecycle", "onstart"]
+                },
+                {
+                  "questionId": 230203,
+                  "question": "Activity tamamen aktif ve kullanıcı etkileşime geçebilir durumdayken hangi metot çalışır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "onCreate()",
+                    "onStart()",
+                    "onResume()",
+                    "onPause()"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "onResume() metodu, Activity tamamen aktif hale geldiğinde ve kullanıcı etkileşime geçebilir durumdayken çağrılır.",
+                  "tags": ["lifecycle", "onresume"]
+                },
+                {
+                  "questionId": 230204,
+                  "question": "Activity arka plana alındığında hangi metot çağrılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "onResume()",
+                    "onCreate()",
+                    "onPause()",
+                    "onRestart()"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "onPause() metodu, Activity arka plana alındığında veya başka bir Activity öne çıktığında çağrılır.",
+                  "tags": ["lifecycle", "onpause"]
+                },
+                {
+                  "questionId": 230205,
+                  "question": "Activity tamamen yok edildiğinde hangi metot çağrılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "onStop()",
+                    "onPause()",
+                    "onDestroy()",
+                    "onCreate()"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "onDestroy() metodu, Activity tamamen yok edildiğinde çağrılır. Burada kaynaklar serbest bırakılmalıdır.",
+                  "tags": ["lifecycle", "ondestroy"]
+                }
+              ]
             },
             {
               "topicId": 2303,
@@ -6125,10 +6287,236 @@
                 "Yanlış kullanım memory leak oluşturabilir",
                 "Toast, Intent ve Dialog işlemlerinde kullanılır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 230301,
+                  "question": "Context nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece layout dosyası",
+                    "Uygulamanın mevcut durumunu temsil eden ortam bilgisi",
+                    "Sadece veritabanı",
+                    "Sadece network bağlantısı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Context, Android uygulamasının mevcut durumunu ve ortam bilgisini temsil eder.",
+                  "tags": ["context", "temel"]
+                },
+                {
+                  "questionId": 230302,
+                  "question": "Aşağıdaki kodda 'this' ne tür bir Context'tir?",
+                  "questionType": "multiple_choice",
+                  "code": "Toast.makeText(this, \"Merhaba\", Toast.LENGTH_SHORT).show()",
+                  "difficulty": "medium",
+                  "options": [
+                    "Application Context",
+                    "Activity Context",
+                    "Service Context",
+                    "Fragment Context"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Activity içinde 'this' kullanıldığında Activity Context'i temsil eder.",
+                  "tags": ["context", "activity_context"]
+                },
+                {
+                  "questionId": 230303,
+                  "question": "Yanlış Context kullanımı hangi soruna yol açabilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Daha hızlı çalışma",
+                    "Memory leak (bellek sızıntısı)",
+                    "Daha az bellek kullanımı",
+                    "Hiçbir sorun oluşmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Yanlış Context kullanımı (örneğin Activity Context'i uzun ömürlü nesnelerde tutmak) memory leak'e yol açabilir.",
+                  "tags": ["context", "memory_leak"]
+                },
+                {
+                  "questionId": 230304,
+                  "question": "Context hangi işlemler için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece veritabanı işlemleri",
+                    "Kaynaklara erişim, Activity başlatma, sistem servisleri",
+                    "Sadece network işlemleri",
+                    "Sadece matematiksel hesaplamalar"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Context; kaynaklara erişim (getString, getDrawable), Activity başlatma (Intent), sistem servislerini kullanma ve Toast/Dialog gösterme gibi işlemler için kullanılır.",
+                  "tags": ["context", "usage"]
+                }
+              ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+              "questionId": 230001,
+              "question": "Activity yaşam döngüsünde doğru sıralama hangisidir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "onCreate → onResume → onStart",
+                "onCreate → onStart → onResume",
+                "onStart → onCreate → onResume",
+                "onResume → onCreate → onStart"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Activity yaşam döngüsü: onCreate() → onStart() → onResume() sırasıyla çalışır.",
+              "tags": ["lifecycle", "sequence"]
+            },
+            {
+              "questionId": 230002,
+              "question": "Kullanıcı Home tuşuna basarak uygulamayı arka plana aldığında hangi lifecycle metotları çağrılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece onPause()",
+                "onPause() → onStop()",
+                "onPause() → onDestroy()",
+                "Hiçbiri çağrılmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Uygulama arka plana alındığında önce onPause(), ardından onStop() çağrılır. Activity yok edilmez.",
+              "tags": ["lifecycle", "background"]
+            },
+            {
+              "questionId": 230003,
+              "question": "Activity'de setContentView() metodu hangi lifecycle metodunda çağrılmalıdır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "onStart()",
+                "onResume()",
+                "onCreate()",
+                "onDestroy()"
+              ],
+              "correctAnswerIndex": 2,
+              "explanation": "setContentView() metodu, layout'u Activity'ye bağlamak için onCreate() metodunda çağrılır.",
+              "tags": ["activity", "setcontentview"]
+            },
+            {
+              "questionId": 230004,
+              "question": "Activity Context ve Application Context arasındaki fark nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir fark yok",
+                "Activity Context Activity'ye bağlı, Application Context tüm uygulamaya bağlı",
+                "Application Context daha yavaştır",
+                "Activity Context sadece layout için kullanılır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Activity Context, Activity'nin yaşam döngüsüne bağlıdır. Application Context ise uygulama çalıştığı sürece yaşar ve uzun ömürlü işlemler için tercih edilir.",
+              "tags": ["context", "difference"]
+            },
+            {
+              "questionId": 230005,
+              "question": "onDestroy() metodunda ne tür işlemler yapılmalıdır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Layout bağlama",
+                "Kaynakları serbest bırakma (cleanup)",
+                "Yeni Activity başlatma",
+                "Toast gösterme"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "onDestroy() metodunda listener'lar, broadcast receiver'lar gibi kaynaklar serbest bırakılmalı ve cleanup işlemleri yapılmalıdır.",
+              "tags": ["lifecycle", "cleanup"]
+            },
+            {
+              "questionId": 230006,
+              "question": "Activity arka plandayken tekrar ön plana geldiğinde hangi lifecycle metotları çalışır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "onCreate() → onStart() → onResume()",
+                "onRestart() → onStart() → onResume()",
+                "Sadece onResume()",
+                "onStart() → onResume()"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Activity arka plandayken tekrar ön plana geldiğinde onRestart() → onStart() → onResume() sırası çalışır.",
+              "tags": ["lifecycle", "restart"]
+            },
+            {
+              "questionId": 230007,
+              "question": "Intent kullanarak başka bir Activity'ye veri göndermek için hangi metot kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "intent.getData()",
+                "intent.putExtra()",
+                "intent.send()",
+                "intent.setData()"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Intent ile veri göndermek için putExtra() metodu kullanılır.",
+              "tags": ["intent", "data_passing"]
+            },
+            {
+              "questionId": 230008,
+              "question": "onPause() ve onStop() arasındaki fark nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Hiçbir fark yok",
+                "onPause() Activity kısmen görünür, onStop() tamamen görünmez",
+                "onStop() daha önce çağrılır",
+                "onPause() sadece ilk açılışta çalışır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "onPause()'da Activity hala kısmen görünür olabilir (örneğin dialog üstte), onStop()'ta ise Activity tamamen görünmez hale gelir.",
+              "tags": ["lifecycle", "onpause_onstop"]
+            },
+            {
+              "questionId": 230009,
+              "question": "AndroidManifest.xml'de Activity tanımlanmazsa ne olur?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Hiçbir şey olmaz",
+                "Uygulama açılmaz",
+                "Activity çalıştırılamaz",
+                "Sadece uyarı verir"
+              ],
+              "correctAnswerIndex": 2,
+              "explanation": "AndroidManifest.xml'de tanımlanmayan Activity'ler çalıştırılamaz ve runtime exception oluşur.",
+              "tags": ["activity", "manifest"]
+            },
+            {
+              "questionId": 230010,
+              "question": "Configuration change (ekran döndürme) durumunda Activity varsayılan olarak ne yapar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir şey olmaz",
+                "Sadece onPause() çağrılır",
+                "Activity yok edilip yeniden oluşturulur",
+                "Sadece layout değişir"
+              ],
+              "correctAnswerIndex": 2,
+              "explanation": "Configuration change (örneğin ekran döndürme) durumunda Activity varsayılan olarak yok edilir (onDestroy) ve yeniden oluşturulur (onCreate).",
+              "tags": ["lifecycle", "configuration_change"]
+            }
+          ]
         },
         {
           "sectionId": 2400,
@@ -6155,7 +6543,56 @@
                 "Click listener ile çalışır",
                 "XML ve koddan kontrol edilebilir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 240101,
+                  "question": "Button ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Metin göstermek",
+                    "Kullanıcıdan aksiyon almak",
+                    "Sadece görsel için",
+                    "Veritabanı işlemleri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Button, kullanıcının bir aksiyon başlatmasını sağlayan temel UI bileşenidir.",
+                  "tags": ["button", "temel"]
+                },
+                {
+                  "questionId": 240102,
+                  "question": "Aşağıdaki XML'de Button'un ID'si nedir?",
+                  "questionType": "multiple_choice",
+                  "code": "<Button\n    android:id=\"@+id/btnSave\"\n    android:layout_width=\"wrap_content\"\n    android:layout_height=\"wrap_content\"\n    android:text=\"Kaydet\" />",
+                  "difficulty": "easy",
+                  "options": [
+                    "Kaydet",
+                    "btnSave",
+                    "Button",
+                    "wrap_content"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "android:id=\"@+id/btnSave\" ifadesinde Button'un ID'si btnSave'dir.",
+                  "tags": ["button", "xml"]
+                },
+                {
+                  "questionId": 240103,
+                  "question": "Button'a tıklama olayı nasıl eklenir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "onClick listener",
+                    "setText metodu",
+                    "setId metodu",
+                    "Otomatik eklenir"
+                  ],
+                  "correctAnswerIndex": 0,
+                  "explanation": "Button'a tıklama olayı eklemek için setOnClickListener kullanılır.",
+                  "tags": ["button", "click_listener"]
+                }
+              ]
             },
             {
               "topicId": 2402,
@@ -6176,7 +6613,56 @@
                 "inputType ile klavye ayarlanır",
                 "Genellikle form ekranlarında kullanılır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 240201,
+                  "question": "EditText ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece metin göstermek",
+                    "Kullanıcıdan metin girişi almak",
+                    "Resim göstermek",
+                    "Video oynatmak"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "EditText, kullanıcıdan metin girişi almak için kullanılan bir UI bileşenidir.",
+                  "tags": ["edittext", "input"]
+                },
+                {
+                  "questionId": 240202,
+                  "question": "EditText'te klavye türünü belirlemek için hangi özellik kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "android:text",
+                    "android:hint",
+                    "android:inputType",
+                    "android:id"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "android:inputType ile klavye türü belirlenir (textPassword, number, email vb.).",
+                  "tags": ["edittext", "inputtype"]
+                },
+                {
+                  "questionId": 240203,
+                  "question": "Aşağıdaki EditText'te hint metni ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": "<EditText\n    android:id=\"@+id/etName\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"wrap_content\"\n    android:hint=\"İsim giriniz\" />",
+                  "difficulty": "easy",
+                  "options": [
+                    "Kullanıcıya yönlendirme gösterir",
+                    "Edittext'in değeridir",
+                    "ID'sidir",
+                    "Hata mesajıdır"
+                  ],
+                  "correctAnswerIndex": 0,
+                  "explanation": "hint, EditText boşken kullanıcıya ne girmesi gerektiğini belirten açıklayıcı metindir.",
+                  "tags": ["edittext", "hint"]
+                }
+              ]
             },
             {
               "topicId": 2403,
@@ -6197,7 +6683,56 @@
                 "Lambda ile sade kullanım",
                 "Tüm View'lar için geçerlidir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 240301,
+                  "question": "Click listener ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "View oluşturur",
+                    "Kullanıcı tıklama olaylarını yakalar",
+                    "Layout tasarlar",
+                    "Veritabanına veri yazar"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Click listener, kullanıcı bir View'a tıkladığında çalışacak kod bloğunu tanımlamak için kullanılır.",
+                  "tags": ["click_listener", "temel"]
+                },
+                {
+                  "questionId": 240302,
+                  "question": "Aşağıdaki kodda ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": "button.setOnClickListener {\n    println(\"Butona tıklandı\")\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "Button oluşturulur",
+                    "Button tıklandığında konsola mesaj yazılır",
+                    "Button silinir",
+                    "Hata verir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "setOnClickListener içindeki kod bloğu, button'a tıklandığında çalışır ve konsola mesaj yazar.",
+                  "tags": ["click_listener", "kotlin"]
+                },
+                {
+                  "questionId": 240303,
+                  "question": "Click listener hangi View'lar için kullanılabilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece Button",
+                    "Sadece TextView",
+                    "Tüm View'lar",
+                    "Sadece EditText"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Click listener tüm View türleri için kullanılabilir (Button, TextView, ImageView, CardView vb.).",
+                  "tags": ["click_listener", "view"]
+                }
+              ]
             },
             {
               "topicId": 2404,
@@ -6218,7 +6753,72 @@
                 "Pozitif ve negatif butonlar içerir",
                 "Context gerektirir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 240401,
+                  "question": "AlertDialog ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece bilgi göstermek",
+                    "Kullanıcıdan onay veya seçim almak",
+                    "Layout oluşturmak",
+                    "Veritabanı işlemleri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "AlertDialog, kullanıcıya bilgi vermek veya onay almak için kullanılan açılır pencere yapısıdır.",
+                  "tags": ["alertdialog", "temel"]
+                },
+                {
+                  "questionId": 240402,
+                  "question": "AlertDialog'da pozitif buton ne anlama gelir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "İptal butonu",
+                    "Onay/Evet butonu",
+                    "Geri butonu",
+                    "Kapat butonu"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "setPositiveButton, genellikle 'Evet', 'Tamam', 'Kaydet' gibi onay butonları için kullanılır.",
+                  "tags": ["alertdialog", "positive_button"]
+                },
+                {
+                  "questionId": 240403,
+                  "question": "Aşağıdaki AlertDialog kodunda kaç buton vardır?",
+                  "questionType": "multiple_choice",
+                  "code": "AlertDialog.Builder(this)\n    .setTitle(\"Uyarı\")\n    .setMessage(\"Silmek istiyor musunuz?\")\n    .setPositiveButton(\"Evet\", null)\n    .setNegativeButton(\"Hayır\", null)\n    .show()",
+                  "difficulty": "easy",
+                  "options": [
+                    "1 buton",
+                    "2 buton",
+                    "3 buton",
+                    "Buton yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Positive (Evet) ve Negative (Hayır) olmak üzere 2 buton vardır.",
+                  "tags": ["alertdialog", "buttons"]
+                },
+                {
+                  "questionId": 240404,
+                  "question": "AlertDialog oluşturmak için ne gereklidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece String",
+                    "Context",
+                    "Sadece Layout",
+                    "Fragment"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "AlertDialog oluşturmak için Context gereklidir. Builder'a this (Activity context) veya applicationContext verilebilir.",
+                  "tags": ["alertdialog", "context"]
+                }
+              ]
             },
             {
               "topicId": 2405,
@@ -6239,10 +6839,220 @@
                 "Snackbar daha etkileşimlidir",
                 "Snackbar aksiyon alabilir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 240501,
+                  "question": "Toast ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Kullanıcıdan veri almak",
+                    "Kısa süreli bilgilendirme mesajı göstermek",
+                    "Activity başlatmak",
+                    "Veritabanı işlemleri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Toast, kullanıcıya kısa süreli bilgilendirme mesajları göstermek için kullanılır.",
+                  "tags": ["toast", "temel"]
+                },
+                {
+                  "questionId": 240502,
+                  "question": "Toast ve Snackbar arasındaki temel fark nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir fark yok",
+                    "Snackbar daha etkileşimli ve aksiyon butonu alabilir",
+                    "Toast daha yavaştır",
+                    "Snackbar sadece error için kullanılır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Snackbar, Toast'a göre daha etkileşimlidir ve aksiyon butonu eklenebilir (örneğin Geri Al).",
+                  "tags": ["toast", "snackbar", "difference"]
+                },
+                {
+                  "questionId": 240503,
+                  "question": "Aşağıdaki kodda Toast ne kadar süre görünür?",
+                  "questionType": "multiple_choice",
+                  "code": "Toast.makeText(this, \"Kayıt başarılı\", Toast.LENGTH_SHORT).show()",
+                  "difficulty": "easy",
+                  "options": [
+                    "1 saniye",
+                    "Kısa süre (yaklaşık 2 saniye)",
+                    "Uzun süre (yaklaşık 3.5 saniye)",
+                    "Sonsuz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Toast.LENGTH_SHORT, Toast'un kısa süre (yaklaşık 2 saniye) görünmesini sağlar. LENGTH_LONG ise yaklaşık 3.5 saniyedir.",
+                  "tags": ["toast", "duration"]
+                }
+              ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+              "questionId": 240001,
+              "question": "Button, EditText ve TextView'in ortak özelliği nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Hepsi View sınıfından türer",
+                "Hepsi sadece metin gösterir",
+                "Hepsi aynı şeydir",
+                "Hepsi sadece tıklanabilir"
+              ],
+              "correctAnswerIndex": 0,
+              "explanation": "Button, EditText, TextView ve diğer tüm UI bileşenleri View sınıfından türer.",
+              "tags": ["view", "inheritance"]
+            },
+            {
+              "questionId": 240002,
+              "question": "Kullanıcıdan şifre girişi almak için EditText'te hangi inputType kullanılmalıdır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "textEmailAddress",
+                "number",
+                "textPassword",
+                "phone"
+              ],
+              "correctAnswerIndex": 2,
+              "explanation": "android:inputType=\"textPassword\" kullanıldığında girilen karakter gizlenir ve şifre girişi için uygun klavye gösterilir.",
+              "tags": ["edittext", "inputtype", "password"]
+            },
+            {
+              "questionId": 240003,
+              "question": "Kritik bir silme işlemi öncesinde kullanıcıdan onay almak için hangi bileşen kullanılmalıdır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Toast",
+                "Button",
+                "AlertDialog",
+                "EditText"
+              ],
+              "correctAnswerIndex": 2,
+              "explanation": "Kritik aksiyonlar öncesinde kullanıcıdan onay almak için AlertDialog kullanılır.",
+              "tags": ["alertdialog", "confirmation"]
+            },
+            {
+              "questionId": 240004,
+              "question": "Snackbar'ın Toast'a göre avantajı nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Daha hızlıdır",
+                "Aksiyon butonu eklenebilir",
+                "Daha az bellek kullanır",
+                "Daha uzun süre görünür"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Snackbar'a setAction() ile aksiyon butonu eklenebilir (örneğin Geri Al), Toast'ta bu özellik yoktur.",
+              "tags": ["snackbar", "advantage"]
+            },
+            {
+              "questionId": 240005,
+              "question": "View Binding ile Button'a nasıl erişilir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "findViewById(R.id.button)",
+                "binding.button",
+                "getButton()",
+                "button.get()"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "View Binding kullanıldığında XML'deki view'lara binding.viewId şeklinde doğrudan erişilir.",
+              "tags": ["view_binding", "button"]
+            },
+            {
+              "questionId": 240006,
+              "question": "EditText'ten girilen değer nasıl alınır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "editText.text",
+                "editText.value",
+                "editText.text.toString()",
+                "editText.getValue()"
+              ],
+              "correctAnswerIndex": 2,
+              "explanation": "EditText'ten girilen değer editText.text.toString() ile String olarak alınır.",
+              "tags": ["edittext", "get_text"]
+            },
+            {
+              "questionId": 240007,
+              "question": "AlertDialog gösterildiğinde hangi metot çağrılmalıdır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "build()",
+                "create()",
+                "show()",
+                "display()"
+              ],
+              "correctAnswerIndex": 2,
+              "explanation": "AlertDialog'u ekranda göstermek için show() metodu çağrılır.",
+              "tags": ["alertdialog", "show"]
+            },
+            {
+              "questionId": 240008,
+              "question": "Bir Button'u programatik olarak tıklanamaz hale getirmek için ne yapılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "button.visible = false",
+                "button.isEnabled = false",
+                "button.remove()",
+                "button.delete()"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "button.isEnabled = false yapıldığında button tıklanamaz (disabled) hale gelir ama görünür kalır.",
+              "tags": ["button", "enabled"]
+            },
+            {
+              "questionId": 240009,
+              "question": "Toast gösterilirken uygulama kapanırsa ne olur?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hata verir",
+                "Toast kaybolur",
+                "Uygulama crash olur",
+                "Toast sonsuza kadar kalır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Toast, Activity'ye bağlı olmadığı için uygulama kapansa bile belirlenen süre boyunca görünmeye devam edebilir, ancak Activity context kullanıldığında genellikle kaybolur.",
+              "tags": ["toast", "lifecycle"]
+            },
+            {
+              "questionId": 240010,
+              "question": "Modern Android uygulamalarında bilgilendirme mesajı göstermek için hangisi önerilir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "AlertDialog",
+                "Toast",
+                "Snackbar",
+                "Notification"
+              ],
+              "correctAnswerIndex": 2,
+              "explanation": "Modern Android uygulamalarında Material Design'a uygun ve daha etkileşimli olduğu için Snackbar önerilir. Toast hala kullanılsa da Snackbar daha kullanıcı dostudur.",
+              "tags": ["snackbar", "best_practice"]
+            }
+          ]
         },
         {
           "sectionId": 2500,
@@ -6269,7 +7079,72 @@
                 "Uygulama içi geçişlerde kullanılır",
                 "En yaygın intent türüdür"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 250101,
+                  "question": "Explicit Intent ne demektir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Hedef Activity belirsizdir",
+                    "Hedef Activity açıkça belirtilir",
+                    "Sadece sistem uygulamaları için kullanılır",
+                    "Veri aktarımı yapılamaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Explicit Intent, hedef Activity'nin doğrudan belirtildiği intent türüdür.",
+                  "tags": ["intent", "explicit"]
+                },
+                {
+                  "questionId": 250102,
+                  "question": "Explicit Intent hangi durumlarda kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece dış uygulamalara geçiş",
+                    "Uygulama içi Activity geçişleri",
+                    "Sadece servis başlatma",
+                    "Sadece broadcast gönderme"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Explicit Intent, genellikle aynı uygulama içerisindeki Activity'ler arasında geçiş yapmak için kullanılır.",
+                  "tags": ["intent", "explicit", "usage"]
+                },
+                {
+                  "questionId": 250103,
+                  "question": "Aşağıdaki kodda hangi Activity açılır?",
+                  "questionType": "multiple_choice",
+                  "code": "val intent = Intent(this, DetailActivity::class.java)\nstartActivity(intent)",
+                  "difficulty": "easy",
+                  "options": [
+                    "MainActivity",
+                    "DetailActivity",
+                    "Sistem seçer",
+                    "Hiçbiri açılmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Kod, DetailActivity'yi açıkça belirttiği için DetailActivity açılır.",
+                  "tags": ["intent", "explicit", "startactivity"]
+                },
+                {
+                  "questionId": 250104,
+                  "question": "Explicit Intent oluşturmak için hangi parametre gereklidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece action",
+                    "Context ve hedef Activity sınıfı",
+                    "Sadece data",
+                    "Sadece flag"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Explicit Intent oluşturmak için Context (this) ve hedef Activity'nin sınıfı (DetailActivity::class.java) gereklidir.",
+                  "tags": ["intent", "explicit", "parameters"]
+                }
+              ]
             },
             {
               "topicId": 2502,
@@ -6290,7 +7165,88 @@
                 "Aksiyon ve data ile çalışır",
                 "Sistem uygun uygulamayı seçer"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 250201,
+                  "question": "Implicit Intent ne demektir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Hedef Activity açıkça belirtilir",
+                    "Yapılmak istenen işlem tanımlanır, sistem uygun uygulamayı seçer",
+                    "Sadece aynı uygulama içinde kullanılır",
+                    "Veri aktarımı yapılamaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Implicit Intent, hangi uygulamanın açılacağını belirtmeden, yapılmak istenen işlemi (action) tanımlar. Sistem uygun uygulamayı kullanıcıya sunar.",
+                  "tags": ["intent", "implicit"]
+                },
+                {
+                  "questionId": 250202,
+                  "question": "Implicit Intent hangi durumlarda kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece kendi uygulamam içinde",
+                    "Telefon araması, tarayıcı açma, paylaşım gibi sistem aksiyonlarında",
+                    "Sadece veritabanı işlemlerinde",
+                    "Sadece animasyon göstermede"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Implicit Intent, telefon araması, tarayıcı açma, e-posta gönderme veya paylaşım gibi sistem seviyesi aksiyonlar için kullanılır.",
+                  "tags": ["intent", "implicit", "usage"]
+                },
+                {
+                  "questionId": 250203,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "val intent = Intent(Intent.ACTION_VIEW)\nintent.data = Uri.parse(\"https://www.google.com\")\nstartActivity(intent)",
+                  "difficulty": "medium",
+                  "options": [
+                    "Google uygulamasını açar",
+                    "Tarayıcıda Google'ı açar",
+                    "E-posta gönderir",
+                    "Telefon açar"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ACTION_VIEW action'ı ve URL data'sı ile tarayıcı açılır ve Google web sitesi gösterilir.",
+                  "tags": ["intent", "implicit", "action_view"]
+                },
+                {
+                  "questionId": 250204,
+                  "question": "Implicit Intent'te action ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hedef Activity'yi belirtir",
+                    "Yapılacak işlemi tanımlar",
+                    "Sadece veri taşır",
+                    "Layout belirler"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Action, yapılacak işlemi tanımlar (ACTION_VIEW, ACTION_DIAL, ACTION_SEND vb.). Sistem bu action'ı işleyebilecek uygulamaları bulur.",
+                  "tags": ["intent", "implicit", "action"]
+                },
+                {
+                  "questionId": 250205,
+                  "question": "Bir URL'yi paylaşmak için hangi action kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "ACTION_VIEW",
+                    "ACTION_DIAL",
+                    "ACTION_SEND",
+                    "ACTION_CALL"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "ACTION_SEND, metin, URL veya dosya paylaşmak için kullanılır. Kullanıcı paylaşım yapacağı uygulamayı seçebilir.",
+                  "tags": ["intent", "implicit", "action_send"]
+                }
+              ]
             },
             {
               "topicId": 2503,
@@ -6311,7 +7267,56 @@
                 "Intent ile birlikte kullanılır",
                 "Küçük veriler için uygundur"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 250301,
+                  "question": "Bundle ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Layout oluşturmak",
+                    "Activity'ler arasında veri taşımak",
+                    "Veritabanı işlemleri",
+                    "Network isteği"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bundle, key-value mantığıyla çalışan ve Activity'ler arasında veri taşımak için kullanılan bir yapıdır.",
+                  "tags": ["bundle", "data_transfer"]
+                },
+                {
+                  "questionId": 250302,
+                  "question": "Bundle nasıl çalışır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Array mantığıyla",
+                    "Key-value mantığıyla",
+                    "Stack mantığıyla",
+                    "Queue mantığıyla"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bundle, key-value (anahtar-değer) çifti olarak veri saklar. putString(\"key\", \"value\") şeklinde kullanılır.",
+                  "tags": ["bundle", "key_value"]
+                },
+                {
+                  "questionId": 250303,
+                  "question": "Aşağıdaki kodda \"username\" verisinin değeri nedir?",
+                  "questionType": "multiple_choice",
+                  "code": "val bundle = Bundle()\nbundle.putString(\"username\", \"Ahmet\")\nintent.putExtras(bundle)",
+                  "difficulty": "easy",
+                  "options": [
+                    "bundle",
+                    "Ahmet",
+                    "username",
+                    "intent"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "putString(\"username\", \"Ahmet\") ile \"username\" key'ine \"Ahmet\" değeri atanmıştır.",
+                  "tags": ["bundle", "putstring"]
+                }
+              ]
             },
             {
               "topicId": 2504,
@@ -6333,10 +7338,236 @@
                 "Karmaşık nesneler için kullanılır",
                 "Android projelerinde Parcelable önerilir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 250401,
+                  "question": "Serializable ve Parcelable ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Layout oluşturmak",
+                    "Karmaşık nesneleri Activity'ler arasında taşımak",
+                    "Veritabanı işlemleri",
+                    "Animasyon oluşturmak"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Serializable ve Parcelable, karmaşık nesneleri (data class, model) Activity'ler arasında taşımak için kullanılır.",
+                  "tags": ["serializable", "parcelable", "data_transfer"]
+                },
+                {
+                  "questionId": 250402,
+                  "question": "Serializable ve Parcelable arasındaki fark nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir fark yok",
+                    "Serializable Java tabanlı, Parcelable Android'e özel ve daha hızlı",
+                    "Parcelable daha yavaştır",
+                    "Serializable sadece String taşır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Serializable Java tabanlıdır ve kullanımı kolaydır. Parcelable ise Android'e özeldir ve daha performanslıdır.",
+                  "tags": ["serializable", "parcelable", "difference"]
+                },
+                {
+                  "questionId": 250403,
+                  "question": "Android projelerinde hangi yöntem önerilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Serializable",
+                    "Parcelable",
+                    "İkisi de aynı",
+                    "Hiçbiri kullanılmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Android projelerinde performans avantajı nedeniyle Parcelable önerilir.",
+                  "tags": ["parcelable", "best_practice"]
+                },
+                {
+                  "questionId": 250404,
+                  "question": "Aşağıdaki Parcelable kullanımında @Parcelize ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": "@Parcelize\ndata class User(val name: String, val age: Int) : Parcelable",
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece görsel amaçlı",
+                    "Parcelable implementasyonunu otomatik oluşturur",
+                    "Veritabanı işlemleri için",
+                    "Network isteği için"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Kotlin'de @Parcelize annotation'ı, Parcelable implementasyonunu otomatik olarak oluşturur, böylece manuel kod yazmaya gerek kalmaz.",
+                  "tags": ["parcelable", "parcelize", "kotlin"]
+                }
+              ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+              "questionId": 250001,
+              "question": "Explicit ve Implicit Intent arasındaki temel fark nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Hiçbir fark yok",
+                "Explicit hedef Activity belirtir, Implicit action tanımlar",
+                "Implicit daha hızlıdır",
+                "Explicit sadece sistem uygulamaları için"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Explicit Intent hedef Activity'yi açıkça belirtir, Implicit Intent ise yapılacak işlemi (action) tanımlar ve sistem uygun uygulamayı seçer.",
+              "tags": ["intent", "explicit", "implicit"]
+            },
+            {
+              "questionId": 250002,
+              "question": "Intent ile basit bir String veri göndermek için hangi metot kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "intent.setData()",
+                "intent.putExtra()",
+                "intent.sendData()",
+                "intent.addString()"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Intent ile basit veri göndermek için intent.putExtra(\"key\", \"value\") metodu kullanılır.",
+              "tags": ["intent", "putextra"]
+            },
+            {
+              "questionId": 250003,
+              "question": "Karşı Activity'de Intent'ten veri nasıl alınır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "intent.getData()",
+                "intent.getStringExtra(\"key\")",
+                "intent.receive()",
+                "intent.fetch()"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Karşı Activity'de Intent'ten veri almak için intent.getStringExtra(\"key\"), intent.getIntExtra() gibi metotlar kullanılır.",
+              "tags": ["intent", "getextra"]
+            },
+            {
+              "questionId": 250004,
+              "question": "Telefon numarası çevirmek (arama ekranını açmak) için hangi action kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "ACTION_CALL",
+                "ACTION_DIAL",
+                "ACTION_PHONE",
+                "ACTION_VIEW"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "ACTION_DIAL, telefon arama ekranını açar ve numara gösterir ama izin gerektirmez. ACTION_CALL direkt arar ve izin gerektirir.",
+              "tags": ["intent", "implicit", "action_dial"]
+            },
+            {
+              "questionId": 250005,
+              "question": "Bundle yerine doğrudan intent.putExtra() kullanmanın avantajı nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Daha hızlıdır",
+                "Daha basit ve kısa kod yazılır",
+                "Daha fazla veri taşır",
+                "Daha güvenlidir"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "intent.putExtra() doğrudan kullanıldığında Bundle oluşturmaya gerek kalmaz, kod daha basit ve kısa olur.",
+              "tags": ["intent", "bundle", "putextra"]
+            },
+            {
+              "questionId": 250006,
+              "question": "Parcelable yerine Serializable kullanmanın dezavantajı nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Kullanımı zordur",
+                "Performans açısından daha yavaştır",
+                "Sadece String taşır",
+                "Android'de çalışmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Serializable, reflection kullandığı için Parcelable'a göre daha yavaştır. Android'de büyük veri transferlerinde Parcelable tercih edilmelidir.",
+              "tags": ["serializable", "parcelable", "performance"]
+            },
+            {
+              "questionId": 250007,
+              "question": "Bir resim paylaşmak için hangi intent action ve type kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "ACTION_VIEW, text/plain",
+                "ACTION_SEND, image/*",
+                "ACTION_DIAL, image/png",
+                "ACTION_CALL, text/html"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Resim paylaşmak için ACTION_SEND action'ı ve type olarak \"image/*\" veya \"image/png\" kullanılır.",
+              "tags": ["intent", "implicit", "share_image"]
+            },
+            {
+              "questionId": 250008,
+              "question": "Intent flag'leri ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece veri taşır",
+                "Activity'nin nasıl başlatılacağını kontrol eder",
+                "Layout belirler",
+                "Renk ayarlar"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Intent flag'leri (FLAG_ACTIVITY_NEW_TASK, FLAG_ACTIVITY_CLEAR_TOP vb.), Activity'nin nasıl başlatılacağını ve back stack'in nasıl yönetileceğini kontrol eder.",
+              "tags": ["intent", "flags"]
+            },
+            {
+              "questionId": 250009,
+              "question": "MainActivity'den DetailActivity'e geçerken hem Intent hem de finish() çağrılırsa ne olur?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Hata verir",
+                "DetailActivity açılır ve MainActivity yok olur",
+                "Hiçbir şey olmaz",
+                "Uygulama kapanır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "startActivity(intent) ile DetailActivity açılır, finish() ile MainActivity yok edilir. Back tuşuna basıldığında MainActivity'e dönülemez.",
+              "tags": ["intent", "finish"]
+            },
+            {
+              "questionId": 250010,
+              "question": "Intent.createChooser() ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Activity oluşturur",
+                "Kullanıcıya hangi uygulamayı kullanacağını seçme şansı verir",
+                "Veritabanı oluşturur",
+                "Layout oluşturur"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Intent.createChooser(), implicit intent için her seferinde kullanıcıya hangi uygulamayı kullanacağını seçme şansı verir (varsayılan uygulama ayarlanmış olsa bile).",
+              "tags": ["intent", "chooser"]
+            }
+          ]
         },
         {
           "sectionId": 2600,
@@ -6364,7 +7595,88 @@
                 "Kalıcı veri saklar",
                 "Basit ve hızlıdır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 260101,
+                  "question": "SharedPreferences ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Büyük dosyaları saklamak",
+                    "Küçük ve basit verileri key-value mantığıyla saklamak",
+                    "Veritabanı oluşturmak",
+                    "Network isteği yapmak"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "SharedPreferences, küçük ve basit verileri anahtar-değer (key-value) mantığıyla saklamak için kullanılır.",
+                  "tags": ["sharedpreferences", "temel"]
+                },
+                {
+                  "questionId": 260102,
+                  "question": "SharedPreferences hangi veri tiplerini destekler?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece String",
+                    "Boolean, Int, Float, Long ve String",
+                    "Sadece Int",
+                    "Tüm nesne türleri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "SharedPreferences, Boolean, Int, Float, Long ve String gibi basit veri tiplerini destekler.",
+                  "tags": ["sharedpreferences", "data_types"]
+                },
+                {
+                  "questionId": 260103,
+                  "question": "Aşağıdaki kodda \"username\" anahtarına hangi değer kaydedilir?",
+                  "questionType": "multiple_choice",
+                  "code": "val prefs = getSharedPreferences(\"MyPrefs\", Context.MODE_PRIVATE)\nprefs.edit().putString(\"username\", \"Ahmet\").apply()",
+                  "difficulty": "easy",
+                  "options": [
+                    "MyPrefs",
+                    "Ahmet",
+                    "username",
+                    "prefs"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "putString(\"username\", \"Ahmet\") ile \"username\" anahtarına \"Ahmet\" değeri kaydedilir.",
+                  "tags": ["sharedpreferences", "putstring"]
+                },
+                {
+                  "questionId": 260104,
+                  "question": "SharedPreferences'ta kayıtlı veri uygulama kapatıldığında ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Silinir",
+                    "Korunur, kalıcıdır",
+                    "Sadece 1 gün saklanır",
+                    "Rastgele olarak silinir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "SharedPreferences kalıcı veri saklar. Uygulama kapatılsa bile veriler korunur.",
+                  "tags": ["sharedpreferences", "persistence"]
+                },
+                {
+                  "questionId": 260105,
+                  "question": "SharedPreferences'tan veri okumak için hangi metot kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "prefs.getString(\"key\", defaultValue)",
+                    "prefs.readString(\"key\")",
+                    "prefs.fetch(\"key\")",
+                    "prefs.load(\"key\")"
+                  ],
+                  "correctAnswerIndex": 0,
+                  "explanation": "SharedPreferences'tan veri okumak için getString(\"key\", defaultValue), getInt(), getBoolean() gibi metotlar kullanılır. İkinci parametre default değerdir.",
+                  "tags": ["sharedpreferences", "getstring"]
+                }
+              ]
             },
             {
               "topicId": 2602,
@@ -6386,7 +7698,72 @@
                 "Dosya bazlı veri saklar",
                 "Uygulama silinince veriler silinir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 260201,
+                  "question": "Internal Storage ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece resim saklamak",
+                    "Uygulamaya özel dosyaları güvenli şekilde saklamak",
+                    "Sadece network isteği",
+                    "Sadece SharedPreferences"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Internal Storage, uygulamaya özel dosyaların cihazın dahili hafızasında güvenli şekilde saklanmasını sağlar.",
+                  "tags": ["internal_storage", "temel"]
+                },
+                {
+                  "questionId": 260202,
+                  "question": "Internal Storage'da saklanan verilere başka uygulamalar erişebilir mi?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Evet, herkes erişebilir",
+                    "Hayır, sadece ilgili uygulama erişebilir",
+                    "Sadece sistem uygulamaları erişebilir",
+                    "Kullanıcı izni ile erişilebilir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Internal Storage'da saklanan dosyalar uygulamaya özeldir ve başka uygulamalar erişemez. Bu güvenli bir veri saklama yöntemidir.",
+                  "tags": ["internal_storage", "security"]
+                },
+                {
+                  "questionId": 260203,
+                  "question": "Uygulama silindiğinde Internal Storage'daki veriler ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Korunur",
+                    "Cihazda kalır",
+                    "Otomatik olarak silinir",
+                    "Cloud'a yüklenir"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Uygulama silindiğinde Internal Storage'daki tüm veriler de otomatik olarak silinir.",
+                  "tags": ["internal_storage", "lifecycle"]
+                },
+                {
+                  "questionId": 260204,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "openFileOutput(\"data.txt\", Context.MODE_PRIVATE).use {\n    it.write(\"Merhaba\".toByteArray())\n}",
+                  "difficulty": "medium",
+                  "options": [
+                    "External Storage'a dosya yazar",
+                    "Internal Storage'a data.txt dosyası oluşturur ve \"Merhaba\" yazar",
+                    "Veritabanına veri ekler",
+                    "Network'e veri gönderir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "openFileOutput ile Internal Storage'a data.txt dosyası oluşturulur ve \"Merhaba\" metni yazılır.",
+                  "tags": ["internal_storage", "file_write"]
+                }
+              ]
             },
             {
               "topicId": 2603,
@@ -6402,10 +7779,220 @@
                 "Permission gerektirebilir",
                 "Medya dosyaları için uygundur"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 260301,
+                  "question": "External Storage ne demektir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece uygulamaya özel alan",
+                    "Cihazın ortak depolama alanı",
+                    "Sadece cloud storage",
+                    "Sadece SharedPreferences"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "External Storage, cihazın ortak depolama alanını kullanarak veri saklamayı ifade eder.",
+                  "tags": ["external_storage", "temel"]
+                },
+                {
+                  "questionId": 260302,
+                  "question": "External Storage genellikle hangi tür dosyalar için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece şifreler",
+                    "Medya dosyaları (resim, video, müzik)",
+                    "Sadece kod dosyaları",
+                    "Sadece veritabanı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "External Storage genellikle medya dosyaları (resim, video, müzik) için kullanılır çünkü bu dosyalara diğer uygulamalar da erişebilir.",
+                  "tags": ["external_storage", "media"]
+                },
+                {
+                  "questionId": 260303,
+                  "question": "Android 10 ve sonrası sürümlerde External Storage erişimi nasıl değişti?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Tamamen kaldırıldı",
+                    "Scoped storage kavramı ile erişim kısıtlandı",
+                    "Hiçbir değişiklik olmadı",
+                    "Sadece root cihazlar erişebilir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Android 10 ve sonrası sürümlerde scoped storage kavramı ile External Storage erişimi kısıtlanmış ve daha güvenli hale getirilmiştir.",
+                  "tags": ["external_storage", "scoped_storage"]
+                }
+              ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+              "questionId": 260001,
+              "question": "Kullanıcı ayarlarını (tema, dil tercihi) saklamak için hangi yöntem en uygundur?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Internal Storage",
+                "External Storage",
+                "SharedPreferences",
+                "Veritabanı"
+              ],
+              "correctAnswerIndex": 2,
+              "explanation": "Kullanıcı ayarları gibi küçük ve basit veriler için SharedPreferences en uygun yöntemdir.",
+              "tags": ["sharedpreferences", "use_case"]
+            },
+            {
+              "questionId": 260002,
+              "question": "Internal Storage ve External Storage arasındaki temel fark nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Hiçbir fark yok",
+                "Internal uygulamaya özel, External ortak alan",
+                "Internal daha yavaştır",
+                "External daha güvenlidir"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Internal Storage uygulamaya özeldir ve güvenlidir. External Storage ise ortak depolama alanıdır ve diğer uygulamalar tarafından erişilebilir.",
+              "tags": ["internal_storage", "external_storage", "difference"]
+            },
+            {
+              "questionId": 260003,
+              "question": "SharedPreferences ile büyük bir liste veya karmaşık nesne saklamak uygun mudur?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Evet, en uygun yöntem",
+                "Hayır, SharedPreferences küçük ve basit veriler içindir",
+                "Sadece String liste için uygun",
+                "Fark etmez"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "SharedPreferences küçük ve basit veriler için tasarlanmıştır. Büyük listeler veya karmaşık nesneler için veritabanı (Room) veya dosya sistemi kullanılmalıdır.",
+              "tags": ["sharedpreferences", "limitation"]
+            },
+            {
+              "questionId": 260004,
+              "question": "SharedPreferences'a veri yazarken commit() ve apply() arasındaki fark nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir fark yok",
+                "commit() senkron, apply() asenkron çalışır",
+                "apply() daha yavaştır",
+                "commit() kullanımdan kaldırıldı"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "commit() senkron çalışır ve boolean döner, apply() asenkron çalışır ve daha hızlıdır. Genellikle apply() tercih edilir.",
+              "tags": ["sharedpreferences", "commit_apply"]
+            },
+            {
+              "questionId": 260005,
+              "question": "Hassas verileri (şifre, token) saklamak için hangi yöntem en güvenlidir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "SharedPreferences (düz metin)",
+                "External Storage",
+                "EncryptedSharedPreferences veya Keystore",
+                "Sadece RAM'de tutmak"
+              ],
+              "correctAnswerIndex": 2,
+              "explanation": "Hassas veriler için EncryptedSharedPreferences veya Android Keystore kullanılmalıdır. Düz SharedPreferences güvenli değildir.",
+              "tags": ["security", "encrypted"]
+            },
+            {
+              "questionId": 260006,
+              "question": "Internal Storage'da saklanan dosyaları kullanıcı manuel olarak görebilir mi?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Evet, dosya yöneticisinden kolayca",
+                "Hayır, normal koşullarda erişemez",
+                "Sadece root cihazlarda",
+                "Sadece USB ile bağlanınca"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Internal Storage uygulamaya özeldir ve normal koşullarda kullanıcı manuel olarak erişemez. Root cihazlarda veya özel araçlarla erişilebilir.",
+              "tags": ["internal_storage", "access"]
+            },
+            {
+              "questionId": 260007,
+              "question": "SharedPreferences dosyası cihazda nerede saklanır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "External Storage",
+                "SD Kart",
+                "Internal Storage (app data klasörü)",
+                "Cloud"
+              ],
+              "correctAnswerIndex": 2,
+              "explanation": "SharedPreferences dosyası, Internal Storage'da uygulamanın data klasöründe XML dosyası olarak saklanır (/data/data/paket_adi/shared_prefs/).",
+              "tags": ["sharedpreferences", "location"]
+            },
+            {
+              "questionId": 260008,
+              "question": "Context.MODE_PRIVATE ne anlama gelir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Herkes erişebilir",
+                "Sadece ilgili uygulama erişebilir",
+                "Sadece sistem erişebilir",
+                "Sadece internet üzerinden erişilebilir"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Context.MODE_PRIVATE, dosyanın veya SharedPreferences'ın sadece ilgili uygulama tarafından erişilebilir olduğunu belirtir.",
+              "tags": ["mode_private", "context"]
+            },
+            {
+              "questionId": 260009,
+              "question": "External Storage'a erişim için izin (permission) gerekli midir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Hayır, hiçbir zaman",
+                "Evet, genellikle READ/WRITE_EXTERNAL_STORAGE",
+                "Sadece resim için",
+                "Sadece video için"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "External Storage'a erişim için genellikle READ_EXTERNAL_STORAGE ve WRITE_EXTERNAL_STORAGE izinleri gereklidir. Android 10+'da scoped storage ile bazı durumlarda izin gerekmez.",
+              "tags": ["external_storage", "permission"]
+            },
+            {
+              "questionId": 260010,
+              "question": "Hangi veri saklama yöntemi en hızlıdır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Veritabanı",
+                "External Storage",
+                "SharedPreferences (küçük veriler için)",
+                "Network isteği"
+              ],
+              "correctAnswerIndex": 2,
+              "explanation": "Küçük ve basit veriler için SharedPreferences en hızlı yöntemdir çünkü hafiftir ve doğrudan bellekte çalışır.",
+              "tags": ["performance", "comparison"]
+            }
+          ]
         }
       ],
       "interviewQuestions": []
