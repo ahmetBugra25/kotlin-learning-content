@@ -10421,7 +10421,168 @@
             ]
           }
         ],
-        "sectionMixedQuestions": []
+        "sectionMixedQuestions": [
+          {
+            "questionId": 350001,
+            "question": "REST API'lerde en yaygın kullanılan veri formatı hangisidir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "XML",
+              "JSON",
+              "CSV",
+              "Binary"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "REST API'lerde en yaygın veri formatı JSON'dur. Hafif, okunabilir ve kolay parse edilebilir bir formattır.",
+            "tags": ["rest", "json"]
+          },
+          {
+            "questionId": 350002,
+            "question": "Retrofit interface'inde @GET annotation'ı ne işe yarar?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Veri silmek",
+              "Veri güncellemek",
+              "Sunucudan veri almak (HTTP GET isteği)",
+              "Veri eklemek"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "@GET annotation'ı, HTTP GET isteği yaparak sunucudan veri almak için kullanılır.",
+            "tags": ["retrofit", "get"]
+          },
+          {
+            "questionId": 350003,
+            "question": "Yeni bir kullanıcı oluşturmak için hangi HTTP metodu kullanılmalıdır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "GET",
+              "POST",
+              "PUT",
+              "DELETE"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "POST metodu, sunucuya yeni veri göndermek (kayıt oluşturmak) için kullanılır.",
+            "tags": ["http", "post"]
+          },
+          {
+            "questionId": 350004,
+            "question": "Retrofit ile JSON verisini otomatik olarak Kotlin nesnesine dönüştürmek için hangi converter kullanılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "StringConverter",
+              "GsonConverterFactory veya MoshiConverterFactory",
+              "JsonConverter",
+              "XmlConverter"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Retrofit'te JSON parsing için GsonConverterFactory veya MoshiConverterFactory kullanılır. Builder'a addConverterFactory ile eklenir.",
+            "tags": ["retrofit", "gson", "moshi"]
+          },
+          {
+            "questionId": 350005,
+            "question": "Aşağıdaki Retrofit fonksiyonunda @Body annotation'ı ne işe yarar?",
+            "questionType": "multiple_choice",
+            "code": "@POST(\"users\")\nsuspend fun createUser(@Body user: User): Response<User>",
+            "difficulty": "medium",
+            "options": [
+              "URL'e parametre ekler",
+              "Request body'sine nesneyi JSON olarak ekler",
+              "Header ekler",
+              "Query parametresi ekler"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "@Body annotation'ı, fonksiyona verilen nesneyi JSON'a çevirip HTTP request body'sine ekler. POST ve PUT isteklerinde sıkça kullanılır.",
+            "tags": ["retrofit", "body", "post"]
+          },
+          {
+            "questionId": 350006,
+            "question": "REST mimarisinde stateless olması ne anlama gelir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Sunucu her istekte yeniden başlar",
+              "Her istek bağımsızdır, sunucu önceki istekleri hatırlamaz",
+              "Veri saklanamaz",
+              "Sadece GET istekleri yapılabilir"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Stateless, her HTTP isteğinin bağımsız olduğu ve sunucunun istemci hakkında durum bilgisi tutmadığı anlamına gelir. Her istekte gerekli bilgiler (token vb.) gönderilmelidir.",
+            "tags": ["rest", "stateless"]
+          },
+          {
+            "questionId": 350007,
+            "question": "Bir kaydı silmek için hangi HTTP metodu ve Retrofit annotation'ı kullanılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "GET ve @GET",
+              "POST ve @POST",
+              "DELETE ve @DELETE",
+              "PUT ve @PUT"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "DELETE metodu ve @DELETE annotation'ı, sunucudan bir kaydı silmek için kullanılır.",
+            "tags": ["http", "delete", "retrofit"]
+          },
+          {
+            "questionId": 350008,
+            "question": "JSON parsing sırasında data class'taki field adları ile JSON key'leri farklıysa ne yapılmalıdır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "hard",
+            "options": [
+              "JSON değiştirilmeli",
+              "@SerializedName annotation'ı kullanılır",
+              "Manuel parsing yapılmalı",
+              "Hiçbir şey yapılamaz"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Gson'da @SerializedName (veya Moshi'de @Json) annotation'ı ile JSON key'i ile Kotlin property adı eşleştirilebilir. Örnek: @SerializedName(\"user_name\") val userName: String",
+            "tags": ["json", "gson", "serializedname"]
+          },
+          {
+            "questionId": 350009,
+            "question": "Retrofit'in OkHttp üzerine kurulu olmasının avantajı nedir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Sadece daha hızlıdır",
+              "HTTP/2, connection pooling, interceptor gibi gelişmiş özellikler sağlar",
+              "Sadece JSON parse eder",
+              "Veritabanı işlemleri yapar"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "OkHttp, HTTP/2 desteği, connection pooling, interceptor (logging, authentication) gibi gelişmiş networking özellikleri sağlar. Retrofit bu altyapıyı kullanır.",
+            "tags": ["retrofit", "okhttp"]
+          },
+          {
+            "questionId": 350010,
+            "question": "REST API çağrısı sırasında network hatası oluşursa hangi yaklaşım doğrudur?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Uygulamayı kapat",
+              "Hatayı yakala (try-catch) ve kullanıcıya bilgi ver",
+              "Hiçbir şey yapma",
+              "Otomatik olarak düzelir"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Network çağrıları try-catch bloğu ile sarmalanmalı veya Result/Resource pattern kullanılmalıdır. Hata durumunda kullanıcıya anlamlı mesaj gösterilmeli (Snackbar, Toast vb.).",
+            "tags": ["networking", "error_handling"]
+          }
+        ]
       },
       {
         "sectionId": 3600,
@@ -10449,7 +10610,72 @@
               "Güvenli kullanıcı yönetimi sağlar",
               "Kolay entegrasyon sunar"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 360101,
+                "question": "Firebase Authentication ne için kullanılır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Dosya depolama",
+                  "Kullanıcı kimlik doğrulama ve giriş yönetimi",
+                  "Veritabanı işlemleri",
+                  "Push notification"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Firebase Authentication, kullanıcıların güvenli bir şekilde giriş yapmasını sağlayan kimlik doğrulama servisidir.",
+                "tags": ["firebase", "authentication"]
+              },
+              {
+                "questionId": 360102,
+                "question": "Firebase Authentication hangi giriş yöntemlerini destekler?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Sadece email/şifre",
+                  "Email/şifre, Google, Facebook, Twitter vb.",
+                  "Sadece Google",
+                  "Sadece telefon numarası"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Firebase Authentication, email/şifre, Google, Facebook, Twitter, telefon numarası gibi birçok giriş yöntemini destekler.",
+                "tags": ["firebase", "authentication", "providers"]
+              },
+              {
+                "questionId": 360103,
+                "question": "Aşağıdaki kod ne yapar?",
+                "questionType": "multiple_choice",
+                "code": "FirebaseAuth.getInstance()\n    .signInWithEmailAndPassword(email, password)",
+                "difficulty": "easy",
+                "options": [
+                  "Yeni kullanıcı oluşturur",
+                  "Email ve şifre ile giriş yapar",
+                  "Şifre sıfırlar",
+                  "Kullanıcı çıkışı yapar"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "signInWithEmailAndPassword metodu, mevcut bir kullanıcının email ve şifre ile giriş yapmasını sağlar.",
+                "tags": ["firebase", "authentication", "signin"]
+              },
+              {
+                "questionId": 360104,
+                "question": "Firebase Authentication kullanmanın avantajı nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Sadece ücretsizdir",
+                  "Backend yazmaya gerek kalmaz, hazır authentication altyapısı sunar",
+                  "Sadece Android için çalışır",
+                  "Veritabanı yönetir"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Firebase Authentication, backend yazmaya gerek kalmadan hazır ve güvenli bir kullanıcı yönetimi altyapısı sağlar.",
+                "tags": ["firebase", "authentication", "advantage"]
+              }
+            ]
           },
           {
             "topicId": 3602,
@@ -10471,7 +10697,72 @@
               "Offline desteği vardır",
               "Koleksiyon-doküman yapısı kullanır"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 360201,
+                "question": "Firestore ne tür bir veritabanıdır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "SQL tabanlı",
+                  "NoSQL tabanlı",
+                  "Graph veritabanı",
+                  "In-memory veritabanı"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Firestore, NoSQL tabanlı bir bulut veritabanıdır ve koleksiyon-doküman yapısı kullanır.",
+                "tags": ["firebase", "firestore", "nosql"]
+              },
+              {
+                "questionId": 360202,
+                "question": "Firestore'un en önemli özelliği nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Sadece offline çalışır",
+                  "Gerçek zamanlı veri senkronizasyonu sağlar",
+                  "Sadece dosya saklar",
+                  "Authentication yapar"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Firestore'un en önemli özelliklerinden biri gerçek zamanlı (real-time) veri güncellemeleri sağlamasıdır. Veri değiştiğinde tüm dinleyen client'lara anında iletilir.",
+                "tags": ["firebase", "firestore", "realtime"]
+              },
+              {
+                "questionId": 360203,
+                "question": "Firestore'da veriler nasıl organize edilir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Tablo ve satır",
+                  "Koleksiyon ve doküman",
+                  "Key-value",
+                  "Graf yapısı"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Firestore, koleksiyon (collection) ve doküman (document) yapısı kullanır. Her koleksiyon dokümanlar içerir, her doküman field'lar içerir.",
+                "tags": ["firebase", "firestore", "structure"]
+              },
+              {
+                "questionId": 360204,
+                "question": "Aşağıdaki kod ne yapar?",
+                "questionType": "multiple_choice",
+                "code": "FirebaseFirestore.getInstance()\n    .collection(\"users\")\n    .add(user)",
+                "difficulty": "easy",
+                "options": [
+                  "Kullanıcıyı siler",
+                  "users koleksiyonuna yeni doküman ekler",
+                  "Kullanıcı günceller",
+                  "Veritabanını siler"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "add() metodu, belirtilen koleksiyona otomatik ID ile yeni bir doküman ekler.",
+                "tags": ["firebase", "firestore", "add"]
+              }
+            ]
           },
           {
             "topicId": 3603,
@@ -10493,7 +10784,56 @@
               "Authentication ile birlikte çalışır",
               "Yüksek ölçeklenebilirlik sunar"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 360301,
+                "question": "Firebase Storage ne için kullanılır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Sadece metin verisi",
+                  "Görsel, video ve dosya depolama",
+                  "Kullanıcı giriş bilgileri",
+                  "Sadece veritabanı"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Firebase Storage, kullanıcıların yüklediği görsel, video ve dosyaları güvenli bir şekilde saklamak için kullanılır.",
+                "tags": ["firebase", "storage"]
+              },
+              {
+                "questionId": 360302,
+                "question": "Firebase Storage hangi servis ile entegre çalışarak güvenli erişim sağlar?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Firestore",
+                  "Realtime Database",
+                  "Firebase Authentication",
+                  "Cloud Functions"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Firebase Storage, Authentication ile entegre çalışarak sadece yetkili kullanıcıların dosyalara erişmesini sağlar.",
+                "tags": ["firebase", "storage", "authentication"]
+              },
+              {
+                "questionId": 360303,
+                "question": "Aşağıdaki kod ne yapar?",
+                "questionType": "multiple_choice",
+                "code": "FirebaseStorage.getInstance()\n    .reference\n    .child(\"images/photo.jpg\")\n    .putFile(uri)",
+                "difficulty": "easy",
+                "options": [
+                  "Dosyayı indirir",
+                  "Dosyayı siler",
+                  "Dosyayı Firebase Storage'a yükler",
+                  "Dosya adını değiştirir"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "putFile() metodu, belirtilen URI'deki dosyayı Firebase Storage'a yükler.",
+                "tags": ["firebase", "storage", "upload"]
+              }
+            ]
           },
           {
             "topicId": 3604,
@@ -10515,10 +10855,220 @@
               "Yetkisiz erişimi engeller",
               "Prod ortamda mutlaka tanımlanmalıdır"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 360401,
+                "question": "Firebase Security Rules ne için kullanılır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "UI tasarımı",
+                  "Kimlerin hangi verilere erişebileceğini tanımlamak",
+                  "Dosya yükleme",
+                  "Kullanıcı giriş ekranı"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Security Rules, Firestore ve Storage üzerinde kimlerin hangi verilere erişebileceğini tanımlamak için kullanılır.",
+                "tags": ["firebase", "security", "rules"]
+              },
+              {
+                "questionId": 360402,
+                "question": "Aşağıdaki Security Rule ne anlama gelir?",
+                "questionType": "multiple_choice",
+                "code": "allow read, write: if request.auth != null;",
+                "difficulty": "medium",
+                "options": [
+                  "Herkes okuyup yazabilir",
+                  "Kimse okuyamaz yazamaz",
+                  "Sadece giriş yapmış kullanıcılar okuyup yazabilir",
+                  "Sadece admin okuyup yazabilir"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Bu kural, sadece authenticate olmuş (giriş yapmış) kullanıcıların okuma ve yazma yapabileceğini belirtir.",
+                "tags": ["firebase", "security", "auth"]
+              },
+              {
+                "questionId": 360403,
+                "question": "Production ortamında Security Rules nasıl olmalıdır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "hard",
+                "options": [
+                  "Herkes için açık olmalı",
+                  "Mutlaka tanımlanmalı ve kısıtlayıcı olmalı",
+                  "Hiç kural olmamalı",
+                  "Sadece development'ta gerekli"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Production ortamında mutlaka güvenli Security Rules tanımlanmalıdır. Yetkisiz erişimi engellemek ve veri güvenliğini sağlamak kritiktir.",
+                "tags": ["firebase", "security", "production"]
+              }
+            ]
           }
         ],
-        "sectionMixedQuestions": []
+        "sectionMixedQuestions": [
+          {
+            "questionId": 360001,
+            "question": "Firebase kullanmanın en büyük avantajı nedir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Sadece ücretsiz olması",
+              "Backend yazmaya gerek kalmadan hazır servisler sunması",
+              "Sadece Android için çalışması",
+              "Offline çalışmaması"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Firebase'in en büyük avantajı, authentication, database, storage gibi backend servislerini hazır olarak sunması ve backend geliştirme ihtiyacını ortadan kaldırmasıdır.",
+            "tags": ["firebase", "advantage"]
+          },
+          {
+            "questionId": 360002,
+            "question": "Firebase Authentication ve Firestore birlikte kullanıldığında ne sağlanır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Sadece hız artışı",
+              "Güvenli kullanıcı yönetimi ve kullanıcıya özel veri saklama",
+              "Sadece UI iyileştirmesi",
+              "Sadece offline destek"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Authentication ile kullanıcı kimliği doğrulanır, Firestore'da her kullanıcının verisi güvenli şekilde saklanabilir ve Security Rules ile kontrol edilebilir.",
+            "tags": ["firebase", "authentication", "firestore"]
+          },
+          {
+            "questionId": 360003,
+            "question": "Firestore ve Firebase Storage arasındaki fark nedir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "İkisi de aynı şeydir",
+              "Firestore yapılandırılmış veri, Storage dosya/medya saklar",
+              "Storage daha yavaştır",
+              "Firestore sadece resim saklar"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Firestore, JSON benzeri yapılandırılmış verileri saklar (user bilgileri, post'lar vb.). Storage ise büyük dosyaları ve medyayı (resim, video, PDF) saklar.",
+            "tags": ["firebase", "firestore", "storage"]
+          },
+          {
+            "questionId": 360004,
+            "question": "Firestore offline desteği ne anlama gelir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Internet olmadan hiçbir şey yapılamaz",
+              "Veriler yerel cache'de saklanır, offline'ken erişilebilir ve sync olur",
+              "Sadece okuma yapılabilir",
+              "Manuel sync gereklidir"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Firestore, verileri yerel cache'de saklar. Offline'ken veriler okunabilir ve yazılabilir, internet bağlantısı geldiğinde otomatik senkronize olur.",
+            "tags": ["firebase", "firestore", "offline"]
+          },
+          {
+            "questionId": 360005,
+            "question": "Yeni bir kullanıcı kaydı oluşturmak için hangi Firebase metodu kullanılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "signInWithEmailAndPassword()",
+              "createUserWithEmailAndPassword()",
+              "registerUser()",
+              "addUser()"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "createUserWithEmailAndPassword() metodu, yeni bir kullanıcı kaydı oluşturmak için kullanılır.",
+            "tags": ["firebase", "authentication", "signup"]
+          },
+          {
+            "questionId": 360006,
+            "question": "Firestore'da gerçek zamanlı veri dinlemek için hangi metot kullanılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "get()",
+              "addSnapshotListener()",
+              "read()",
+              "observe()"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "addSnapshotListener() metodu, Firestore'da gerçek zamanlı veri değişikliklerini dinlemek için kullanılır. Veri her değiştiğinde callback tetiklenir.",
+            "tags": ["firebase", "firestore", "realtime"]
+          },
+          {
+            "questionId": 360007,
+            "question": "Firebase Storage'dan bir dosyayı indirmek için hangi metot kullanılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "putFile()",
+              "getFile() veya getDownloadUrl()",
+              "uploadFile()",
+              "fetchFile()"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "getFile() ile dosya doğrudan indirilir veya getDownloadUrl() ile dosyanın URL'i alınıp Glide/Picasso gibi kütüphanelerle yüklenebilir.",
+            "tags": ["firebase", "storage", "download"]
+          },
+          {
+            "questionId": 360008,
+            "question": "Firebase Security Rules'da request.auth.uid ne anlama gelir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "hard",
+            "options": [
+              "Dosya ID'si",
+              "Giriş yapmış kullanıcının ID'si",
+              "Veritabanı ID'si",
+              "Server ID'si"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "request.auth.uid, giriş yapmış kullanıcının benzersiz ID'sini temsil eder. Kullanıcı bazlı erişim kontrolü yapmak için kullanılır (örn: sadece kendi verilerine erişebilir).",
+            "tags": ["firebase", "security", "uid"]
+          },
+          {
+            "questionId": 360009,
+            "question": "Firebase'de kullanıcı çıkış yapmak için hangi metot kullanılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "FirebaseAuth.getInstance().logout()",
+              "FirebaseAuth.getInstance().signOut()",
+              "FirebaseAuth.getInstance().exit()",
+              "FirebaseAuth.getInstance().close()"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "FirebaseAuth.getInstance().signOut() metodu, mevcut kullanıcının oturumunu sonlandırır (logout).",
+            "tags": ["firebase", "authentication", "signout"]
+          },
+          {
+            "questionId": 360010,
+            "question": "Firestore'da bir dokümanı güncellemek için hangi metot kullanılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "add()",
+              "set()",
+              "update()",
+              "modify()"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "update() metodu, mevcut dokümanın belirli field'larını günceller. set() ise tüm dokümanı değiştirir. update() sadece belirtilen field'ları değiştirir.",
+            "tags": ["firebase", "firestore", "update"]
+          }
+        ]
       },
       {
         "sectionId": 3700,
@@ -10546,7 +11096,72 @@
               "Harita etkileşimleri desteklenir",
               "Modern uygulamalarda yaygındır"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 370101,
+                "question": "Android uygulamasında Google Maps kullanmak için ne gereklidir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Sadece internet bağlantısı",
+                  "Google Maps SDK ve API Key",
+                  "Sadece GPS",
+                  "Firebase entegrasyonu"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Google Maps SDK'sı projeye eklenmeli ve Google Cloud Console'dan alınan API Key kullanılmalıdır.",
+                "tags": ["google_maps", "api_key"]
+              },
+              {
+                "questionId": 370102,
+                "question": "onMapReady() metodu ne zaman çağrılır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Uygulama ilk açıldığında",
+                  "Google Maps hazır olduğunda",
+                  "Kullanıcı haritaya tıkladığında",
+                  "GPS açıldığında"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "onMapReady() callback metodu, Google Maps tamamen yüklenip kullanıma hazır olduğunda çağrılır.",
+                "tags": ["google_maps", "onmapready"]
+              },
+              {
+                "questionId": 370103,
+                "question": "Google Maps'te hangi işlemler yapılabilir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Sadece konum gösterme",
+                  "Marker ekleme, kamera hareketi, rota çizimi",
+                  "Sadece zoom yapma",
+                  "Sadece stil değiştirme"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Google Maps SDK ile marker ekleme, kamera hareketleri (zoom, pan), rota çizimi (polyline), stil değiştirme gibi birçok etkileşimli işlem yapılabilir.",
+                "tags": ["google_maps", "features"]
+              },
+              {
+                "questionId": 370104,
+                "question": "Google Maps API Key nereden alınır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Firebase Console",
+                  "Play Console",
+                  "Google Cloud Console",
+                  "Android Studio"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Google Maps API Key, Google Cloud Console'dan (Google Cloud Platform) Maps SDK for Android aktifleştirilerek alınır.",
+                "tags": ["google_maps", "api_key", "cloud_console"]
+              }
+            ]
           },
           {
             "topicId": 3702,
@@ -10568,7 +11183,72 @@
               "Fine ve Coarse location farkı vardır",
               "Yanlış kullanım crash'e yol açabilir"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 370201,
+                "question": "Android'de kullanıcı konumuna erişmek için ne gereklidir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Hiçbir şey gerekmez",
+                  "Kullanıcıdan runtime permission alınmalıdır",
+                  "Sadece AndroidManifest'e yazılmalıdır",
+                  "Otomatik olarak verilir"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Android 6.0 (API 23) ve sonrasında konum izni runtime'da kullanıcıdan açıkça alınmalıdır.",
+                "tags": ["location", "permission"]
+              },
+              {
+                "questionId": 370202,
+                "question": "ACCESS_FINE_LOCATION ve ACCESS_COARSE_LOCATION arasındaki fark nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Hiçbir fark yok",
+                  "FINE_LOCATION daha hassas (GPS), COARSE_LOCATION daha genel konum verir",
+                  "COARSE_LOCATION daha hassastır",
+                  "İkisi de aynı konumu verir"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "ACCESS_FINE_LOCATION GPS kullanarak çok hassas konum verir. ACCESS_COARSE_LOCATION ise network tabanlı (WiFi, cell tower) daha genel konum verir.",
+                "tags": ["location", "permission", "fine_coarse"]
+              },
+              {
+                "questionId": 370203,
+                "question": "Konum izni olmadan konum bilgisi alınmaya çalışılırsa ne olur?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Null değer döner",
+                  "SecurityException fırlatılır (crash)",
+                  "Varsayılan konum verilir",
+                  "Hiçbir şey olmaz"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Runtime permission alınmadan konum API'leri kullanılırsa SecurityException fırlatılır ve uygulama crash olur.",
+                "tags": ["location", "permission", "exception"]
+              },
+              {
+                "questionId": 370204,
+                "question": "Aşağıdaki kodda ne yapılmaktadır?",
+                "questionType": "multiple_choice",
+                "code": "if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)\n    != PackageManager.PERMISSION_GRANTED) {\n    requestPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 100)\n}",
+                "difficulty": "easy",
+                "options": [
+                  "Konum bilgisi alınıyor",
+                  "Konum izni kontrol ediliyor ve yoksa isteniyor",
+                  "GPS açılıyor",
+                  "Harita gösteriliyor"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Kod, önce konum izninin verilip verilmediğini kontrol ediyor. Verilmemişse kullanıcıdan izin istiyor.",
+                "tags": ["location", "permission", "request"]
+              }
+            ]
           },
           {
             "topicId": 3703,
@@ -10590,7 +11270,56 @@
               "Kullanıcı etkileşimine açıktır",
               "Birden fazla marker eklenebilir"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 370301,
+                "question": "Google Maps'te Marker ne için kullanılır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Rota çizmek",
+                  "Belirli bir konumu işaretlemek",
+                  "Haritayı zoom yapmak",
+                  "Konum izni almak"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Marker, Google Maps üzerinde belirli bir konumu görsel olarak işaretlemek için kullanılır.",
+                "tags": ["google_maps", "marker"]
+              },
+              {
+                "questionId": 370302,
+                "question": "Marker'a başlık ve açıklama eklenebilir mi?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Hayır, sadece konum gösterir",
+                  "Evet, title ve snippet ile eklenebilir",
+                  "Sadece başlık eklenebilir",
+                  "Sadece açıklama eklenebilir"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Marker'a title() ve snippet() metotları ile başlık ve açıklama eklenebilir. Kullanıcı marker'a tıkladığında bu bilgiler gösterilir.",
+                "tags": ["google_maps", "marker", "title"]
+              },
+              {
+                "questionId": 370303,
+                "question": "Aşağıdaki kod ne yapar?",
+                "questionType": "multiple_choice",
+                "code": "val location = LatLng(41.0082, 28.9784)\nmap.addMarker(MarkerOptions().position(location).title(\"İstanbul\"))",
+                "difficulty": "easy",
+                "options": [
+                  "Haritayı zoom yapar",
+                  "İstanbul koordinatlarına \"İstanbul\" başlıklı marker ekler",
+                  "Rota çizer",
+                  "Konum izni ister"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Kod, LatLng(41.0082, 28.9784) koordinatlarına (İstanbul) \"İstanbul\" başlıklı bir marker ekler.",
+                "tags": ["google_maps", "marker", "latlng"]
+              }
+            ]
           },
           {
             "topicId": 3704,
@@ -10612,13 +11341,560 @@
               "Navigasyon uygulamalarında kullanılır",
               "Performans dikkat edilmelidir"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 370401,
+                "question": "Google Maps'te iki nokta arasında rota çizmek için ne kullanılır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Marker",
+                  "Circle",
+                  "Polyline",
+                  "Polygon"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Polyline, harita üzerinde iki veya daha fazla nokta arasında çizgi (rota) çizmek için kullanılır.",
+                "tags": ["google_maps", "route", "polyline"]
+              },
+              {
+                "questionId": 370402,
+                "question": "Gerçek yol bilgisi (sokak takip eden rota) almak için hangi API kullanılır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "hard",
+                "options": [
+                  "Maps SDK",
+                  "Directions API",
+                  "Places API",
+                  "Geocoding API"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Directions API, iki nokta arasında gerçek yol bilgisini (turn-by-turn directions) sağlar. Bu bilgi Polyline ile harita üzerinde çizilir.",
+                "tags": ["google_maps", "directions_api", "route"]
+              },
+              {
+                "questionId": 370403,
+                "question": "Aşağıdaki kod ne yapar?",
+                "questionType": "multiple_choice",
+                "code": "map.addPolyline(\n    PolylineOptions().add(startLatLng, endLatLng)\n)",
+                "difficulty": "easy",
+                "options": [
+                  "Marker ekler",
+                  "İki nokta arasında çizgi çizer",
+                  "Haritayı zoom yapar",
+                  "Konum izni ister"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Kod, startLatLng ve endLatLng koordinatları arasında bir Polyline (çizgi) çizer.",
+                "tags": ["google_maps", "polyline", "route"]
+              },
+              {
+                "questionId": 370404,
+                "question": "Rota çizimi hangi tür uygulamalarda yaygın kullanılır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Sadece oyun uygulamaları",
+                  "Navigasyon ve sürüş uygulamaları",
+                  "Sadece hava durumu uygulamaları",
+                  "Sadece sosyal medya uygulamaları"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Rota çizimi, navigasyon, taksi, teslimat ve sürüş uygulamalarında yaygın olarak kullanılır.",
+                "tags": ["google_maps", "route", "navigation"]
+              }
+            ]
           }
         ],
-        "sectionMixedQuestions": []
+        "sectionMixedQuestions": [
+          {
+            "questionId": 370001,
+            "question": "Google Maps kullanabilmek için hangi dosyaya API Key eklenir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "MainActivity.kt",
+              "AndroidManifest.xml",
+              "build.gradle",
+              "strings.xml"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Google Maps API Key, AndroidManifest.xml dosyasına <meta-data> tag'i içinde eklenir.",
+            "tags": ["google_maps", "api_key", "manifest"]
+          },
+          {
+            "questionId": 370002,
+            "question": "LatLng nedir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Marker türü",
+              "Enlem (Latitude) ve Boylam (Longitude) çifti",
+              "Rota çizimi",
+              "İzin türü"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "LatLng, enlem (Latitude) ve boylam (Longitude) değerlerini tutan ve harita üzerinde bir konumu temsil eden sınıftır.",
+            "tags": ["google_maps", "latlng"]
+          },
+          {
+            "questionId": 370003,
+            "question": "Kullanıcının mevcut konumunu almak için hangi servis kullanılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Firebase",
+              "FusedLocationProviderClient",
+              "GoogleMap",
+              "SharedPreferences"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "FusedLocationProviderClient, Google Play Services'in bir parçasıdır ve kullanıcının mevcut konumunu almak için önerilen API'dir.",
+            "tags": ["location", "fused_location"]
+          },
+          {
+            "questionId": 370004,
+            "question": "Harita kamerasını belirli bir konuma taşımak için hangi metot kullanılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "map.setLocation()",
+              "map.moveCamera() veya map.animateCamera()",
+              "map.goTo()",
+              "map.navigate()"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "moveCamera() anında, animateCamera() ise animasyonlu şekilde harita kamerasını belirtilen konuma taşır.",
+            "tags": ["google_maps", "camera"]
+          },
+          {
+            "questionId": 370005,
+            "question": "Konum izni kullanıcı tarafından reddedilirse ne yapılmalıdır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Uygulama crash olmalı",
+              "Kullanıcıya alternatif sunulmalı veya özellik kısıtlanmalı",
+              "Hiçbir şey yapılmaz",
+              "Otomatik tekrar istenmeli"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "İzin reddedilirse kullanıcıya alternatif sunulmalı (manuel konum girişi) veya konum gerektirmeyen özellikler kullanılmalıdır. Sürekli izin istemek kötü kullanıcı deneyimine yol açar.",
+            "tags": ["location", "permission", "ux"]
+          },
+          {
+            "questionId": 370006,
+            "question": "Harita üzerinde birden fazla marker eklenebilir mi?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Hayır, sadece 1 marker",
+              "Evet, istediğiniz kadar marker eklenebilir",
+              "En fazla 10 marker",
+              "Sadece 2 marker"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Google Maps'e istediğiniz kadar marker ekleyebilirsiniz. Çok sayıda marker için clustering kullanılması önerilir.",
+            "tags": ["google_maps", "marker"]
+          },
+          {
+            "questionId": 370007,
+            "question": "Polyline'a renk ve kalınlık eklenebilir mi?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Hayır, sadece varsayılan görünüm",
+              "Evet, color() ve width() ile özelleştirilebilir",
+              "Sadece renk değiştirilebilir",
+              "Sadece kalınlık değiştirilebilir"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "PolylineOptions'a color() ve width() metotları ile renk ve kalınlık eklenebilir. Örnek: PolylineOptions().color(Color.BLUE).width(10f)",
+            "tags": ["google_maps", "polyline", "customization"]
+          },
+          {
+            "questionId": 370008,
+            "question": "Google Maps'te harita türleri (map types) nelerdir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "hard",
+            "options": [
+              "Sadece normal",
+              "Normal, Satellite, Terrain, Hybrid",
+              "Sadece satellite",
+              "Normal ve dark mode"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Google Maps 4 temel harita türünü destekler: Normal (yol haritası), Satellite (uydu görüntüsü), Terrain (arazi), Hybrid (uydu + yollar).",
+            "tags": ["google_maps", "map_types"]
+          },
+          {
+            "questionId": 370009,
+            "question": "Background'da sürekli konum takibi yapmak için ne gerekir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "hard",
+            "options": [
+              "Sadece ACCESS_FINE_LOCATION",
+              "ACCESS_BACKGROUND_LOCATION izni ve Foreground Service",
+              "Hiçbir şey gerekmez",
+              "Sadece GPS açık olmalı"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Android 10+ için background'da konum takibi yapmak için ACCESS_BACKGROUND_LOCATION izni ve kullanıcıya bildirim gösteren Foreground Service gereklidir.",
+            "tags": ["location", "background", "permission"]
+          },
+          {
+            "questionId": 370010,
+            "question": "Directions API'den alınan rota bilgisi hangi formatta gelir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "hard",
+            "options": [
+              "XML",
+              "JSON",
+              "Binary",
+              "CSV"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Directions API, rota bilgisini JSON formatında döner. Bu JSON içinde encoded polyline, distance, duration gibi bilgiler bulunur.",
+            "tags": ["directions_api", "json", "route"]
+          }
+        ]
       }
       ],
-      "interviewQuestions": []
+      "interviewQuestions": [
+      {
+        "questionId": 390001,
+        "question": "RecyclerView'in ListView'a göre avantajları nelerdir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "medium",
+        "options": [
+          "Sadece daha hızlıdır",
+          "ViewHolder pattern zorunludur, daha performanslı ve esnek layout manager desteği",
+          "Sadece daha kolay kullanılır",
+          "Hiçbir fark yok"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "RecyclerView, ViewHolder pattern'i zorunlu kılar, daha performanslı çalışır ve LinearLayoutManager, GridLayoutManager, StaggeredGridLayoutManager gibi esnek layout seçenekleri sunar.",
+        "tags": ["recyclerview", "performance", "viewholder"]
+      },
+      {
+        "questionId": 390002,
+        "question": "Fragment yaşam döngüsünde onCreateView() metodunun amacı nedir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "easy",
+        "options": [
+          "Fragment'i yok eder",
+          "Fragment'in UI'ını oluşturur ve View döner",
+          "Activity'yi başlatır",
+          "Veritabanı bağlantısı açar"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "onCreateView(), Fragment'in layout'unu inflate ederek View oluşturur ve döner. UI başlatma işlemleri burada yapılır.",
+        "tags": ["fragment", "lifecycle", "oncreateview"]
+      },
+      {
+        "questionId": 390003,
+        "question": "Room veritabanında @Entity annotation'ı ne işe yarar?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "easy",
+        "options": [
+          "DAO tanımlar",
+          "Veritabanı tablosunu temsil eden sınıfı işaretler",
+          "Query yazar",
+          "TypeConverter tanımlar"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "@Entity annotation'ı, bir sınıfın Room veritabanında tablo olarak kullanılacağını belirtir.",
+        "tags": ["room", "entity", "database"]
+      },
+      {
+        "questionId": 390004,
+        "question": "MVVM mimarisinde ViewModel'in temel sorumluluğu nedir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "medium",
+        "options": [
+          "UI çizmek",
+          "İş mantığını yönetmek ve UI state'ini tutmak",
+          "Veritabanı oluşturmak",
+          "Navigation yapmak"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "ViewModel, iş mantığını (business logic) yönetir, UI state'ini tutar ve configuration change'lerde hayatta kalır. UI ile iş mantığını ayırır.",
+        "tags": ["mvvm", "viewmodel", "architecture"]
+      },
+      {
+        "questionId": 390005,
+        "question": "Retrofit ile API çağrısı yaparken hangi yöntem önerilir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "medium",
+        "options": [
+          "Main thread'de çağrı",
+          "Coroutines veya RxJava ile asenkron çağrı",
+          "Senkron çağrı",
+          "Timer ile çağrı"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Network işlemleri main thread'de yapılamaz (NetworkOnMainThreadException). Coroutines (suspend fun) veya RxJava ile asenkron yapılmalıdır.",
+        "tags": ["retrofit", "coroutines", "async"]
+      },
+      {
+        "questionId": 390006,
+        "question": "Firebase Firestore'un gerçek zamanlı (real-time) olması ne anlama gelir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "easy",
+        "options": [
+          "Sadece hızlı çalışır",
+          "Veri değiştiğinde tüm dinleyen client'lara anında bildirim gider",
+          "Offline çalışır",
+          "Sadece bulut tabanlıdır"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Firestore'da addSnapshotListener ile veri dinlendiğinde, veri değiştiğinde tüm client'lar anında güncellenir (real-time sync).",
+        "tags": ["firebase", "firestore", "realtime"]
+      },
+      {
+        "questionId": 390007,
+        "question": "Google Maps'te kullanıcının mevcut konumunu almak için hangi API önerilir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "medium",
+        "options": [
+          "LocationManager",
+          "FusedLocationProviderClient",
+          "GPS",
+          "SharedPreferences"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "FusedLocationProviderClient, Google Play Services'in bir parçasıdır ve battery-efficient konum almak için önerilen modern API'dir.",
+        "tags": ["location", "google_maps", "fused_location"]
+      },
+      {
+        "questionId": 390008,
+        "question": "RecyclerView.Adapter'da DiffUtil kullanmanın avantajı nedir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "hard",
+        "options": [
+          "Sadece kod kısalır",
+          "Liste değişikliklerini hesaplar ve sadece değişen item'ları günceller (performans artışı)",
+          "Sadece animasyon ekler",
+          "Hiçbir fark yok"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "DiffUtil, eski ve yeni liste arasındaki farkları hesaplar ve sadece değişen item'ları günceller. notifyDataSetChanged() yerine kullanılarak performans artışı sağlar.",
+        "tags": ["recyclerview", "diffutil", "performance"]
+      },
+      {
+        "questionId": 390009,
+        "question": "Fragment'ler arasında veri paylaşmanın modern yöntemi nedir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "medium",
+        "options": [
+          "Static değişkenler",
+          "SharedViewModel veya Navigation Safe Args",
+          "Singleton pattern",
+          "Bundle ile her seferinde geçiş"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Modern yöntem, SharedViewModel (Activity scope'lu ViewModel) veya Navigation Component'in Safe Args özelliği kullanmaktır. Type-safe ve lifecycle-aware çözümlerdir.",
+        "tags": ["fragment", "viewmodel", "navigation"]
+      },
+      {
+        "questionId": 390010,
+        "question": "Room veritabanında @Dao nedir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "easy",
+        "options": [
+          "Veritabanı tablosu",
+          "Veritabanı sorgu metodlarını içeren interface",
+          "Entity sınıfı",
+          "TypeConverter"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "@Dao (Data Access Object), veritabanı sorgu metodlarını (@Query, @Insert, @Update, @Delete) içeren interface veya abstract class'tır.",
+        "tags": ["room", "dao", "database"]
+      },
+      {
+        "questionId": 390011,
+        "question": "MVVM'de LiveData'nın avantajı nedir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "medium",
+        "options": [
+          "Sadece veri tutar",
+          "Lifecycle-aware'dir, memory leak önler ve UI otomatik günceller",
+          "Sadece veritabanı için kullanılır",
+          "Sadece Fragment'lerde çalışır"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "LiveData lifecycle-aware'dir (Activity/Fragment yaşam döngüsünü bilir), memory leak önler ve veri değiştiğinde UI'ı otomatik günceller.",
+        "tags": ["mvvm", "livedata", "lifecycle"]
+      },
+      {
+        "questionId": 390012,
+        "question": "Retrofit'te @Body annotation'ı hangi HTTP metodlarında kullanılır?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "medium",
+        "options": [
+          "Sadece GET",
+          "POST, PUT, PATCH gibi request body gerektiren metodlarda",
+          "Sadece DELETE",
+          "Tüm HTTP metodlarında"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "@Body, POST, PUT, PATCH gibi request body gerektiren HTTP metodlarında kullanılır. GET ve DELETE'de body yoktur.",
+        "tags": ["retrofit", "body", "http"]
+      },
+      {
+        "questionId": 390013,
+        "question": "Firebase Authentication ile Firestore Security Rules'ı birlikte kullanmanın amacı nedir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "hard",
+        "options": [
+          "Sadece hız artışı",
+          "Kullanıcı kimlik doğrulama ve veri erişim kontrolü sağlamak",
+          "Sadece offline destek",
+          "Sadece UI iyileştirmesi"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Authentication ile kullanıcı kimliği doğrulanır, Security Rules ile her kullanıcının sadece kendi verilerine erişmesi sağlanır (request.auth.uid kontrolü).",
+        "tags": ["firebase", "authentication", "security"]
+      },
+      {
+        "questionId": 390014,
+        "question": "Navigation Component'in avantajları nelerdir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "medium",
+        "options": [
+          "Sadece animasyon ekler",
+          "Fragment geçişlerini yönetir, Safe Args ile type-safe veri aktarımı, deep link desteği",
+          "Sadece Activity geçişleri içindir",
+          "Veritabanı yönetir"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Navigation Component, Fragment geçişlerini kolaylaştırır, Safe Args ile type-safe veri aktarımı, deep link, back stack yönetimi ve görsel navigation graph sağlar.",
+        "tags": ["navigation", "fragment", "safe_args"]
+      },
+      {
+        "questionId": 390015,
+        "question": "Room'da TypeConverter ne için kullanılır?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "hard",
+        "options": [
+          "SQL sorguları yazmak",
+          "Room'un desteklemediği veri tiplerini (Date, List vb.) dönüştürmek",
+          "Entity oluşturmak",
+          "Veritabanı versiyonu yükseltmek"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "TypeConverter, Room'un natively desteklemediği veri tiplerini (Date, List, custom object) primitive tiplere (Long, String) dönüştürmek için kullanılır.",
+        "tags": ["room", "typeconverter", "database"]
+      },
+      {
+        "questionId": 390016,
+        "question": "Repository pattern'in MVVM'deki rolü nedir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "hard",
+        "options": [
+          "UI çizer",
+          "Veri kaynaklarını (API, Database) yönetir ve ViewModel'e tek bir veri akışı sunar",
+          "Sadece network işlemleri yapar",
+          "Kullanıcı giriş kontrolü yapar"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Repository, veri kaynaklarını (Retrofit, Room, SharedPreferences) soyutlar ve ViewModel'e tek bir clean data interface sunar. Single source of truth sağlar.",
+        "tags": ["mvvm", "repository", "architecture"]
+      },
+      {
+        "questionId": 390017,
+        "question": "RecyclerView'da ViewHolder pattern'in amacı nedir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "easy",
+        "options": [
+          "Sadece görsel iyileştirme",
+          "findViewById çağrılarını önbelleğe alarak performansı artırmak",
+          "Animasyon eklemek",
+          "Veritabanı yönetimi"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "ViewHolder pattern, findViewById çağrılarını önbelleğe alır. Her scroll'da aynı view'lar yeniden kullanılır (recycling), performans büyük ölçüde artar.",
+        "tags": ["recyclerview", "viewholder", "performance"]
+      },
+      {
+        "questionId": 390018,
+        "question": "Kotlin Coroutines'de suspend function ne demektir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "medium",
+        "options": [
+          "Fonksiyon çalışmaz",
+          "Fonksiyon askıya alınabilir (pausable) ve main thread'i bloklamadan çalışır",
+          "Sadece arka planda çalışır",
+          "Fonksiyon silinemez"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "suspend function, coroutine içinde askıya alınabilir (suspend edilebilir). Main thread'i bloklamadan asenkron işlemler yapar. Retrofit ve Room ile uyumludur.",
+        "tags": ["coroutines", "suspend", "async"]
+      },
+      {
+        "questionId": 390019,
+        "question": "Firebase Storage ve Firestore arasındaki fark nedir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "easy",
+        "options": [
+          "İkisi de aynıdır",
+          "Storage dosya/medya saklar, Firestore yapılandırılmış veri saklar",
+          "Storage daha yavaştır",
+          "Firestore sadece resim saklar"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Firebase Storage, büyük dosyaları ve medyayı (resim, video, PDF) saklar. Firestore ise NoSQL database olarak yapılandırılmış verileri (user info, posts) saklar.",
+        "tags": ["firebase", "storage", "firestore"]
+      },
+      {
+        "questionId": 390020,
+        "question": "Android'de background'da konum takibi için ne gereklidir?",
+        "questionType": "multiple_choice",
+        "code": null,
+        "difficulty": "hard",
+        "options": [
+          "Sadece ACCESS_FINE_LOCATION",
+          "ACCESS_BACKGROUND_LOCATION izni ve Foreground Service",
+          "Hiçbir şey gerekmez",
+          "Sadece GPS açık olmalı"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Android 10+ için background konum takibi yapmak için ACCESS_BACKGROUND_LOCATION izni ve kullanıcıya notification gösteren Foreground Service gereklidir.",
+        "tags": ["location", "background", "foreground_service"]
+      }
+    ]
     },
     {
       "categoryId": 4,
@@ -10646,7 +11922,56 @@
                 "Yanlış kullanım ANR hatasına sebep olur",
                 "Asenkron yapı UX'i iyileştirir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 410101,
+                  "question": "Asenkron programlama nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece UI işlemleri",
+                    "Uzun süren işlemlerin ana thread'i bloklamadan arka planda çalıştırılması",
+                    "Sadece veritabanı işlemleri",
+                    "Senkron programlamanın tersi değildir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Asenkron programlama, uzun süren işlemlerin (network, veritabanı) ana thread'i bloklamadan arka planda çalıştırılmasını sağlar.",
+                  "tags": ["async", "temel"]
+                },
+                {
+                  "questionId": 410102,
+                  "question": "Android'de UI thread neden bloklanmamalıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece performans düşer",
+                    "ANR (Application Not Responding) hatasına ve donma yaşanmasına yol açar",
+                    "Veritabanı silinir",
+                    "Hiçbir şey olmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "UI thread bloklanırsa uygulama donar ve 5 saniyeden fazla yanıt vermezse ANR hatası oluşur, bu da kötü kullanıcı deneyimine yol açar.",
+                  "tags": ["ui_thread", "anr"]
+                },
+                {
+                  "questionId": 410103,
+                  "question": "Hangi işlemler asenkron olarak yapılmalıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece UI çizimi",
+                    "Network istekleri, veritabanı işlemleri, dosya okuma/yazma",
+                    "Sadece Toast gösterme",
+                    "Sadece Button tıklama"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Network istekleri, veritabanı işlemleri, dosya okuma/yazma gibi uzun süren işlemler asenkron yapılmalıdır. UI işlemleri ise main thread'de yapılır.",
+                  "tags": ["async", "operations"]
+                }
+              ]
             },
             {
               "topicId": 4102,
@@ -10668,7 +11993,72 @@
                 "Suspend fonksiyonlar kullanılır",
                 "Modern Android'in temelidir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 410201,
+                  "question": "Coroutine nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece thread yönetimi",
+                    "Kotlin'in sunduğu hafif ve güçlü asenkron programlama çözümü",
+                    "Sadece network kütüphanesi",
+                    "Veritabanı aracı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Coroutine, Kotlin tarafından sunulan hafif (lightweight) ve güçlü bir asenkron programlama çözümüdür.",
+                  "tags": ["coroutine", "temel"]
+                },
+                {
+                  "questionId": 410202,
+                  "question": "Coroutine'in Thread'e göre avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece daha yavaştır",
+                    "Daha hafiftir (lightweight), callback hell'i ortadan kaldırır",
+                    "Sadece daha karmaşıktır",
+                    "Hiçbir fark yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Coroutine'ler Thread'lere göre çok daha hafiftir, binlerce coroutine aynı anda çalışabilir. Ayrıca callback yapısını ortadan kaldırarak okunabilir kod sağlar.",
+                  "tags": ["coroutine", "thread", "advantage"]
+                },
+                {
+                  "questionId": 410203,
+                  "question": "Coroutine'de callback hell problemi nasıl çözülür?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Çözülmez",
+                    "Suspend fonksiyonlar ile sıralı (sequential) kod yazılır",
+                    "Daha fazla callback kullanılır",
+                    "Sadece Thread kullanılır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Coroutine'lerde suspend fonksiyonlar sayesinde asenkron kod sıralı (sequential) şekilde yazılır, callback zincirleri ortadan kalkar.",
+                  "tags": ["coroutine", "callback_hell"]
+                },
+                {
+                  "questionId": 410204,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "GlobalScope.launch {\n    delay(1000)\n    println(\"Coroutine çalıştı\")\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "1 saniye thread'i bloklar",
+                    "1 saniye bekler (askıya alır) sonra mesaj yazdırır",
+                    "Hata verir",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "launch bir coroutine başlatır, delay(1000) 1 saniye askıya alır (thread bloklamadan), sonra mesaj yazdırır.",
+                  "tags": ["coroutine", "launch", "delay"]
+                }
+              ]
             },
             {
               "topicId": 4103,
@@ -10690,7 +12080,72 @@
                 "delay() gibi suspend fonksiyonlar içerir",
                 "Asenkron yapının temelidir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 410301,
+                  "question": "Suspend fonksiyon nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Normal bir fonksiyon",
+                    "Coroutine içinde çalışabilen ve execution'ı askıya alabilen fonksiyon",
+                    "Sadece UI fonksiyonu",
+                    "Veritabanı fonksiyonu"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Suspend fonksiyonlar, coroutine içinde çalışabilen ve execution'ı askıya alabilen (pausable) özel fonksiyonlardır.",
+                  "tags": ["suspend", "coroutine"]
+                },
+                {
+                  "questionId": 410302,
+                  "question": "Suspend fonksiyon nerede çağrılabilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Her yerde",
+                    "Sadece coroutine içinde veya başka bir suspend fonksiyon içinde",
+                    "Sadece main thread'de",
+                    "Sadece Activity'de"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Suspend fonksiyonlar sadece coroutine scope içinde veya başka bir suspend fonksiyon içinde çağrılabilir.",
+                  "tags": ["suspend", "scope"]
+                },
+                {
+                  "questionId": 410303,
+                  "question": "Suspend fonksiyon thread'i bloklar mı?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Evet, her zaman bloklar",
+                    "Hayır, thread'i bloklamadan askıya alır",
+                    "Bazen bloklar",
+                    "Sadece main thread'i bloklar"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Suspend fonksiyonlar thread'i bloklamaz, sadece coroutine'i askıya alır. Thread başka işler yapabilir.",
+                  "tags": ["suspend", "thread"]
+                },
+                {
+                  "questionId": 410304,
+                  "question": "Aşağıdaki kodda suspend anahtar kelimesinin önemi nedir?",
+                  "questionType": "multiple_choice",
+                  "code": "suspend fun fetchData() {\n    delay(1000)\n}",
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece görsel amaçlı",
+                    "Fonksiyonun coroutine içinde çağrılabileceğini ve askıya alınabileceğini belirtir",
+                    "Fonksiyonu durdurur",
+                    "Hata önler"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "suspend keyword, fonksiyonun coroutine context içinde çağrılabileceğini ve execution'ı askıya alabileceğini belirtir. delay() gibi suspend fonksiyonlar içerebilir.",
+                  "tags": ["suspend", "keyword"]
+                }
+              ]
             },
             {
               "topicId": 4104,
@@ -10712,10 +12167,252 @@
                 "Dispatchers.Main: UI",
                 "Yanlış dispatcher crash'e yol açabilir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 410401,
+                  "question": "Coroutine Scope nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Thread türü",
+                    "Coroutine'in yaşam döngüsünü belirleyen yapı",
+                    "Veritabanı bağlantısı",
+                    "UI bileşeni"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Coroutine Scope, coroutine'lerin yaşam döngüsünü belirler. Scope iptal edildiğinde içindeki tüm coroutine'ler de iptal olur.",
+                  "tags": ["scope", "lifecycle"]
+                },
+                {
+                  "questionId": 410402,
+                  "question": "Dispatcher ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece hız artırır",
+                    "Coroutine'in hangi thread üzerinde çalışacağını belirler",
+                    "Sadece network işlemleri yapar",
+                    "UI çizer"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Dispatcher, coroutine'in hangi thread veya thread pool üzerinde çalışacağını belirler.",
+                  "tags": ["dispatcher", "thread"]
+                },
+                {
+                  "questionId": 410403,
+                  "question": "Dispatchers.IO ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "UI işlemleri",
+                    "Network istekleri ve veritabanı işlemleri",
+                    "Matematiksel hesaplamalar",
+                    "Sadece animasyon"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Dispatchers.IO, network istekleri, veritabanı okuma/yazma, dosya işlemleri gibi I/O operasyonları için optimize edilmiş dispatcher'dır.",
+                  "tags": ["dispatcher", "io"]
+                },
+                {
+                  "questionId": 410404,
+                  "question": "Dispatchers.Main ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Veritabanı işlemleri",
+                    "UI güncellemeleri ve kullanıcı etkileşimleri",
+                    "Network istekleri",
+                    "Dosya okuma"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Dispatchers.Main, Android'de UI thread üzerinde çalışır. UI güncellemeleri ve kullanıcı etkileşimleri için kullanılır.",
+                  "tags": ["dispatcher", "main", "ui"]
+                },
+                {
+                  "questionId": 410405,
+                  "question": "viewModelScope'un avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece hızlıdır",
+                    "ViewModel temizlendiğinde coroutine'leri otomatik iptal eder (lifecycle-aware)",
+                    "Sadece network için kullanılır",
+                    "Manuel iptal gerektirir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "viewModelScope, ViewModel'in lifecycle'ına bağlıdır. ViewModel temizlendiğinde (onCleared) içindeki tüm coroutine'ler otomatik iptal edilir, memory leak önlenir.",
+                  "tags": ["viewmodelscope", "lifecycle"]
+                }
+              ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+              "questionId": 410001,
+              "question": "Android'de network işlemi main thread'de yapılırsa ne olur?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Hiçbir şey olmaz",
+                "NetworkOnMainThreadException fırlatılır",
+                "Sadece yavaş çalışır",
+                "Otomatik düzelir"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Android'de main thread'de network işlemi yapılmaya çalışılırsa NetworkOnMainThreadException fırlatılır ve uygulama crash olur.",
+              "tags": ["network", "main_thread", "exception"]
+            },
+            {
+              "questionId": 410002,
+              "question": "Coroutine'de async ve launch arasındaki fark nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir fark yok",
+                "launch sonuç döndürmez, async Deferred<T> döner ve await() ile sonuç alınır",
+                "async daha yavaştır",
+                "launch kullanımdan kalkmıştır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "launch sadece coroutine başlatır ve Job döner. async ise Deferred<T> döner ve await() ile sonuç alınabilir. Paralel işlemler ve sonuç almak için async kullanılır.",
+              "tags": ["async", "launch", "difference"]
+            },
+            {
+              "questionId": 410003,
+              "question": "withContext ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Yeni scope oluşturur",
+                "Mevcut coroutine'in dispatcher'ını geçici olarak değiştirir",
+                "Coroutine'i iptal eder",
+                "Sadece hız artırır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "withContext, mevcut coroutine içinde dispatcher'ı geçici olarak değiştirmek için kullanılır. Örneğin IO'da çalışıp sonucu Main'de döndürmek için.",
+              "tags": ["withcontext", "dispatcher"]
+            },
+            {
+              "questionId": 410004,
+              "question": "Coroutine'de exception handling nasıl yapılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Exception handle edilemez",
+                "try-catch bloğu veya CoroutineExceptionHandler kullanılır",
+                "Otomatik handle edilir",
+                "Sadece log yazılır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Coroutine'lerde exception handling için try-catch bloğu veya CoroutineExceptionHandler kullanılır. Launch ile başlatılan coroutine'lerde CoroutineExceptionHandler tercih edilir.",
+              "tags": ["exception", "error_handling"]
+            },
+            {
+              "questionId": 410005,
+              "question": "GlobalScope kullanmanın dezavantajı nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir dezavantajı yok",
+                "Lifecycle'a bağlı değildir, memory leak riski vardır",
+                "Daha yavaştır",
+                "Sadece test için kullanılır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "GlobalScope, uygulama yaşam döngüsü boyunca yaşar ve lifecycle'a bağlı değildir. Activity/Fragment kapansa bile çalışmaya devam eder, memory leak riski yaratır. viewModelScope veya lifecycleScope tercih edilmelidir.",
+              "tags": ["globalscope", "memory_leak"]
+            },
+            {
+              "questionId": 410006,
+              "question": "delay() ve Thread.sleep() arasındaki fark nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Hiçbir fark yok",
+                "delay() thread'i bloklamaz (suspend), Thread.sleep() bloklar",
+                "delay() daha yavaştır",
+                "Thread.sleep() daha güvenlidir"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "delay() suspend fonksiyondur ve thread'i bloklamaz, sadece coroutine'i askıya alır. Thread.sleep() ise thread'i tamamen bloklar.",
+              "tags": ["delay", "thread_sleep"]
+            },
+            {
+              "questionId": 410007,
+              "question": "Dispatchers.Default ne için kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "UI işlemleri",
+                "CPU-intensive işlemler (sıralama, parsing, hesaplama)",
+                "Network istekleri",
+                "Veritabanı işlemleri"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Dispatchers.Default, CPU-intensive işlemler (büyük veri sıralama, JSON parsing, karmaşık hesaplamalar) için optimize edilmiş dispatcher'dır.",
+              "tags": ["dispatcher", "default", "cpu"]
+            },
+            {
+              "questionId": 410008,
+              "question": "lifecycleScope nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece ViewModel için",
+                "Activity/Fragment lifecycle'ına bağlı coroutine scope",
+                "Global scope",
+                "Sadece Service için"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "lifecycleScope, Activity veya Fragment'in lifecycle'ına bağlı bir coroutine scope'tur. Activity/Fragment yok olduğunda coroutine'ler otomatik iptal edilir.",
+              "tags": ["lifecyclescope", "lifecycle"]
+            },
+            {
+              "questionId": 410009,
+              "question": "Retrofit ile suspend fonksiyon kullanmanın avantajı nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece hızlıdır",
+                "Callback ihtiyacını ortadan kaldırır, sequential kod yazılır",
+                "Sadece daha az kod",
+                "Hiçbir fark yok"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Retrofit suspend fonksiyon destekler. Callback yerine direkt sonuç döner ve try-catch ile hata yönetimi yapılır. Kod daha okunabilir ve yönetilebilir olur.",
+              "tags": ["retrofit", "suspend", "callback"]
+            },
+            {
+              "questionId": 410010,
+              "question": "Coroutine iptal edildiğinde (cancel) ne olur?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir şey olmaz",
+                "CancellationException fırlatılır ve coroutine temizlenir",
+                "Uygulama crash olur",
+                "Coroutine devam eder"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Coroutine iptal edildiğinde CancellationException fırlatılır. finally bloğunda cleanup işlemleri yapılabilir. İptal edilen coroutine yeni suspend fonksiyon çağıramaz.",
+              "tags": ["cancel", "cancellation"]
+            }
+          ]
         },
         {
           "sectionId": 4200,
@@ -10743,7 +12440,72 @@
                 "Birden fazla değer yayabilir",
                 "Asenkron veri akışı sağlar"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 420101,
+                  "question": "Flow nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece veritabanı aracı",
+                    "Kotlin Coroutines tabanlı reaktif veri akışı sağlayan yapı",
+                    "Sadece UI bileşeni",
+                    "Network kütüphanesi"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Flow, Kotlin Coroutines tabanlı soğuk (cold) veri akışı sağlayan reaktif bir yapıdır. Zaman içerisinde birden fazla veri yayabilir.",
+                  "tags": ["flow", "temel"]
+                },
+                {
+                  "questionId": 420102,
+                  "question": "Flow'un cold stream olması ne anlama gelir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece soğuk havalarda çalışır",
+                    "Collect edilmeden çalışmaz, her collect'te yeniden başlar",
+                    "Daha yavaş çalışır",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Cold stream, collect edilmeden çalışmaz. Her collect çağrısında Flow baştan çalışır ve yeni bir veri akışı başlatır.",
+                  "tags": ["flow", "cold_stream"]
+                },
+                {
+                  "questionId": 420103,
+                  "question": "Flow kaç değer yayabilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece 1 değer",
+                    "Birden fazla değer (asenkron stream)",
+                    "Sadece 2 değer",
+                    "Hiç değer yayamaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Flow, zaman içerisinde birden fazla değer yayabilir. emit() ile her seferinde yeni bir değer gönderilebilir.",
+                  "tags": ["flow", "emit"]
+                },
+                {
+                  "questionId": 420104,
+                  "question": "Aşağıdaki Flow'da kaç değer yayınlanır?",
+                  "questionType": "multiple_choice",
+                  "code": "fun numbersFlow(): Flow<Int> = flow {\n    emit(1)\n    emit(2)\n    emit(3)\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "1 değer",
+                    "2 değer",
+                    "3 değer",
+                    "Hiç değer yayınlanmaz"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Flow, emit() ile 3 değer (1, 2, 3) yayınlar. Her emit çağrısı bir değer gönderir.",
+                  "tags": ["flow", "emit", "values"]
+                }
+              ]
             },
             {
               "topicId": 4202,
@@ -10765,7 +12527,56 @@
                 "Flow başlatır",
                 "UI lifecycle ile birlikte çalışır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 420201,
+                  "question": "Flow'dan veri almak için ne kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "get()",
+                    "collect()",
+                    "fetch()",
+                    "observe()"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "collect(), Flow'dan gelen verileri dinlemek ve işlemek için kullanılan suspend fonksiyondur.",
+                  "tags": ["flow", "collect"]
+                },
+                {
+                  "questionId": 420202,
+                  "question": "collect() nerede çağrılabilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Her yerde",
+                    "Sadece coroutine scope içinde",
+                    "Sadece main thread'de",
+                    "Sadece Activity'de"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "collect() bir suspend fonksiyondur ve sadece coroutine scope içinde (lifecycleScope, viewModelScope vb.) çağrılabilir.",
+                  "tags": ["flow", "collect", "scope"]
+                },
+                {
+                  "questionId": 420203,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "lifecycleScope.launch {\n    numbersFlow().collect {\n        println(it)\n    }\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hiçbir şey yapmaz",
+                    "Flow'u başlatır ve her değeri yazdırır",
+                    "Sadece ilk değeri yazdırır",
+                    "Hata verir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "lifecycleScope içinde Flow collect edilir ve her emit edilen değer (it) konsola yazdırılır.",
+                  "tags": ["flow", "collect", "lifecyclescope"]
+                }
+              ]
             },
             {
               "topicId": 4203,
@@ -10787,7 +12598,72 @@
                 "Son değeri saklar",
                 "UI state için kullanılır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 420301,
+                  "question": "StateFlow nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece veritabanı",
+                    "Her zaman güncel bir state tutan hot Flow türü",
+                    "Sadece network için",
+                    "Cold stream"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "StateFlow, her zaman güncel bir state tutan ve yeni observer'lara son değeri anında ileten sıcak (hot) bir Flow türüdür.",
+                  "tags": ["stateflow", "temel"]
+                },
+                {
+                  "questionId": 420302,
+                  "question": "StateFlow'un hot stream olması ne anlama gelir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Daha hızlıdır",
+                    "Collect edilmese bile aktiftir, yeni observer'a son değeri hemen verir",
+                    "Sadece sıcak havalarda çalışır",
+                    "Cold stream ile aynıdır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Hot stream, collect edilmese bile aktiftir. StateFlow her zaman bir değer tutar ve yeni observer geldiğinde son değeri anında iletir.",
+                  "tags": ["stateflow", "hot_stream"]
+                },
+                {
+                  "questionId": 420303,
+                  "question": "StateFlow tanımlarken ne zorunludur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Hiçbir şey",
+                    "Initial (başlangıç) değeri",
+                    "Sadece tip",
+                    "Sadece isim"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "StateFlow tanımlanırken mutlaka bir initial (başlangıç) değeri verilmelidir. StateFlow her zaman bir değer tutar.",
+                  "tags": ["stateflow", "initial_value"]
+                },
+                {
+                  "questionId": 420304,
+                  "question": "StateFlow ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece network işlemleri",
+                    "UI state yönetimi ve reaktif data flow",
+                    "Sadece veritabanı",
+                    "Sadece animasyon"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "StateFlow, UI state yönetimi için idealdir. ViewModel'de UI state'i tutar ve UI tarafından observe edilir.",
+                  "tags": ["stateflow", "ui_state"]
+                }
+              ]
             },
             {
               "topicId": 4204,
@@ -10803,7 +12679,72 @@
                 "StateFlow lifecycle'dan bağımsızdır",
                 "Modern projelerde Flow önerilir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 420401,
+                  "question": "Flow ve LiveData arasındaki temel fark nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir fark yok",
+                    "Flow coroutine tabanlı ve daha esnektir, LiveData lifecycle-aware'dır",
+                    "LiveData daha hızlıdır",
+                    "Flow kullanımdan kalkmıştır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Flow, coroutine tabanlıdır ve daha esnek operatörler sunar. LiveData ise lifecycle-aware'dır ancak daha sınırlıdır.",
+                  "tags": ["flow", "livedata", "comparison"]
+                },
+                {
+                  "questionId": 420402,
+                  "question": "Modern Android projelerinde hangisi önerilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "LiveData",
+                    "Flow (özellikle StateFlow)",
+                    "İkisi de eşit",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Modern Android geliştirmede Flow (özellikle StateFlow) önerilir. Daha esnek, coroutine ile uyumlu ve güçlü operatörler sunar.",
+                  "tags": ["flow", "stateflow", "best_practice"]
+                },
+                {
+                  "questionId": 420403,
+                  "question": "StateFlow'un LiveData'ya göre avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece daha hızlı",
+                    "Lifecycle'dan bağımsız, coroutine operatörleri kullanılabilir",
+                    "Sadece daha az kod",
+                    "LiveData'dan daha yavaş"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "StateFlow, lifecycle'dan bağımsızdır ve map, filter gibi coroutine Flow operatörleri kullanılabilir. Daha esnek ve test edilebilir.",
+                  "tags": ["stateflow", "livedata", "advantage"]
+                },
+                {
+                  "questionId": 420404,
+                  "question": "LiveData'nın hala kullanılabileceği durum nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Hiçbir zaman kullanılmamalı",
+                    "XML Data Binding ile uyumlu olduğu için eski projelerde",
+                    "Her zaman tercih edilmeli",
+                    "Sadece test için"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "LiveData, XML Data Binding ile doğrudan uyumludur. Eski projeler veya XML Data Binding kullanılan durumlarda hala kullanılabilir.",
+                  "tags": ["livedata", "databinding", "legacy"]
+                }
+              ]
             },
             {
               "topicId": 4205,
@@ -10825,10 +12766,252 @@
                 "Tek yönlü data flow sağlar",
                 "MVVM ile uyumludur"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 420501,
+                  "question": "StateFlow genellikle nerede tanımlanır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Activity'de",
+                    "ViewModel'de",
+                    "Fragment'te",
+                    "Repository'de"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "StateFlow genellikle ViewModel içinde tanımlanır ve UI state'ini tutar. UI tarafından observe edilir.",
+                  "tags": ["stateflow", "viewmodel"]
+                },
+                {
+                  "questionId": 420502,
+                  "question": "ViewModel'de StateFlow tanımlarken MutableStateFlow neden private tutulur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Performans için",
+                    "Encapsulation: UI sadece okusun, değiştirmesin (tek yönlü data flow)",
+                    "Zorunlu değildir",
+                    "Hata önlemek için"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "MutableStateFlow private tutulur, dışarıya read-only StateFlow expose edilir. Bu sayede UI sadece observe eder, değiştiremez (tek yönlü data flow).",
+                  "tags": ["stateflow", "encapsulation", "mutable"]
+                },
+                {
+                  "questionId": 420503,
+                  "question": "Aşağıdaki kodda StateFlow nasıl güncellenir?",
+                  "questionType": "multiple_choice",
+                  "code": "private val _uiState = MutableStateFlow(0)\nval uiState: StateFlow<Int> = _uiState",
+                  "difficulty": "medium",
+                  "options": [
+                    "uiState.value = 5",
+                    "_uiState.value = 5",
+                    "uiState.update(5)",
+                    "Güncellenemez"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "MutableStateFlow'un value property'si ile güncellenir: _uiState.value = 5. uiState read-only olduğu için güncellenemez.",
+                  "tags": ["stateflow", "update", "value"]
+                },
+                {
+                  "questionId": 420504,
+                  "question": "UI tarafında StateFlow'u lifecycle-aware şekilde nasıl collect etmeliyiz?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "GlobalScope.launch { collect }",
+                    "lifecycleScope.launch { repeatOnLifecycle(STARTED) { collect } }",
+                    "Thread içinde",
+                    "Doğrudan collect"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "StateFlow'u lifecycle-aware şekilde collect etmek için lifecycleScope ve repeatOnLifecycle(STARTED) kullanılmalıdır. Bu, Activity/Fragment arka plandayken collect'i durdurur.",
+                  "tags": ["stateflow", "lifecycle", "repeatonlifecycle"]
+                },
+                {
+                  "questionId": 420505,
+                  "question": "ViewModel + StateFlow kullanımının MVVM'deki rolü nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece veri saklar",
+                    "Tek yönlü data flow sağlar: ViewModel state tutar, UI sadece observe eder",
+                    "Sadece network işlemleri yapar",
+                    "Veritabanı yönetir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ViewModel'de StateFlow ile UI state tutulur, UI sadece observe eder ve state'e göre kendini günceller. Bu, MVVM'de tek yönlü data flow ve separation of concerns sağlar.",
+                  "tags": ["mvvm", "stateflow", "viewmodel", "unidirectional"]
+                }
+              ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+              "questionId": 420001,
+              "question": "Flow operatörleri (map, filter) ne için kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece görsel için",
+                "Flow'daki verileri dönüştürmek ve filtrelemek",
+                "Sadece hata yönetimi",
+                "Flow'u iptal eder"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Flow operatörleri (map, filter, transform vb.), Flow'dan gelen verileri dönüştürmek, filtrelemek ve işlemek için kullanılır.",
+              "tags": ["flow", "operators"]
+            },
+            {
+              "questionId": 420002,
+              "question": "SharedFlow nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Cold stream",
+                "Hot stream, birden fazla collector'a aynı anda yayın yapabilir",
+                "StateFlow ile aynı",
+                "Kullanımdan kalkmıştır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "SharedFlow, hot stream'dir ve birden fazla collector'a aynı anda yayın yapabilir. Event-driven yapılar için kullanılır (örn: one-time events, navigation).",
+              "tags": ["sharedflow", "hot_stream"]
+            },
+            {
+              "questionId": 420003,
+              "question": "StateFlow ve SharedFlow arasındaki fark nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir fark yok",
+                "StateFlow her zaman bir state tutar, SharedFlow event-driven'dır",
+                "SharedFlow daha yavaştır",
+                "StateFlow kullanımdan kalkmıştır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "StateFlow her zaman bir state (değer) tutar ve yeni observer'a son değeri verir. SharedFlow ise event-driven'dır, geçmiş değerleri tutmayabilir.",
+              "tags": ["stateflow", "sharedflow", "difference"]
+            },
+            {
+              "questionId": 420004,
+              "question": "Flow'da exception handling nasıl yapılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Exception handle edilemez",
+                "try-catch veya catch operatörü kullanılır",
+                "Otomatik handle edilir",
+                "Sadece log yazılır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Flow'da exception handling için try-catch bloğu veya catch { } operatörü kullanılır. catch operatörü Flow chain'inde upstream exception'ları yakalar.",
+              "tags": ["flow", "exception", "catch"]
+            },
+            {
+              "questionId": 420005,
+              "question": "flowOn() ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Flow'u iptal eder",
+                "Flow'un hangi dispatcher'da çalışacağını belirler",
+                "Flow'u başlatır",
+                "Sadece hız artırır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "flowOn() operatörü, Flow'un upstream kısmının hangi dispatcher üzerinde çalışacağını belirler. Örneğin flowOn(Dispatchers.IO) ile IO thread'de çalıştırılabilir.",
+              "tags": ["flow", "flowon", "dispatcher"]
+            },
+            {
+              "questionId": 420006,
+              "question": "stateIn() operatörü ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Flow'u iptal eder",
+                "Cold Flow'u hot StateFlow'a dönüştürür",
+                "Sadece hata yakalar",
+                "Flow'u başlatır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "stateIn() operatörü, cold Flow'u hot StateFlow'a dönüştürür. Bu sayede birden fazla collector aynı Flow'u dinleyebilir ve son değer tutulur.",
+              "tags": ["flow", "statein", "stateflow"]
+            },
+            {
+              "questionId": 420007,
+              "question": "Room Database ile Flow kullanmanın avantajı nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece daha hızlı",
+                "Veritabanı değiştiğinde otomatik olarak UI güncellenir (reactive)",
+                "Sadece daha az kod",
+                "Hiçbir fark yok"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Room, Flow döndüren query'leri destekler. Veritabanı değiştiğinde Flow otomatik olarak yeni veriyi yayar ve UI reaktif şekilde güncellenir.",
+              "tags": ["flow", "room", "reactive"]
+            },
+            {
+              "questionId": 420008,
+              "question": "Retrofit ile Flow kullanmanın amacı nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece hız artışı",
+                "Asenkron network çağrıları ve reaktif data stream",
+                "Sadece hata yönetimi",
+                "Kullanılamaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Retrofit ile Flow kullanarak asenkron network çağrıları yapılabilir ve veri reaktif şekilde UI'a iletilebilir. callbackFactory ile Flow desteği eklenir.",
+              "tags": ["flow", "retrofit", "network"]
+            },
+            {
+              "questionId": 420009,
+              "question": "collectLatest() ve collect() arasındaki fark nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir fark yok",
+                "collectLatest() yeni değer geldiğinde önceki işlemi iptal eder",
+                "collect() daha hızlıdır",
+                "collectLatest() kullanımdan kalkmıştır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "collectLatest(), yeni değer geldiğinde önceki collect işlemini iptal eder ve yeni değer ile devam eder. Search gibi hızlı güncellemelerde kullanışlıdır.",
+              "tags": ["flow", "collectlatest", "collect"]
+            },
+            {
+              "questionId": 420010,
+              "question": "asStateFlow() ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Flow'u iptal eder",
+                "MutableStateFlow'u read-only StateFlow'a dönüştürür (encapsulation)",
+                "StateFlow'u oluşturur",
+                "Sadece Compose için"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "asStateFlow(), MutableStateFlow'u read-only StateFlow'a dönüştürür. Bu sayede dışarıya sadece okunabilir interface expose edilir (encapsulation).",
+              "tags": ["stateflow", "asstateflow", "encapsulation"]
+            }
+          ]
         },
         {
           "sectionId": 4300,
@@ -10850,7 +13033,56 @@
                 "Kod tekrarını önler",
                 "Clean Architecture için gereklidir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 430101,
+                  "question": "Dependency Injection (DI) nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece veritabanı aracı",
+                    "Bir sınıfın bağımlılıklarını kendisi oluşturması yerine dışarıdan alması",
+                    "Sadece UI tasarımı",
+                    "Network kütüphanesi"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Dependency Injection, bir sınıfın ihtiyaç duyduğu bağımlılıkları kendisinin oluşturması yerine dışarıdan almasını sağlayan tasarım desenidir.",
+                  "tags": ["dependency_injection", "design_pattern"]
+                },
+                {
+                  "questionId": 430102,
+                  "question": "Dependency Injection'ın avantajları nelerdir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece hız artışı",
+                    "Sıkı bağımlılığı azaltır, test edilebilirliği artırır, kod tekrarını önler",
+                    "Sadece görsel iyileştirme",
+                    "Hiçbir avantajı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "DI, sıkı bağımlılıkları azaltır, kodun test edilebilirliğini artırır, kod tekrarını önler ve bakımı kolaylaştırır.",
+                  "tags": ["dependency_injection", "advantages"]
+                },
+                {
+                  "questionId": 430103,
+                  "question": "Dependency Injection hangi mimari yapı için gereklidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece MVC",
+                    "Clean Architecture ve MVVM",
+                    "Sadece MVP",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "DI, Clean Architecture ve MVVM gibi modern mimari yapılar için gereklidir. Katmanlar arası bağımlılıkları yönetir.",
+                  "tags": ["dependency_injection", "architecture"]
+                }
+              ]
             },
             {
               "topicId": 4302,
@@ -10872,7 +13104,72 @@
                 "Otomatik lifecycle yönetimi sağlar",
                 "Resmi DI çözümüdür"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 430201,
+                  "question": "Hilt nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Veritabanı kütüphanesi",
+                    "Android için Dagger tabanlı resmi DI kütüphanesi",
+                    "Network kütüphanesi",
+                    "UI kütüphanesi"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Hilt, Android için geliştirilmiş, Dagger üzerine kurulu resmi Dependency Injection kütüphanesidir.",
+                  "tags": ["hilt", "temel"]
+                },
+                {
+                  "questionId": 430202,
+                  "question": "Hilt hangi şirket tarafından önerilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Facebook",
+                    "Google",
+                    "Microsoft",
+                    "Apple"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Hilt, Google tarafından önerilen ve desteklenen resmi Android DI çözümüdür.",
+                  "tags": ["hilt", "google"]
+                },
+                {
+                  "questionId": 430203,
+                  "question": "Hilt'in Dagger'a göre avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece daha hızlı",
+                    "Android bileşenleriyle entegre, boilerplate kodu azaltır",
+                    "Sadece daha az bellek kullanır",
+                    "Hiçbir fark yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Hilt, Android bileşenleriyle (Activity, Fragment, ViewModel) entegredir ve Dagger'a göre çok daha az boilerplate kod gerektirir.",
+                  "tags": ["hilt", "dagger", "advantage"]
+                },
+                {
+                  "questionId": 430204,
+                  "question": "Aşağıdaki kod ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": "@HiltAndroidApp\nclass MyApplication : Application()",
+                  "difficulty": "easy",
+                  "options": [
+                    "Activity oluşturur",
+                    "Application seviyesinde Hilt'i başlatır",
+                    "ViewModel oluşturur",
+                    "Fragment oluşturur"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "@HiltAndroidApp annotation'ı, Application sınıfına eklenerek Hilt'in uygulama seviyesinde başlatılmasını sağlar.",
+                  "tags": ["hilt", "hiltandroidapp"]
+                }
+              ]
             },
             {
               "topicId": 4303,
@@ -10894,7 +13191,72 @@
                 "Merkezi yapı sağlar",
                 "Test için mock edilebilir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 430301,
+                  "question": "Hilt modülleri ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "UI çizmek",
+                    "Bağımlılıkların nasıl oluşturulacağını tanımlamak",
+                    "Veritabanı oluşturmak",
+                    "Network isteği yapmak"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Hilt modülleri, bağımlılıkların nasıl oluşturulacağını ve sağlanacağını tanımlayan sınıflardır.",
+                  "tags": ["hilt", "module"]
+                },
+                {
+                  "questionId": 430302,
+                  "question": "Hilt modülü tanımlamak için hangi annotation kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "@Inject",
+                    "@Module",
+                    "@Component",
+                    "@HiltModule"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "@Module annotation'ı ile Hilt modülü tanımlanır. @InstallIn ile hangi component'te kullanılacağı belirtilir.",
+                  "tags": ["hilt", "module", "annotation"]
+                },
+                {
+                  "questionId": 430303,
+                  "question": "@Provides ve @Binds arasındaki fark nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Hiçbir fark yok",
+                    "@Provides concrete tip döner, @Binds interface'i implementasyona bağlar",
+                    "@Binds daha yavaştır",
+                    "@Provides kullanımdan kalkmıştır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "@Provides, concrete bir nesne döndürmek için kullanılır. @Binds ise interface'i implementasyona bağlamak için kullanılır (daha performanslıdır).",
+                  "tags": ["hilt", "provides", "binds"]
+                },
+                {
+                  "questionId": 430304,
+                  "question": "Aşağıdaki Hilt modülü ne sağlar?",
+                  "questionType": "multiple_choice",
+                  "code": "@Module\n@InstallIn(SingletonComponent::class)\nobject NetworkModule {\n    @Provides\n    fun provideApi(): ApiService {\n        return ApiService.create()\n    }\n}",
+                  "difficulty": "medium",
+                  "options": [
+                    "ViewModel sağlar",
+                    "Singleton scope'ta ApiService sağlar",
+                    "Fragment sağlar",
+                    "Hiçbir şey sağlamaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Module, SingletonComponent'e install edildiği için ApiService'i singleton olarak sağlar (uygulama boyunca tek instance).",
+                  "tags": ["hilt", "module", "singleton"]
+                }
+              ]
             },
             {
               "topicId": 4304,
@@ -10916,7 +13278,72 @@
                 "Boilerplate azalır",
                 "MVVM ile tam uyumludur"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 430401,
+                  "question": "Hilt ile ViewModel nasıl inject edilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Manual olarak oluşturulur",
+                    "@HiltViewModel annotation'ı ve constructor injection kullanılır",
+                    "Factory pattern kullanılır",
+                    "Inject edilemez"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "@HiltViewModel annotation'ı ile ViewModel işaretlenir ve constructor'a @Inject eklenerek bağımlılıklar otomatik sağlanır.",
+                  "tags": ["hilt", "viewmodel"]
+                },
+                {
+                  "questionId": 430402,
+                  "question": "Hilt ile ViewModel kullanmanın avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece daha hızlı",
+                    "Constructor injection kullanılır, test edilebilirlik artar, boilerplate azalır",
+                    "Sadece görsel iyileştirme",
+                    "Hiçbir avantajı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Hilt ile ViewModel'de constructor injection kullanılır, bu da test edilebilirliği artırır ve ViewModelProvider.Factory gibi boilerplate kodları ortadan kaldırır.",
+                  "tags": ["hilt", "viewmodel", "advantage"]
+                },
+                {
+                  "questionId": 430403,
+                  "question": "Aşağıdaki ViewModel'de repository nereden gelir?",
+                  "questionType": "multiple_choice",
+                  "code": "@HiltViewModel\nclass MainViewModel @Inject constructor(\n    private val repository: UserRepository\n) : ViewModel()",
+                  "difficulty": "medium",
+                  "options": [
+                    "Manuel olarak oluşturulur",
+                    "Hilt tarafından otomatik inject edilir",
+                    "Activity'den gönderilir",
+                    "Fragment'ten gönderilir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "@Inject constructor sayesinde Hilt, repository bağımlılığını otomatik olarak sağlar (Hilt module'den veya @Inject constructor'dan).",
+                  "tags": ["hilt", "viewmodel", "injection"]
+                },
+                {
+                  "questionId": 430404,
+                  "question": "Hilt ile ViewModel kullanmak MVVM'de nasıl bir rol oynar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece hız artışı",
+                    "Separation of concerns sağlar, ViewModel bağımlılıkları merkezi yönetilir",
+                    "Sadece UI iyileştirir",
+                    "Hiçbir rolü yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Hilt, ViewModel'in bağımlılıklarını merkezi yönetir, separation of concerns sağlar ve MVVM mimarisinde clean code yazmayı kolaylaştırır.",
+                  "tags": ["hilt", "viewmodel", "mvvm"]
+                }
+              ]
             },
             {
               "topicId": 4305,
@@ -10932,10 +13359,220 @@
                 "Yanlış instance oluşumunu önler",
                 "Performansı artırır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 430501,
+                  "question": "Hilt scope'ları ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece hız artırır",
+                    "Bağımlılıkların yaşam döngüsünü belirler",
+                    "Sadece UI çizer",
+                    "Veritabanı yönetir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Hilt scope'ları, bağımlılıkların yaşam döngüsünü belirlemek için kullanılır (Singleton, ActivityScoped, ViewModelScoped vb.).",
+                  "tags": ["hilt", "scope"]
+                },
+                {
+                  "questionId": 430502,
+                  "question": "@Singleton scope ne anlama gelir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Her seferinde yeni instance",
+                    "Uygulama boyunca tek instance",
+                    "Activity başına bir instance",
+                    "ViewModel başına bir instance"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "@Singleton scope, bağımlılığın uygulama boyunca tek bir instance olarak yaşamasını sağlar (Application lifecycle).",
+                  "tags": ["hilt", "singleton"]
+                },
+                {
+                  "questionId": 430503,
+                  "question": "Hilt'te hangi scope'lar vardır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece Singleton",
+                    "@Singleton, @ActivityScoped, @ViewModelScoped, @ActivityRetainedScoped vb.",
+                    "Sadece ViewModelScoped",
+                    "Scope yoktur"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Hilt, @Singleton, @ActivityScoped, @FragmentScoped, @ViewModelScoped, @ActivityRetainedScoped gibi birçok scope sunar. Her biri farklı lifecycle'a bağlıdır.",
+                  "tags": ["hilt", "scopes"]
+                }
+              ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+              "questionId": 430001,
+              "question": "Hilt kullanmadan önce hangi annotation Application sınıfına eklenmeli?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "@Inject",
+                "@HiltAndroidApp",
+                "@Module",
+                "@Component"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "@HiltAndroidApp annotation'ı Application sınıfına eklenerek Hilt başlatılır. Bu zorunludur.",
+              "tags": ["hilt", "setup"]
+            },
+            {
+              "questionId": 430002,
+              "question": "Activity'ye Hilt desteği eklemek için hangi annotation kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "@HiltActivity",
+                "@AndroidEntryPoint",
+                "@HiltAndroidApp",
+                "@Inject"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "@AndroidEntryPoint annotation'ı Activity, Fragment, Service gibi Android bileşenlerine eklenerek Hilt desteği sağlanır.",
+              "tags": ["hilt", "androidentrypoint"]
+            },
+            {
+              "questionId": 430003,
+              "question": "Constructor injection ne demektir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Manuel nesne oluşturma",
+                "Bağımlılıkların constructor'dan geçilmesi",
+                "Setter injection",
+                "Field injection"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Constructor injection, bir sınıfın bağımlılıklarının constructor parametreleri olarak geçilmesidir. En tercih edilen DI yöntemidir.",
+              "tags": ["dependency_injection", "constructor"]
+            },
+            {
+              "questionId": 430004,
+              "question": "@InstallIn annotation'ı ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Module'ü siler",
+                "Module'ün hangi component'e kurulacağını belirtir",
+                "Sadece hız artırır",
+                "Test yapar"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "@InstallIn, Hilt module'ünün hangi component'e (SingletonComponent, ActivityComponent vb.) kurulacağını belirtir.",
+              "tags": ["hilt", "installin"]
+            },
+            {
+              "questionId": 430005,
+              "question": "Hilt ile test yazmak neden daha kolaydır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece daha hızlı",
+                "Bağımlılıklar mock edilebilir, test modülleri yazılabilir",
+                "Sadece daha az kod",
+                "Test yazılamaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Hilt ile bağımlılıklar merkezi yönetildiği için kolayca mock edilebilir ve test modülleri yazılabilir. DI test edilebilirliği artırır.",
+              "tags": ["hilt", "testing"]
+            },
+            {
+              "questionId": 430006,
+              "question": "@Qualifier annotation'ı ne için kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece isim vermek",
+                "Aynı tipte birden fazla bağımlılığı ayırt etmek",
+                "Module oluşturmak",
+                "Scope belirlemek"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "@Qualifier, aynı tipte birden fazla bağımlılık olduğunda (örn: 2 farklı Retrofit instance) hangisinin inject edileceğini belirtmek için kullanılır.",
+              "tags": ["hilt", "qualifier"]
+            },
+            {
+              "questionId": 430007,
+              "question": "Hilt ile Field Injection yerine Constructor Injection neden tercih edilir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece daha hızlı",
+                "Daha test edilebilir, immutability sağlar, null safety vardır",
+                "Sadece daha az kod",
+                "Hiçbir fark yok"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Constructor injection daha test edilebilir, field'ları final/val yaparak immutability sağlar ve null safety sunar. Field injection'da bu avantajlar yoktur.",
+              "tags": ["dependency_injection", "constructor_vs_field"]
+            },
+            {
+              "questionId": 430008,
+              "question": "SingletonComponent ve ActivityComponent arasındaki fark nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir fark yok",
+                "SingletonComponent uygulama boyunca, ActivityComponent Activity lifecycle'ı boyunca yaşar",
+                "ActivityComponent daha yavaştır",
+                "SingletonComponent kullanımdan kalkmıştır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "SingletonComponent'e install edilen bağımlılıklar uygulama boyunca yaşar. ActivityComponent'e install edilenler ise sadece Activity lifecycle'ı boyunca yaşar.",
+              "tags": ["hilt", "component", "lifecycle"]
+            },
+            {
+              "questionId": 430009,
+              "question": "Hilt ile WorkManager entegrasyonu mümkün müdür?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hayır, mümkün değil",
+                "Evet, @HiltWorker annotation'ı ile mümkün",
+                "Sadece manuel injection ile",
+                "Sadece Service'lerde"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Hilt, WorkManager ile entegre edilebilir. @HiltWorker annotation'ı ile Worker sınıflarına dependency injection yapılabilir.",
+              "tags": ["hilt", "workmanager"]
+            },
+            {
+              "questionId": 430010,
+              "question": "Hilt ile Retrofit instance nasıl sağlanır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Her Activity'de manuel oluşturulur",
+                "@Module ve @Provides ile merkezi olarak sağlanır",
+                "Sadece Application'da",
+                "Sağlanamaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Retrofit instance, Hilt Module içinde @Provides ile merkezi olarak sağlanır ve tüm uygulama genelinde kullanılır (genellikle Singleton scope ile).",
+              "tags": ["hilt", "retrofit", "module"]
+            }
+          ]
         },
         {
           "sectionId": 4400,
@@ -10957,7 +13594,56 @@
                 "İş mantığı UI'dan bağımsızdır",
                 "Test yazımı kolaylaşır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 440101,
+                  "question": "Clean Architecture nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece UI tasarımı",
+                    "Uygulamayı katmanlara ayırarak bağımlılıkların tek yönlü olmasını sağlayan mimari",
+                    "Sadece veritabanı yönetimi",
+                    "Network kütüphanesi"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Clean Architecture, uygulamayı katmanlara ayırarak bağımlılıkların tek yönlü olmasını sağlayan bir mimari yaklaşımdır.",
+                  "tags": ["clean_architecture", "temel"]
+                },
+                {
+                  "questionId": 440102,
+                  "question": "Clean Architecture'da bağımlılıkların yönü nasıldır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Her yöne olabilir",
+                    "Dış katmanlar iç katmanlara bağımlıdır (içe doğru)",
+                    "İç katmanlar dış katmanlara bağımlıdır",
+                    "Bağımlılık yoktur"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Clean Architecture'da bağımlılık kuralı: Dış katmanlar (UI, Framework) iç katmanlara (Domain) bağımlıdır, tersi asla olmaz. Bu, iş mantığının UI'dan bağımsız olmasını sağlar.",
+                  "tags": ["clean_architecture", "dependency_rule"]
+                },
+                {
+                  "questionId": 440103,
+                  "question": "Clean Architecture'ın avantajları nelerdir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece hız artışı",
+                    "Test edilebilirlik, sürdürülebilirlik, iş mantığının UI'dan bağımsızlığı",
+                    "Sadece daha az kod",
+                    "Hiçbir avantajı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Clean Architecture, test edilebilirliği artırır, sürdürülebilir kod sağlar, iş mantığını UI ve framework'lerden bağımsız hale getirir.",
+                  "tags": ["clean_architecture", "advantages"]
+                }
+              ]
             },
             {
               "topicId": 4402,
@@ -10973,7 +13659,72 @@
                 "Data veri kaynaklarını yönetir",
                 "Katmanlar arası bağımlılık sınırlandırılmıştır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 440201,
+                  "question": "Clean Architecture'da kaç ana katman vardır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "2 katman",
+                    "3 katman (Presentation, Domain, Data)",
+                    "4 katman",
+                    "5 katman"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Clean Architecture genellikle üç ana katmana ayrılır: Presentation (UI), Domain (Business Logic), Data (Veri Kaynakları).",
+                  "tags": ["clean_architecture", "layers"]
+                },
+                {
+                  "questionId": 440202,
+                  "question": "Presentation katmanı neyi içerir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Veritabanı işlemleri",
+                    "UI ve ViewModel (UI logic)",
+                    "UseCase'ler",
+                    "Network istekleri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Presentation katmanı, Activity, Fragment, ViewModel gibi UI bileşenlerini ve UI logic'i içerir.",
+                  "tags": ["clean_architecture", "presentation"]
+                },
+                {
+                  "questionId": 440203,
+                  "question": "Domain katmanı neyi içerir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Activity ve Fragment",
+                    "UseCase ve Entity (Business Logic)",
+                    "Retrofit ve Room",
+                    "ViewModel"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Domain katmanı, UseCase (Business Logic) ve Entity (Model) içerir. Framework bağımlılığı yoktur, saf Kotlin'dir.",
+                  "tags": ["clean_architecture", "domain"]
+                },
+                {
+                  "questionId": 440204,
+                  "question": "Data katmanı neyi içerir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "ViewModel",
+                    "Repository implementasyonları ve veri kaynakları (API, Room)",
+                    "UseCase'ler",
+                    "Activity"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Data katmanı, Repository implementasyonlarını ve veri kaynaklarını (Remote: Retrofit, Local: Room, Cache) yönetir.",
+                  "tags": ["clean_architecture", "data"]
+                }
+              ]
             },
             {
               "topicId": 4403,
@@ -10995,7 +13746,72 @@
                 "Test edilmesi çok kolaydır",
                 "Uzun vadede stabil yapı sağlar"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 440301,
+                  "question": "Domain katmanının en önemli özelliği nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "UI bağımlıdır",
+                    "Framework bağımlılığı yoktur, saf Kotlin'dir",
+                    "Sadece Android API kullanır",
+                    "Retrofit gerektirir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Domain katmanı framework bağımlılığı olmayan, saf Kotlin kodudur. Bu sayede kolayca test edilebilir ve platform bağımsızdır.",
+                  "tags": ["domain", "framework_independent"]
+                },
+                {
+                  "questionId": 440302,
+                  "question": "UseCase nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "UI bileşeni",
+                    "İş mantığını kapsülleyen, tek bir işi yapan sınıf",
+                    "Veritabanı tablosu",
+                    "Network kütüphanesi"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "UseCase, uygulamanın iş mantığını (business logic) kapsülleyen, tek bir sorumluluğu olan (Single Responsibility) sınıftır.",
+                  "tags": ["domain", "usecase"]
+                },
+                {
+                  "questionId": 440303,
+                  "question": "Aşağıdaki UseCase ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "class GetUsersUseCase(private val repository: UserRepository) {\n    suspend operator fun invoke() = repository.getUsers()\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "UI çizer",
+                    "Repository'den kullanıcıları alır (business logic)",
+                    "Veritabanı oluşturur",
+                    "Network isteği yapar"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "UseCase, repository'den kullanıcıları almak için iş mantığını kapsüller. operator fun invoke() ile direkt çağrılabilir.",
+                  "tags": ["domain", "usecase", "invoke"]
+                },
+                {
+                  "questionId": 440304,
+                  "question": "Domain katmanının test edilebilirliği neden yüksektir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece daha hızlıdır",
+                    "Framework bağımlılığı yok, repository mock edilebilir, saf Kotlin",
+                    "Sadece UI test edilir",
+                    "Test edilemez"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Domain katmanı framework bağımlılığı olmadığı için JUnit ile kolayca test edilebilir. Repository interface mock edilerek unit test yazılır.",
+                  "tags": ["domain", "testing"]
+                }
+              ]
             },
             {
               "topicId": 4404,
@@ -11017,7 +13833,72 @@
                 "Domain ile interface üzerinden konuşur",
                 "Mocklama kolaydır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 440401,
+                  "question": "Data katmanının görevi nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "UI çizmek",
+                    "Veri kaynaklarını (API, Room, Cache) yönetmek",
+                    "UseCase oluşturmak",
+                    "ViewModel yönetmek"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Data katmanı, veri kaynaklarını (Remote: API, Local: Room, Cache) yönetir ve Repository implementasyonlarını içerir.",
+                  "tags": ["data", "layer"]
+                },
+                {
+                  "questionId": 440402,
+                  "question": "Repository implementasyonu hangi katmanda bulunur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Domain katmanında",
+                    "Data katmanında",
+                    "Presentation katmanında",
+                    "Her katmanda"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Repository interface Domain katmanında tanımlanır, implementasyonu ise Data katmanında bulunur.",
+                  "tags": ["data", "repository"]
+                },
+                {
+                  "questionId": 440403,
+                  "question": "Data katmanında Remote ve Local data source'ları ayırmanın amacı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece daha fazla kod",
+                    "Separation of concerns, test edilebilirlik ve esneklik",
+                    "Sadece görsel amaçlı",
+                    "Hiçbir amacı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Remote (API) ve Local (Room) data source'ları ayırmak, separation of concerns sağlar, test edilebilirliği artırır ve offline-first stratejisi uygulama esnekliği kazandırır.",
+                  "tags": ["data", "separation"]
+                },
+                {
+                  "questionId": 440404,
+                  "question": "Aşağıdaki Repository implementasyonu hangi katmandadır?",
+                  "questionType": "multiple_choice",
+                  "code": "class UserRepositoryImpl(\n    private val api: ApiService\n) : UserRepository {\n    override suspend fun getUsers() = api.getUsers()\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "Domain",
+                    "Data",
+                    "Presentation",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Repository implementasyonu Data katmanında bulunur. Domain'deki interface'i implement eder ve concrete veri kaynaklarını (API) kullanır.",
+                  "tags": ["data", "repository", "implementation"]
+                }
+              ]
             },
             {
               "topicId": 4405,
@@ -11039,7 +13920,56 @@
                 "UseCase kullanır",
                 "MVVM ile birlikte çalışır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 440501,
+                  "question": "Presentation katmanının sorumluluğu nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Business logic",
+                    "UI ve kullanıcı etkileşimleri (UI logic)",
+                    "Veritabanı işlemleri",
+                    "Network istekleri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Presentation katmanı, UI (Activity, Fragment) ve kullanıcı etkileşimlerini yönetir. Sadece UI logic içerir, business logic içermez.",
+                  "tags": ["presentation", "responsibility"]
+                },
+                {
+                  "questionId": 440502,
+                  "question": "Presentation katmanında ViewModel hangi katmanla iletişim kurar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Doğrudan Data katmanı ile",
+                    "Domain katmanı (UseCase) ile",
+                    "Repository ile doğrudan",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ViewModel, Domain katmanındaki UseCase'leri çağırır. Repository veya Data katmanıyla direkt iletişim kurmaz (Clean Architecture prensibi).",
+                  "tags": ["presentation", "viewmodel", "usecase"]
+                },
+                {
+                  "questionId": 440503,
+                  "question": "Presentation katmanında business logic olmamasının nedeni nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece daha hızlı olur",
+                    "Separation of concerns, test edilebilirlik ve yeniden kullanılabilirlik",
+                    "Sadece daha az kod",
+                    "Hiçbir nedeni yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Business logic Domain katmanında tutularak UI'dan bağımsız hale gelir. Bu, separation of concerns, test edilebilirlik ve farklı platformlarda (iOS, web) yeniden kullanılabilirlik sağlar.",
+                  "tags": ["presentation", "separation"]
+                }
+              ]
             },
             {
               "topicId": 4406,
@@ -11055,10 +13985,236 @@
                 "Büyük projelerde tercih edilir",
                 "Senior seviye mimaridir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 440601,
+                  "question": "Clean Architecture ile MVVM nasıl bir ilişki içindedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Birbirinden bağımsızdır",
+                    "MVVM, Clean Architecture'ın Presentation katmanında kullanılır",
+                    "MVVM daha üstündür",
+                    "Clean Architecture MVVM'i kapsar"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "MVVM (Model-View-ViewModel), Clean Architecture'ın Presentation katmanında kullanılan bir pattern'dir. Clean Architecture tüm uygulamayı kapsarken, MVVM sadece UI katmanını organize eder.",
+                  "tags": ["clean_architecture", "mvvm", "relationship"]
+                },
+                {
+                  "questionId": 440602,
+                  "question": "Clean Architecture + MVVM kombinasyonunun avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece hız artışı",
+                    "Test edilebilirlik maksimum, separation of concerns, ölçeklenebilirlik",
+                    "Sadece daha az kod",
+                    "Hiçbir avantajı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu kombinasyon, maksimum test edilebilirlik, katmanlar arası net separation of concerns, ölçeklenebilirlik ve sürdürülebilir kod sağlar. Büyük ve karmaşık projelerde tercih edilir.",
+                  "tags": ["clean_architecture", "mvvm", "advantages"]
+                },
+                {
+                  "questionId": 440603,
+                  "question": "Clean Architecture + MVVM hangi seviye projelerde tercih edilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece küçük projelerde",
+                    "Orta ve büyük ölçekli, uzun vadeli projelerde",
+                    "Sadece demo projelerde",
+                    "Hiçbir projede kullanılmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Clean Architecture + MVVM, orta ve büyük ölçekli, uzun vadeli projelerde tercih edilir. Küçük projelerde overengineering olabilir.",
+                  "tags": ["clean_architecture", "mvvm", "project_size"]
+                },
+                {
+                  "questionId": 440604,
+                  "question": "Aşağıdaki ViewModel hangi mimari yaklaşımı kullanıyor?",
+                  "questionType": "multiple_choice",
+                  "code": "@HiltViewModel\nclass MainViewModel @Inject constructor(\n    private val getUsersUseCase: GetUsersUseCase\n) : ViewModel()",
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece MVVM",
+                    "Clean Architecture + MVVM + Dependency Injection",
+                    "Sadece Repository Pattern",
+                    "MVC"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu ViewModel, Clean Architecture (UseCase kullanımı), MVVM (ViewModel pattern) ve Dependency Injection (Hilt ile constructor injection) kombinasyonunu kullanıyor.",
+                  "tags": ["clean_architecture", "mvvm", "hilt"]
+                }
+              ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+              "questionId": 440001,
+              "question": "Clean Architecture'da hangi katman hiçbir Android framework bağımlılığı içermemelidir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Presentation",
+                "Domain",
+                "Data",
+                "Hepsi"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Domain katmanı, hiçbir Android framework bağımlılığı içermemelidir. Saf Kotlin/Java kodu olmalıdır ki platform bağımsız ve kolayca test edilebilir olsun.",
+              "tags": ["clean_architecture", "domain", "framework"]
+            },
+            {
+              "questionId": 440002,
+              "question": "Repository interface neden Domain katmanında tanımlanır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece organizasyon için",
+                "Dependency Inversion Principle: Domain, Data'ya bağımlı olmamalı",
+                "Daha hızlı olur",
+                "Zorunlu değildir"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Repository interface Domain'de tanımlanır çünkü Dependency Inversion Principle gereği, Domain katmanı dış katmanlara (Data) bağımlı olmamalıdır. Data, Domain'in interface'ini implement eder.",
+              "tags": ["clean_architecture", "dip", "repository"]
+            },
+            {
+              "questionId": 440003,
+              "question": "UseCase'in operator fun invoke() kullanmasının avantajı nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece görsel",
+                "UseCase'i fonksiyon gibi direkt çağırabilme (getUsersUseCase())",
+                "Daha yavaş çalışır",
+                "Hiçbir avantajı yok"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "operator fun invoke() kullanarak UseCase'i fonksiyon gibi direkt çağırabiliriz: getUsersUseCase() yerine getUsersUseCase.invoke(). Daha clean syntax sağlar.",
+              "tags": ["usecase", "invoke", "operator"]
+            },
+            {
+              "questionId": 440004,
+              "question": "Entity nedir ve hangi katmanda bulunur?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "UI bileşeni, Presentation'da",
+                "Business model, Domain katmanında",
+                "Veritabanı tablosu, Data'da",
+                "Network modeli, Data'da"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Entity, uygulamanın business modelini temsil eden saf data class'tır ve Domain katmanında bulunur. UI veya veritabanı bağımlılığı yoktur.",
+              "tags": ["entity", "domain", "model"]
+            },
+            {
+              "questionId": 440005,
+              "question": "DTO (Data Transfer Object) nedir ve hangi katmanda kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Domain model, Domain'de",
+                "API response modeli, Data katmanında (Network'ten gelen ham veri)",
+                "UI modeli, Presentation'da",
+                "UseCase"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "DTO, API'den gelen ham veriyi temsil eder ve Data katmanında kullanılır. Data katmanında DTO'dan Domain Entity'ye mapping yapılır (toEntity()).",
+              "tags": ["dto", "data", "mapping"]
+            },
+            {
+              "questionId": 440006,
+              "question": "Clean Architecture'da katmanlar arası veri dönüşümü (mapping) neden yapılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece ekstra iş",
+                "Katmanların birbirinden bağımsız olması ve Domain'in temiz kalması",
+                "Performans artışı",
+                "Zorunlu değildir"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Mapping, katmanların birbirinden bağımsız olmasını sağlar. API response'u değişse bile sadece Data katmanı etkilenir, Domain ve Presentation etkilenmez. Bu da maintainability artırır.",
+              "tags": ["mapping", "separation", "independence"]
+            },
+            {
+              "questionId": 440007,
+              "question": "Clean Architecture'da Result/Resource pattern ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece veri saklar",
+                "Success, Error, Loading state'lerini yönetmek",
+                "Sadece UI çizer",
+                "Network isteği yapar"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Result/Resource pattern, UseCase'lerden dönen sonuçları Success, Error, Loading state'leri ile sarmalayarak UI'ın durumu yönetmesini kolaylaştırır.",
+              "tags": ["result", "resource", "state_management"]
+            },
+            {
+              "questionId": 440008,
+              "question": "UseCase'lerde birden fazla repository kullanılabilir mi?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Hayır, sadece 1 repository",
+                "Evet, karmaşık business logic için birden fazla repository koordine edilebilir",
+                "Repository kullanılamaz",
+                "Sadece Data katmanında"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "UseCase'ler karmaşık business logic için birden fazla repository'yi koordine edebilir. Örneğin: UserRepository ve PostRepository'yi kullanarak kullanıcının post'larını getirme.",
+              "tags": ["usecase", "repository", "coordination"]
+            },
+            {
+              "questionId": 440009,
+              "question": "Clean Architecture'da test stratejisi nasıl olmalıdır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece UI test",
+                "Domain (Unit test), Data (Integration test), Presentation (UI test) - piramit",
+                "Sadece Integration test",
+                "Test yazılmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Test piramidi: Domain katmanı (Unit test - en çok), Data katmanı (Integration test), Presentation (UI test - en az). Bu strateji hızlı ve güvenilir test suite sağlar.",
+              "tags": ["testing", "test_pyramid", "strategy"]
+            },
+            {
+              "questionId": 440010,
+              "question": "Clean Architecture küçük projeler için overengineering olabilir mi?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Hayır, her zaman kullanılmalı",
+                "Evet, küçük projelerde gereksiz karmaşıklık yaratabilir",
+                "Sadece büyük projelerde overengineering",
+                "Asla overengineering olmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Küçük projelerde (prototip, POC, basit uygulamalar) Clean Architecture gereksiz karmaşıklık yaratabilir. Proje büyüklüğüne göre mimari seçilmelidir. Ancak büyüyecek projelerde baştan uygulanması önerilir.",
+              "tags": ["clean_architecture", "project_size", "overengineering"]
+            }
+          ]
         },
         {
           "sectionId": 4500,
