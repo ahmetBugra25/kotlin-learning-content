@@ -7995,7 +7995,328 @@
           ]
         }
       ],
-      "interviewQuestions": []
+      "interviewQuestions": [
+        {
+          "questionId": 290001,
+          "question": "Android uygulaması geliştirmek için hangi programlama dilleri kullanılır?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "easy",
+          "options": [
+            "Swift ve Objective-C",
+            "Kotlin ve Java",
+            "Python ve Ruby",
+            "C# ve VB.NET"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Android uygulamaları Kotlin ve Java ile geliştirilir. Google, resmi olarak Kotlin'i tercih etmektedir.",
+          "tags": ["android", "kotlin", "java"]
+        },
+        {
+          "questionId": 290002,
+          "question": "Activity yaşam döngüsünde doğru sıralama hangisidir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "onCreate → onResume → onStart",
+            "onCreate → onStart → onResume",
+            "onStart → onCreate → onResume",
+            "onResume → onStart → onCreate"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Activity yaşam döngüsü onCreate() → onStart() → onResume() sırasıyla çalışır.",
+          "tags": ["lifecycle", "activity"]
+        },
+        {
+          "questionId": 290003,
+          "question": "findViewById yerine hangi modern yapı kullanılmalıdır?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "easy",
+          "options": [
+            "View Binding",
+            "Context",
+            "Intent",
+            "Bundle"
+          ],
+          "correctAnswerIndex": 0,
+          "explanation": "View Binding, findViewById'a göre daha güvenli (null safety) ve derleme zamanında hata yakalar.",
+          "tags": ["view_binding", "best_practice"]
+        },
+        {
+          "questionId": 290004,
+          "question": "LinearLayout ve ConstraintLayout arasındaki performans farkı nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "LinearLayout daha hızlıdır",
+            "ConstraintLayout nested layout ihtiyacını azaltarak daha performanslıdır",
+            "Performans farkı yoktur",
+            "LinearLayout her zaman önerilir"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "ConstraintLayout, karmaşık UI'ları tek layout içinde oluşturarak nested layout kullanımını ve performans kaybını azaltır.",
+          "tags": ["layout", "performance", "constraintlayout"]
+        },
+        {
+          "questionId": 290005,
+          "question": "Context nedir ve ne için kullanılır?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Sadece layout dosyası",
+            "Uygulamanın mevcut durumunu temsil eden ve kaynaklara erişim sağlayan ortam bilgisi",
+            "Sadece veritabanı bağlantısı",
+            "Sadece network yönetimi"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Context, uygulamanın mevcut durumunu temsil eder ve kaynaklara erişim, Activity başlatma, sistem servisleri kullanma gibi işlemler için gereklidir.",
+          "tags": ["context", "temel"]
+        },
+        {
+          "questionId": 290006,
+          "question": "Explicit Intent ve Implicit Intent arasındaki fark nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Hiçbir fark yok",
+            "Explicit hedef Activity'yi belirtir, Implicit action tanımlar",
+            "Implicit daha hızlıdır",
+            "Explicit kullanımdan kalkmıştır"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Explicit Intent hedef Activity'yi doğrudan belirtir (uygulama içi geçişler), Implicit Intent ise yapılacak işlemi tanımlar ve sistem uygun uygulamayı seçer (tarayıcı açma, paylaşım vb.).",
+          "tags": ["intent", "explicit", "implicit"]
+        },
+        {
+          "questionId": 290007,
+          "question": "SharedPreferences hangi tür veriler için en uygun veri saklama yöntemidir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "easy",
+          "options": [
+            "Büyük dosyalar",
+            "Karmaşık nesneler",
+            "Kullanıcı ayarları gibi küçük key-value verileri",
+            "Video ve resim dosyaları"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "SharedPreferences, kullanıcı ayarları, tercihler gibi küçük ve basit key-value verilerini saklamak için idealdir.",
+          "tags": ["sharedpreferences", "storage"]
+        },
+        {
+          "questionId": 290008,
+          "question": "onPause() ve onStop() arasındaki fark nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Hiçbir fark yok",
+            "onPause()'da Activity kısmen görünür olabilir, onStop()'ta tamamen görünmez",
+            "onStop() daha önce çağrılır",
+            "onPause() sadece ilk açılışta çalışır"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "onPause()'da Activity hala kısmen görünür olabilir (örneğin dialog üstte), onStop()'ta ise Activity tamamen görünmez hale gelir.",
+          "tags": ["lifecycle", "onpause", "onstop"]
+        },
+        {
+          "questionId": 290009,
+          "question": "Activity'ler arası karmaşık nesne (model class) göndermek için hangi yöntem önerilir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Sadece String olarak",
+            "Parcelable veya Serializable",
+            "SharedPreferences",
+            "Doğrudan gönderilemez"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Karmaşık nesneleri Intent ile göndermek için Parcelable (Android'de önerilen, daha hızlı) veya Serializable (kullanımı kolay) kullanılır.",
+          "tags": ["intent", "parcelable", "serializable"]
+        },
+        {
+          "questionId": 290010,
+          "question": "AlertDialog ne için kullanılır?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "easy",
+          "options": [
+            "Activity başlatmak",
+            "Kullanıcıdan onay veya seçim almak",
+            "Veritabanı işlemleri",
+            "Network isteği"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "AlertDialog, kullanıcıya bilgi vermek veya kritik aksiyonlar öncesinde onay almak için kullanılan bir dialog penceresidir.",
+          "tags": ["alertdialog", "ui"]
+        },
+        {
+          "questionId": 290011,
+          "question": "Android'de UI tanımlamak için hangi işaretleme dili kullanılır?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "easy",
+          "options": [
+            "HTML",
+            "JSON",
+            "XML",
+            "YAML"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Android'de kullanıcı arayüzü genellikle XML ile tanımlanır. Bu, tasarım ve iş mantığını ayırarak kodun daha okunabilir olmasını sağlar.",
+          "tags": ["xml", "ui"]
+        },
+        {
+          "questionId": 290012,
+          "question": "Internal Storage ve External Storage arasındaki güvenlik farkı nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "External Storage daha güvenlidir",
+            "Internal Storage uygulamaya özeldir ve daha güvenlidir",
+            "İkisi de aynı güvenlik seviyesindedir",
+            "Hiçbiri güvenli değildir"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Internal Storage uygulamaya özeldir ve diğer uygulamalar erişemez, dolayısıyla daha güvenlidir. External Storage ortak alandır ve diğer uygulamalar erişebilir.",
+          "tags": ["storage", "security"]
+        },
+        {
+          "questionId": 290013,
+          "question": "Configuration change (ekran döndürme) durumunda Activity varsayılan olarak ne yapar?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Hiçbir şey olmaz",
+            "Sadece layout değişir",
+            "Activity yok edilip yeniden oluşturulur (onCreate çağrılır)",
+            "Sadece onPause() çağrılır"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Configuration change (ekran döndürme gibi) durumunda Activity varsayılan olarak yok edilir (onDestroy) ve yeniden oluşturulur (onCreate). Bu durum ViewModel ve savedInstanceState ile yönetilebilir.",
+          "tags": ["lifecycle", "configuration_change"]
+        },
+        {
+          "questionId": 290014,
+          "question": "Toast ve Snackbar arasındaki temel fark nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "easy",
+          "options": [
+            "Hiçbir fark yok",
+            "Snackbar aksiyon butonu alabilir ve daha etkileşimlidir",
+            "Toast daha modern bir yapıdır",
+            "Snackbar daha yavaştır"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Snackbar, Toast'a göre daha modern ve etkileşimlidir. Aksiyon butonu eklenebilir (örneğin Geri Al) ve Material Design'a daha uygundur.",
+          "tags": ["toast", "snackbar", "ui"]
+        },
+        {
+          "questionId": 290015,
+          "question": "wrap_content ve match_parent arasındaki fark nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "easy",
+          "options": [
+            "Hiçbir fark yok",
+            "wrap_content içeriği kadar, match_parent parent'ın boyutu kadar",
+            "match_parent daha küçüktür",
+            "wrap_content sadece TextView'de kullanılır"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "wrap_content, view'in boyutunu içeriği kadar yapar. match_parent ise view'i parent'ın (üst container) boyutu kadar yapar.",
+          "tags": ["layout", "layout_params"]
+        },
+        {
+          "questionId": 290016,
+          "question": "AndroidManifest.xml dosyasının amacı nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Sadece Activity'leri listeler",
+            "Uygulama yapılandırması, bileşenler ve izinleri tanımlar",
+            "Sadece layout dosyalarını saklar",
+            "Sadece veritabanı şeması içerir"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "AndroidManifest.xml, uygulamanın temel yapılandırmasını içerir: Activity'ler, Service'ler, Broadcast Receiver'lar, izinler (permissions), uygulama adı ve icon gibi bilgiler burada tanımlanır.",
+          "tags": ["manifest", "configuration"]
+        },
+        {
+          "questionId": 290017,
+          "question": "EditText'te klavye türünü belirlemek için hangi özellik kullanılır?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "easy",
+          "options": [
+            "android:text",
+            "android:hint",
+            "android:inputType",
+            "android:keyboard"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "android:inputType ile klavye türü belirlenir (textPassword, number, email, phone vb.).",
+          "tags": ["edittext", "inputtype"]
+        },
+        {
+          "questionId": 290018,
+          "question": "Hassas verileri (token, şifre) güvenli şekilde saklamak için hangi yöntem önerilir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Düz SharedPreferences",
+            "External Storage",
+            "EncryptedSharedPreferences veya Android Keystore",
+            "Hiçbiri, saklanmamalı"
+          ],
+          "correctAnswerIndex": 2,
+          "explanation": "Hassas veriler için EncryptedSharedPreferences (şifrelenmiş) veya Android Keystore kullanılmalıdır. Düz SharedPreferences veya dosya sisteminde saklamak güvenli değildir.",
+          "tags": ["security", "encrypted", "keystore"]
+        },
+        {
+          "questionId": 290019,
+          "question": "Intent ile basit bir String verisi göndermek için hangi metot kullanılır?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "easy",
+          "options": [
+            "intent.setData()",
+            "intent.putExtra(\"key\", \"value\")",
+            "intent.sendString()",
+            "intent.addData()"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Intent ile basit veri göndermek için intent.putExtra(\"key\", \"value\") kullanılır. Karşı Activity'de intent.getStringExtra(\"key\") ile alınır.",
+          "tags": ["intent", "data_transfer"]
+        },
+        {
+          "questionId": 290020,
+          "question": "Modern Android uygulamalarında hangi layout ve veri bağlama (binding) kombinasyonu önerilir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "LinearLayout + findViewById",
+            "ConstraintLayout + View Binding",
+            "RelativeLayout + findViewById",
+            "FrameLayout + View Binding"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Modern Android geliştirmede ConstraintLayout (performans ve esneklik için) ve View Binding (güvenli view erişimi için) kombinasyonu önerilir.",
+          "tags": ["best_practice", "modern_android", "constraintlayout", "view_binding"]
+        }
+      ]
     },
     {
       "categoryId": 3,
@@ -9043,7 +9364,56 @@
               "SQL tabanlıdır",
               "Room altyapı olarak SQLite kullanır"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 330101,
+                "question": "SQLite nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Sunucu tabanlı bir veritabanı",
+                  "Android’e gömülü hafif bir ilişkisel veritabanı",
+                  "Sadece geçici veri tutan yapı",
+                  "Sadece cloud üzerinde çalışan veritabanı"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "SQLite, Android cihazlarda yerleşik olarak bulunan hafif ve ilişkisel bir veritabanıdır.",
+                "tags": ["sqlite", "database", "temel"]
+              },
+              {
+                "questionId": 330102,
+                "question": "SQLite hangi veri modeli ile çalışır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "NoSQL",
+                  "Key-Value",
+                  "İlişkisel",
+                  "Graph"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "SQLite, tablolar ve ilişkiler üzerinden çalışan ilişkisel bir veritabanıdır.",
+                "tags": ["sqlite", "relational", "model"]
+              },
+              {
+                "questionId": 330103,
+                "question": "Room kütüphanesi neyin üzerine kuruludur?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Firebase",
+                  "SharedPreferences",
+                  "SQLite",
+                  "Realm"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Room, SQLite üzerinde çalışan bir soyutlama katmanıdır.",
+                "tags": ["room", "sqlite", "architecture"]
+              }
+            ]
           },
           {
             "topicId": 3302,
@@ -9065,7 +9435,56 @@
               "data class olarak tanımlanır",
               "@Entity anotasyonu kullanılır"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 330201,
+                "question": "Room’da Entity neyi temsil eder?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Veritabanını",
+                  "DAO’yu",
+                  "Bir tabloyu",
+                  "Bir sorguyu"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Entity, Room veritabanında bir tabloyu temsil eder.",
+                "tags": ["entity", "room", "table"]
+              },
+              {
+                "questionId": 330202,
+                "question": "Bir Entity sınıfında hangi anotasyon zorunludur?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "@Dao",
+                  "@Database",
+                  "@PrimaryKey",
+                  "@Query"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Her Entity sınıfında en az bir PrimaryKey tanımlanmalıdır.",
+                "tags": ["entity", "primary_key", "room"]
+              },
+              {
+                "questionId": 330203,
+                "question": "@PrimaryKey(autoGenerate = true) ne işe yarar?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "Tabloyu siler",
+                  "ID değerini otomatik artırır",
+                  "Veriyi şifreler",
+                  "Sütunu gizler"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "autoGenerate = true, PrimaryKey değerinin otomatik olarak artırılmasını sağlar.",
+                "tags": ["entity", "primary_key", "auto_generate"]
+              }
+            ]
           },
           {
             "topicId": 3303,
@@ -9087,7 +9506,56 @@
               "Interface olarak tanımlanır",
               "Suspend fonksiyonlarla çalışabilir"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 330301,
+                "question": "DAO’nun temel görevi nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "UI çizmek",
+                  "Veri erişimini yönetmek",
+                  "Navigation yapmak",
+                  "Lifecycle yönetmek"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "DAO, veritabanına erişim sağlayan katmandır.",
+                "tags": ["dao", "data_access", "room"]
+              },
+              {
+                "questionId": 330302,
+                "question": "DAO genellikle nasıl tanımlanır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "class",
+                  "object",
+                  "interface",
+                  "enum"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "DAO genellikle interface olarak tanımlanır.",
+                "tags": ["dao", "interface", "room"]
+              },
+              {
+                "questionId": 330303,
+                "question": "Room’da SQL sorguları hangi anotasyon ile yazılır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "@Insert",
+                  "@Query",
+                  "@Entity",
+                  "@Database"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "SELECT gibi SQL sorguları @Query anotasyonu ile yazılır.",
+                "tags": ["dao", "query", "sql"]
+              }
+            ]
           },
           {
             "topicId": 3304,
@@ -9109,7 +9577,40 @@
               "DAO'lara erişim sağlar",
               "Version yönetimi içerir"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 330401,
+                "question": "Room Database sınıfı nasıl tanımlanmalıdır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "interface",
+                  "data class",
+                  "abstract class",
+                  "sealed class"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Room Database sınıfı abstract class olarak tanımlanmalıdır.",
+                "tags": ["room_database", "abstract", "room"]
+              },
+              {
+                "questionId": 330402,
+                "question": "@Database anotasyonu neyi belirtir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "medium",
+                "options": [
+                  "DAO’yu",
+                  "Entity listesini ve versiyonu",
+                  "SQL sorgularını",
+                  "Tablo adını"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "@Database anotasyonu Entity’leri ve veritabanı versiyonunu tanımlar.",
+                "tags": ["database", "annotation", "room"]
+              }
+            ]
           },
           {
             "topicId": 3305,
@@ -9131,10 +9632,215 @@
               "Suspend fonksiyon önerilir",
               "Ana thread bloklanmamalıdır"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 330501,
+                "question": "CRUD açılımı nedir?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "Create, Read, Update, Delete",
+                  "Copy, Remove, Update, Drop",
+                  "Create, Replace, Upload, Download",
+                  "Connect, Read, Use, Delete"
+                ],
+                "correctAnswerIndex": 0,
+                "explanation": "CRUD, Create, Read, Update ve Delete işlemlerini ifade eder.",
+                "tags": ["crud", "database", "temel"]
+              },
+              {
+                "questionId": 330502,
+                "question": "Room’da veri eklemek için hangi anotasyon kullanılır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "easy",
+                "options": [
+                  "@Query",
+                  "@Insert",
+                  "@Update",
+                  "@Delete"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Veri eklemek için @Insert anotasyonu kullanılır.",
+                "tags": ["crud", "insert", "room"]
+              },
+              {
+                "questionId": 330503,
+                "question": "Room işlemleri neden suspend fonksiyon olarak yazılır?",
+                "questionType": "multiple_choice",
+                "code": null,
+                "difficulty": "hard",
+                "options": [
+                  "Zorunlu olduğu için",
+                  "UI thread’i bloklamamak için",
+                  "Daha hızlı çalışması için",
+                  "Compile-time hatası almamak için"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Veritabanı işlemleri uzun sürebileceği için ana thread’i bloklamamak adına suspend kullanılır.",
+                "tags": ["crud", "coroutines", "performance"]
+              }
+            ]
           }
         ],
-        "sectionMixedQuestions": []
+        "sectionMixedQuestions": [
+          {
+            "questionId": 330001,
+            "question": "Room neden doğrudan SQLite kullanımına göre avantaj sağlar?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "easy",
+            "options": [
+              "Daha fazla kod gerektirir",
+              "Compile-time kontrol sağlar",
+              "Sadece UI için çalışır",
+              "Network bağımlıdır"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Room, compile-time kontroller ile SQL hatalarını erkenden yakalar.",
+            "tags": ["room", "advantage", "architecture"]
+          },
+          {
+            "questionId": 330002,
+            "question": "DAO katmanı hangi prensibi destekler?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Single Responsibility",
+              "UI Separation",
+              "Navigation",
+              "Dependency Injection"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "DAO yalnızca veri erişiminden sorumludur.",
+            "tags": ["dao", "solid", "architecture"]
+          },
+          {
+            "questionId": 330003,
+            "question": "Room’da migration neden gereklidir?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "hard",
+            "options": [
+              "UI güncellemek için",
+              "Veritabanı şeması değiştiğinde veri kaybını önlemek için",
+              "DAO eklemek için",
+              "Performansı artırmak için"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Migration, veritabanı versiyonu değiştiğinde mevcut verilerin korunmasını sağlar.",
+            "tags": ["room", "migration", "database"]
+          },
+          {
+            "questionId": 330004,
+            "question": "Room Database neden genellikle Singleton olarak kullanılır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "Daha fazla instance üretmek için",
+              "Bellek ve performans için",
+              "UI kolaylığı için",
+              "Zorunlu olduğu için"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Tek instance kullanımı bellek ve performans açısından daha verimlidir.",
+            "tags": ["room", "singleton", "performance"]
+          },
+          {
+            "questionId": 330005,
+            "question": "Room hangi mimariyle en uyumlu çalışır?",
+            "questionType": "multiple_choice",
+            "code": null,
+            "difficulty": "medium",
+            "options": [
+              "MVC",
+              "MVVM",
+              "MVP",
+              "Monolith"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Room genellikle MVVM mimarisi ile birlikte kullanılır.",
+            "tags": ["room", "mvvm", "architecture"]
+          },
+          {
+            "questionId": 33006,
+            "question": "Room kütüphanesinin temel amacı nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "tags": ["room", "database", "sqlite"],
+            "options": [
+              "UI tasarımı yapmak",
+              "Network istekleri atmak",
+              "SQLite işlemlerini daha güvenli ve kolay hale getirmek",
+              "Fragment geçişlerini yönetmek"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Room, SQLite üzerinde çalışan bir soyutlama katmanıdır ve veritabanı işlemlerini daha güvenli hale getirir."
+          },
+          {
+            "questionId": 33007,
+            "question": "Room Entity sınıfında aşağıdakilerden hangisi zorunludur?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "tags": ["room", "entity"],
+            "options": [
+              "ForeignKey",
+              "PrimaryKey",
+              "Index",
+              "ColumnInfo"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Her Room Entity sınıfında en az bir adet PrimaryKey bulunmak zorundadır."
+          },
+          {
+            "questionId": 33008,
+            "question": "DAO interface’lerinde SQL sorguları hangi anotasyon ile yazılır?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "tags": ["room", "dao", "sql"],
+            "options": [
+              "@Insert",
+              "@Database",
+              "@Query",
+              "@Entity"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "@Query anotasyonu ile SELECT, DELETE gibi SQL sorguları yazılır."
+          },
+          {
+            "questionId": 33009,
+            "question": "Room Database sınıfı nasıl tanımlanmalıdır?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "tags": ["room", "database"],
+            "options": [
+              "Interface olarak",
+              "Normal class olarak",
+              "Abstract class olarak",
+              "Singleton olmadan"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Room Database sınıfı abstract class olmalı ve RoomDatabase’den türemelidir."
+          },
+          {
+            "questionId": 33010,
+            "question": "Room ile veritabanı işlemlerinin ana thread üzerinde çalıştırılması neden önerilmez?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "tags": ["room", "performance", "coroutines"],
+            "options": [
+              "Kod okunabilirliği azalır",
+              "Uygulama boyutu artar",
+              "UI donmalarına ve ANR hatalarına yol açar",
+              "Compile süresi uzar"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Veritabanı işlemleri uzun sürebileceği için ana thread üzerinde çalıştırılması UI donmasına ve ANR hatalarına neden olabilir."
+          }
+        ]
       },
       {
         "sectionId": 3400,
@@ -9156,7 +9862,38 @@
               "Test edilebilirliği artırır",
               "Modern Android için önerilir"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 340101,
+                "question": "MVVM mimarisinin temel amacı aşağıdakilerden hangisidir?",
+                "questionType": "multiple_choice",
+                "difficulty": "easy",
+                "tags": ["mvvm", "architecture"],
+                "options": [
+                  "UI tasarımını hızlandırmak",
+                  "UI ile iş mantığını ayırmak",
+                  "Veritabanı işlemlerini yönetmek",
+                  "Network performansını artırmak"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "MVVM, View ile iş mantığını ayırarak daha sürdürülebilir bir yapı sunar."
+              },
+              {
+                "questionId": 340102,
+                "question": "MVVM mimarisinde iş mantığı hangi katmanda yer alır?",
+                "questionType": "multiple_choice",
+                "difficulty": "easy",
+                "tags": ["mvvm", "layers"],
+                "options": [
+                  "Model",
+                  "View",
+                  "ViewModel",
+                  "Repository"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "ViewModel, UI state ve iş mantığını yönetir."
+              }
+            ]
           },
           {
             "topicId": 3402,
@@ -9178,7 +9915,38 @@
               "Configuration change'lerde silinmez",
               "Business logic içerir"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 340201,
+                "question": "ViewModel’in Android’de tercih edilmesinin ana sebebi nedir?",
+                "questionType": "multiple_choice",
+                "difficulty": "medium",
+                "tags": ["viewmodel", "lifecycle"],
+                "options": [
+                  "UI çizimini yapması",
+                  "Configuration change sırasında veriyi koruması",
+                  "Context tutabilmesi",
+                  "Navigation işlemlerini yönetmesi"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "ViewModel ekran döndürme gibi durumlarda veriyi korur."
+              },
+              {
+                "questionId": 340202,
+                "question": "ViewModel aşağıdakilerden hangisine doğrudan bağımlı olmamalıdır?",
+                "questionType": "multiple_choice",
+                "difficulty": "medium",
+                "tags": ["viewmodel", "architecture"],
+                "options": [
+                  "Repository",
+                  "LiveData",
+                  "Activity veya Fragment",
+                  "UseCase"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "ViewModel, View katmanından bağımsız olmalıdır."
+              }
+            ]
           },
           {
             "topicId": 3403,
@@ -9200,7 +9968,38 @@
               "UI otomatik güncellenir",
               "Thread-safe veri akışı sağlar"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 340301,
+                "question": "LiveData’nın en önemli özelliği aşağıdakilerden hangisidir?",
+                "questionType": "multiple_choice",
+                "difficulty": "medium",
+                "tags": ["livedata", "lifecycle"],
+                "options": [
+                  "Statik veri tutması",
+                  "Lifecycle-aware olması",
+                  "Sadece background thread’de çalışması",
+                  "Context gerektirmesi"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "LiveData lifecycle-aware olduğu için memory leak riskini azaltır."
+              },
+              {
+                "questionId": 340302,
+                "question": "LiveData hangi tasarım desenine dayanır?",
+                "questionType": "multiple_choice",
+                "difficulty": "medium",
+                "tags": ["livedata", "observer"],
+                "options": [
+                  "Singleton",
+                  "Factory",
+                  "Observer",
+                  "Builder"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "LiveData, Observer pattern kullanır."
+              }
+            ]
           },
           {
             "topicId": 3404,
@@ -9222,10 +10021,192 @@
               "Test yazımını kolaylaştırır",
               "Clean Architecture'a uygundur"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 340401,
+                "question": "Repository katmanının temel görevi nedir?",
+                "questionType": "multiple_choice",
+                "difficulty": "medium",
+                "tags": ["repository", "mvvm"],
+                "options": [
+                  "UI çizmek",
+                  "Lifecycle yönetmek",
+                  "Veri kaynaklarını tek noktadan yönetmek",
+                  "Navigation işlemlerini yapmak"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Repository, API ve Room gibi veri kaynaklarını soyutlar."
+              },
+              {
+                "questionId": 340402,
+                "question": "Repository kullanmanın en büyük avantajlarından biri hangisidir?",
+                "questionType": "multiple_choice",
+                "difficulty": "medium",
+                "tags": ["repository", "testability"],
+                "options": [
+                  "APK boyutunu küçültmesi",
+                  "UI performansını artırması",
+                  "Test yazımını kolaylaştırması",
+                  "Navigation yönetmesi"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Repository sayesinde veri kaynakları kolayca mocklanabilir."
+              }
+            ]
           }
         ],
-        "sectionMixedQuestions": []
+        "sectionMixedQuestions": [
+          {
+            "questionId": 34001,
+            "question": "MVVM mimarisinin temel amacı nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "tags": ["mvvm", "architecture"],
+            "options": [
+              "UI tasarımını hızlandırmak",
+              "UI ile iş mantığını birbirinden ayırmak",
+              "Veritabanı işlemlerini yönetmek",
+              "Network isteklerini optimize etmek"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "MVVM, UI (View) ile iş mantığını ayırarak daha okunabilir ve sürdürülebilir kod yazılmasını amaçlar."
+          },
+          {
+            "questionId": 34002,
+            "question": "MVVM mimarisinde kullanıcı arayüzünü temsil eden katman hangisidir?",
+            "questionType": "multiple_choice",
+            "difficulty": "easy",
+            "tags": ["mvvm", "view"],
+            "options": [
+              "Model",
+              "Repository",
+              "View",
+              "ViewModel"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "View katmanı Activity veya Fragment gibi UI bileşenlerinden oluşur."
+          },
+          {
+            "questionId": 34003,
+            "question": "ViewModel’in Android’de tercih edilmesinin temel sebeplerinden biri nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "tags": ["viewmodel", "lifecycle"],
+            "options": [
+              "UI çizimini yapması",
+              "Context tutabilmesi",
+              "Configuration change sırasında veriyi koruması",
+              "Veritabanı oluşturması"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "ViewModel, ekran döndürme gibi configuration change durumlarında verinin kaybolmasını engeller."
+          },
+          {
+            "questionId": 34004,
+            "question": "ViewModel sınıfı aşağıdakilerden hangisine doğrudan bağlı olmamalıdır?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "tags": ["viewmodel", "architecture"],
+            "options": [
+              "Repository",
+              "LiveData",
+              "Activity veya Fragment",
+              "UseCase"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "ViewModel, View katmanından bağımsız olmalıdır."
+          },
+          {
+            "questionId": 34005,
+            "question": "LiveData’nın en önemli özelliklerinden biri hangisidir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "tags": ["livedata", "lifecycle"],
+            "options": [
+              "Statik veri tutması",
+              "Lifecycle-aware olması",
+              "Sadece background thread’de çalışması",
+              "Context gerektirmesi"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "LiveData lifecycle-aware olduğu için memory leak riskini azaltır."
+          },
+          {
+            "questionId": 34006,
+            "question": "LiveData hangi tasarım desenine dayanır?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "tags": ["livedata", "observer"],
+            "options": [
+              "Singleton",
+              "Factory",
+              "Observer",
+              "Builder"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "LiveData, Observer pattern kullanarak veri değişikliklerini UI’a bildirir."
+          },
+          {
+            "questionId": 34007,
+            "question": "Repository katmanının temel görevi nedir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "tags": ["repository", "mvvm"],
+            "options": [
+              "UI çizmek",
+              "Lifecycle yönetmek",
+              "Veri kaynaklarını tek noktadan yönetmek",
+              "Navigation işlemlerini yapmak"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Repository, API, Room veya cache gibi veri kaynaklarını soyutlar."
+          },
+          {
+            "questionId": 34008,
+            "question": "Repository kullanmanın en büyük avantajlarından biri hangisidir?",
+            "questionType": "multiple_choice",
+            "difficulty": "medium",
+            "tags": ["repository", "testability"],
+            "options": [
+              "Kod satırını azaltması",
+              "UI performansını artırması",
+              "Test yazımını kolaylaştırması",
+              "APK boyutunu küçültmesi"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "Repository sayesinde veri kaynakları mocklanabilir ve testler kolaylaşır."
+          },
+          {
+            "questionId": 34009,
+            "question": "MVVM mimarisi hangi prensibi doğrudan destekler?",
+            "questionType": "multiple_choice",
+            "difficulty": "hard",
+            "tags": ["mvvm", "solid"],
+            "options": [
+              "DRY",
+              "KISS",
+              "Single Responsibility",
+              "YAGNI"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "MVVM, her katmanın tek bir sorumluluğu olmasını teşvik eder."
+          },
+          {
+            "questionId": 34010,
+            "question": "Aşağıdakilerden hangisi MVVM mimarisinin yanlış kullanımına örnektir?",
+            "questionType": "multiple_choice",
+            "difficulty": "hard",
+            "tags": ["mvvm", "anti-pattern"],
+            "options": [
+              "ViewModel içinde LiveData kullanmak",
+              "ViewModel içinde Repository çağırmak",
+              "ViewModel içinde Context tutmak",
+              "Repository üzerinden veri almak"
+            ],
+            "correctAnswerIndex": 2,
+            "explanation": "ViewModel içinde Context tutulması memory leak ve mimari ihlale yol açar."
+          }
+        ]
       },
       {
         "sectionId": 3500,
@@ -9247,7 +10228,38 @@
               "JSON en yaygın veri formatıdır",
               "Mobil-backend iletişimin temelidir"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 350101,
+                "question": "REST mimarisinin en temel özelliklerinden biri aşağıdakilerden hangisidir?",
+                "questionType": "multiple_choice",
+                "difficulty": "easy",
+                "tags": ["rest", "api", "networking"],
+                "options": [
+                  "Stateful olması",
+                  "Stateless olması",
+                  "Sadece XML kullanması",
+                  "Socket tabanlı çalışması"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "REST mimarisi stateless çalışır, her istek bağımsızdır."
+              },
+              {
+                "questionId": 350102,
+                "question": "REST API’lerde kaynaklara erişim genellikle ne ile sağlanır?",
+                "questionType": "multiple_choice",
+                "difficulty": "easy",
+                "tags": ["rest", "url"],
+                "options": [
+                  "IP adresi",
+                  "Dosya yolu",
+                  "URL",
+                  "Database tablo adı"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "REST API’de her kaynak bir URL ile temsil edilir."
+              }
+            ]
           },
           {
             "topicId": 3502,
@@ -9269,7 +10281,38 @@
               "OkHttp ile birlikte çalışır",
               "API çağrılarını sadeleştirir"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 350201,
+                "question": "Retrofit’in Android’de kullanılmasının temel sebebi nedir?",
+                "questionType": "multiple_choice",
+                "difficulty": "medium",
+                "tags": ["retrofit", "networking"],
+                "options": [
+                  "UI çizimini kolaylaştırması",
+                  "REST API çağrılarını sadeleştirmesi",
+                  "Veritabanı yönetmesi",
+                  "Navigation işlemlerini yapması"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Retrofit, REST API çağrılarını annotation tabanlı ve okunabilir hale getirir."
+              },
+              {
+                "questionId": 350202,
+                "question": "Retrofit hangi kütüphane üzerine inşa edilmiştir?",
+                "questionType": "multiple_choice",
+                "difficulty": "medium",
+                "tags": ["retrofit", "okhttp"],
+                "options": [
+                  "Volley",
+                  "Glide",
+                  "OkHttp",
+                  "Ktor"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "Retrofit, HTTP işlemleri için OkHttp kullanır."
+              }
+            ]
           },
           {
             "topicId": 3503,
@@ -9291,7 +10334,38 @@
               "PUT veri günceller",
               "DELETE veri siler"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 350301,
+                "question": "Sunucudan veri almak için kullanılan HTTP metodu hangisidir?",
+                "questionType": "multiple_choice",
+                "difficulty": "easy",
+                "tags": ["http", "get"],
+                "options": [
+                  "POST",
+                  "PUT",
+                  "GET",
+                  "DELETE"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "GET isteği sunucudan veri almak için kullanılır."
+              },
+              {
+                "questionId": 350302,
+                "question": "Bir kaydı güncellemek için en uygun HTTP metodu hangisidir?",
+                "questionType": "multiple_choice",
+                "difficulty": "easy",
+                "tags": ["http", "put"],
+                "options": [
+                  "GET",
+                  "POST",
+                  "PUT",
+                  "DELETE"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "PUT isteği mevcut veriyi güncellemek için kullanılır."
+              }
+            ]
           },
           {
             "topicId": 3504,
@@ -9313,7 +10387,38 @@
               "Gson / Moshi kullanılır",
               "Retrofit ile otomatik parse edilir"
             ],
-            "questions": []
+            "questions": [
+              {
+                "questionId": 350401,
+                "question": "JSON Parsing işleminin amacı nedir?",
+                "questionType": "multiple_choice",
+                "difficulty": "medium",
+                "tags": ["json", "parsing"],
+                "options": [
+                  "JSON verisini şifrelemek",
+                  "JSON verisini UI’da göstermek",
+                  "JSON verisini Kotlin nesnelerine dönüştürmek",
+                  "JSON verisini sunucuya göndermek"
+                ],
+                "correctAnswerIndex": 2,
+                "explanation": "JSON Parsing, JSON verisini model class’lara dönüştürme işlemidir."
+              },
+              {
+                "questionId": 350402,
+                "question": "Retrofit ile JSON parsing için en yaygın kullanılan kütüphaneler hangileridir?",
+                "questionType": "multiple_choice",
+                "difficulty": "medium",
+                "tags": ["json", "gson", "moshi"],
+                "options": [
+                  "Room ve SQLite",
+                  "Gson ve Moshi",
+                  "LiveData ve Flow",
+                  "Hilt ve Dagger"
+                ],
+                "correctAnswerIndex": 1,
+                "explanation": "Retrofit, JSON dönüşümü için genellikle Gson veya Moshi kullanır."
+              }
+            ]
           }
         ],
         "sectionMixedQuestions": []
