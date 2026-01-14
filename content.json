@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.0",
   "lastUpdate": "2025-01-06T10:00:00Z",
   "categories": [
     {
@@ -19940,9 +19940,2241 @@
               "tags": ["lifecycle", "state", "started", "resumed"]
             }
           ]
+        },
+        {
+          "sectionId": 5600,
+          "sectionTitle": "Material Design 3",
+          "sectionDescription": "Material Design 3 (Material You) ile modern, dinamik ve erişilebilir UI tasarımı",
+          "order": 6,
+          "topics": [
+            {
+              "topicId": 5601,
+              "title": "Material 3 Components",
+              "summary": "Material 3, Button, Card, TextField gibi modern UI bileşenleri sunar. Material 2'den farklı görsel tasarıma sahiptir.",
+              "content": "## Material 3 Components\n\nMaterial 3 (Material You) güncel Material Design'dır.\n\nButton, Card, TextField, TopAppBar gibi bileşenler içerir.\n\nDaha yuvarlak köşeler ve dinamik renk sistemi.",
+              "difficulty": "easy",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Material 3 Button",
+                  "code": "Button(onClick = { }) {\n    Text(\"Material 3 Button\")\n}",
+                  "explanation": "Material 3 Button varsayılan olarak gelir."
+                }
+              ],
+              "keyPoints": [
+                "Material You olarak da bilinir",
+                "Modern UI bileşenleri",
+                "Dinamik renk desteği",
+                "Material 2'den farklı görsel"
+              ],
+              "questions": [
+                {
+                  "questionId": 560101,
+                  "question": "Material 3 nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Veritabanı",
+                    "Google'ın güncel Material Design versiyonu (Material You)",
+                    "Network kütüphanesi",
+                    "Test framework'ü"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Material 3 (Material You), Google'ın güncel Material Design versiyonudur. Compose ile birlikte geliştirilmiştir.",
+                  "tags": ["material3", "design"]
+                },
+                {
+                  "questionId": 560102,
+                  "question": "Material 3 hangi dependency ile eklenir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "androidx.compose.material",
+                    "androidx.compose.material3:material3",
+                    "com.google.material3",
+                    "androidx.material3"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Material 3, androidx.compose.material3:material3 dependency'si ile eklenir. Material 2 ise androidx.compose.material'dır.",
+                  "tags": ["material3", "dependency"]
+                },
+                {
+                  "questionId": 560103,
+                  "question": "Material 3 ve Material 2 arasındaki fark nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir fark yok",
+                    "Material 3 daha yuvarlak köşeler, dinamik renk, modern görsel",
+                    "Material 2 daha modern",
+                    "Sadece renk farkı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Material 3, daha yuvarlak köşeler, dinamik renk sistemi (Android 12+), modern görsel tasarım ve yeni bileşenler sunar.",
+                  "tags": ["material3", "material2", "difference"]
+                },
+                {
+                  "questionId": 560104,
+                  "question": "Material 3 Button ile Material 2 Button aynı mı?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Evet, tamamen aynı",
+                    "Hayır, görsel tasarım ve default style farklı",
+                    "Sadece renk farkı",
+                    "Material 2 daha iyi"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Material 3 Button, Material 2'den farklı görsel tasarıma sahiptir: daha yuvarlak köşeler, farklı elevation, farklı padding ve renk kullanımı.",
+                  "tags": ["material3", "button", "components"]
+                }
+              ]
+            },
+            {
+              "topicId": 5602,
+              "title": "Theme & Color System",
+              "summary": "Material 3 dinamik renk sistemi sunar. Primary, Secondary, Tertiary color scheme kullanılır.",
+              "content": "## Theme & Color System\n\nMaterialTheme Composable tema tanımlar.\n\nPrimary, Secondary, Tertiary renk şemaları.\n\nDinamik renk desteği (Android 12+).",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "MaterialTheme Kullanımı",
+                  "code": "MaterialTheme(\n    colorScheme = lightColorScheme(\n        primary = Color(0xFF6200EE)\n    )\n) {\n    // App content\n}",
+                  "explanation": "Custom renk şeması tanımlama."
+                }
+              ],
+              "keyPoints": [
+                "MaterialTheme tema sağlar",
+                "ColorScheme renk şeması",
+                "Dinamik renk (wallpaper bazlı)",
+                "Light ve Dark scheme"
+              ],
+              "questions": [
+                {
+                  "questionId": 560201,
+                  "question": "MaterialTheme ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece renk",
+                    "Tema sağlar (renk, tipografi, shape)",
+                    "Sadece font",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "MaterialTheme, uygulamanın temasını sağlar: ColorScheme (renk), Typography (tipografi), Shapes (şekil). Tüm Material bileşenleri bu temayı kullanır.",
+                  "tags": ["materialtheme", "theme"]
+                },
+                {
+                  "questionId": 560202,
+                  "question": "Material 3'te kaç ana renk kategorisi vardır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "1 (sadece primary)",
+                    "3 (Primary, Secondary, Tertiary)",
+                    "2 (Primary, Secondary)",
+                    "5"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Material 3'te 3 ana renk kategorisi vardır: Primary (ana renk), Secondary (ikincil renk), Tertiary (üçüncül renk). Her biri farklı varyantlara sahiptir.",
+                  "tags": ["material3", "color", "scheme"]
+                },
+                {
+                  "questionId": 560203,
+                  "question": "Dinamik renk (Dynamic Color) nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece animasyon",
+                    "Wallpaper'dan renk çıkararak tema oluşturma (Android 12+)",
+                    "Manuel renk seçimi",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Dinamik renk, Android 12+ cihazlarda wallpaper'dan renk çıkararak otomatik tema oluşturur. dynamicLightColorScheme() ve dynamicDarkColorScheme() ile kullanılır.",
+                  "tags": ["material3", "dynamic_color"]
+                },
+                {
+                  "questionId": 560204,
+                  "question": "MaterialTheme.colorScheme.primary ne döner?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "String",
+                    "Color (Primary renk)",
+                    "Int",
+                    "Theme"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "MaterialTheme.colorScheme.primary, mevcut temanın primary rengini (Color) döner. Composable'larda tema renklerine erişim için kullanılır.",
+                  "tags": ["materialtheme", "colorscheme", "primary"]
+                },
+                {
+                  "questionId": 560205,
+                  "question": "lightColorScheme() ve darkColorScheme() ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece renk atar",
+                    "Light ve Dark tema için ColorScheme oluşturur",
+                    "Otomatik tema",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "lightColorScheme() ve darkColorScheme(), sırasıyla light ve dark tema için ColorScheme oluşturur. Her biri farklı renk palette'i tanımlar.",
+                  "tags": ["colorscheme", "light", "dark"]
+                }
+              ]
+            },
+            {
+              "topicId": 5603,
+              "title": "Typography & Shapes",
+              "summary": "Material 3 Typography ve Shape sistemi ile tutarlı tipografi ve şekil kullanımı sağlanır.",
+              "content": "## Typography & Shapes\n\nTypography: Font, boyut, ağırlık tanımlar\nShapes: Köşe yuvarlaklığı tanımlar\n\nMaterialTheme.typography ve shapes erişim sağlar.",
+              "difficulty": "medium",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Typography Kullanımı",
+                  "code": "Text(\n    text = \"Başlık\",\n    style = MaterialTheme.typography.headlineLarge\n)",
+                  "explanation": "Material 3 tipografi kullanımı."
+                }
+              ],
+              "keyPoints": [
+                "Typography font sistemi",
+                "Shapes köşe yuvarlaklığı",
+                "displayLarge, headlineMedium vb.",
+                "Tutarlı tasarım dili"
+              ],
+              "questions": [
+                {
+                  "questionId": 560301,
+                  "question": "Typography nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece renk",
+                    "Font, boyut, ağırlık sistemi",
+                    "Sadece layout",
+                    "Shape sistemi"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Typography, uygulamanın font, font boyutu, font ağırlığı (weight), line height gibi tipografi özelliklerini tanımlayan sistemdir.",
+                  "tags": ["typography", "material3"]
+                },
+                {
+                  "questionId": 560302,
+                  "question": "Material 3'te hangi Typography style'lar vardır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece 1 style",
+                    "displayLarge, headlineMedium, bodySmall gibi çeşitli style'lar",
+                    "Sadece bold ve normal",
+                    "Custom tanımlanamaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Material 3, displayLarge/Medium/Small, headlineLarge/Medium/Small, titleLarge/Medium/Small, bodyLarge/Medium/Small, labelLarge/Medium/Small gibi önceden tanımlı style'lar sunar.",
+                  "tags": ["typography", "styles"]
+                },
+                {
+                  "questionId": 560303,
+                  "question": "Shapes ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece renk",
+                    "Bileşenlerin köşe yuvarlaklığını (corner radius) tanımlar",
+                    "Sadece boyut",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Shapes, Material bileşenlerinin köşe yuvarlaklığını (corner radius) tanımlar. small, medium, large kategorileri vardır.",
+                  "tags": ["shapes", "material3"]
+                },
+                {
+                  "questionId": 560304,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "Text(\n    text = \"Başlık\",\n    style = MaterialTheme.typography.headlineLarge\n)",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hata verir",
+                    "Material 3 headlineLarge tipografi style'ı ile text gösterir",
+                    "Sadece renk değişir",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu kod, Material 3'ün headlineLarge tipografi style'ını (büyük başlık için font, boyut, ağırlık) kullanarak text gösterir.",
+                  "tags": ["typography", "example", "text"]
+                }
+              ]
+            },
+            {
+              "topicId": 5604,
+              "title": "Dark Mode",
+              "summary": "Material 3 Light ve Dark Mode desteği sunar. Otomatik tema değişimi yapılabilir.",
+              "content": "## Dark Mode\n\nLight ve Dark ColorScheme tanımlanır.\n\nisSystemInDarkTheme() sistem teması tespit eder.\n\nOtomatik tema değişimi sağlanır.",
+              "difficulty": "medium",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "Dark Mode Desteği",
+                  "code": "val darkTheme = isSystemInDarkTheme()\nval colorScheme = if (darkTheme) darkColorScheme() else lightColorScheme()\nMaterialTheme(colorScheme = colorScheme) { }",
+                  "explanation": "Otomatik tema değişimi."
+                }
+              ],
+              "keyPoints": [
+                "Light ve Dark scheme",
+                "isSystemInDarkTheme() tespit",
+                "Otomatik tema geçişi",
+                "Göz sağlığı ve battery tasarrufu"
+              ],
+              "questions": [
+                {
+                  "questionId": 560401,
+                  "question": "Dark Mode neden önemlidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece görsel",
+                    "Göz sağlığı, battery tasarrufu (OLED), kullanıcı tercihi",
+                    "Sadece trend",
+                    "Hiçbir önemi yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Dark Mode, göz sağlığı (özellikle düşük ışıkta), battery tasarrufu (OLED ekranlarda), kullanıcı tercihi ve erişilebilirlik için önemlidir.",
+                  "tags": ["dark_mode", "importance"]
+                },
+                {
+                  "questionId": 560402,
+                  "question": "isSystemInDarkTheme() ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Dark mode'u zorlar",
+                    "Sistem dark mode durumunu tespit eder (Boolean döner)",
+                    "Tema değiştirir",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "isSystemInDarkTheme(), cihazın sistem temasının dark mode'da olup olmadığını tespit eder. true veya false döner.",
+                  "tags": ["dark_mode", "issystemindarktheme"]
+                },
+                {
+                  "questionId": 560403,
+                  "question": "Otomatik tema değişimi nasıl yapılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Manuel switch",
+                    "isSystemInDarkTheme() ile ColorScheme seçilir",
+                    "Otomatik yapılamaz",
+                    "Sadece manuel"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Otomatik tema değişimi için: val darkTheme = isSystemInDarkTheme(); val colorScheme = if (darkTheme) darkColorScheme() else lightColorScheme()",
+                  "tags": ["dark_mode", "automatic"]
+                },
+                {
+                  "questionId": 560404,
+                  "question": "Dark Mode'da hangi renkler kullanılmalıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Aynı renkler",
+                    "Daha yumuşak, düşük contrast renkler (göz yorgunluğu azaltmak için)",
+                    "Daha parlak renkler",
+                    "Fark etmez"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Dark Mode'da daha yumuşak, düşük contrast renkler kullanılmalıdır. Çok parlak beyaz yerine biraz mat beyaz, saf siyah yerine koyu gri tercih edilir (Material Design guideline).",
+                  "tags": ["dark_mode", "colors", "best_practice"]
+                }
+              ]
+            },
+            {
+              "topicId": 5605,
+              "title": "Custom Theme",
+              "summary": "Material 3 tema özelleştirilebilir. Custom ColorScheme, Typography ve Shapes tanımlanabilir.",
+              "content": "## Custom Theme\n\nCustom ColorScheme oluşturulabilir.\n\nTypography ve Shapes özelleştirilebilir.\n\nBrand identity için kullanılır.",
+              "difficulty": "hard",
+              "order": 5,
+              "codeExamples": [
+                {
+                  "title": "Custom Theme",
+                  "code": "val MyColorScheme = lightColorScheme(\n    primary = Color(0xFF6200EE),\n    secondary = Color(0xFF03DAC6)\n)\n@Composable\nfun MyAppTheme(content: @Composable () -> Unit) {\n    MaterialTheme(colorScheme = MyColorScheme, content = content)\n}",
+                  "explanation": "Custom tema oluşturma."
+                }
+              ],
+              "keyPoints": [
+                "Custom ColorScheme tanımlama",
+                "Typography özelleştirme",
+                "Shapes özelleştirme",
+                "Brand identity sağlar"
+              ],
+              "questions": [
+                {
+                  "questionId": 560501,
+                  "question": "Custom Theme neden oluşturulur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece eğlence",
+                    "Brand identity, şirket renkleri, unique tasarım için",
+                    "Zorunlu",
+                    "Hiçbir nedeni yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Custom Theme, brand identity (marka kimliği), şirket renkleri kullanma ve unique tasarım oluşturmak için kullanılır.",
+                  "tags": ["custom_theme", "branding"]
+                },
+                {
+                  "questionId": 560502,
+                  "question": "Custom ColorScheme nasıl oluşturulur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Otomatik",
+                    "lightColorScheme() / darkColorScheme() ile custom renkler tanımlanır",
+                    "XML'de",
+                    "Oluşturulamaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Custom ColorScheme, lightColorScheme() / darkColorScheme() fonksiyonları ile custom primary, secondary, tertiary vb. renkler tanımlanarak oluşturulur.",
+                  "tags": ["custom_theme", "colorscheme"]
+                },
+                {
+                  "questionId": 560503,
+                  "question": "Material Theme Builder nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Kod editörü",
+                    "Google'ın resmi Material 3 tema oluşturma aracı (web tool)",
+                    "Android Studio plugin",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Material Theme Builder, Google'ın resmi web aracıdır. Custom ColorScheme oluşturur ve Compose kodunu export eder (m3.material.io/theme-builder).",
+                  "tags": ["theme_builder", "tool"]
+                },
+                {
+                  "questionId": 560504,
+                  "question": "Custom Typography nasıl tanımlanır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Tanımlanamaz",
+                    "Typography() ile custom font, boyut, ağırlık tanımlanır",
+                    "Sadece XML",
+                    "Otomatik"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Custom Typography, Typography() ile oluşturulur. displayLarge, headlineMedium vb. için custom TextStyle (fontFamily, fontSize, fontWeight) tanımlanır.",
+                  "tags": ["custom_theme", "typography"]
+                },
+                {
+                  "questionId": 560505,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "@Composable\nfun MyAppTheme(content: @Composable () -> Unit) {\n    MaterialTheme(\n        colorScheme = MyColorScheme,\n        content = content\n    )\n}",
+                  "difficulty": "medium",
+                  "options": [
+                    "Hata verir",
+                    "Custom tema wrapper Composable oluşturur",
+                    "Sadece renk değiştirir",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu, custom tema wrapper Composable'ıdır. Uygulamanın root'unda MyAppTheme { } kullanılarak tüm app custom tema ile sarılır. Best practice pattern'dir.",
+                  "tags": ["custom_theme", "wrapper", "example"]
+                }
+              ]
+            }
+          ],
+          "sectionMixedQuestions": [
+            {
+              "questionId": 560001,
+              "question": "MaterialTheme'den renk, tipografi ve shape'e nasıl erişilir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Global değişken",
+                "MaterialTheme.colorScheme, MaterialTheme.typography, MaterialTheme.shapes",
+                "Sadece parametre",
+                "Context üzerinden"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "MaterialTheme.colorScheme (renk), MaterialTheme.typography (tipografi), MaterialTheme.shapes (şekil) ile tema değerlerine erişilir. Composable içinde kullanılır.",
+              "tags": ["materialtheme", "access"]
+            },
+            {
+              "questionId": 560002,
+              "question": "Surface Composable ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece padding",
+                "Material container, tema renklerini uygular, elevation sağlar",
+                "Sadece layout",
+                "Hiçbir şey yapmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Surface, Material Design container'ıdır. Tema renklerini (background, content color) uygular, elevation (gölge) sağlar ve shape kullanır.",
+              "tags": ["surface", "material"]
+            },
+            {
+              "questionId": 560003,
+              "question": "contentColor nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece background",
+                "Container'ın background'ına uygun içerik rengi (örn: Text rengi)",
+                "Sadece border",
+                "Hiçbiri"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "contentColor, container'ın background'ına uygun içerik rengidir (genellikle Text, Icon rengi). Material bileşenleri otomatik olarak doğru contentColor kullanır.",
+              "tags": ["contentcolor", "material"]
+            },
+            {
+              "questionId": 560004,
+              "question": "Material 3 Icons nasıl kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Sadece drawable",
+                "Icon Composable + Icons.Default.* / Icons.Outlined.* / Icons.Filled.*",
+                "Sadece asset",
+                "Kullanılamaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Material 3 Icons, Icon Composable ile kullanılır. Icons.Default.*, Icons.Outlined.*, Icons.Filled.* ile 1000+ Material icon mevcuttur. androidx.compose.material.icons dependency gerekir.",
+              "tags": ["icons", "material3"]
+            },
+            {
+              "questionId": 560005,
+              "question": "Scaffold Composable ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece layout",
+                "Material app layout yapısı (TopBar, BottomBar, FAB, content)",
+                "Sadece padding",
+                "Hiçbir şey yapmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Scaffold, Material app layout yapısını sağlar: TopAppBar, BottomAppBar, FloatingActionButton, Drawer ve content slot'ları. Otomatik padding yönetimi yapar.",
+              "tags": ["scaffold", "material", "layout"]
+            },
+            {
+              "questionId": 560006,
+              "question": "FloatingActionButton (FAB) ne için kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Sadece navigation",
+                "Primary action (ör: yeni item ekleme) için yuvarlak button",
+                "Sadece menu",
+                "Hiçbiri"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "FloatingActionButton (FAB), ekranın primary action'ı (örn: yeni item ekleme, mesaj yazma) için kullanılan prominent, yuvarlak button'dur.",
+              "tags": ["fab", "material"]
+            },
+            {
+              "questionId": 560007,
+              "question": "TopAppBar (Material 3) kaç variant'a sahiptir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "1",
+                "3 (TopAppBar, MediumTopAppBar, LargeTopAppBar)",
+                "2",
+                "Sadece TopAppBar"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Material 3'te 3 TopAppBar variant vardır: TopAppBar (small), MediumTopAppBar, LargeTopAppBar. Her biri farklı yüksekliğe sahiptir.",
+              "tags": ["topappbar", "material3"]
+            },
+            {
+              "questionId": 560008,
+              "question": "Material 3'te Snackbar nasıl gösterilir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Direkt çağrılır",
+                "SnackbarHost + SnackbarHostState kullanılır",
+                "Otomatik gösterilir",
+                "Gösterilemez"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Snackbar, SnackbarHost (Scaffold içinde) + SnackbarHostState ile gösterilir. snackbarHostState.showSnackbar() suspend fonksiyondur.",
+              "tags": ["snackbar", "material3"]
+            },
+            {
+              "questionId": 560009,
+              "question": "Material 3'te TextField variant'ları nelerdir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadek TextField",
+                "TextField (filled) ve OutlinedTextField",
+                "Sadece OutlinedTextField",
+                "Hiçbiri"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Material 3'te 2 TextField variant vardır: TextField (filled style, background ile) ve OutlinedTextField (outline border ile).",
+              "tags": ["textfield", "material3"]
+            },
+            {
+              "questionId": 560010,
+              "question": "Material 3 tema migration stratejisi nasıl olmalıdır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hemen tüm app değişmeli",
+                "Aşamalı migration: Material 2 ve 3 birlikte kullanılabilir",
+                "Migration yapılamaz",
+                "Sadece yeni projeler"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Material 2'den 3'e aşamalı migration yapılabilir. Her iki kütüphane de birlikte kullanılabilir (farklı import'lar). Önce tema, sonra bileşenler aşamalı güncellenir.",
+              "tags": ["migration", "material3", "strategy"]
+            }
+          ]
+        },
+        {
+          "sectionId": 5700,
+          "sectionTitle": "Advanced UI",
+          "sectionDescription": "Compose'da animasyonlar, custom layout, Canvas ile çizim ve gesture yönetimi",
+          "order": 7,
+          "topics": [
+            {
+              "topicId": 5701,
+              "title": "Animations (animate*AsState, AnimatedVisibility)",
+              "summary": "Compose'da animations için animate*AsState, AnimatedVisibility gibi high-level API'lar vardır. Declarative animation sağlar.",
+              "content": "## Animations\n\nanimate*AsState: State değişimini animate eder\nAnimatedVisibility: Visibility değişimini animate eder\n\nDeclarative ve kolay kullanım.",
+              "difficulty": "medium",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "animateFloatAsState Örneği",
+                  "code": "val alpha by animateFloatAsState(if (visible) 1f else 0f)\nBox(modifier = Modifier.alpha(alpha))",
+                  "explanation": "Visibility değişiminde alpha animasyonu."
+                }
+              ],
+              "keyPoints": [
+                "Declarative animation",
+                "animate*AsState family",
+                "AnimatedVisibility enter/exit",
+                "Otomatik interruption handling"
+              ],
+              "questions": [
+                {
+                  "questionId": 570101,
+                  "question": "animate*AsState ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece state oluşturur",
+                    "State değişimini otomatik animate eder (declarative animation)",
+                    "Manuel animasyon",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "animate*AsState (animateFloatAsState, animateDpAsState vb.), target state değiştiğinde otomatik olarak mevcut değerden yeni değere animasyon yapar. Declarative animation API'dır.",
+                  "tags": ["animation", "animate_as_state"]
+                },
+                {
+                  "questionId": 570102,
+                  "question": "AnimatedVisibility ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece visibility değiştirir",
+                    "Visibility değişimini enter/exit animasyonu ile yapar",
+                    "Sadece fade",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "AnimatedVisibility, Composable'ın görünürlüğünü (visibility) değiştirirken enter ve exit animasyonu yapar. fadeIn, slideIn, expandIn gibi efektler kullanılabilir.",
+                  "tags": ["animation", "animatedvisibility"]
+                },
+                {
+                  "questionId": 570103,
+                  "question": "Compose animation'ları nasıl çalışır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Manuel frame update",
+                    "Declarative: Target state belirtilir, Compose otomatik animate eder",
+                    "Sadece XML",
+                    "Çalışmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Compose animation'ları declarative'dir. Target state belirtilir (örn: if (visible) 1f else 0f), Compose otomatik olarak current state'ten target state'e animate eder. Interruption otomatik handle edilir.",
+                  "tags": ["animation", "declarative"]
+                },
+                {
+                  "questionId": 570104,
+                  "question": "updateTransition ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece state değiştirir",
+                    "Birden fazla değeri aynı anda animate etmek için transition oluşturur",
+                    "Sadece renk",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "updateTransition, birden fazla değeri (renk, boyut, konum vb.) aynı state değişikliğine bağlı olarak koordine şekilde animate etmek için kullanılır.",
+                  "tags": ["animation", "updatetransition"]
+                },
+                {
+                  "questionId": 570105,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "val alpha by animateFloatAsState(if (visible) 1f else 0f)\nBox(modifier = Modifier.alpha(alpha))",
+                  "difficulty": "medium",
+                  "options": [
+                    "Hata verir",
+                    "visible değiştiğinde alpha 0-1 arası animate olur (fade in/out)",
+                    "Sadece hemen değişir",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "visible true olunca alpha 0'dan 1'e, false olunca 1'den 0'a smooth animasyon ile değişir. Fade in/out efekti yaratır.",
+                  "tags": ["animation", "example", "alpha"]
+                }
+              ]
+            },
+            {
+              "topicId": 5702,
+              "title": "Custom Layout (Layout Composable)",
+              "summary": "Custom Layout ile kendi layout mantığınızı yazabilirsiniz. Measure ve placement'ı kontrol edersiniz.",
+              "content": "## Custom Layout\n\nLayout Composable ile custom layout.\n\nMeasure ve placement kontrolü.\n\nPerformance optimizasyonu için kullanılır.",
+              "difficulty": "hard",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "Custom Layout Örneği",
+                  "code": "@Composable\nfun CustomLayout(content: @Composable () -> Unit) {\n    Layout(content) { measurables, constraints ->\n        // measure ve place\n    }\n}",
+                  "explanation": "Basit custom layout template."
+                }
+              ],
+              "keyPoints": [
+                "Tam layout kontrolü",
+                "Measure ve placement",
+                "Performance için kullanılır",
+                "Advanced use case"
+              ],
+              "questions": [
+                {
+                  "questionId": 570201,
+                  "question": "Custom Layout ne zaman kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Her zaman",
+                    "Row/Column/Box yeterli olmadığında, custom layout mantığı gerektiğinde",
+                    "Sadece test için",
+                    "Hiçbir zaman"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Custom Layout, Row/Column/Box gibi built-in layout'lar yeterli olmadığında veya custom layout mantığı (özel measure/placement) gerektiğinde kullanılır. Performance optimization için de kullanılabilir.",
+                  "tags": ["custom_layout", "use_case"]
+                },
+                {
+                  "questionId": 570202,
+                  "question": "Layout Composable ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece UI çizer",
+                    "Custom layout oluşturur, measure ve placement kontrolü sağlar",
+                    "Sadece modifier",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Layout Composable, custom layout oluşturmak için kullanılır. measurables (child'lar) ve constraints alır, her child'ı measure eder ve place eder.",
+                  "tags": ["layout", "composable"]
+                },
+                {
+                  "questionId": 570203,
+                  "question": "Measure ve Placement nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece boyut",
+                    "Measure: Child boyutunu belirleme, Placement: Child'ı konumlandırma",
+                    "Sadece konum",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Measure: Child Composable'ın boyutunu (width, height) belirleme. Placement: Child'ı parent içinde konumlandırma (x, y koordinatı). Layout'un iki temel aşamasıdır.",
+                  "tags": ["measure", "placement", "layout"]
+                },
+                {
+                  "questionId": 570204,
+                  "question": "Custom Layout performans açısından ne sağlar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Hiçbir şey",
+                    "Gereksiz recomposition ve measure'ı önleyerek optimize layout",
+                    "Sadece görsel",
+                    "Her zaman yavaşlatır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "İyi yazılmış Custom Layout, gereksiz recomposition ve measure'ı önleyerek performans optimizasyonu sağlayabilir. Özellikle complex nested layout yerine tek custom layout kullanmak faydalıdır.",
+                  "tags": ["custom_layout", "performance"]
+                }
+              ]
+            },
+            {
+              "topicId": 5703,
+              "title": "Canvas & Drawing",
+              "summary": "Canvas ile custom çizim yapılır. Shape, path, text çizme gibi low-level drawing API'ları sunar.",
+              "content": "## Canvas & Drawing\n\nCanvas Composable low-level drawing.\n\ndrawLine, drawCircle, drawPath vb.\n\nCustom grafik ve chart için kullanılır.",
+              "difficulty": "hard",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Canvas Örneği",
+                  "code": "Canvas(modifier = Modifier.size(100.dp)) {\n    drawCircle(color = Color.Red, radius = 50f)\n}",
+                  "explanation": "Kırmızı daire çizme."
+                }
+              ],
+              "keyPoints": [
+                "Low-level drawing API",
+                "Custom shape çizimi",
+                "Chart ve grafik için",
+                "DrawScope kullanır"
+              ],
+              "questions": [
+                {
+                  "questionId": 570301,
+                  "question": "Canvas Composable ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece layout",
+                    "Low-level drawing API, custom çizim (shape, path, text)",
+                    "Sadece image gösterir",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Canvas, low-level drawing API sağlar. drawCircle, drawRect, drawLine, drawPath gibi fonksiyonlarla custom çizim yapılır.",
+                  "tags": ["canvas", "drawing"]
+                },
+                {
+                  "questionId": 570302,
+                  "question": "DrawScope nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece state",
+                    "Canvas içinde drawing yapılan scope, draw* fonksiyonları sunar",
+                    "Layout scope",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "DrawScope, Canvas lambda içinde kullanılan scope'tur. drawCircle, drawRect, drawPath gibi drawing fonksiyonları ve size, center gibi property'ler sunar.",
+                  "tags": ["drawscope", "canvas"]
+                },
+                {
+                  "questionId": 570303,
+                  "question": "Canvas ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece text",
+                    "Custom grafik, chart, drawing, game rendering",
+                    "Sadece layout",
+                    "Hiçbir şey için"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Canvas, custom grafik çizimi, chart ve graph oluşturma, drawing app, game rendering gibi low-level çizim gerektiren use case'ler için kullanılır.",
+                  "tags": ["canvas", "use_case"]
+                },
+                {
+                  "questionId": 570304,
+                  "question": "drawPath() ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece çizgi",
+                    "Karmaşık shape'ler çizmek için path (bezier curve, arc vb.)",
+                    "Sadece dikdörtgen",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "drawPath(), karmaşık shape'ler çizmek için Path kullanır. moveTo, lineTo, cubicTo (bezier curve), arcTo gibi komutlarla custom shape oluşturulur.",
+                  "tags": ["canvas", "drawpath"]
+                },
+                {
+                  "questionId": 570305,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "Canvas(modifier = Modifier.size(100.dp)) {\n    drawCircle(color = Color.Red, radius = 50f)\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hata verir",
+                    "100dp boyutunda canvas'ta kırmızı daire çizer",
+                    "Sadece layout oluşturur",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu kod, 100dp×100dp boyutunda bir Canvas içinde 50f radius'lu kırmızı daire çizer.",
+                  "tags": ["canvas", "example", "circle"]
+                }
+              ]
+            },
+            {
+              "topicId": 5704,
+              "title": "Gestures (clickable, draggable, swipeable)",
+              "summary": "Compose'da gesture detection için Modifier.clickable, draggable, swipeable gibi API'lar vardır.",
+              "content": "## Gestures\n\nModifier.clickable: Tıklama\nModifier.draggable: Sürükleme\nModifier.swipeable: Swipe\n\npointerInput ile custom gesture.",
+              "difficulty": "hard",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "Draggable Örneği",
+                  "code": "var offsetX by remember { mutableStateOf(0f) }\nBox(\n    modifier = Modifier.draggable(\n        state = rememberDraggableState { offsetX += it },\n        orientation = Orientation.Horizontal\n    )\n)",
+                  "explanation": "Yatay sürüklenebilir Box."
+                }
+              ],
+              "keyPoints": [
+                "Touch event handling",
+                "clickable, draggable, swipeable",
+                "pointerInput custom gesture",
+                "Multi-touch desteği"
+              ],
+              "questions": [
+                {
+                  "questionId": 570401,
+                  "question": "Modifier.clickable() ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece görsel",
+                    "Composable'ı tıklanabilir yapar, ripple effect ekler",
+                    "Sadece layout",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Modifier.clickable(), Composable'ı tıklanabilir yapar. onClick lambda alır ve Material ripple effect otomatik ekler.",
+                  "tags": ["gesture", "clickable"]
+                },
+                {
+                  "questionId": 570402,
+                  "question": "Modifier.draggable() ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece tıklama",
+                    "Tek yönde (horizontal/vertical) sürüklenebilir yapar",
+                    "Multi-directional sürükleme",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Modifier.draggable(), tek yönde (Orientation.Horizontal veya Vertical) sürüklenebilir yapar. DraggableState ile offset alınır.",
+                  "tags": ["gesture", "draggable"]
+                },
+                {
+                  "questionId": 570403,
+                  "question": "pointerInput ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece clickable",
+                    "Custom gesture detection, low-level touch event handling",
+                    "Sadece drag",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "pointerInput, custom gesture detection için low-level touch event handling sağlar. detectTapGestures, detectDragGestures, detectTransformGestures gibi helper'lar vardır.",
+                  "tags": ["gesture", "pointerinput"]
+                },
+                {
+                  "questionId": 570404,
+                  "question": "detectTransformGestures ne sağlar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece tıklama",
+                    "Pan, zoom, rotate gesture detection (multi-touch)",
+                    "Sadece drag",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "detectTransformGestures (pointerInput içinde), pan (kaydırma), zoom (pinch), rotate gesture'larını detect eder. Multi-touch için kullanılır.",
+                  "tags": ["gesture", "transform", "multi_touch"]
+                },
+                {
+                  "questionId": 570405,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "var offsetX by remember { mutableStateOf(0f) }\nBox(\n    modifier = Modifier.draggable(\n        state = rememberDraggableState { offsetX += it },\n        orientation = Orientation.Horizontal\n    )\n)",
+                  "difficulty": "medium",
+                  "options": [
+                    "Hata verir",
+                    "Yatay sürüklenebilir Box, offsetX güncellenir",
+                    "Sadece tıklanabilir",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu kod, Box'ı yatay sürüklenebilir yapar. Sürükleme sırasında delta (it) offsetX'e eklenir. offsetX ile Box'ın konumu güncellenebilir.",
+                  "tags": ["gesture", "draggable", "example"]
+                }
+              ]
+            },
+            {
+              "topicId": 5705,
+              "title": "ConstraintLayout Compose",
+              "summary": "ConstraintLayout, Compose'da complex layout'lar için kullanılır. XML ConstraintLayout'un Compose versiyonudur.",
+              "content": "## ConstraintLayout Compose\n\nComplex layout için kullanılır.\n\nRow/Column/Box yeterli değilse.\n\nandroidx.constraintlayout:constraintlayout-compose",
+              "difficulty": "hard",
+              "order": 5,
+              "codeExamples": [
+                {
+                  "title": "ConstraintLayout Basit Örnek",
+                  "code": "ConstraintLayout {\n    val (button, text) = createRefs()\n    Button(modifier = Modifier.constrainAs(button) { })\n    Text(modifier = Modifier.constrainAs(text) { })\n}",
+                  "explanation": "Constraint ile layout."
+                }
+              ],
+              "keyPoints": [
+                "Complex layout için",
+                "Constraint ilişkileri",
+                "createRefs() ile referans",
+                "Chain, barrier, guideline desteği"
+              ],
+              "questions": [
+                {
+                  "questionId": 570501,
+                  "question": "ConstraintLayout Compose ne zaman kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Her zaman",
+                    "Complex layout, Row/Column/Box yeterli olmadığında",
+                    "Sadece basit layout",
+                    "Hiçbir zaman"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ConstraintLayout, complex layout'lar için kullanılır. Çoğu durumda Row/Column/Box yeterlidir ama karmaşık constraint ilişkileri gerektiğinde ConstraintLayout tercih edilir.",
+                  "tags": ["constraintlayout", "use_case"]
+                },
+                {
+                  "questionId": 570502,
+                  "question": "ConstraintLayout'ta createRefs() ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece state",
+                    "Child Composable'lara referans oluşturur (constraint tanımlama için)",
+                    "Layout oluşturur",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "createRefs(), child Composable'lara referans oluşturur. Bu referanslar ile constraint'ler (top, start, end, bottom) tanımlanır.",
+                  "tags": ["constraintlayout", "createrefs"]
+                },
+                {
+                  "questionId": 570503,
+                  "question": "ConstraintLayout Compose hangi dependency'den gelir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "androidx.compose.ui",
+                    "androidx.constraintlayout:constraintlayout-compose",
+                    "androidx.compose.foundation",
+                    "Built-in"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ConstraintLayout Compose, androidx.constraintlayout:constraintlayout-compose dependency'sinden gelir. Ayrı kütüphane olarak eklenir.",
+                  "tags": ["constraintlayout", "dependency"]
+                }
+              ]
+            }
+          ],
+          "sectionMixedQuestions": [
+            {
+              "questionId": 570001,
+              "question": "Compose animation interruption nasıl handle edilir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Manuel handling gerekir",
+                "Otomatik handle edilir, yeni target'a smooth geçiş yapar",
+                "Crash olur",
+                "Animasyon durur"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Compose animation'ları interruption'ı otomatik handle eder. Animasyon sırasında target state değişirse, current state'ten yeni target'a smooth geçiş yapar.",
+              "tags": ["animation", "interruption"]
+            },
+            {
+              "questionId": 570002,
+              "question": "animationSpec ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece duration",
+                "Animation'ın timing, easing, duration vb. özelliklerini belirler",
+                "Sadece renk",
+                "Hiçbir şey yapmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "animationSpec, animation'ın timing curve (easing), duration, delay gibi özelliklerini belirler. tween, spring, keyframes gibi spec'ler vardır.",
+              "tags": ["animation", "animationspec"]
+            },
+            {
+              "questionId": 570003,
+              "question": "Modifier.offset() ve Modifier.graphicsLayer() farkı nedir (animation için)?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir fark yok",
+                "graphicsLayer GPU accelerated, performanslı; offset layout phase'de çalışır",
+                "offset daha hızlı",
+                "Aynı şey"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "graphicsLayer, GPU accelerated ve performanslıdır, layout phase'i tekrarlatmaz (translation, rotation, scale için). offset ise layout phase'de çalışır, daha yavaştır. Animation için graphicsLayer tercih edilir.",
+              "tags": ["animation", "performance", "graphicslayer"]
+            },
+            {
+              "questionId": 570004,
+              "question": "InfiniteTransition ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece bir kez",
+                "Sonsuz döngüde çalışan animation (loading indicator vb.)",
+                "Hiçbir şey yapmaz",
+                "Sadece test"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "InfiniteTransition (rememberInfiniteTransition), sonsuz döngüde çalışan animation için kullanılır. Loading indicator, pulse effect gibi durumlarda kullanılır.",
+              "tags": ["animation", "infinite"]
+            },
+            {
+              "questionId": 570005,
+              "question": "Modifier.semantics ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece görsel",
+                "Accessibility ve test için semantic bilgi ekler",
+                "Layout için",
+                "Hiçbir şey yapmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Modifier.semantics, accessibility (TalkBack) ve test için semantic bilgi ekler. contentDescription, role, state gibi bilgiler tanımlanır.",
+              "tags": ["accessibility", "semantics", "testing"]
+            },
+            {
+              "questionId": 570006,
+              "question": "Compose'da blur effect nasıl eklenir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Eklenemez",
+                "Modifier.blur() (Android 12+)",
+                "Sadece Canvas",
+                "Sadece Image"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Modifier.blur() ile blur effect eklenir (Android 12+). radiusX, radiusY parametreleri alır.",
+              "tags": ["effect", "blur"]
+            },
+            {
+              "questionId": 570007,
+              "question": "SubcomposeLayout ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece layout",
+                "Child'ları measure ettikten sonra başka child'lar ekleyebilme (dynamic composition)",
+                "Sadece state",
+                "Hiçbir şey yapmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "SubcomposeLayout, child'ları measure ettikten sonra sonuca göre başka child'lar ekleyebilme (dynamic composition) sağlar. Advanced use case'ler için kullanılır.",
+              "tags": ["layout", "subcompose"]
+            },
+            {
+              "questionId": 570008,
+              "question": "Modifier.zIndex() ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece boyut",
+                "Child'ların çizim sırasını (z-order) belirler",
+                "Sadece layout",
+                "Hiçbir şey yapmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Modifier.zIndex(), child'ların çizim sırasını (z-order) belirler. Yüksek zIndex önde çizilir. Box içinde overlap durumlarda kullanılır.",
+              "tags": ["layout", "zindex"]
+            },
+            {
+              "questionId": 570009,
+              "question": "Modifier.border() ve Modifier.drawBehind() farkı nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir fark yok",
+                "border high-level API, drawBehind low-level custom drawing",
+                "Aynı şey",
+                "border daha yavaş"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Modifier.border() high-level border API'dir. Modifier.drawBehind() ise low-level custom drawing yapmak için kullanılır (DrawScope ile).",
+              "tags": ["drawing", "border", "drawbehind"]
+            },
+            {
+              "questionId": 570010,
+              "question": "Compose'da performanslı shadow ekleme yolu nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece drawBehind",
+                "Modifier.shadow() (GPU accelerated)",
+                "Sadece Canvas",
+                "Shadow eklenemez"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Modifier.shadow(), GPU accelerated shadow ekler. elevation ve shape parametreleri alır. drawBehind ile de shadow çizilebilir ama shadow() daha performanslıdır.",
+              "tags": ["shadow", "performance"]
+            }
+          ]
+        },
+        {
+          "sectionId": 5800,
+          "sectionTitle": "Compose Architecture & Best Practices",
+          "sectionDescription": "Compose'da mimari pattern'ler, performans optimizasyonu ve best practice'ler",
+          "order": 8,
+          "topics": [
+            {
+              "topicId": 5801,
+              "title": "Unidirectional Data Flow (UDF)",
+              "summary": "UDF, state'in yukarıdan aşağı (↓), event'lerin aşağıdan yukarı (↑) tek yönlü akışını sağlar. Compose'un temel prensibidir.",
+              "content": "## Unidirectional Data Flow\n\nState yukarıdan aşağı iner (parent → child)\nEvent aşağıdan yukarı çıkar (child → parent)\n\nPredictable ve maintainable kod sağlar.",
+              "difficulty": "hard",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "UDF Örneği",
+                  "code": "@Composable\nfun Screen(state: UiState, onEvent: (Event) -> Unit) {\n    // State aşağı, Event yukarı\n}",
+                  "explanation": "UDF pattern ile Composable."
+                }
+              ],
+              "keyPoints": [
+                "State aşağı iner (↓)",
+                "Event yukarı çıkar (↑)",
+                "Single source of truth",
+                "Predictable state management"
+              ],
+              "questions": [
+                {
+                  "questionId": 580101,
+                  "question": "Unidirectional Data Flow (UDF) nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Çift yönlü data akışı",
+                    "State yukarıdan aşağı (↓), Event aşağıdan yukarı (↑) tek yönlü akış",
+                    "Sadece state akışı",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "UDF, state'in parent'tan child'a aşağı indiği (↓), event'lerin child'dan parent'a yukarı çıktığı (↑) tek yönlü veri akışıdır. Compose'un temel prensibidir.",
+                  "tags": ["udf", "architecture"]
+                },
+                {
+                  "questionId": 580102,
+                  "question": "UDF'nin avantajları nelerdir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece daha hızlı",
+                    "Predictable state, kolay debug, testable, single source of truth",
+                    "Sadece daha az kod",
+                    "Hiçbir avantajı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "UDF avantajları: Predictable state management, kolay debug (state flow takip edilebilir), test edilebilir, single source of truth.",
+                  "tags": ["udf", "advantages"]
+                },
+                {
+                  "questionId": 580103,
+                  "question": "UDF'de state nereden gelir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Child'dan",
+                    "Parent'tan (ViewModel veya parent Composable)",
+                    "Global state",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "UDF'de state, parent'tan (genellikle ViewModel veya parent Composable) child'a parametre olarak gelir. Child state değiştiremez, sadece event gönderir.",
+                  "tags": ["udf", "state"]
+                },
+                {
+                  "questionId": 580104,
+                  "question": "UDF'de event nasıl handle edilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Child direkt state değiştirir",
+                    "Child event gönderir (callback), parent state günceller",
+                    "Event gönderilmez",
+                    "Otomatik"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "UDF'de child, event gönderir (lambda callback ile). Parent bu event'i handle eder ve state'i günceller. Güncellenmiş state tekrar child'a iner.",
+                  "tags": ["udf", "event"]
+                },
+                {
+                  "questionId": 580105,
+                  "question": "Aşağıdaki kod UDF'yi doğru uygular mı?",
+                  "questionType": "multiple_choice",
+                  "code": "@Composable\nfun Screen(state: UiState, onEvent: (Event) -> Unit) {\n    Button(onClick = { onEvent(Event.Click) })\n}",
+                  "difficulty": "medium",
+                  "options": [
+                    "Hayır, hatalı",
+                    "Evet, state aşağı, event yukarı gidiyor",
+                    "State eksik",
+                    "Event yanlış"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu doğru UDF pattern'idir. state parametre olarak geliyor (↓), event onEvent callback ile yukarı gönderiliyor (↑).",
+                  "tags": ["udf", "example"]
+                }
+              ]
+            },
+            {
+              "topicId": 5802,
+              "title": "UI State Pattern",
+              "summary": "UI State Pattern, tüm UI state'ini tek bir data class'ta toplar. Loading, Error, Success state'lerini yönetir.",
+              "content": "## UI State Pattern\n\nTüm UI state tek data class:\ndata class UiState(loading, error, data)\n\nSingle source of truth sağlar.",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "UI State Örneği",
+                  "code": "data class UiState(\n    val isLoading: Boolean = false,\n    val error: String? = null,\n    val data: List<Item> = emptyList()\n)",
+                  "explanation": "UI State pattern."
+                }
+              ],
+              "keyPoints": [
+                "Tek data class tüm state",
+                "Loading, Error, Success",
+                "Single source of truth",
+                "Kolayca test edilebilir"
+              ],
+              "questions": [
+                {
+                  "questionId": 580201,
+                  "question": "UI State Pattern nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Birden fazla state değişkeni",
+                    "Tüm UI state'ini tek bir data class'ta toplama",
+                    "Sadece loading state",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "UI State Pattern, tüm UI state'ini (loading, error, data vb.) tek bir data class'ta toplar. Single source of truth ve kolayca yönetilebilir state sağlar.",
+                  "tags": ["ui_state", "pattern"]
+                },
+                {
+                  "questionId": 580202,
+                  "question": "UI State Pattern'in avantajları nelerdir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece daha az kod",
+                    "Single source of truth, kolay test, snapshot alınabilir, time-travel debug",
+                    "Sadece performans",
+                    "Hiçbir avantajı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "UI State Pattern avantajları: Single source of truth, kolay test (state'in snapshot'ı alınır), state history tutulabilir (time-travel debug), consistent UI.",
+                  "tags": ["ui_state", "advantages"]
+                },
+                {
+                  "questionId": 580203,
+                  "question": "Loading, Error, Success state'leri nasıl yönetilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Ayrı değişkenler",
+                    "Tek UiState data class içinde (isLoading, error, data)",
+                    "Sadece data",
+                    "Yönetilmez"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Loading, Error, Success state'leri tek UiState data class içinde yönetilir: data class UiState(isLoading, error, data). UI bu state'e göre render edilir.",
+                  "tags": ["ui_state", "loading_error_success"]
+                },
+                {
+                  "questionId": 580204,
+                  "question": "Aşağıdaki UI State Pattern doğru mu?",
+                  "questionType": "multiple_choice",
+                  "code": "data class UiState(\n    val isLoading: Boolean = false,\n    val error: String? = null,\n    val data: List<Item> = emptyList()\n)",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hayır, hatalı",
+                    "Evet, doğru UI State pattern",
+                    "Default değerler gereksiz",
+                    "data nullable olmalı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu doğru UI State pattern'idir. isLoading (loading state), error (error message), data (success data) tek data class'ta. Default değerler initial state'i sağlar.",
+                  "tags": ["ui_state", "example"]
+                }
+              ]
+            },
+            {
+              "topicId": 5803,
+              "title": "Compose + MVVM/MVI",
+              "summary": "Compose, MVVM ve MVI pattern'leri ile mükemmel uyum sağlar. ViewModel, StateFlow/State ile UI katmanını besler.",
+              "content": "## MVVM/MVI ile Compose\n\nMVVM: Model-View-ViewModel\nMVI: Model-View-Intent\n\nHer ikisi de Compose ile uyumlu.",
+              "difficulty": "hard",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "MVVM Örneği",
+                  "code": "@Composable\nfun Screen(viewModel: MyViewModel = viewModel()) {\n    val state by viewModel.uiState.collectAsState()\n    // UI based on state\n}",
+                  "explanation": "MVVM pattern ile Compose."
+                }
+              ],
+              "keyPoints": [
+                "MVVM ve MVI uyumlu",
+                "ViewModel + StateFlow",
+                "UDF prensibi",
+                "Separation of concerns"
+              ],
+              "questions": [
+                {
+                  "questionId": 580301,
+                  "question": "MVVM pattern'de ViewModel'in görevi nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "UI çizer",
+                    "Business logic ve UI state yönetir, View'dan bağımsızdır",
+                    "Sadece navigation",
+                    "Database yönetir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "MVVM'de ViewModel, business logic ve UI state'i yönetir. View (Composable)'dan bağımsızdır, configuration change'de hayatta kalır.",
+                  "tags": ["mvvm", "viewmodel"]
+                },
+                {
+                  "questionId": 580302,
+                  "question": "MVI pattern'de Intent nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Android Intent",
+                    "User action/event (örn: ButtonClicked, TextChanged)",
+                    "Sadece navigation",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "MVI'da Intent, user action/event'tir (örn: ButtonClicked, TextChanged). ViewModel Intent alır, state günceller. Compose'da event callback'leri Intent olarak kullanılır.",
+                  "tags": ["mvi", "intent"]
+                },
+                {
+                  "questionId": 580303,
+                  "question": "Compose hangi pattern'lerle uyumludur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece MVVM",
+                    "MVVM, MVI, MVP gibi birçok pattern ile uyumlu",
+                    "Sadece MVI",
+                    "Pattern kullanılamaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Compose, MVVM, MVI, MVP, Clean Architecture gibi birçok pattern ile uyumludur. Declarative nature sayesinde farklı architecture'larla kolayca entegre olur.",
+                  "tags": ["compose", "patterns", "architecture"]
+                },
+                {
+                  "questionId": 580304,
+                  "question": "MVVM + Compose'da data binding gerekir mi?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Evet, şart",
+                    "Hayır, Compose zaten reactive (StateFlow.collectAsState)",
+                    "Sadece XML'de",
+                    "Her zaman"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Compose'da XML Data Binding gerekmez. Compose zaten reactive'dir. StateFlow.collectAsState() ile state değiştiğinde UI otomatik güncellenir.",
+                  "tags": ["mvvm", "compose", "data_binding"]
+                }
+              ]
+            },
+            {
+              "topicId": 5804,
+              "title": "Recomposition & Performance",
+              "summary": "Recomposition optimizasyonu için stable types, remember, derivedStateOf, key kullanılır. Gereksiz recomposition önlenir.",
+              "content": "## Recomposition Optimization\n\nStable types kullan\nremember, derivedStateOf\nkey ile liste optimization\n\nPerformans için kritik.",
+              "difficulty": "hard",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "key ile Optimization",
+                  "code": "LazyColumn {\n    items(list, key = { it.id }) { item ->\n        ItemRow(item)\n    }\n}",
+                  "explanation": "key ile recomposition optimizasyonu."
+                }
+              ],
+              "keyPoints": [
+                "Stable types önemli",
+                "remember ile hesaplama cache",
+                "key ile liste optimization",
+                "Gereksiz recomposition önle"
+              ],
+              "questions": [
+                {
+                  "questionId": 580401,
+                  "question": "Stable type nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Değişmeyen tip",
+                    "Compose'un equals() ile değişikliği tespit edebildiği tip",
+                    "Sadece immutable",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Stable type, Compose'un equals() ile değişikliği tespit edebildiği tiptir. Primitive types, String, immutable data class'lar stable'dır. Stable type, smart recomposition sağlar.",
+                  "tags": ["recomposition", "stable_type"]
+                },
+                {
+                  "questionId": 580402,
+                  "question": "remember ile hesaplama neden cache'lenir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece görsel",
+                    "Her recomposition'da tekrar hesaplama önlenir, performance artar",
+                    "Zorunlu",
+                    "Hiçbir nedeni yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "remember, hesaplamayı cache'ler. Her recomposition'da tekrar hesaplama yapılmaz (pahalı işlem varsa önemli), bu da performance artışı sağlar.",
+                  "tags": ["remember", "performance", "cache"]
+                },
+                {
+                  "questionId": 580403,
+                  "question": "LazyColumn'da key kullanmanın amacı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece görsel",
+                    "Item'ları unique tanımlar, recomposition ve reorder optimizasyonu",
+                    "Zorunludur",
+                    "Hiçbir amacı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "key, her item'ı unique tanımlar. Liste değiştiğinde (ekleme, silme, reorder) Compose hangi item'ın değiştiğini bilir, gereksiz recomposition önler. Performance kritik.",
+                  "tags": ["lazycolumn", "key", "performance"]
+                },
+                {
+                  "questionId": 580404,
+                  "question": "@Stable annotation ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Hiçbir şey yapmaz",
+                    "Compose'a bir type'ın stable olduğunu bildirir (manual hint)",
+                    "Sadece görsel",
+                    "Otomatik"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "@Stable annotation, Compose compiler'a bir type'ın stable olduğunu manuel olarak bildirir. Compose otomatik tespit edemediği durumlarda kullanılır.",
+                  "tags": ["stable", "annotation", "performance"]
+                },
+                {
+                  "questionId": 580405,
+                  "question": "Recomposition scope nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Tüm UI recompose olur",
+                    "Sadece değişen state'i kullanan en küçük Composable scope recompose olur",
+                    "Sadece parent",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Recomposition scope: Sadece değişen state'i kullanan en küçük Composable scope recompose olur (smart recomposition). Tüm UI yeniden çizilmez, performans optimizasyonudur.",
+                  "tags": ["recomposition", "scope", "performance"]
+                }
+              ]
+            },
+            {
+              "topicId": 5805,
+              "title": "CompositionLocal",
+              "summary": "CompositionLocal, implicit dependency injection sağlar. Theme, context gibi değerleri composition tree'de paylaşır.",
+              "content": "## CompositionLocal\n\nImplicit dependency injection\nTree boyunca değer paylaşma\n\nLocalContext, LocalConfiguration vb.",
+              "difficulty": "hard",
+              "order": 5,
+              "codeExamples": [
+                {
+                  "title": "CompositionLocal Kullanımı",
+                  "code": "val context = LocalContext.current\nval configuration = LocalConfiguration.current",
+                  "explanation": "Built-in CompositionLocal kullanımı."
+                }
+              ],
+              "keyPoints": [
+                "Implicit dependency injection",
+                "Tree-wide value sharing",
+                "Built-in: LocalContext vb.",
+                "Custom CompositionLocal oluşturulabilir"
+              ],
+              "questions": [
+                {
+                  "questionId": 580501,
+                  "question": "CompositionLocal ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece state",
+                    "Implicit dependency injection, composition tree boyunca değer paylaşma",
+                    "Sadece theme",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "CompositionLocal, implicit dependency injection sağlar. Değer composition tree'de (parent'tan child'lara) otomatik olarak iletilir, her Composable'a parametre geçmek gerekmez.",
+                  "tags": ["compositionlocal", "dependency_injection"]
+                },
+                {
+                  "questionId": 580502,
+                  "question": "LocalContext.current ne döner?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Application Context",
+                    "Current composition'ın Context'i",
+                    "Null",
+                    "Activity"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "LocalContext.current, mevcut composition'ın Context'ini döner. Composable içinde Context'e erişmek için kullanılır.",
+                  "tags": ["compositionlocal", "localcontext"]
+                },
+                {
+                  "questionId": 580503,
+                  "question": "Custom CompositionLocal nasıl oluşturulur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Oluşturulamaz",
+                    "compositionLocalOf() veya staticCompositionLocalOf() ile",
+                    "Sadece built-in",
+                    "Otomatik"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Custom CompositionLocal, compositionLocalOf() (dynamic) veya staticCompositionLocalOf() (static) ile oluşturulur. CompositionLocalProvider ile değer sağlanır.",
+                  "tags": ["compositionlocal", "custom"]
+                },
+                {
+                  "questionId": 580504,
+                  "question": "CompositionLocal ne zaman kullanılmalıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Her zaman",
+                    "Tree-wide shared değerler için (theme, context, configuration), dikkatli kullanılmalı",
+                    "Hiçbir zaman",
+                    "Sadece theme"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "CompositionLocal, tree-wide shared değerler için (theme, context, configuration) kullanılmalıdır. Overuse edilmemeli, explicit parameter passing tercih edilmeli (testability için).",
+                  "tags": ["compositionlocal", "best_practice"]
+                }
+              ]
+            }
+          ],
+          "sectionMixedQuestions": [
+            {
+              "questionId": 580001,
+              "question": "Side-effect free Composable nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Her zaman side-effect var",
+                "Aynı input'ta her zaman aynı output, side-effect yok (idempotent)",
+                "Sadece pure function",
+                "Hiçbiri"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Side-effect free Composable, aynı input'ta her zaman aynı output üretir, dış dünyayı etkilemez (idempotent). Recomposition safe'dir. LaunchedEffect gibi API'larla side-effect kontrollü yapılır.",
+              "tags": ["composable", "side_effect", "best_practice"]
+            },
+            {
+              "questionId": 580002,
+              "question": "Compose'da dependency injection için hangi yaklaşım tercih edilir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "CompositionLocal her yerde",
+                "Hilt (constructor injection) + explicit parameters, CompositionLocal dikkatli",
+                "Sadece global state",
+                "DI kullanılmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Best practice: Hilt ile ViewModel'e constructor injection + Composable'lara explicit parameter passing. CompositionLocal sadece tree-wide shared değerler için (theme, context). Testability için önemli.",
+              "tags": ["dependency_injection", "best_practice"]
+            },
+            {
+              "questionId": 580003,
+              "question": "Composable naming convention nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "camelCase",
+                "PascalCase (Capital letter ile başlar)",
+                "snake_case",
+                "Fark etmez"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Composable fonksiyonlar PascalCase ile (Capital letter ile başlayarak) isimlendirilir. Bu, UI bileşeni olduğunu gösterir ve Kotlin convention'ıdır.",
+              "tags": ["naming", "convention"]
+            },
+            {
+              "questionId": 580004,
+              "question": "Stateless vs Stateful Composable tercihi nasıl olmalıdır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Her zaman stateful",
+                "Stateless tercih edilir (reusable, testable), stateful wrapper pattern",
+                "Her zaman stateless",
+                "Fark etmez"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Best practice: Stateless Composable tercih edilir (reusable, testable). Stateful wrapper pattern kullanılır: stateful wrapper, internal state'i yönetir ve stateless Composable'ı çağırır.",
+              "tags": ["stateless", "stateful", "best_practice"]
+            },
+            {
+              "questionId": 580005,
+              "question": "@Preview Composable production kodunda kullanılabilir mi?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Evet, sorun yok",
+                "Hayır, @Preview sadece preview için, production Composable ayrı olmalı",
+                "Her zaman kullanılmalı",
+                "Fark etmez"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Best practice: @Preview fonksiyonu sadece preview için olmalı, production Composable'ı çağırmalı. Preview fonksiyonu production'da çağrılmamalı (hardcoded data içerir).",
+              "tags": ["preview", "best_practice"]
+            },
+            {
+              "questionId": 580006,
+              "question": "Compose'da ViewBinding kullanılmalı mı?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Evet, her zaman",
+                "Hayır, Compose'da ViewBinding gerekmez (findViewById de yok)",
+                "Zorunlu",
+                "Sadece Activity'de"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Compose'da ViewBinding gerekmez. XML kullanılmaz, findViewById yoktur. State ile direkt erişim vardır.",
+              "tags": ["viewbinding", "compose"]
+            },
+            {
+              "questionId": 580007,
+              "question": "Modifier.then() ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir şey yapmaz",
+                "Conditional modifier eklemek için (if/else ile modifier chain)",
+                "Sadece animasyon",
+                "Hiçbiri"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Modifier.then(), conditional modifier eklemek için kullanılır: Modifier.then(if (condition) Modifier.padding(16.dp) else Modifier). Modifier chain'de conditional logic sağlar.",
+              "tags": ["modifier", "then", "conditional"]
+            },
+            {
+              "questionId": 580008,
+              "question": "Compose'da memory leak'ten kaçınmak için ne yapılmalıdır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir şey gerekmez",
+                "Lifecycle-aware scope (viewModelScope, lifecycleScope), DisposableEffect cleanup",
+                "Sadece remember",
+                "Global state kullan"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Memory leak önlemek için: Lifecycle-aware scope kullan (viewModelScope, lifecycleScope), DisposableEffect ile cleanup yap, CompositionLocal overuse etme, ViewModel'de Context tutma.",
+              "tags": ["memory_leak", "best_practice"]
+            },
+            {
+              "questionId": 580009,
+              "question": "Compose performance profiling için hangi tool kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece log",
+                "Android Studio Layout Inspector, Recomposition Count overlay",
+                "Sadece emülatör",
+                "Hiçbiri"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Compose performance profiling için: Android Studio Layout Inspector (recomposition count, composition tree), Recomposition Count overlay (developer options), Systrace kullanılır.",
+              "tags": ["performance", "profiling", "tools"]
+            },
+            {
+              "questionId": 580010,
+              "question": "Production Compose app checklist'inde ne olmalıdır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece kod yaz",
+                "ProGuard/R8, performance test, accessibility, dark mode, memory leak check",
+                "Sadece test",
+                "Hiçbir şey gerekmez"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Production checklist: ProGuard/R8 enable, performance test (recomposition), accessibility (contentDescription, semantics), dark mode support, memory leak check, large screen support.",
+              "tags": ["production", "checklist", "best_practice"]
+            }
+          ]
         }
       ],
-      "interviewQuestions": []
+      "interviewQuestions": [
+        {
+          "questionId": 590001,
+          "question": "@Composable fonksiyon nedir ve nasıl çalışır?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Normal fonksiyon",
+            "UI bileşeni oluşturan, Compose compiler tarafından özel işlenen fonksiyon",
+            "Sadece annotation",
+            "Hiçbiri"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "@Composable, fonksiyonu UI bileşeni yapar. Compose compiler bu fonksiyonları özel şekilde işler, recomposition mekanizmasını ekler. Sadece başka @Composable içinden çağrılabilir.",
+          "tags": ["composable", "fundamentals"]
+        },
+        {
+          "questionId": 590002,
+          "question": "Recomposition nedir ve ne zaman tetiklenir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "İlk composition",
+            "State değiştiğinde Composable'ın yeniden çizilmesi",
+            "Activity restart",
+            "Manuel çağrı"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Recomposition, state değiştiğinde Compose'un o state'i kullanan Composable'ları yeniden çizmesidir. Smart recomposition ile sadece değişen state'i kullanan en küçük scope recompose olur.",
+          "tags": ["recomposition", "state"]
+        },
+        {
+          "questionId": 590003,
+          "question": "remember ve rememberSaveable arasındaki fark nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Hiçbir fark yok",
+            "rememberSaveable configuration change'lerde korur, remember korumaz",
+            "remember daha güçlü",
+            "rememberSaveable kullanımdan kalkmış"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "remember sadece recomposition'da korur. rememberSaveable, configuration change (ekran döndürme) ve process death'de state'i korur (Bundle'a kaydeder).",
+          "tags": ["remember", "remembersaveable", "state"]
+        },
+        {
+          "questionId": 590004,
+          "question": "State Hoisting nedir ve neden önemlidir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "State silme",
+            "State'i child'dan parent'a taşıyarak stateless, reusable Composable oluşturma",
+            "State oluşturma",
+            "Hiçbiri"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "State Hoisting, state'i child'dan parent'a taşıyarak child'ı stateless ve reusable yapar. Unidirectional Data Flow, testability ve single source of truth sağlar.",
+          "tags": ["state_hoisting", "architecture"]
+        },
+        {
+          "questionId": 590005,
+          "question": "LaunchedEffect ve DisposableEffect arasındaki fark nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Hiçbir fark yok",
+            "LaunchedEffect coroutine başlatır, DisposableEffect cleanup gerektiğinde kullanılır",
+            "Aynı şey",
+            "LaunchedEffect deprecated"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "LaunchedEffect, coroutine başlatır ve side-effect yapar. DisposableEffect, cleanup gerektiren side-effect'ler için kullanılır (listener add/remove). onDispose bloğu cleanup yapar.",
+          "tags": ["side_effect", "launchedeffect", "disposableeffect"]
+        },
+        {
+          "questionId": 590006,
+          "question": "collectAsState ve collectAsStateWithLifecycle arasındaki fark nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Hiçbir fark yok",
+            "collectAsStateWithLifecycle lifecycle-aware, app background'da collect durur",
+            "collectAsState daha hızlı",
+            "Aynı şey"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "collectAsStateWithLifecycle, lifecycle-aware'dır. App background'a gittiğinde (onStop) collect durur, memory ve battery optimizasyonu sağlar. collectAsState her zaman collect eder.",
+          "tags": ["flow", "collectasstate", "lifecycle"]
+        },
+        {
+          "questionId": 590007,
+          "question": "Modifier sıralaması neden önemlidir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Hiç önemli değil",
+            "Modifier'lar soldan sağa uygulanır, sıralama sonucu değiştirir",
+            "Sadece performans",
+            "Her zaman aynı"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Modifier sıralaması çok önemlidir. Soldan sağa uygulanır. Örneğin: padding sonra background farklı, background sonra padding farklı görsel sonuç verir.",
+          "tags": ["modifier", "order"]
+        },
+        {
+          "questionId": 590008,
+          "question": "LazyColumn ve Column arasındaki fark nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Hiçbir fark yok",
+            "LazyColumn lazy loading yapar (sadece görünen item'lar), Column tüm child'ları render eder",
+            "Column daha performanslı",
+            "LazyColumn deprecated"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "LazyColumn, lazy loading yapar (RecyclerView gibi). Sadece görünen item'lar render edilir, performanslıdır. Column tüm child'ları baştan render eder, büyük listelerde performans sorunu yaratır.",
+          "tags": ["lazycolumn", "column", "performance"]
+        },
+        {
+          "questionId": 590009,
+          "question": "Material 3 (Material You) nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "easy",
+          "options": [
+            "Veritabanı",
+            "Google'ın güncel Material Design versiyonu, dinamik renk desteği",
+            "Network library",
+            "Test framework"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Material 3 (Material You), Google'ın güncel Material Design versiyonudur. Dinamik renk (wallpaper bazlı), modern UI bileşenleri ve yuvarlak köşeler sunar.",
+          "tags": ["material3", "design"]
+        },
+        {
+          "questionId": 590010,
+          "question": "Navigation Component'ta route nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Veritabanı tablosu",
+            "Her ekranın unique string adresi (örn: 'home', 'profile/{id}')",
+            "Network endpoint",
+            "UI bileşeni"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Route, Navigation Component'ta her ekranın unique string adresidir. URL path gibi çalışır ve path parameter ile veri geçişi yapılabilir.",
+          "tags": ["navigation", "route"]
+        },
+        {
+          "questionId": 590011,
+          "question": "ViewModel Compose'da neden kullanılır?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Sadece UI çizer",
+            "Business logic ve state yönetir, configuration change'de hayatta kalır",
+            "Sadece navigation",
+            "Hiçbiri"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "ViewModel, business logic ve UI state'i yönetir. Configuration change (ekran döndürme)'de hayatta kalır, UI'dan (Composable) bağımsızdır. MVVM pattern'in temelidir.",
+          "tags": ["viewmodel", "mvvm"]
+        },
+        {
+          "questionId": 590012,
+          "question": "derivedStateOf ne işe yarar?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "State oluşturur",
+            "Başka state'lerden türetilen state oluşturur, gereksiz recomposition önler",
+            "State siler",
+            "Hiçbir şey yapmaz"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "derivedStateOf, başka state'lerden türetilen state oluşturur. Sadece sonuç değiştiğinde recomposition tetikler, ara hesaplamalar tetiklemez. Performance optimizasyonu sağlar.",
+          "tags": ["derivedstateof", "performance"]
+        },
+        {
+          "questionId": 590013,
+          "question": "Canvas Composable ne için kullanılır?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Sadece layout",
+            "Custom çizim, grafik, chart oluşturma (low-level drawing)",
+            "Sadece image",
+            "Hiçbiri"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Canvas, low-level drawing API sağlar. Custom grafik, chart, drawing app, game rendering gibi use case'ler için kullanılır. drawCircle, drawRect, drawPath gibi fonksiyonlar sunar.",
+          "tags": ["canvas", "drawing"]
+        },
+        {
+          "questionId": 590014,
+          "question": "Unidirectional Data Flow (UDF) ne demektir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Çift yönlü akış",
+            "State yukarıdan aşağı (↓), Event aşağıdan yukarı (↑) tek yönlü akış",
+            "Sadece state",
+            "Hiçbiri"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "UDF, state'in parent'tan child'a aşağı indiği (↓), event'lerin child'dan parent'a yukarı çıktığı (↑) tek yönlü veri akışıdır. Predictable state management sağlar.",
+          "tags": ["udf", "architecture"]
+        },
+        {
+          "questionId": 590015,
+          "question": "CompositionLocal ne işe yarar?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Sadece state",
+            "Implicit dependency injection, composition tree boyunca değer paylaşma",
+            "Sadece theme",
+            "Hiçbir şey yapmaz"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "CompositionLocal, implicit dependency injection sağlar. Theme, context, configuration gibi tree-wide shared değerleri composition tree boyunca paylaşır. LocalContext, LocalConfiguration vb.",
+          "tags": ["compositionlocal", "dependency_injection"]
+        },
+        {
+          "questionId": 590016,
+          "question": "Stable type nedir ve neden önemlidir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Sadece immutable",
+            "Compose'un equals() ile değişikliği tespit edebildiği tip, smart recomposition sağlar",
+            "Her tip stable",
+            "Hiçbiri"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Stable type, Compose'un equals() ile değişikliği tespit edebildiği tiptir. Primitive types, String, immutable data class stable'dır. Smart recomposition ve performance için kritiktir.",
+          "tags": ["stable_type", "performance"]
+        },
+        {
+          "questionId": 590017,
+          "question": "animate*AsState ne işe yarar?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Sadece state",
+            "State değişimini otomatik animate eder (declarative animation)",
+            "Manuel animasyon",
+            "Hiçbir şey yapmaz"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "animate*AsState (animateFloatAsState, animateDpAsState vb.), target state değiştiğinde otomatik olarak smooth animasyon yapar. Declarative animation API'dır.",
+          "tags": ["animation", "animate_as_state"]
+        },
+        {
+          "questionId": 590018,
+          "question": "pointerInput ne işe yarar?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Sadece clickable",
+            "Custom gesture detection, low-level touch event handling",
+            "Sadece drag",
+            "Hiçbir şey yapmaz"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "pointerInput, custom gesture detection için low-level touch event handling sağlar. detectTapGestures, detectDragGestures, detectTransformGestures gibi helper'lar vardır.",
+          "tags": ["gesture", "pointerinput"]
+        },
+        {
+          "questionId": 590019,
+          "question": "Compose ve XML birlikte kullanılabilir mi?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Hayır, sadece Compose veya XML",
+            "Evet, ComposeView ve AndroidView ile interoperability mümkün",
+            "Sadece yeni projelerde",
+            "Kullanılamaz"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Evet, Compose ve XML birlikte kullanılabilir (interoperability). ComposeView ile XML'de Compose, AndroidView ile Compose'da XML kullanılır. Migration aşamalı yapılabilir.",
+          "tags": ["interoperability", "xml", "compose"]
+        },
+        {
+          "questionId": 590020,
+          "question": "Compose'da performance optimize etmek için en önemli 3 yaklaşım nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Sadece remember kullan",
+            "Stable types, remember/derivedStateOf, key kullanımı",
+            "Sadece key kullan",
+            "Optimization gerekmez"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Compose performance için: 1) Stable types kullan (immutable data class), 2) remember/derivedStateOf ile gereksiz hesaplama önle, 3) LazyColumn'da key kullan. Bu 3 yaklaşım en kritik optimizasyonlardır.",
+          "tags": ["performance", "optimization", "best_practice"]
+        }
+      ]
     }
   ]
 }
