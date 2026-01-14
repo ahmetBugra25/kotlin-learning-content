@@ -53,7 +53,7 @@
             ],
             "questions": []
             }
-        ],
+          ],
         "sectionMixedQuestions": []
         },
         {
@@ -16771,6 +16771,3178 @@
           "tags": ["modularization", "circular_dependency", "gradle"]
         }
       ]
+    },
+    {
+      "categoryId": 4,
+      "categoryTitle": "Jetpack Compose",
+      "categoryDescription": "Modern UI geliştirme için Jetpack Compose kütüphanesini öğrenin.",
+      "order": 1,
+      "sections": [
+        {
+          "sectionId": 5100,
+          "sectionTitle": "Compose Temelleri",
+          "sectionDescription": "Jetpack Compose'un temel yapısı, declarative UI yaklaşımı ve temel UI bileşenleri",
+          "order": 1,
+          "topics": [
+            {
+              "topicId": 5101,
+              "title": "Compose Nedir ve Neden Compose",
+              "summary": "Jetpack Compose, Android için modern, declarative (bildirimsel) bir UI toolkit'tir. XML yerine Kotlin kod ile UI oluşturmayı sağlar.",
+              "content": "## Compose Nedir\n\nCompose, Google tarafından geliştirilen resmi modern UI framework'üdür.\n\nDeclarative (bildirimsel) yaklaşım kullanır.\n\nDaha az kod, daha kolay bakım ve daha güçlü UI sağlar.",
+              "difficulty": "easy",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Basit Compose Örneği",
+                  "code": "@Composable\nfun Greeting() {\n    Text(text = \"Merhaba Compose!\")\n}",
+                  "explanation": "Compose'da UI Kotlin fonksiyonları ile oluşturulur."
+                }
+              ],
+              "keyPoints": [
+                "Modern Android UI framework'ü",
+                "Declarative yaklaşım kullanır",
+                "XML yerine Kotlin ile UI",
+                "Daha az boilerplate kod"
+              ],
+              "questions": [
+                {
+                  "questionId": 510101,
+                  "question": "Jetpack Compose nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Veritabanı kütüphanesi",
+                    "Android için modern, declarative UI toolkit",
+                    "Network kütüphanesi",
+                    "Test framework'ü"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Jetpack Compose, Android için Google tarafından geliştirilen modern, declarative (bildirimsel) UI toolkit'tir.",
+                  "tags": ["compose", "temel"]
+                },
+                {
+                  "questionId": 510102,
+                  "question": "Compose'un XML'e göre avantajları nelerdir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece daha hızlı",
+                    "Daha az kod, Kotlin'in gücü, daha kolay bakım, type-safe",
+                    "Sadece görsel",
+                    "Hiçbir avantajı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Compose, daha az kod, Kotlin'in gücünü kullanma, daha kolay bakım, type-safety ve declarative yaklaşım avantajları sunar.",
+                  "tags": ["compose", "advantages", "xml"]
+                },
+                {
+                  "questionId": 510103,
+                  "question": "Compose hangi programlama dili ile yazılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Java",
+                    "Kotlin",
+                    "XML",
+                    "JavaScript"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Jetpack Compose, Kotlin ile yazılır. XML kullanılmaz, UI tamamen Kotlin kodu ile oluşturulur.",
+                  "tags": ["compose", "kotlin"]
+                },
+                {
+                  "questionId": 510104,
+                  "question": "Compose hangi şirket tarafından geliştirilmiştir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Facebook",
+                    "Google",
+                    "Microsoft",
+                    "Apple"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Jetpack Compose, Google tarafından geliştirilmiş resmi Android UI framework'üdür.",
+                  "tags": ["compose", "google"]
+                },
+                {
+                  "questionId": 510105,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "@Composable\nfun Greeting() {\n    Text(text = \"Merhaba Compose!\")\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hata verir",
+                    "Ekrana 'Merhaba Compose!' metnini gösterir",
+                    "Sadece log yazdırır",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu Composable fonksiyon, ekrana 'Merhaba Compose!' metnini gösteren bir Text bileşeni oluşturur.",
+                  "tags": ["compose", "text", "example"]
+                }
+              ]
+            },
+            {
+              "topicId": 5102,
+              "title": "Declarative vs Imperative UI",
+              "summary": "Declarative UI, 'nasıl' değil 'ne' istediğini söyler. Compose declarative, XML imperative yaklaşımdır.",
+              "content": "## Declarative vs Imperative\n\nDeclarative: UI'ın son halini tanımla, framework halleder.\n\nImperative: UI'ı adım adım oluştur, her değişikliği manuel yap.\n\nCompose declarative, XML imperative'dir.",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [],
+              "keyPoints": [
+                "Declarative 'ne' istediğini söyler",
+                "Imperative 'nasıl' yapılacağını söyler",
+                "Compose declarative yaklaşım",
+                "Daha az hata, daha kolay bakım"
+              ],
+              "questions": [
+                {
+                  "questionId": 510201,
+                  "question": "Declarative UI nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "UI'ı adım adım oluşturma",
+                    "UI'ın son halini tanımlama, framework'ün nasıl yapacağını belirlemesi",
+                    "Sadece XML kullanma",
+                    "Manuel UI güncelleme"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Declarative UI, 'nasıl' değil 'ne' istediğini söyler. UI'ın son halini tanımlarsınız, framework nasıl yapılacağını halleder.",
+                  "tags": ["declarative", "ui"]
+                },
+                {
+                  "questionId": 510202,
+                  "question": "Imperative UI nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "UI'ın son halini tanımlama",
+                    "UI'ı adım adım oluşturma ve her değişikliği manuel yapma",
+                    "Sadece Compose kullanma",
+                    "Otomatik UI güncelleme"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Imperative UI, 'nasıl' yapılacağını söyler. UI'ı adım adım oluşturur ve her değişikliği manuel yaparsınız (findViewById, setText vb.).",
+                  "tags": ["imperative", "ui"]
+                },
+                {
+                  "questionId": 510203,
+                  "question": "XML hangi yaklaşımı kullanır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Declarative",
+                    "Imperative (findViewById, setText vb. ile manuel güncelleme)",
+                    "Her ikisi de",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "XML, UI tanımı declarative olsa da güncelleme imperative'dir (findViewById, setText gibi manuel işlemler). Compose ise tamamen declarative'dir.",
+                  "tags": ["xml", "imperative"]
+                },
+                {
+                  "questionId": 510204,
+                  "question": "Declarative yaklaşımın avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece daha hızlı",
+                    "Daha az hata, daha kolay bakım, state değişince UI otomatik güncellenir",
+                    "Sadece daha az kod",
+                    "Hiçbir avantajı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Declarative yaklaşımda, state değişince UI otomatik güncellenir (recomposition). Bu, daha az hata, daha kolay bakım ve tutarlı UI sağlar.",
+                  "tags": ["declarative", "advantages"]
+                }
+              ]
+            },
+            {
+              "topicId": 5103,
+              "title": "@Composable Fonksiyonlar",
+              "summary": "@Composable annotation'ı ile işaretlenen fonksiyonlar UI oluşturur. Compose'un temel yapı taşıdır.",
+              "content": "## @Composable\n\n@Composable annotation'ı fonksiyonu UI bileşeni yapar.\n\nSadece başka @Composable içinden çağrılabilir.\n\nCapital letter ile başlamalıdır (convention).",
+              "difficulty": "easy",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "@Composable Fonksiyon",
+                  "code": "@Composable\nfun MyButton() {\n    Button(onClick = { }) {\n        Text(\"Tıkla\")\n    }\n}",
+                  "explanation": "Composable fonksiyon tanımlama."
+                }
+              ],
+              "keyPoints": [
+                "UI bileşeni oluşturur",
+                "Sadece Composable içinden çağrılır",
+                "Capital letter convention",
+                "Return type yok (Unit)"
+              ],
+              "questions": [
+                {
+                  "questionId": 510301,
+                  "question": "@Composable annotation'ı ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece görsel amaçlı",
+                    "Fonksiyonu UI bileşeni yapar, Compose compiler'a bildirir",
+                    "Test için kullanılır",
+                    "Hiçbir işe yaramaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "@Composable annotation'ı, fonksiyonu UI bileşeni yapar ve Compose compiler'a bu fonksiyonun özel şekilde işlenmesi gerektiğini bildirir.",
+                  "tags": ["composable", "annotation"]
+                },
+                {
+                  "questionId": 510302,
+                  "question": "@Composable fonksiyon nereden çağrılabilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Her yerden",
+                    "Sadece başka @Composable fonksiyon içinden",
+                    "Sadece Activity'den",
+                    "Sadece ViewModel'den"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "@Composable fonksiyonlar sadece başka @Composable fonksiyon içinden veya setContent { } bloğu içinden çağrılabilir.",
+                  "tags": ["composable", "scope"]
+                },
+                {
+                  "questionId": 510303,
+                  "question": "Composable fonksiyon isimlendirme convention'ı nasıldır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "camelCase (myButton)",
+                    "PascalCase - Capital letter ile başlamalı (MyButton)",
+                    "snake_case (my_button)",
+                    "Fark etmez"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Composable fonksiyonlar PascalCase ile (Capital letter ile başlayarak) isimlendirilir. Bu, Compose convention'ıdır ve UI bileşeni olduğunu gösterir.",
+                  "tags": ["composable", "naming", "convention"]
+                },
+                {
+                  "questionId": 510304,
+                  "question": "Composable fonksiyonun return type'ı ne olmalıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "View",
+                    "Unit (genellikle belirtilmez)",
+                    "String",
+                    "Int"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Composable fonksiyonlar genellikle Unit döner (hiçbir şey dönmez). UI bileşenini compose tree'ye ekler, return etmez.",
+                  "tags": ["composable", "return_type"]
+                },
+                {
+                  "questionId": 510305,
+                  "question": "Aşağıdaki kod doğru mu?",
+                  "questionType": "multiple_choice",
+                  "code": "@Composable\nfun MyButton() {\n    Button(onClick = { }) {\n        Text(\"Tıkla\")\n    }\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hayır, hatalı",
+                    "Evet, doğru Composable fonksiyon",
+                    "Sadece Preview'da çalışır",
+                    "Return type eksik"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu doğru bir Composable fonksiyondur. @Composable ile işaretlenmiş, PascalCase isimlendirme ve içinde başka Composable'lar (Button, Text) kullanılmış.",
+                  "tags": ["composable", "example", "button"]
+                }
+              ]
+            },
+            {
+              "topicId": 5104,
+              "title": "Preview & Tooling",
+              "summary": "@Preview annotation'ı ile Composable'ı Android Studio'da kod yazarken görüntüleyebilirsiniz.",
+              "content": "## Preview\n\n@Preview ile UI'ı emülatör açmadan görüntülersiniz.\n\nInteractive Preview ile tıklama test edilebilir.\n\nMulti-preview desteği vardır.",
+              "difficulty": "easy",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "Preview Örneği",
+                  "code": "@Preview(showBackground = true)\n@Composable\nfun GreetingPreview() {\n    Greeting()\n}",
+                  "explanation": "Preview ile Composable'ı görüntüleme."
+                }
+              ],
+              "keyPoints": [
+                "Emülatör gerektirmez",
+                "Hızlı UI geliştirme",
+                "Interactive preview mevcut",
+                "Multiple preview destekler"
+              ],
+              "questions": [
+                {
+                  "questionId": 510401,
+                  "question": "@Preview annotation'ı ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Uygulamayı başlatır",
+                    "Composable'ı Android Studio'da emülatör olmadan görüntüler",
+                    "Test yapar",
+                    "APK üretir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "@Preview annotation'ı, Composable'ı Android Studio'da emülatör veya cihaz gerektirmeden görüntülemenizi sağlar.",
+                  "tags": ["preview", "tooling"]
+                },
+                {
+                  "questionId": 510402,
+                  "question": "@Preview'ın avantajları nelerdir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece görsel",
+                    "Hızlı UI geliştirme, emülatör gerektirmez, multiple preview desteği",
+                    "Sadece test için",
+                    "Hiçbir avantajı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "@Preview, hızlı UI geliştirme sağlar, emülatör gerektirmez, birden fazla preview (dark mode, farklı ekran boyutları) destekler ve interactive preview sunar.",
+                  "tags": ["preview", "advantages"]
+                },
+                {
+                  "questionId": 510403,
+                  "question": "Aşağıdaki Preview kodu ne gösterir?",
+                  "questionType": "multiple_choice",
+                  "code": "@Preview(showBackground = true)\n@Composable\nfun GreetingPreview() {\n    Greeting()\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hiçbir şey göstermez",
+                    "Greeting Composable'ını beyaz arka plan ile preview'da gösterir",
+                    "Sadece kod hata kontrolü yapar",
+                    "Emülatörde çalıştırır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu kod, Greeting Composable'ını Android Studio'nun preview panelinde showBackground = true ile beyaz arka plan üzerinde gösterir.",
+                  "tags": ["preview", "example", "showbackground"]
+                }
+              ]
+            },
+            {
+              "topicId": 5105,
+              "title": "Temel UI Elementleri (Text, Button, Image)",
+              "summary": "Compose'da Text, Button, Image gibi temel UI bileşenleri Composable fonksiyonlar olarak sunulur.",
+              "content": "## Temel UI Elementleri\n\nText: Metin gösterir\nButton: Tıklanabilir buton\nImage: Resim gösterir\n\nHer biri özelleştirilebilir Composable'dır.",
+              "difficulty": "easy",
+              "order": 5,
+              "codeExamples": [
+                {
+                  "title": "Temel Bileşenler",
+                  "code": "@Composable\nfun BasicUI() {\n    Text(text = \"Merhaba\")\n    Button(onClick = { }) { Text(\"Tıkla\") }\n    Image(painter = painterResource(R.drawable.logo))\n}",
+                  "explanation": "Temel UI bileşenleri kullanımı."
+                }
+              ],
+              "keyPoints": [
+                "Text metin gösterir",
+                "Button tıklama alır",
+                "Image resim gösterir",
+                "Hepsi Composable fonksiyondur"
+              ],
+              "questions": [
+                {
+                  "questionId": 510501,
+                  "question": "Compose'da metin göstermek için hangi Composable kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "TextView",
+                    "Text",
+                    "Label",
+                    "String"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Compose'da metin göstermek için Text Composable kullanılır. XML'deki TextView'ın karşılığıdır.",
+                  "tags": ["text", "ui", "composable"]
+                },
+                {
+                  "questionId": 510502,
+                  "question": "Compose'da tıklanabilir buton oluşturmak için hangi Composable kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "ClickButton",
+                    "Button",
+                    "Clickable",
+                    "TouchButton"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Compose'da Button Composable kullanılır. onClick parametresi ile tıklama işlemi yönetilir.",
+                  "tags": ["button", "ui", "composable"]
+                },
+                {
+                  "questionId": 510503,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "Image(painter = painterResource(R.drawable.logo), contentDescription = \"Logo\")",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hata verir",
+                    "Drawable'dan logo resmini gösterir",
+                    "Sadece URL'den resim gösterir",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Image Composable, painterResource ile drawable klasöründeki logo resmini gösterir. contentDescription accessibility için önemlidir.",
+                  "tags": ["image", "ui", "composable"]
+                }
+              ]
+            }
+          ],
+          "sectionMixedQuestions": [
+            {
+              "questionId": 510001,
+              "question": "Compose'da Activity'ye UI eklemek için hangi metot kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "setContentView()",
+                "setContent { }",
+                "addComposable()",
+                "composeUI()"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Compose'da Activity'ye UI eklemek için setContent { } bloğu kullanılır. XML'deki setContentView()'in yerini alır.",
+              "tags": ["activity", "setcontent"]
+            },
+            {
+              "questionId": 510002,
+              "question": "Compose'un minimum Android API seviyesi nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "API 16",
+                "API 21",
+                "API 26",
+                "API 30"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Jetpack Compose, minimum Android API 21 (Lollipop) gerektirir.",
+              "tags": ["compose", "api_level"]
+            },
+            {
+              "questionId": 510003,
+              "question": "Compose'da UI güncellenmesi nasıl olur?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "findViewById ve setText ile",
+                "State değiştiğinde otomatik recomposition ile",
+                "Manuel refresh çağrısı ile",
+                "Activity yeniden başlatılır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Compose'da state değiştiğinde UI otomatik olarak güncellenir (recomposition). Manuel güncelleme gerekmez, bu declarative yaklaşımın temelidir.",
+              "tags": ["compose", "recomposition", "state"]
+            },
+            {
+              "questionId": 510004,
+              "question": "Compose projesi oluştururken hangi bağımlılık eklenir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "androidx.appcompat",
+                "androidx.compose.ui:ui",
+                "androidx.legacy",
+                "com.android.compose"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Compose projesi için androidx.compose.ui:ui, androidx.compose.material3:material3 gibi Compose bağımlılıkları eklenir.",
+              "tags": ["compose", "dependency", "setup"]
+            },
+            {
+              "questionId": 510005,
+              "question": "Composable fonksiyonlar kaç kez çağrılabilir (recompose edilebilir)?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece 1 kez",
+                "Herhangi bir sayıda, state değiştiğinde veya parent recompose olduğunda",
+                "En fazla 2 kez",
+                "Hiç çağrılmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Composable fonksiyonlar herhangi bir sayıda recompose edilebilir. State değiştiğinde, parent recompose olduğunda veya başka nedenlerle tekrar çağrılabilir. Bu nedenle side-effect'siz olmalıdır.",
+              "tags": ["composable", "recomposition"]
+            },
+            {
+              "questionId": 510006,
+              "question": "Compose'da findViewById kullanılır mı?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Evet, her zaman",
+                "Hayır, Compose'da ID ve findViewById yoktur",
+                "Sadece test için",
+                "Sadece Activity'de"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Compose'da findViewById kullanılmaz. XML'deki ID kavramı yoktur. UI'a doğrudan state ile erişilir, declarative yaklaşım kullanılır.",
+              "tags": ["compose", "findviewbyid"]
+            },
+            {
+              "questionId": 510007,
+              "question": "@Preview ile cihazda çalışan kodu test edebilir miyiz?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Evet, tam test",
+                "Hayır, sadece UI görünümü, logic çalışmaz (ViewModel vb.)",
+                "Her şeyi test eder",
+                "Preview sadece layout içindir"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "@Preview sadece UI görünümünü gösterir. ViewModel, network, database gibi logic'ler çalışmaz. Interactive preview ile basit tıklama test edilebilir ama tam test değildir.",
+              "tags": ["preview", "testing"]
+            },
+            {
+              "questionId": 510008,
+              "question": "Compose'da contentDescription neden önemlidir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece görsel",
+                "Accessibility (erişilebilirlik) için, screen reader'lar içeriği okur",
+                "Performans için",
+                "Hiçbir önemi yok"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "contentDescription, accessibility (erişilebilirlik) için kritiktir. Screen reader'lar (TalkBack) bu açıklamayı okur. Image gibi görsel bileşenlerde mutlaka kullanılmalıdır.",
+              "tags": ["accessibility", "contentdescription"]
+            },
+            {
+              "questionId": 510009,
+              "question": "Compose XML'i tamamen değiştirir mi?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Evet, XML artık hiç kullanılamaz",
+                "Hayır, Compose ve XML birlikte kullanılabilir (interoperability)",
+                "Sadece yeni projelerde",
+                "XML daha iyi"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Compose ve XML birlikte kullanılabilir (interoperability). ComposeView ile XML'de Compose, AndroidView ile Compose'da XML kullanılabilir. Migration aşamalı yapılabilir.",
+              "tags": ["compose", "xml", "interoperability"]
+            },
+            {
+              "questionId": 510010,
+              "question": "Compose'un stable sürümü ne zaman yayınlandı?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "2019",
+                "2021 (1.0.0)",
+                "2022",
+                "Henüz stable değil"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Jetpack Compose'un ilk stable sürümü (1.0.0) Temmuz 2021'de yayınlandı. Production kullanımı için hazırdır.",
+              "tags": ["compose", "history", "stable"]
+            }
+          ]
+        },
+        {
+          "sectionId": 5200,
+          "sectionTitle": "Layout & UI Components",
+          "sectionDescription": "Compose'da layout düzenleme, Modifier kullanımı ve temel UI bileşenleri",
+          "order": 2,
+          "topics": [
+            {
+              "topicId": 5201,
+              "title": "Row, Column, Box",
+              "summary": "Row, Column ve Box, Compose'un temel layout bileşenleridir. XML'deki LinearLayout ve FrameLayout'a benzer işlevlere sahiptir.",
+              "content": "## Layout Bileşenleri\n\nRow: Yatay dizilim\nColumn: Dikey dizilim\nBox: Üst üste bindirme\n\nBunlar Compose'un temel layout building block'larıdır.",
+              "difficulty": "easy",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Row, Column, Box Kullanımı",
+                  "code": "Row { Text(\"A\"); Text(\"B\") } // Yatay\nColumn { Text(\"A\"); Text(\"B\") } // Dikey\nBox { Text(\"Üstte\"); Text(\"Altta\") } // Üst üste",
+                  "explanation": "Temel layout bileşenleri."
+                }
+              ],
+              "keyPoints": [
+                "Row yatay dizilim sağlar",
+                "Column dikey dizilim sağlar",
+                "Box üst üste bindirme sağlar",
+                "LinearLayout ve FrameLayout alternatifi"
+              ],
+              "questions": [
+                {
+                  "questionId": 520101,
+                  "question": "Row Composable ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Dikey dizilim",
+                    "Yatay dizilim (horizontal)",
+                    "Üst üste bindirme",
+                    "Grid yapısı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Row, child Composable'ları yatay (horizontal) olarak yan yana dizer.",
+                  "tags": ["row", "layout"]
+                },
+                {
+                  "questionId": 520102,
+                  "question": "Column Composable ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Yatay dizilim",
+                    "Dikey dizilim (vertical)",
+                    "Üst üste bindirme",
+                    "Grid yapısı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Column, child Composable'ları dikey (vertical) olarak alt alta dizer.",
+                  "tags": ["column", "layout"]
+                },
+                {
+                  "questionId": 520103,
+                  "question": "Box Composable ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Yatay dizilim",
+                    "Dikey dizilim",
+                    "Üst üste bindirme (stack/overlay)",
+                    "Tek child"
+                  ],
+                  "correctAnswerIndex": 2,
+                  "explanation": "Box, child Composable'ları üst üste bindirir (z-index mantığı). XML'deki FrameLayout'a benzer.",
+                  "tags": ["box", "layout"]
+                },
+                {
+                  "questionId": 520104,
+                  "question": "Row'un XML'deki karşılığı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "FrameLayout",
+                    "LinearLayout (horizontal)",
+                    "RelativeLayout",
+                    "ConstraintLayout"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Row, XML'deki LinearLayout (android:orientation=\"horizontal\") ile aynı işlevi görür.",
+                  "tags": ["row", "xml", "comparison"]
+                },
+                {
+                  "questionId": 520105,
+                  "question": "Aşağıdaki kod nasıl bir layout oluşturur?",
+                  "questionType": "multiple_choice",
+                  "code": "Row {\n    Text(\"A\")\n    Text(\"B\")\n    Text(\"C\")\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "Dikey: A, B, C",
+                    "Yatay: A B C",
+                    "Üst üste: A=B=C",
+                    "Hata verir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Row yatay dizilim yaptığı için Text'ler yan yana (A B C) görünür.",
+                  "tags": ["row", "example"]
+                }
+              ]
+            },
+            {
+              "topicId": 5202,
+              "title": "Modifier",
+              "summary": "Modifier, Composable'ların boyut, padding, background, tıklama gibi özelliklerini değiştirmek için kullanılır.",
+              "content": "## Modifier\n\nModifier, Composable'ları özelleştirmek için kullanılır.\n\nChain (zincir) yapısı ile birden fazla modifier uygulanabilir.\n\nSıralama önemlidir.",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "Modifier Kullanımı",
+                  "code": "Text(\n    text = \"Merhaba\",\n    modifier = Modifier\n        .padding(16.dp)\n        .background(Color.Blue)\n        .size(100.dp)\n)",
+                  "explanation": "Modifier ile padding, background ve size ekleme."
+                }
+              ],
+              "keyPoints": [
+                "Composable özelliklerini değiştirir",
+                "Chain yapısı destekler",
+                "Sıralama çok önemlidir",
+                "padding, size, background gibi birçok modifier var"
+              ],
+              "questions": [
+                {
+                  "questionId": 520201,
+                  "question": "Modifier ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece renk değiştirir",
+                    "Composable'ların boyut, padding, background gibi özelliklerini değiştirir",
+                    "Sadece layout için",
+                    "Hiçbir işe yaramaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Modifier, Composable'ların boyut, padding, background, tıklama, alignment gibi birçok özelliğini değiştirmek için kullanılır.",
+                  "tags": ["modifier", "temel"]
+                },
+                {
+                  "questionId": 520202,
+                  "question": "Modifier chain (zincir) yapısı ne demektir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Tek modifier kullanılır",
+                    "Birden fazla modifier arka arkaya (.) ile eklenebilir",
+                    "Sadece 2 modifier",
+                    "Modifier zincirlenemez"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Modifier chain, birden fazla modifier'ın arka arkaya (.) ile eklenmesidir. Örnek: Modifier.padding(16.dp).background(Color.Blue).size(100.dp)",
+                  "tags": ["modifier", "chain"]
+                },
+                {
+                  "questionId": 520203,
+                  "question": "Modifier sıralaması neden önemlidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Hiç önemli değil",
+                    "Modifier'lar soldan sağa uygulanır, sıralama sonucu değiştirir",
+                    "Sadece performans için",
+                    "Her zaman aynı sonuç"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Modifier sıralaması çok önemlidir. Soldan sağa uygulanır. Örneğin padding sonra background farklı, background sonra padding farklı sonuç verir.",
+                  "tags": ["modifier", "order", "chain"]
+                },
+                {
+                  "questionId": 520204,
+                  "question": "Modifier.padding(16.dp) ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Margin ekler",
+                    "İç boşluk (padding) ekler",
+                    "Boyut değiştirir",
+                    "Background ekler"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Modifier.padding(), Composable'ın iç boşluğunu (padding) ekler. Her yönden (top, bottom, left, right) 16.dp boşluk.",
+                  "tags": ["modifier", "padding"]
+                },
+                {
+                  "questionId": 520205,
+                  "question": "Aşağıdaki modifier chain'de hangi sıralama doğrudur?",
+                  "questionType": "multiple_choice",
+                  "code": "Modifier.padding(16.dp).background(Color.Blue)",
+                  "difficulty": "medium",
+                  "options": [
+                    "Önce background, sonra padding",
+                    "Önce padding, sonra background (padding'li alanın tamamı mavi)",
+                    "Aynı anda uygulanır",
+                    "Sıralama fark etmez"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Modifier'lar soldan sağa uygulanır. Önce 16.dp padding eklenir, sonra background uygulanır. Bu nedenle padding'li alanın tamamı mavi olur.",
+                  "tags": ["modifier", "order", "example"]
+                }
+              ]
+            },
+            {
+              "topicId": 5203,
+              "title": "LazyColumn & LazyRow",
+              "summary": "LazyColumn ve LazyRow, RecyclerView'ın Compose karşılığıdır. Büyük listeleri performanslı şekilde gösterir.",
+              "content": "## LazyColumn & LazyRow\n\nLazyColumn: Dikey scroll liste\nLazyRow: Yatay scroll liste\n\nSadece görünen item'lar render edilir (lazy loading).",
+              "difficulty": "medium",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "LazyColumn Örneği",
+                  "code": "LazyColumn {\n    items(100) { index ->\n        Text(\"Item $index\")\n    }\n}",
+                  "explanation": "100 item'lık scroll edilebilir liste."
+                }
+              ],
+              "keyPoints": [
+                "RecyclerView alternatifi",
+                "Lazy loading (sadece görünenler)",
+                "Performanslı liste gösterimi",
+                "items() ile liste oluşturulur"
+              ],
+              "questions": [
+                {
+                  "questionId": 520301,
+                  "question": "LazyColumn ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Yatay scroll liste",
+                    "Dikey scroll liste (RecyclerView gibi)",
+                    "Üst üste bindirme",
+                    "Static liste"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "LazyColumn, dikey scroll edilebilir liste oluşturur. XML'deki RecyclerView'ın Compose karşılığıdır.",
+                  "tags": ["lazycolumn", "list"]
+                },
+                {
+                  "questionId": 520302,
+                  "question": "LazyColumn'un 'Lazy' olması ne anlama gelir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Yavaş çalışır",
+                    "Sadece görünen item'lar render edilir (lazy loading)",
+                    "Tüm item'lar başta yüklenir",
+                    "Sadece tek item gösterir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Lazy loading: Sadece ekranda görünen item'lar render edilir. Scroll ettikçe yeni item'lar yüklenir, görünmeyenler bellekten temizlenir. Bu, performans optimizasyonudur.",
+                  "tags": ["lazycolumn", "lazy_loading", "performance"]
+                },
+                {
+                  "questionId": 520303,
+                  "question": "LazyColumn ve Column arasındaki fark nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Hiçbir fark yok",
+                    "LazyColumn lazy loading yapar (scroll), Column tüm child'ları render eder",
+                    "Column daha performanslı",
+                    "LazyColumn kullanımdan kalkmış"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "LazyColumn lazy loading yapar, sadece görünen item'lar render edilir ve scroll desteği vardır. Column ise tüm child'ları baştan render eder, büyük listelerde performans sorunu yaratır.",
+                  "tags": ["lazycolumn", "column", "difference"]
+                },
+                {
+                  "questionId": 520304,
+                  "question": "LazyRow ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Dikey scroll liste",
+                    "Yatay scroll liste (horizontal RecyclerView gibi)",
+                    "Grid yapısı",
+                    "Static yatay liste"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "LazyRow, yatay scroll edilebilir liste oluşturur. Horizontal RecyclerView'ın Compose karşılığıdır.",
+                  "tags": ["lazyrow", "list"]
+                },
+                {
+                  "questionId": 520305,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "LazyColumn {\n    items(100) { index ->\n        Text(\"Item $index\")\n    }\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "100 adet yatay item",
+                    "100 adet dikey scroll edilebilir item (Item 0, Item 1, ...)",
+                    "Sadece 1 item",
+                    "Hata verir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "items(100) ile 100 adet item oluşturulur. Her item'da \"Item 0\", \"Item 1\" ... \"Item 99\" metni gösterilir. Dikey scroll edilebilir.",
+                  "tags": ["lazycolumn", "items", "example"]
+                }
+              ]
+            },
+            {
+              "topicId": 5204,
+              "title": "Spacer & Divider",
+              "summary": "Spacer boşluk eklemek, Divider ise ayırıcı çizgi eklemek için kullanılır.",
+              "content": "## Spacer & Divider\n\nSpacer: Boşluk ekler\nDivider: Ayırıcı çizgi ekler\n\nLayout düzenlemede sık kullanılır.",
+              "difficulty": "easy",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "Spacer ve Divider",
+                  "code": "Column {\n    Text(\"Başlık\")\n    Spacer(modifier = Modifier.height(16.dp))\n    Divider()\n    Text(\"İçerik\")\n}",
+                  "explanation": "Spacer ile boşluk, Divider ile ayırıcı çizgi."
+                }
+              ],
+              "keyPoints": [
+                "Spacer boşluk ekler",
+                "Divider ayırıcı çizgi ekler",
+                "Layout düzenlemede kullanılır",
+                "Material Design'a uygun"
+              ],
+              "questions": [
+                {
+                  "questionId": 520401,
+                  "question": "Spacer Composable ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Ayırıcı çizgi ekler",
+                    "Boşluk (space) ekler",
+                    "Text gösterir",
+                    "Button oluşturur"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Spacer, layout'ta boşluk eklemek için kullanılır. Modifier ile height veya width verilebilir.",
+                  "tags": ["spacer", "layout"]
+                },
+                {
+                  "questionId": 520402,
+                  "question": "Divider Composable ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Boşluk ekler",
+                    "Ayırıcı çizgi ekler",
+                    "Text gösterir",
+                    "Border ekler"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Divider, Material Design'a uygun ayırıcı çizgi (separator line) ekler. Genellikle liste item'ları arasında kullanılır.",
+                  "tags": ["divider", "layout"]
+                },
+                {
+                  "questionId": 520403,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "Spacer(modifier = Modifier.height(16.dp))",
+                  "difficulty": "easy",
+                  "options": [
+                    "16.dp genişlik",
+                    "16.dp yükseklik boşluk ekler",
+                    "Ayırıcı çizgi ekler",
+                    "Hata verir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Spacer ile Modifier.height(16.dp) kullanılarak 16.dp yüksekliğinde dikey boşluk eklenir.",
+                  "tags": ["spacer", "height", "example"]
+                }
+              ]
+            },
+            {
+              "topicId": 5205,
+              "title": "Surface & Card",
+              "summary": "Surface ve Card, Material Design öğeleridir. Elevation (gölge) ve shape (şekil) özelliklerine sahiptir.",
+              "content": "## Surface & Card\n\nSurface: Temel Material container\nCard: Elevation ve rounded corner ile container\n\nMaterial Design prensipleri sağlar.",
+              "difficulty": "easy",
+              "order": 5,
+              "codeExamples": [
+                {
+                  "title": "Card Örneği",
+                  "code": "Card(\n    modifier = Modifier.padding(16.dp),\n    elevation = CardDefaults.cardElevation(4.dp)\n) {\n    Text(\"Card içeriği\")\n}",
+                  "explanation": "Elevation ve padding ile Card."
+                }
+              ],
+              "keyPoints": [
+                "Material Design container'lar",
+                "Elevation (gölge) destekler",
+                "Shape özelleştirilebilir",
+                "Modern UI için kullanılır"
+              ],
+              "questions": [
+                {
+                  "questionId": 520501,
+                  "question": "Surface Composable ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece text gösterir",
+                    "Material Design container, elevation ve shape desteği",
+                    "Sadece liste gösterir",
+                    "Navigation yapar"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Surface, Material Design'ın temel container'ıdır. Elevation (gölge), shape (şekil), background color gibi özelliklere sahiptir.",
+                  "tags": ["surface", "material"]
+                },
+                {
+                  "questionId": 520502,
+                  "question": "Card ve Surface arasındaki fark nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir fark yok",
+                    "Card, varsayılan elevation ve rounded corner ile gelen özelleştirilmiş Surface",
+                    "Surface daha modern",
+                    "Card kullanımdan kalkmış"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Card, varsayılan olarak elevation (gölge) ve rounded corner (yuvarlak köşe) ile gelen, özelleştirilmiş bir Surface'tir. Genellikle liste item'ları için kullanılır.",
+                  "tags": ["card", "surface", "difference"]
+                },
+                {
+                  "questionId": 520503,
+                  "question": "Elevation nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Boyut",
+                    "Gölge/Derinlik (Material Design'da z-axis)",
+                    "Renk",
+                    "Shape"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Elevation, Material Design'da gölge/derinlik anlamına gelir (z-axis). Yüksek elevation daha belirgin gölge verir.",
+                  "tags": ["elevation", "material"]
+                },
+                {
+                  "questionId": 520504,
+                  "question": "Card genellikle nerede kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece başlık",
+                    "Liste item'ları, ürün kartları, içerik grupları",
+                    "Sadece buton",
+                    "Navigation"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Card, genellikle liste item'ları, ürün kartları, blog post'ları gibi içerik gruplarını görsel olarak ayırmak için kullanılır.",
+                  "tags": ["card", "use_case"]
+                }
+              ]
+            }
+          ],
+          "sectionMixedQuestions": [
+            {
+              "questionId": 520001,
+              "question": "Compose'da ConstraintLayout kullanılabilir mi?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Hayır, sadece Row/Column/Box",
+                "Evet, ConstraintLayout Compose kütüphanesi var",
+                "Sadece XML'de",
+                "Kullanımdan kalkmış"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Compose'da ConstraintLayout kullanılabilir (androidx.constraintlayout:constraintlayout-compose). Ancak çoğu durumda Row/Column/Box yeterlidir.",
+              "tags": ["constraintlayout", "compose"]
+            },
+            {
+              "questionId": 520002,
+              "question": "Modifier.fillMaxWidth() ne yapar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Yüksekliği doldurur",
+                "Genişliği parent'ın tamamına yayar (match_parent gibi)",
+                "Sadece 50% genişlik",
+                "Hiçbir şey yapmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Modifier.fillMaxWidth(), Composable'ın genişliğini parent'ın tamamına yayar. XML'deki match_parent (width) ile aynıdır.",
+              "tags": ["modifier", "fillmaxwidth"]
+            },
+            {
+              "questionId": 520003,
+              "question": "Modifier.fillMaxSize() ne yapar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Sadece genişlik",
+                "Hem genişlik hem yüksekliği parent'a yayar",
+                "Sadece yükseklik",
+                "Minimum boyut"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Modifier.fillMaxSize(), Composable'ı hem genişlik hem yükseklikte parent'ın tamamına yayar. XML'deki match_parent (width + height) ile aynıdır.",
+              "tags": ["modifier", "fillmaxsize"]
+            },
+            {
+              "questionId": 520004,
+              "question": "LazyColumn'da key parametresi neden kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece görsel",
+                "Recomposition optimizasyonu, item'ları unique tanımlar",
+                "Zorunlu parametre",
+                "Hiçbir işe yaramaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "key parametresi, her item'ı unique tanımlayarak recomposition optimizasyonu sağlar. Liste değiştiğinde hangi item'ların değiştiği/eklendiği/silindiği daha verimli tespit edilir.",
+              "tags": ["lazycolumn", "key", "optimization"]
+            },
+            {
+              "questionId": 520005,
+              "question": "Arrangement nedir (Row/Column'da)?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece renk",
+                "Child'ların nasıl dizileceğini belirler (SpaceBetween, Center vb.)",
+                "Sadece boyut",
+                "Background"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Arrangement, Row/Column içinde child'ların nasıl dizileceğini belirler. SpaceBetween (aralarında eşit boşluk), Center (ortala), SpaceAround, SpaceEvenly gibi seçenekler vardır.",
+              "tags": ["arrangement", "row", "column"]
+            },
+            {
+              "questionId": 520006,
+              "question": "Alignment nedir (Row/Column/Box'ta)?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece renk",
+                "Child'ların hizalamasını belirler (Start, End, Center, Top, Bottom)",
+                "Sadece boyut",
+                "Background"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Alignment, child'ların hizalamasını belirler. Row'da verticalAlignment (Top, CenterVertically, Bottom), Column'da horizontalAlignment (Start, CenterHorizontally, End), Box'ta contentAlignment kullanılır.",
+              "tags": ["alignment", "row", "column", "box"]
+            },
+            {
+              "questionId": 520007,
+              "question": "Modifier.clickable() ne yapar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Sadece görsel efekt",
+                "Composable'ı tıklanabilir yapar, onClick lambda alır",
+                "Sadece animasyon",
+                "Hiçbir şey yapmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Modifier.clickable(), Composable'ı tıklanabilir yapar. onClick lambda ile tıklama işlemi yönetilir. Ripple effect otomatik eklenir.",
+              "tags": ["modifier", "clickable"]
+            },
+            {
+              "questionId": 520008,
+              "question": "LazyColumn'da 1000 item varsa ne kadar item render edilir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Hepsi (1000)",
+                "Sadece ekranda görünen item'lar + buffer",
+                "İlk 100",
+                "Hiçbiri"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "LazyColumn lazy loading yapar. Sadece ekranda görünen item'lar + küçük bir buffer render edilir. Bu, 1000 item olsa bile performans sounu yaratmaz.",
+              "tags": ["lazycolumn", "lazy_loading", "performance"]
+            },
+            {
+              "questionId": 520009,
+              "question": "Modifier.weight() ne işe yarar (Row/Column'da)?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece ağırlık belirler",
+                "Available space'i child'lar arasında ağırlıklı böler (LinearLayout weight gibi)",
+                "Sadece boyut",
+                "Kullanılmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Modifier.weight(), Row/Column içinde available space'i child'lar arasında ağırlıklı böler. XML'deki LinearLayout weight özelliği ile aynıdır.",
+              "tags": ["modifier", "weight", "row", "column"]
+            },
+            {
+              "questionId": 520010,
+              "question": "Compose'da ScrollView'ın karşılığı nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "ScrollColumn",
+                "Column + Modifier.verticalScroll() veya LazyColumn",
+                "Sadece LazyColumn",
+                "ScrollView kullanılır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Compose'da Column + Modifier.verticalScroll() kullanılır (az item için). Çok item için performanslı LazyColumn tercih edilir.",
+              "tags": ["scroll", "column", "lazycolumn"]
+            }
+          ]
+        },
+        {
+          "sectionId": 5300,
+          "sectionTitle": "State Management",
+          "sectionDescription": "Compose'da state yönetimi, recomposition ve side effect'ler",
+          "order": 3,
+          "topics": [
+            {
+              "topicId": 5301,
+              "title": "Remember & MutableStateOf",
+              "summary": "remember ve mutableStateOf, Compose'da state oluşturmak ve saklamak için kullanılır. State değiştiğinde UI otomatik güncellenir.",
+              "content": "## remember & mutableStateOf\n\nremember: State'i recomposition'lar arasında saklar\nmutableStateOf: Değiştirilebilir state oluşturur\n\nState değişince UI otomatik recompose olur.",
+              "difficulty": "medium",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "remember ve mutableStateOf",
+                  "code": "@Composable\nfun Counter() {\n    var count by remember { mutableStateOf(0) }\n    Button(onClick = { count++ }) {\n        Text(\"Count: $count\")\n    }\n}",
+                  "explanation": "Her tıklamada count artar ve UI güncellenir."
+                }
+              ],
+              "keyPoints": [
+                "remember recomposition'da state'i korur",
+                "mutableStateOf değiştirilebilir state",
+                "State değişince recomposition tetiklenir",
+                "by delegate kullanılabilir"
+              ],
+              "questions": [
+                {
+                  "questionId": 530101,
+                  "question": "remember ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece değişken oluşturur",
+                    "State'i recomposition'lar arasında saklar",
+                    "Sadece performans için",
+                    "Hiçbir işe yaramaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "remember, state'i recomposition'lar arasında saklar. remember olmazsa her recomposition'da state sıfırlanır.",
+                  "tags": ["remember", "state"]
+                },
+                {
+                  "questionId": 530102,
+                  "question": "mutableStateOf ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece okuma için state",
+                    "Değiştirilebilir (mutable) state oluşturur",
+                    "Sadece String için",
+                    "Kullanımdan kalkmış"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "mutableStateOf, değiştirilebilir (mutable) state oluşturur. State değiştiğinde Compose otomatik olarak recomposition tetikler.",
+                  "tags": ["mutablestateof", "state"]
+                },
+                {
+                  "questionId": 530103,
+                  "question": "State değiştiğinde ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir şey olmaz",
+                    "UI otomatik olarak recompose olur (yeniden çizilir)",
+                    "Sadece log yazılır",
+                    "Activity yeniden başlar"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "State değiştiğinde Compose, o state'i kullanan Composable'ları otomatik olarak recompose eder (yeniden çizer). Bu, declarative UI'ın temelidir.",
+                  "tags": ["state", "recomposition"]
+                },
+                {
+                  "questionId": 530104,
+                  "question": "by delegate kullanmanın avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir avantajı yok",
+                    "State'e .value yazmadan direkt erişim sağlar",
+                    "Sadece hız artışı",
+                    "Zorunludur"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "by delegate kullanarak state'e .value yazmadan direkt erişebilirsiniz. var count by remember { mutableStateOf(0) } → count++ (count.value++ yerine)",
+                  "tags": ["by", "delegate", "state"]
+                },
+                {
+                  "questionId": 530105,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "var count by remember { mutableStateOf(0) }\nButton(onClick = { count++ }) {\n    Text(\"Count: $count\")\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hata verir",
+                    "Her tıklamada count artar ve UI güncellenir",
+                    "Sadece ilk tıklama",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Her tıklamada count artar (mutableStateOf), remember sayesinde değer korunur ve state değiştiği için UI otomatik recompose olur.",
+                  "tags": ["remember", "mutablestateof", "example"]
+                }
+              ]
+            },
+            {
+              "topicId": 5302,
+              "title": "State Hoisting",
+              "summary": "State Hoisting, state'i child Composable'dan parent'a taşıyarak Composable'ı stateless ve reusable hale getirir.",
+              "content": "## State Hoisting\n\nState'i parent'a taşı, child'a parametre ve callback ver.\n\nComposable stateless ve reusable olur.\n\nUnidirectional data flow sağlar.",
+              "difficulty": "hard",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "State Hoisting Örneği",
+                  "code": "@Composable\nfun Counter(count: Int, onIncrement: () -> Unit) {\n    Button(onClick = onIncrement) {\n        Text(\"Count: $count\")\n    }\n}",
+                  "explanation": "State parent'ta, child stateless."
+                }
+              ],
+              "keyPoints": [
+                "State'i parent'a taşır",
+                "Child stateless olur",
+                "Reusability artar",
+                "Single source of truth"
+              ],
+              "questions": [
+                {
+                  "questionId": 530201,
+                  "question": "State Hoisting nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "State'i silme",
+                    "State'i child'dan parent'a taşıma",
+                    "State'i database'e kaydetme",
+                    "State oluşturma"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "State Hoisting, state'i child Composable'dan parent'a taşıyarak child'ı stateless ve reusable hale getirmektir.",
+                  "tags": ["state_hoisting", "pattern"]
+                },
+                {
+                  "questionId": 530202,
+                  "question": "State Hoisting'in amacı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece performans",
+                    "Composable'ı stateless, reusable ve testable yapmak",
+                    "Sadece görsel",
+                    "Hiçbir amacı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "State Hoisting'in amacı: Composable'ı stateless (kendi state'i yok), reusable (farklı yerlerde kullanılabilir) ve testable (test kolay) yapmaktır.",
+                  "tags": ["state_hoisting", "benefits"]
+                },
+                {
+                  "questionId": 530203,
+                  "question": "State Hoisting'de child Composable ne alır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir şey almaz",
+                    "State değeri (parametre) ve state değiştirme callback'i",
+                    "Sadece state değeri",
+                    "Sadece callback"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "State Hoisting'de child, state değerini parametre olarak alır ve state'i değiştirmek için callback (lambda) alır. Böylece stateless olur.",
+                  "tags": ["state_hoisting", "parameters"]
+                },
+                {
+                  "questionId": 530204,
+                  "question": "Unidirectional Data Flow nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Çift yönlü data akışı",
+                    "Tek yönlü veri akışı: State aşağı (↓), Event yukarı (↑)",
+                    "Sadece event akışı",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Unidirectional Data Flow: State parent'tan child'a aşağı iner (↓), event (tıklama vb.) child'dan parent'a yukarı çıkar (↑). Bu, State Hoisting'in sağladığı pattern'dir.",
+                  "tags": ["state_hoisting", "udf", "pattern"]
+                },
+                {
+                  "questionId": 530205,
+                  "question": "Aşağıdaki Counter stateless mi?",
+                  "questionType": "multiple_choice",
+                  "code": "@Composable\nfun Counter(count: Int, onIncrement: () -> Unit) {\n    Button(onClick = onIncrement) {\n        Text(\"Count: $count\")\n    }\n}",
+                  "difficulty": "medium",
+                  "options": [
+                    "Hayır, stateful",
+                    "Evet, stateless (state dışarıdan geliyor)",
+                    "Belirsiz",
+                    "Hatalı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu Counter stateless'tir çünkü kendi state'i yok. count ve onIncrement parametre olarak geliyor. State parent'ta yönetilir.",
+                  "tags": ["state_hoisting", "stateless", "example"]
+                }
+              ]
+            },
+            {
+              "topicId": 5303,
+              "title": "rememberSaveable",
+              "summary": "rememberSaveable, state'i configuration change'lerde (ekran döndürme) korur. remember'dan farkı budur.",
+              "content": "## rememberSaveable\n\nConfiguration change'lerde state'i korur.\n\nremember ekran döndürmede state'i kaybeder.\n\nrememberSaveable Bundle'a kaydeder.",
+              "difficulty": "medium",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "rememberSaveable Kullanımı",
+                  "code": "var text by rememberSaveable { mutableStateOf(\"\") }\nTextField(value = text, onValueChange = { text = it })",
+                  "explanation": "Ekran döndürmede text korunur."
+                }
+              ],
+              "keyPoints": [
+                "Configuration change'lerde korur",
+                "remember'dan daha güçlü",
+                "Bundle'a kaydeder",
+                "Parcelable/Serializable destekler"
+              ],
+              "questions": [
+                {
+                  "questionId": 530301,
+                  "question": "rememberSaveable ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "remember ile aynı",
+                    "Configuration change'lerde (ekran döndürme) state'i korur",
+                    "Sadece performans için",
+                    "Database'e kaydeder"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "rememberSaveable, configuration change'lerde (ekran döndürme, dil değiştirme) state'i korur. remember ekran döndürmede state'i kaybeder.",
+                  "tags": ["remembersaveable", "configuration"]
+                },
+                {
+                  "questionId": 530302,
+                  "question": "remember ve rememberSaveable arasındaki fark nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Hiçbir fark yok",
+                    "rememberSaveable configuration change'lerde korur, remember korumaz",
+                    "remember daha güçlü",
+                    "rememberSaveable kullanımdan kalkmış"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "remember sadece recomposition'da korur, configuration change'de kaybolur. rememberSaveable Bundle'a kaydederek configuration change'lerde de korur.",
+                  "tags": ["remember", "remembersaveable", "difference"]
+                },
+                {
+                  "questionId": 530303,
+                  "question": "rememberSaveable nasıl çalışır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Memory'de tutar",
+                    "Bundle'a kaydeder (Activity'nin onSaveInstanceState gibi)",
+                    "Database'e kaydeder",
+                    "SharedPreferences'a kaydeder"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "rememberSaveable, state'i Bundle'a kaydeder (Activity'nin onSaveInstanceState mekanizması gibi). Bu nedenle Parcelable/Serializable tiplerle çalışır.",
+                  "tags": ["remembersaveable", "bundle"]
+                },
+                {
+                  "questionId": 530304,
+                  "question": "TextField gibi user input için hangi remember tercih edilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "remember",
+                    "rememberSaveable (ekran döndürmede kullanıcı girdisi kaybolmamalı)",
+                    "Fark etmez",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "TextField gibi user input için rememberSaveable tercih edilir. Böylece ekran döndürüldüğünde kullanıcının yazdığı text kaybolmaz.",
+                  "tags": ["remembersaveable", "textfield", "use_case"]
+                }
+              ]
+            },
+            {
+              "topicId": 5304,
+              "title": "derivedStateOf",
+              "summary": "derivedStateOf, başka state'lerden türetilen state oluşturur ve gereksiz recomposition'ları önler.",
+              "content": "## derivedStateOf\n\nBaşka state'lerden türetilen state.\n\nGereksiz recomposition önler.\n\nHesaplama sonucu state için kullanılır.",
+              "difficulty": "hard",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "derivedStateOf Örneği",
+                  "code": "val listState = rememberLazyListState()\nval showButton by remember {\n    derivedStateOf { listState.firstVisibleItemIndex > 0 }\n}",
+                  "explanation": "Scroll durumuna göre türetilen state."
+                }
+              ],
+              "keyPoints": [
+                "Türetilmiş state oluşturur",
+                "Performance optimizasyonu",
+                "Gereksiz recomposition önler",
+                "Hesaplama sonucu için ideal"
+              ],
+              "questions": [
+                {
+                  "questionId": 530401,
+                  "question": "derivedStateOf ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Yeni state oluşturur",
+                    "Başka state'lerden türetilen state oluşturur, gereksiz recomposition önler",
+                    "State'i siler",
+                    "Sadece performans ölçer"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "derivedStateOf, başka state'lerden türetilen (derived) state oluşturur ve gereksiz recomposition'ları önleyerek performans optimizasyonu sağlar.",
+                  "tags": ["derivedstateof", "optimization"]
+                },
+                {
+                  "questionId": 530402,
+                  "question": "derivedStateOf neden kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece görsel",
+                    "Hesaplama sonucu state için, gereksiz recomposition önlemek",
+                    "Her zaman kullanılmalı",
+                    "Hiçbir nedeni yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "derivedStateOf, hesaplama sonucu (derived) state için kullanılır. Sadece sonuç değiştiğinde recomposition tetikler, ara hesaplamalar recomposition tetiklemez.",
+                  "tags": ["derivedstateof", "use_case"]
+                },
+                {
+                  "questionId": 530403,
+                  "question": "derivedStateOf performans optimizasyonunu nasıl sağlar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece hız artışı",
+                    "Sadece sonuç değiştiğinde recomposition tetikler, ara değişiklikler tetiklemez",
+                    "Tüm recomposition'ı engeller",
+                    "Hiçbir optimizasyon sağlamaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "derivedStateOf, sadece türetilmiş state'in sonucu değiştiğinde recomposition tetikler. Kaynak state'ler değişse bile sonuç aynıysa recomposition olmaz.",
+                  "tags": ["derivedstateof", "performance"]
+                },
+                {
+                  "questionId": 530404,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "val listState = rememberLazyListState()\nval showButton by remember {\n    derivedStateOf { listState.firstVisibleItemIndex > 0 }\n}",
+                  "difficulty": "hard",
+                  "options": [
+                    "Hata verir",
+                    "Scroll durumuna göre showButton state'ini türetir",
+                    "Sadece ilk item'ı gösterir",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu kod, LazyList scroll durumuna göre showButton state'ini türetir. firstVisibleItemIndex 0'dan büyükse (scroll yapıldıysa) true, değilse false döner.",
+                  "tags": ["derivedstateof", "example", "scroll"]
+                }
+              ]
+            },
+            {
+              "topicId": 5305,
+              "title": "Side Effects (LaunchedEffect, DisposableEffect)",
+              "summary": "Side effect'ler, Composable dışındaki dünyayla (API, database) etkileşim için kullanılır. LaunchedEffect, DisposableEffect gibi API'lar vardır.",
+              "content": "## Side Effects\n\nLaunchedEffect: Coroutine başlatır\nDisposableEffect: Cleanup gerektiğinde\nSideEffect: Her recomposition'da\n\nComposable'ın dış dünya ile etkileşimi.",
+              "difficulty": "hard",
+              "order": 5,
+              "codeExamples": [
+                {
+                  "title": "LaunchedEffect Örneği",
+                  "code": "LaunchedEffect(key1 = userId) {\n    val user = repository.getUser(userId)\n    // state güncelle\n}",
+                  "explanation": "userId değişince API çağrısı."
+                }
+              ],
+              "keyPoints": [
+                "Dış dünya ile etkileşim",
+                "LaunchedEffect coroutine başlatır",
+                "DisposableEffect cleanup için",
+                "Key değişince yeniden çalışır"
+              ],
+              "questions": [
+                {
+                  "questionId": 530501,
+                  "question": "Side Effect nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece UI çizme",
+                    "Composable dışındaki dünya ile etkileşim (API, database, analytics)",
+                    "State oluşturma",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Side Effect, Composable dışındaki dünya ile etkileşimdir: API çağrısı, database işlemi, analytics event gönderme, timer başlatma vb.",
+                  "tags": ["side_effect", "temel"]
+                },
+                {
+                  "questionId": 530502,
+                  "question": "LaunchedEffect ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece state oluşturur",
+                    "Coroutine başlatır, key değişince yeniden çalışır",
+                    "Sadece animasyon",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "LaunchedEffect, coroutine başlatır ve side effect yapar. key parametresi değiştiğinde önceki coroutine iptal edilir ve yeni coroutine başlatılır.",
+                  "tags": ["launchedeffect", "coroutine"]
+                },
+                {
+                  "questionId": 530503,
+                  "question": "DisposableEffect ne zaman kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Her zaman",
+                    "Cleanup gerektiren side effect'ler için (listener ekleme/çıkarma)",
+                    "Sadece API çağrısı",
+                    "Kullanılmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "DisposableEffect, cleanup gerektiren side effect'ler için kullanılır: listener ekleme/çıkarma, subscription başlatma/durdurma. onDispose bloğunda cleanup yapılır.",
+                  "tags": ["disposableeffect", "cleanup"]
+                },
+                {
+                  "questionId": 530504,
+                  "question": "LaunchedEffect'te key parametresi neden önemlidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece görsel",
+                    "key değişince önceki coroutine iptal edilip yeni başlatılır",
+                    "Zorunlu değil",
+                    "Sadece performans"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "key parametresi, LaunchedEffect'in ne zaman yeniden çalışacağını belirler. key değişince önceki coroutine iptal edilir ve yeni coroutine başlatılır. key = Unit ise sadece bir kez çalışır.",
+                  "tags": ["launchedeffect", "key"]
+                },
+                {
+                  "questionId": 530505,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "LaunchedEffect(key1 = userId) {\n    val user = repository.getUser(userId)\n    // state güncelle\n}",
+                  "difficulty": "medium",
+                  "options": [
+                    "Hata verir",
+                    "userId değiştiğinde API çağrısı yapar",
+                    "Sadece ilk render'da çalışır",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "userId key olduğu için, userId değiştiğinde LaunchedEffect yeniden çalışır ve yeni user bilgisi fetch edilir. userId aynı kalırsa tekrar çalışmaz.",
+                  "tags": ["launchedeffect", "example", "api"]
+                }
+              ]
+            }
+          ],
+          "sectionMixedQuestions": [
+            {
+              "questionId": 530001,
+              "question": "Recomposition nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "İlk composition",
+                "State değiştiğinde Composable'ın yeniden çizilmesi",
+                "Activity yeniden başlatma",
+                "Layout inflation"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Recomposition, state değiştiğinde Compose'un o state'i kullanan Composable'ları yeniden çizmesidir. Declarative UI'ın temelidir.",
+              "tags": ["recomposition", "state"]
+            },
+            {
+              "questionId": 530002,
+              "question": "Smart recomposition nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Tüm UI yeniden çizilir",
+                "Sadece değişen state'i kullanan Composable'lar recompose olur",
+                "Hiçbir şey recompose olmaz",
+                "Sadece parent recompose olur"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Smart recomposition: Compose, sadece değişen state'i kullanan Composable'ları recompose eder. Tüm UI yeniden çizilmez, bu performans optimizasyonudur.",
+              "tags": ["recomposition", "smart", "optimization"]
+            },
+            {
+              "questionId": 530003,
+              "question": "Single Source of Truth ne demektir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Birden fazla state kopyası",
+                "State'in tek bir yerde tutulması (genellikle ViewModel veya parent)",
+                "Sadece child'da state",
+                "Database"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Single Source of Truth: State'in tek bir yerde (genellikle ViewModel veya parent) tutulması. Birden fazla kopya tutulmaz, bu tutarsızlık önler.",
+              "tags": ["ssot", "pattern"]
+            },
+            {
+              "questionId": 530004,
+              "question": "SideEffect (not LaunchedEffect, ama SideEffect API) ne zaman kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Coroutine başlatmak için",
+                "Her successful recomposition'da çalışması gereken kod için",
+                "Cleanup için",
+                "Hiçbir zaman"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "SideEffect API, her successful recomposition'da çalışması gereken kod için kullanılır. Örneğin, analytics event gönderme. Coroutine başlatmaz, direkt çalışır.",
+              "tags": ["sideeffect", "api"]
+            },
+            {
+              "questionId": 530005,
+              "question": "produceState ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece state oluşturur",
+                "Suspend fonksiyondan State<T> oluşturur (örn: Flow'dan State)",
+                "State siler",
+                "Kullanılmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "produceState, suspend fonksiyon veya Flow'dan State<T> oluşturur. Örneğin, Flow<List<User>>'ı State<List<User>>'a çevirir.",
+              "tags": ["producestate", "flow"]
+            },
+            {
+              "questionId": 530006,
+              "question": "snapshotFlow ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "State'den Flow oluşturur",
+                "State<T>'den Flow<T> oluşturur",
+                "Sadece screenshot alır",
+                "Hiçbir şey yapmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "snapshotFlow, State<T>'den Flow<T> oluşturur. State değişikliklerini Flow olarak izlemenizi sağlar.",
+              "tags": ["snapshotflow", "flow"]
+            },
+            {
+              "questionId": 530007,
+              "question": "remember ile oluşturulan state configuration change'de ne olur?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Korunur",
+                "Kaybolur (sıfırlanır)",
+                "Database'e kaydedilir",
+                "Hiçbir şey olmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "remember ile oluşturulan state, configuration change'de (ekran döndürme) kaybolur. Configuration change'de korumak için rememberSaveable kullanılmalıdır.",
+              "tags": ["remember", "configuration"]
+            },
+            {
+              "questionId": 530008,
+              "question": "Stateful Composable nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Stateless",
+                "Kendi internal state'i olan Composable",
+                "State kullanmayan",
+                "Hatalı"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Stateful Composable, kendi internal state'i olan (remember, mutableStateOf kullanan) Composable'dır. Reusability azalır ama bazı durumlarda uygundur.",
+              "tags": ["stateful", "composable"]
+            },
+            {
+              "questionId": 530009,
+              "question": "Stateless Composable nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Kendi state'i olan",
+                "Kendi state'i olmayan, state dışarıdan parametre olarak alan Composable",
+                "State kullanmayan",
+                "Hatalı"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Stateless Composable, kendi internal state'i olmayan, tüm state'i parametre olarak alan Composable'dır. Reusable ve testable'dır.",
+              "tags": ["stateless", "composable"]
+            },
+            {
+              "questionId": 530010,
+              "question": "rememberCoroutineScope ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "State oluşturur",
+                "Composable'ın lifecycle'ına bağlı CoroutineScope döner",
+                "Sadece animasyon",
+                "Hiçbir şey yapmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "rememberCoroutineScope, Composable'ın lifecycle'ına bağlı CoroutineScope döner. onClick gibi event handler'larda coroutine başlatmak için kullanılır (LaunchedEffect composable scope dışında çağrılamaz).",
+              "tags": ["remembercoroutinescope", "coroutine"]
+            }
+          ]
+        },
+        {
+          "sectionId": 5400,
+          "sectionTitle": "Navigation",
+          "sectionDescription": "Compose'da Navigation Component kullanarak ekranlar arası geçiş yönetimi",
+          "order": 4,
+          "topics": [
+            {
+              "topicId": 5401,
+              "title": "Navigation Component",
+              "summary": "Navigation Component, Compose'da ekranlar arası geçişi yönetmek için kullanılan resmi Jetpack kütüphanesidir.",
+              "content": "## Navigation Component\n\nCompose için özel Navigation kütüphanesi vardır.\n\nNavHost ve NavController kullanılır.\n\nType-safe navigation sağlar.",
+              "difficulty": "medium",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "Navigation Setup",
+                  "code": "val navController = rememberNavController()\nNavHost(navController, startDestination = \"home\") {\n    composable(\"home\") { HomeScreen() }\n    composable(\"profile\") { ProfileScreen() }\n}",
+                  "explanation": "Temel navigation yapısı."
+                }
+              ],
+              "keyPoints": [
+                "Jetpack Navigation for Compose",
+                "NavHost ve NavController kullanır",
+                "Declarative navigation",
+                "Type-safe route desteği"
+              ],
+              "questions": [
+                {
+                  "questionId": 540101,
+                  "question": "Navigation Component nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "UI kütüphanesi",
+                    "Compose'da ekranlar arası geçişi yönetmek için Jetpack kütüphanesi",
+                    "Veritabanı kütüphanesi",
+                    "Network kütüphanesi"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Navigation Component, Compose'da ekranlar arası geçişi (navigation) yönetmek için kullanılan resmi Jetpack kütüphanesidir.",
+                  "tags": ["navigation", "jetpack"]
+                },
+                {
+                  "questionId": 540102,
+                  "question": "Compose Navigation'ın XML Navigation'a göre avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir fark yok",
+                    "Declarative, type-safe, Kotlin DSL ile tanımlama",
+                    "Sadece daha hızlı",
+                    "XML daha iyi"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Compose Navigation, declarative yaklaşım, type-safe route'lar ve Kotlin DSL ile tanımlama avantajları sunar. XML dosyası gerekmez.",
+                  "tags": ["navigation", "compose", "advantages"]
+                },
+                {
+                  "questionId": 540103,
+                  "question": "Navigation Component hangi dependency ile eklenir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "androidx.compose.ui",
+                    "androidx.navigation:navigation-compose",
+                    "androidx.compose.navigation",
+                    "com.google.navigation"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Navigation Component, androidx.navigation:navigation-compose dependency'si ile eklenir.",
+                  "tags": ["navigation", "dependency"]
+                },
+                {
+                  "questionId": 540104,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "val navController = rememberNavController()\nNavHost(navController, startDestination = \"home\") {\n    composable(\"home\") { HomeScreen() }\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hata verir",
+                    "Navigation yapısını kurar, başlangıç ekranı home",
+                    "Sadece controller oluşturur",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu kod, navigation yapısını kurar. rememberNavController ile controller, NavHost ile navigation graph oluşturulur. Başlangıç ekranı \"home\" route'udur.",
+                  "tags": ["navigation", "navhost", "example"]
+                }
+              ]
+            },
+            {
+              "topicId": 5402,
+              "title": "NavHost & NavController",
+              "summary": "NavHost navigation graph'ı tanımlar, NavController ise navigation işlemlerini yönetir.",
+              "content": "## NavHost & NavController\n\nNavController: Navigation işlemlerini yönetir\nNavHost: Navigation graph'ı (rotaları) tanımlar\n\nrememberNavController ile oluşturulur.",
+              "difficulty": "medium",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "NavController Kullanımı",
+                  "code": "navController.navigate(\"profile\")\nnavController.popBackStack()",
+                  "explanation": "Ekran geçişi ve geri gitme."
+                }
+              ],
+              "keyPoints": [
+                "NavController navigation yönetir",
+                "NavHost rotaları tanımlar",
+                "rememberNavController kullanılır",
+                "Lifecycle-aware'dır"
+              ],
+              "questions": [
+                {
+                  "questionId": 540201,
+                  "question": "NavController ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "UI çizer",
+                    "Navigation işlemlerini yönetir (navigate, popBackStack)",
+                    "State tutar",
+                    "Layout oluşturur"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "NavController, navigation işlemlerini yönetir: ekran geçişi (navigate), geri gitme (popBackStack), current route bilgisi vb.",
+                  "tags": ["navcontroller", "navigation"]
+                },
+                {
+                  "questionId": 540202,
+                  "question": "NavHost ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Controller oluşturur",
+                    "Navigation graph'ı (rotaları) tanımlar",
+                    "Sadece animasyon",
+                    "Veritabanı yönetir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "NavHost, navigation graph'ı tanımlar. Her route için hangi Composable'ın gösterileceğini belirler.",
+                  "tags": ["navhost", "navigation"]
+                },
+                {
+                  "questionId": 540203,
+                  "question": "rememberNavController ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Her recomposition'da yeni controller",
+                    "NavController'ı recomposition'larda korur",
+                    "State oluşturur",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "rememberNavController, NavController'ı recomposition'larda korur. remember kullanarak navigation state kaybolmaz.",
+                  "tags": ["remembernavcontroller", "navigation"]
+                },
+                {
+                  "questionId": 540204,
+                  "question": "navController.navigate(\"profile\") ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Geri gider",
+                    "\"profile\" route'una gider",
+                    "Uygulamayı kapatır",
+                    "Hata verir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "navController.navigate(\"profile\"), \"profile\" route'una gider. Profile ekranı gösterilir.",
+                  "tags": ["navigate", "navcontroller"]
+                },
+                {
+                  "questionId": 540205,
+                  "question": "navController.popBackStack() ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "İleri gider",
+                    "Geri gider (back button gibi)",
+                    "Uygulamayı kapatır",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "navController.popBackStack(), back stack'ten bir ekran geri gider. Android back button davranışı ile aynıdır.",
+                  "tags": ["popbackstack", "navcontroller"]
+                }
+              ]
+            },
+            {
+              "topicId": 5403,
+              "title": "Route & Arguments",
+              "summary": "Route, her ekranın unique adresini tanımlar. Arguments ile ekranlar arası veri aktarılır.",
+              "content": "## Route & Arguments\n\nRoute: String tabanlı adres (örn: \"profile/{userId}\")\nArguments: URL parameter gibi veri geçişi\n\nType-safe arguments önerilir.",
+              "difficulty": "hard",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "Arguments ile Navigation",
+                  "code": "composable(\"profile/{userId}\") { backStackEntry ->\n    val userId = backStackEntry.arguments?.getString(\"userId\")\n    ProfileScreen(userId)\n}\nnavController.navigate(\"profile/123\")",
+                  "explanation": "Route ile veri geçişi."
+                }
+              ],
+              "keyPoints": [
+                "Route ekranın adresi",
+                "Arguments veri geçişi sağlar",
+                "Path parameter destekler",
+                "Optional argument mümkün"
+              ],
+              "questions": [
+                {
+                  "questionId": 540301,
+                  "question": "Route nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Veritabanı tablosu",
+                    "Her ekranın unique string adresi (örn: 'home', 'profile')",
+                    "Network endpoint",
+                    "UI bileşeni"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Route, her ekranın unique string adresidir. URL path gibi çalışır (örn: \"home\", \"profile\", \"detail/{id}\").",
+                  "tags": ["route", "navigation"]
+                },
+                {
+                  "questionId": 540302,
+                  "question": "Route ile veri nasıl geçirilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece Intent",
+                    "Path parameter (örn: 'profile/{userId}') veya query parameter",
+                    "Sadece Bundle",
+                    "Veri geçirilemez"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Route ile veri, path parameter (\"profile/{userId}\") veya query parameter (\"search?query=abc\") ile geçirilir. URL mantığı gibi.",
+                  "tags": ["route", "arguments", "navigation"]
+                },
+                {
+                  "questionId": 540303,
+                  "question": "BackStackEntry nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece route",
+                    "Back stack'teki her entry, arguments ve savedStateHandle içerir",
+                    "Sadece UI",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "BackStackEntry, back stack'teki her entry'yi temsil eder. arguments (route parameters), savedStateHandle ve lifecycle içerir.",
+                  "tags": ["backstackentry", "navigation"]
+                },
+                {
+                  "questionId": 540304,
+                  "question": "Optional argument nasıl tanımlanır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Tanımlanamaz",
+                    "composable() içinde arguments parametresi ile navArgument tanımlanır",
+                    "Sadece required",
+                    "Otomatik"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Optional argument, composable() içinde arguments parametresi ile navArgument { defaultValue, nullable } şeklinde tanımlanır.",
+                  "tags": ["arguments", "optional", "navigation"]
+                },
+                {
+                  "questionId": 540305,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "composable(\"profile/{userId}\") { backStackEntry ->\n    val userId = backStackEntry.arguments?.getString(\"userId\")\n    ProfileScreen(userId)\n}",
+                  "difficulty": "medium",
+                  "options": [
+                    "Hata verir",
+                    "Route'tan userId alır ve ProfileScreen'e geçirir",
+                    "Sadece route tanımlar",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu kod, \"profile/{userId}\" route'undan userId parametresini alır ve ProfileScreen'e geçirir. backStackEntry.arguments ile argument'lara erişilir.",
+                  "tags": ["route", "arguments", "example"]
+                }
+              ]
+            },
+            {
+              "topicId": 5404,
+              "title": "Bottom Navigation",
+              "summary": "Bottom Navigation, alt kısımda sabit navigation bar ile ana ekranlar arasında geçiş sağlar.",
+              "content": "## Bottom Navigation\n\nAlt navigation bar için kullanılır.\n\nNavigationBar ve NavigationBarItem kullanılır.\n\nHer item bir route'a karşılık gelir.",
+              "difficulty": "medium",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "Bottom Navigation Örneği",
+                  "code": "NavigationBar {\n    items.forEach { item ->\n        NavigationBarItem(\n            selected = currentRoute == item.route,\n            onClick = { navController.navigate(item.route) },\n            icon = { Icon(item.icon) }\n        )\n    }\n}",
+                  "explanation": "Bottom navigation bar."
+                }
+              ],
+              "keyPoints": [
+                "Alt navigation bar",
+                "Ana ekranlar arası geçiş",
+                "Material 3 komponenti",
+                "Selected state yönetimi"
+              ],
+              "questions": [
+                {
+                  "questionId": 540401,
+                  "question": "Bottom Navigation ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Top bar",
+                    "Alt kısımda sabit navigation bar ile ana ekranlar arası geçiş",
+                    "Sadece drawer",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bottom Navigation, alt kısımda sabit navigation bar ile ana ekranlar (Home, Profile, Settings vb.) arasında hızlı geçiş sağlar.",
+                  "tags": ["bottom_navigation", "ui"]
+                },
+                {
+                  "questionId": 540402,
+                  "question": "Bottom Navigation'da hangi Composable kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "BottomBar",
+                    "NavigationBar ve NavigationBarItem (Material 3)",
+                    "TabRow",
+                    "Menu"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Material 3'te NavigationBar (container) ve NavigationBarItem (her item) kullanılır. Material 2'de BottomNavigation kullanılırdı.",
+                  "tags": ["bottom_navigation", "navigationbar"]
+                },
+                {
+                  "questionId": 540403,
+                  "question": "Bottom Navigation'da selected state nasıl yönetilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Otomatik",
+                    "currentRoute ile karşılaştırılır, manuel yönetilir",
+                    "Sadece tıklama",
+                    "State gerekmez"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Selected state, currentRoute ile her item'ın route'u karşılaştırılarak manuel yönetilir. navController.currentDestination kullanılır.",
+                  "tags": ["bottom_navigation", "selected_state"]
+                },
+                {
+                  "questionId": 540404,
+                  "question": "Bottom Navigation kaç item olmalıdır (Material Design guideline)?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "2",
+                    "3-5 item",
+                    "10 item",
+                    "Sınır yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Material Design guideline'a göre Bottom Navigation 3-5 item olmalıdır. Daha fazla item için Navigation Drawer tercih edilir.",
+                  "tags": ["bottom_navigation", "material_design"]
+                }
+              ]
+            },
+            {
+              "topicId": 5405,
+              "title": "Deep Links",
+              "summary": "Deep Link, uygulamanın belirli bir ekranına doğrudan URL ile erişim sağlar.",
+              "content": "## Deep Links\n\nURL ile belirli ekrana erişim.\n\nWeb link veya app link kullanılabilir.\n\nAndroidManifest'te tanımlanır.",
+              "difficulty": "hard",
+              "order": 5,
+              "codeExamples": [
+                {
+                  "title": "Deep Link Tanımlama",
+                  "code": "composable(\n    route = \"profile/{userId}\",\n    deepLinks = listOf(navDeepLink { uriPattern = \"myapp://profile/{userId}\" })\n) { ProfileScreen() }",
+                  "explanation": "Deep link ile navigation."
+                }
+              ],
+              "keyPoints": [
+                "URL ile ekran açma",
+                "Web ve app link desteği",
+                "AndroidManifest gerektirir",
+                "Modüller arası navigation için ideal"
+              ],
+              "questions": [
+                {
+                  "questionId": 540501,
+                  "question": "Deep Link nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece web link",
+                    "URL ile uygulamanın belirli bir ekranına doğrudan erişim",
+                    "Sadece email link",
+                    "Navigation component"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Deep Link, URL ile uygulamanın belirli bir ekranına doğrudan erişim sağlar. Web'den, email'den veya başka app'ten açılabilir.",
+                  "tags": ["deep_link", "navigation"]
+                },
+                {
+                  "questionId": 540502,
+                  "question": "Deep Link nasıl tanımlanır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece kod",
+                    "composable() içinde deepLinks parametresi + AndroidManifest intent-filter",
+                    "Sadece Manifest",
+                    "Tanımlanamaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Deep Link, composable() içinde deepLinks parametresi ile tanımlanır ve AndroidManifest'te intent-filter eklenir.",
+                  "tags": ["deep_link", "setup"]
+                },
+                {
+                  "questionId": 540503,
+                  "question": "Deep Link ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece UI",
+                    "Web/email'den app açma, notification'dan ekran açma, modüler navigation",
+                    "Sadece performans",
+                    "Hiçbir işe yaramaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Deep Link kullanım alanları: Web/email'den app'in belirli ekranını açma, notification'dan direkt ekran açma, multi-module projede modüller arası navigation.",
+                  "tags": ["deep_link", "use_case"]
+                },
+                {
+                  "questionId": 540504,
+                  "question": "Aşağıdaki deep link ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "deepLinks = listOf(navDeepLink { uriPattern = \"myapp://profile/{userId}\" })",
+                  "difficulty": "medium",
+                  "options": [
+                    "Hata verir",
+                    "myapp://profile/123 URL'i profile ekranını açar, userId=123",
+                    "Sadece web link",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu deep link, myapp://profile/123 gibi bir URL geldiğinde profile ekranını açar ve userId parametresini 123 olarak geçirir.",
+                  "tags": ["deep_link", "example"]
+                }
+              ]
+            }
+          ],
+          "sectionMixedQuestions": [
+            {
+              "questionId": 540001,
+              "question": "Navigation back stack nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece son ekran",
+                "Ziyaret edilen ekranların sıralı listesi (stack)",
+                "Veritabanı",
+                "Hiçbiri"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Back stack, ziyaret edilen ekranların sıralı listesidir (LIFO - Last In First Out). Back button ile stack'ten pop edilir.",
+              "tags": ["navigation", "backstack"]
+            },
+            {
+              "questionId": 540002,
+              "question": "NavController'a nereden erişilir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece Activity'den",
+                "NavHost'ta remember edilen controller, child Composable'lara parametre olarak geçilir",
+                "Global singleton",
+                "Otomatik erişim"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "NavController, NavHost'ta rememberNavController ile oluşturulur ve child Composable'lara parametre olarak geçilir. Global state tutmak anti-pattern'dir.",
+              "tags": ["navcontroller", "access"]
+            },
+            {
+              "questionId": 540003,
+              "question": "popUpTo ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece animasyon",
+                "Navigate ederken back stack'i belirli bir route'a kadar temizler",
+                "Sadece UI",
+                "Hiçbir şey yapmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "popUpTo, navigate ederken back stack'i belirli bir route'a kadar temizler. Örneğin login sonrası splash'e geri dönülmemesi için kullanılır.",
+              "tags": ["navigation", "popupto"]
+            },
+            {
+              "questionId": 540004,
+              "question": "launchSingleTop ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir şey yapmaz",
+                "Aynı route tekrar navigate edilirse yeni instance oluşturmaz",
+                "Sadece ilk ekran",
+                "Sadece animasyon"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "launchSingleTop = true, aynı route'a tekrar navigate edilirse back stack'te yeni instance oluşturmaz. Mevcut instance kullanılır (Android launchMode singleTop gibi).",
+              "tags": ["navigation", "launchsingletop"]
+            },
+            {
+              "questionId": 540005,
+              "question": "Navigation animation nasıl eklenir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Otomatik",
+                "composable() içinde enterTransition, exitTransition vb. parametreleri",
+                "Sadece XML",
+                "Eklenemez"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Navigation animation, composable() içinde enterTransition, exitTransition, popEnterTransition, popExitTransition parametreleri ile eklenir.",
+              "tags": ["navigation", "animation"]
+            },
+            {
+              "questionId": 540006,
+              "question": "Type-safe navigation ne demektir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece String route",
+                "Route ve arguments'ın compile-time'da type-safe olması (Kotlin Serialization ile)",
+                "Sadece Int",
+                "Hiçbiri"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Type-safe navigation (Compose 2.8+), route ve arguments'ın compile-time'da type-safe olmasını sağlar. Kotlin Serialization ile data class route kullanılır, String yerine.",
+              "tags": ["navigation", "type_safe"]
+            },
+            {
+              "questionId": 540007,
+              "question": "Nested navigation nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece tek seviye",
+                "Navigation graph içinde başka navigation graph (nested NavHost)",
+                "Sadece bottom nav",
+                "Hiçbiri"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Nested navigation, navigation graph içinde başka navigation graph'lar barındırır. Örneğin, Bottom Nav her tab'ı için ayrı nested navigation.",
+              "tags": ["navigation", "nested"]
+            },
+            {
+              "questionId": 540008,
+              "question": "currentBackStackEntryAsState() ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece route",
+                "Current destination'ı State olarak döner, recomposition tetikler",
+                "Sadece log",
+                "Hiçbir şey yapmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "currentBackStackEntryAsState(), current destination'ı State olarak döner. Destination değiştiğinde recomposition tetikler. Bottom Nav'da selected state için kullanılır.",
+              "tags": ["navigation", "state"]
+            },
+            {
+              "questionId": 540009,
+              "question": "SavedStateHandle navigation ile nasıl çalışır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Çalışmaz",
+                "Route arguments otomatik olarak SavedStateHandle'a eklenir, ViewModel'de erişilebilir",
+                "Sadece manuel",
+                "Hiçbiri"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Navigation, route arguments'ları otomatik olarak SavedStateHandle'a ekler. ViewModel constructor'ında SavedStateHandle alarak route arguments'lara erişebilirsiniz.",
+              "tags": ["navigation", "savedstatehandle", "viewmodel"]
+            },
+            {
+              "questionId": 540010,
+              "question": "Navigation için ViewModel paylaşımı nasıl yapılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece global",
+                "viewModel(navController.getBackStackEntry(route)) ile parent route'un ViewModel'i paylaşılır",
+                "Paylaşılamaz",
+                "Sadece Activity scoped"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "viewModel(navController.getBackStackEntry(parentRoute)) kullanarak child ekranlar parent route'un ViewModel'ini paylaşabilir. Multi-step flow'larda kullanılır.",
+              "tags": ["navigation", "viewmodel", "sharing"]
+            }
+          ]
+        },
+        {
+          "sectionId": 5500,
+          "sectionTitle": "ViewModel & Lifecycle",
+          "sectionDescription": "Compose'da ViewModel kullanımı, lifecycle yönetimi ve state akışı",
+          "order": 5,
+          "topics": [
+            {
+              "topicId": 5501,
+              "title": "ViewModel ile Compose",
+              "summary": "ViewModel, Compose'da business logic ve state'i UI'dan ayırarak MVVM pattern'i uygular. Configuration change'lerde hayatta kalır.",
+              "content": "## ViewModel ile Compose\n\nViewModel business logic ve state tutar.\n\nComposable UI katmanıdır.\n\nConfiguration change'lerde ViewModel korunur.",
+              "difficulty": "medium",
+              "order": 1,
+              "codeExamples": [
+                {
+                  "title": "ViewModel Kullanımı",
+                  "code": "@Composable\nfun MyScreen(viewModel: MyViewModel = viewModel()) {\n    val state by viewModel.uiState.collectAsState()\n    // UI\n}",
+                  "explanation": "ViewModel'den state alma."
+                }
+              ],
+              "keyPoints": [
+                "Business logic tutar",
+                "Configuration change'de korunur",
+                "UI'dan bağımsızdır",
+                "MVVM pattern'in temelidir"
+              ],
+              "questions": [
+                {
+                  "questionId": 550101,
+                  "question": "ViewModel'in Compose'daki görevi nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece UI çizer",
+                    "Business logic ve state'i tutar, UI'dan ayırır",
+                    "Sadece navigation",
+                    "Database yönetir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ViewModel, business logic ve state'i tutar, UI'dan (Composable) ayırır. MVVM pattern'in temel bileşenidir.",
+                  "tags": ["viewmodel", "mvvm"]
+                },
+                {
+                  "questionId": 550102,
+                  "question": "ViewModel configuration change'de ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Yok olur",
+                    "Hayatta kalır (destroyed olmaz)",
+                    "Yeniden oluşturulur",
+                    "Sadece state korunur"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ViewModel, configuration change'lerde (ekran döndürme) hayatta kalır (destroyed olmaz). Bu nedenle state korunur ve UI yeniden veri çekmek zorunda kalmaz.",
+                  "tags": ["viewmodel", "configuration_change"]
+                },
+                {
+                  "questionId": 550103,
+                  "question": "Compose'da ViewModel nasıl alınır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "new ViewModel()",
+                    "viewModel() fonksiyonu ile",
+                    "ViewModel.create()",
+                    "Otomatik"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Compose'da viewModel() fonksiyonu ile ViewModel alınır. Bu fonksiyon, androidx.lifecycle:lifecycle-viewmodel-compose dependency'sinden gelir.",
+                  "tags": ["viewmodel", "compose"]
+                },
+                {
+                  "questionId": 550104,
+                  "question": "ViewModel'de Composable referansı tutulmalı mı?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Evet, her zaman",
+                    "Hayır, memory leak riski yaratır",
+                    "Fark etmez",
+                    "Sadece State"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ViewModel'de Composable, Context, View referansı tutulmamalıdır. ViewModel, UI'dan daha uzun yaşar, memory leak riski yaratır. Sadece business logic ve state tutulmalı.",
+                  "tags": ["viewmodel", "memory_leak", "best_practice"]
+                },
+                {
+                  "questionId": 550105,
+                  "question": "Aşağıdaki kullanım doğru mu?",
+                  "questionType": "multiple_choice",
+                  "code": "@Composable\nfun MyScreen(viewModel: MyViewModel = viewModel()) {\n    val state by viewModel.uiState.collectAsState()\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hayır, hatalı",
+                    "Evet, doğru kullanım",
+                    "viewModel parametre olmamalı",
+                    "collectAsState yanlış"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu doğru kullanımdır. viewModel() ile ViewModel alınır, default parameter olarak verilir (test için inject edilebilir). uiState Flow'u collectAsState ile State'e çevrilir.",
+                  "tags": ["viewmodel", "example", "best_practice"]
+                }
+              ]
+            },
+            {
+              "topicId": 5502,
+              "title": "collectAsState & collectAsStateWithLifecycle",
+              "summary": "Flow'dan State'e dönüşüm için kullanılır. collectAsStateWithLifecycle lifecycle-aware'dır ve memory leak önler.",
+              "content": "## collectAsState vs collectAsStateWithLifecycle\n\ncollectAsState: Flow'u State'e çevirir\ncollectAsStateWithLifecycle: Lifecycle-aware, app background'dayken collect durur\n\ncollectAsStateWithLifecycle önerilir.",
+              "difficulty": "hard",
+              "order": 2,
+              "codeExamples": [
+                {
+                  "title": "collectAsStateWithLifecycle",
+                  "code": "val state by viewModel.uiState.collectAsStateWithLifecycle()",
+                  "explanation": "Lifecycle-aware state collection."
+                }
+              ],
+              "keyPoints": [
+                "Flow'dan State'e dönüşüm",
+                "collectAsStateWithLifecycle lifecycle-aware",
+                "App background'da collect durur",
+                "Memory leak önler"
+              ],
+              "questions": [
+                {
+                  "questionId": 550201,
+                  "question": "collectAsState() ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "State oluşturur",
+                    "Flow'u State'e çevirir (Flow → State)",
+                    "Sadece collect eder",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "collectAsState(), Flow'u Compose State'ine çevirir. Flow emit ettiğinde State güncellenir ve recomposition tetiklenir.",
+                  "tags": ["collectasstate", "flow"]
+                },
+                {
+                  "questionId": 550202,
+                  "question": "collectAsStateWithLifecycle() ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "collectAsState ile aynı",
+                    "Lifecycle-aware, app background'dayken collect durur",
+                    "Sadece hız artışı",
+                    "Kullanımdan kalkmış"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "collectAsStateWithLifecycle(), lifecycle-aware'dır. App background'a gittiğinde (onStop) collect durur, foreground'a dönünce (onStart) devam eder. Bu, memory ve battery optimizasyonu sağlar.",
+                  "tags": ["collectasstatewithlifecycle", "lifecycle"]
+                },
+                {
+                  "questionId": 550203,
+                  "question": "collectAsState ve collectAsStateWithLifecycle arasındaki fark nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Hiçbir fark yok",
+                    "collectAsStateWithLifecycle lifecycle-aware, background'da durur",
+                    "collectAsState daha hızlı",
+                    "collectAsStateWithLifecycle deprecated"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "collectAsState her zaman collect eder. collectAsStateWithLifecycle ise app background'dayken collect durur, gereksiz güncelleme ve kaynak kullanımını önler.",
+                  "tags": ["collectasstate", "collectasstatewithlifecycle", "difference"]
+                },
+                {
+                  "questionId": 550204,
+                  "question": "Hangisi önerilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "collectAsState",
+                    "collectAsStateWithLifecycle (önerilir)",
+                    "Fark etmez",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "collectAsStateWithLifecycle önerilir çünkü lifecycle-aware'dır, memory leak riskini azaltır ve battery optimization sağlar. Google'ın resmi önerisidir.",
+                  "tags": ["collectasstatewithlifecycle", "best_practice"]
+                },
+                {
+                  "questionId": 550205,
+                  "question": "collectAsStateWithLifecycle hangi dependency'den gelir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "androidx.compose.ui",
+                    "androidx.lifecycle:lifecycle-runtime-compose",
+                    "androidx.lifecycle:lifecycle-viewmodel",
+                    "androidx.compose.runtime"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "collectAsStateWithLifecycle, androidx.lifecycle:lifecycle-runtime-compose dependency'sinden gelir.",
+                  "tags": ["collectasstatewithlifecycle", "dependency"]
+                }
+              ]
+            },
+            {
+              "topicId": 5503,
+              "title": "StateFlow & LiveData Entegrasyonu",
+              "summary": "ViewModel'de StateFlow veya LiveData kullanılabilir. StateFlow modern yaklaşımdır.",
+              "content": "## StateFlow vs LiveData\n\nStateFlow: Coroutine tabanlı, modern tercih\nLiveData: Lifecycle-aware, XML uyumlu\n\nStateFlow tercih edilir.",
+              "difficulty": "medium",
+              "order": 3,
+              "codeExamples": [
+                {
+                  "title": "StateFlow Kullanımı",
+                  "code": "class MyViewModel : ViewModel() {\n    private val _uiState = MutableStateFlow(UiState())\n    val uiState: StateFlow<UiState> = _uiState.asStateFlow()\n}",
+                  "explanation": "ViewModel'de StateFlow pattern."
+                }
+              ],
+              "keyPoints": [
+                "StateFlow modern yaklaşım",
+                "LiveData hala desteklenir",
+                "StateFlow coroutine tabanlı",
+                "asStateFlow() encapsulation sağlar"
+              ],
+              "questions": [
+                {
+                  "questionId": 550301,
+                  "question": "ViewModel'de StateFlow mi LiveData mı tercih edilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "LiveData",
+                    "StateFlow (modern tercih)",
+                    "Her ikisi de eşit",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "StateFlow modern yaklaşımdır ve Compose ile daha iyi entegrasyon sağlar. Coroutine tabanlıdır ve daha fazla operatör (map, filter) sunar.",
+                  "tags": ["stateflow", "livedata", "comparison"]
+                },
+                {
+                  "questionId": 550302,
+                  "question": "LiveData Compose'da nasıl kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Kullanılamaz",
+                    "observeAsState() ile State'e çevrilir",
+                    "Sadece XML'de",
+                    "Otomatik"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "LiveData, observeAsState() fonksiyonu ile Compose State'ine çevrilir. Ancak StateFlow tercih edilir.",
+                  "tags": ["livedata", "observeasstate", "compose"]
+                },
+                {
+                  "questionId": 550303,
+                  "question": "asStateFlow() ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "State oluşturur",
+                    "MutableStateFlow'u read-only StateFlow'a çevirir (encapsulation)",
+                    "Flow başlatır",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "asStateFlow(), MutableStateFlow'u read-only StateFlow'a çevirir. Bu, encapsulation sağlar: ViewModel dışından state değiştirilemez, sadece okunabilir.",
+                  "tags": ["stateflow", "asstateflow", "encapsulation"]
+                },
+                {
+                  "questionId": 550304,
+                  "question": "Aşağıdaki pattern doğru mu?",
+                  "questionType": "multiple_choice",
+                  "code": "private val _uiState = MutableStateFlow(UiState())\nval uiState: StateFlow<UiState> = _uiState.asStateFlow()",
+                  "difficulty": "medium",
+                  "options": [
+                    "Hayır, hatalı",
+                    "Evet, doğru encapsulation pattern",
+                    "Private gereksiz",
+                    "asStateFlow gereksiz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu doğru encapsulation pattern'dir. _uiState private ve mutable, uiState public ve read-only. ViewModel dışından sadece okuma yapılabilir, değiştiremez.",
+                  "tags": ["stateflow", "pattern", "encapsulation"]
+                }
+              ]
+            },
+            {
+              "topicId": 5504,
+              "title": "Hilt ile ViewModel Injection",
+              "summary": "Hilt, ViewModel'e dependency injection yapar. @HiltViewModel ile otomatik injection sağlanır.",
+              "content": "## Hilt + ViewModel\n\n@HiltViewModel annotation ile ViewModel inject edilir.\n\nConstructor injection kullanılır.\n\nBoilerplate kod azalır.",
+              "difficulty": "medium",
+              "order": 4,
+              "codeExamples": [
+                {
+                  "title": "Hilt ViewModel",
+                  "code": "@HiltViewModel\nclass MyViewModel @Inject constructor(\n    private val repository: Repository\n) : ViewModel()",
+                  "explanation": "Hilt ile ViewModel injection."
+                }
+              ],
+              "keyPoints": [
+                "@HiltViewModel annotation",
+                "Constructor injection",
+                "ViewModelProvider.Factory gerekmez",
+                "Test edilebilirlik artar"
+              ],
+              "questions": [
+                {
+                  "questionId": 550401,
+                  "question": "@HiltViewModel annotation'ı ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece görsel",
+                    "ViewModel'i Hilt'e tanıtır, otomatik injection sağlar",
+                    "Test için",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "@HiltViewModel, ViewModel'i Hilt'e tanıtır. Bağımlılıklar otomatik inject edilir, ViewModelProvider.Factory gerekmez.",
+                  "tags": ["hilt", "viewmodel", "annotation"]
+                },
+                {
+                  "questionId": 550402,
+                  "question": "Hilt ile ViewModel'e dependency nasıl inject edilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Manuel injection",
+                    "Constructor injection (@Inject constructor)",
+                    "Field injection",
+                    "Method injection"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Hilt ile ViewModel'e constructor injection yapılır: @Inject constructor(private val repo: Repository). Bağımlılıklar otomatik sağlanır.",
+                  "tags": ["hilt", "constructor_injection"]
+                },
+                {
+                  "questionId": 550403,
+                  "question": "Hilt olmadan ViewModel dependency injection nasıl yapılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Yapılamaz",
+                    "ViewModelProvider.Factory implement edilir (boilerplate)",
+                    "Otomatik",
+                    "Sadece Hilt"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Hilt olmadan ViewModelProvider.Factory implement edilir ve manuel injection yapılır. Bu, boilerplate kod gerektirir. Hilt bu karmaşıklığı ortadan kaldırır.",
+                  "tags": ["viewmodel", "factory", "hilt"]
+                },
+                {
+                  "questionId": 550404,
+                  "question": "Aşağıdaki Hilt ViewModel doğru mu?",
+                  "questionType": "multiple_choice",
+                  "code": "@HiltViewModel\nclass MyViewModel @Inject constructor(\n    private val repository: Repository\n) : ViewModel()",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hayır, hatalı",
+                    "Evet, doğru Hilt ViewModel",
+                    "@Inject gereksiz",
+                    "@HiltViewModel gereksiz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu doğru Hilt ViewModel pattern'idir. @HiltViewModel ve @Inject constructor ile repository otomatik inject edilir.",
+                  "tags": ["hilt", "viewmodel", "example"]
+                }
+              ]
+            },
+            {
+              "topicId": 5505,
+              "title": "Lifecycle-aware Composables",
+              "summary": "Compose, lifecycle-aware'dır. DisposableEffect ve LaunchedEffect ile lifecycle olayları yönetilir.",
+              "content": "## Lifecycle in Compose\n\nCompose otomatik lifecycle-aware'dır.\n\nDisposableEffect lifecycle olaylarını dinler.\n\nApp background/foreground yönetimi.",
+              "difficulty": "hard",
+              "order": 5,
+              "codeExamples": [
+                {
+                  "title": "Lifecycle Observer",
+                  "code": "DisposableEffect(Unit) {\n    val observer = LifecycleEventObserver { _, event ->\n        if (event == Lifecycle.Event.ON_RESUME) { }\n    }\n    lifecycle.addObserver(observer)\n    onDispose { lifecycle.removeObserver(observer) }\n}",
+                  "explanation": "Lifecycle event'lerini dinleme."
+                }
+              ],
+              "keyPoints": [
+                "Compose lifecycle-aware",
+                "DisposableEffect için cleanup",
+                "Background/foreground yönetimi",
+                "Memory leak önleme"
+              ],
+              "questions": [
+                {
+                  "questionId": 550501,
+                  "question": "Compose otomatik lifecycle-aware mıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hayır, manuel yönetim gerekir",
+                    "Evet, Composable otomatik lifecycle-aware'dır",
+                    "Sadece ViewModel",
+                    "Sadece Activity"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Evet, Compose otomatik lifecycle-aware'dır. Composable, composition'a girdiğinde başlar, çıktığında temizlenir. LaunchedEffect, DisposableEffect gibi API'lar lifecycle olaylarını yönetir.",
+                  "tags": ["lifecycle", "compose"]
+                },
+                {
+                  "questionId": 550502,
+                  "question": "DisposableEffect ne zaman kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Her zaman",
+                    "Cleanup gerektiren lifecycle-aware işlemler için (listener add/remove)",
+                    "Sadece API çağrısı",
+                    "Kullanılmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "DisposableEffect, cleanup gerektiren lifecycle-aware işlemler için kullanılır: listener ekleme/çıkarma, subscription başlatma/durdurma. onDispose bloğu cleanup yapar.",
+                  "tags": ["disposableeffect", "lifecycle"]
+                },
+                {
+                  "questionId": 550503,
+                  "question": "LocalLifecycleOwner ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece state",
+                    "Composable içinden lifecycle'a erişim sağlar",
+                    "ViewModel oluşturur",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "LocalLifecycleOwner, Composable içinden mevcut lifecycle'a erişim sağlar. DisposableEffect ile birlikte kullanılarak lifecycle event'leri dinlenebilir.",
+                  "tags": ["locallifecycleowner", "lifecycle"]
+                },
+                {
+                  "questionId": 550504,
+                  "question": "App background'a gittiğinde Composable ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Yok olur",
+                    "Composition kalır ama inactive olur (onStop)",
+                    "Yeniden oluşturulur",
+                    "Hiçbir şey olmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "App background'a gittiğinde Composable composition'da kalır ama inactive olur (onStop çağrılır). Foreground'a dönünce active olur (onStart). collectAsStateWithLifecycle bu durumu handle eder.",
+                  "tags": ["lifecycle", "background"]
+                }
+              ]
+            }
+          ],
+          "sectionMixedQuestions": [
+            {
+              "questionId": 550001,
+              "question": "ViewModel'in lifecycle'ı ne kadardır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Composable ile aynı",
+                "Activity/Fragment finish olana kadar (configuration change'de hayatta kalır)",
+                "Sadece bir recomposition",
+                "Uygulama kapanana kadar"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "ViewModel'in lifecycle'ı, Activity/Fragment finish olana kadar devam eder. Configuration change'de (ekran döndürme) hayatta kalır. onCleared() çağrıldığında temizlenir.",
+              "tags": ["viewmodel", "lifecycle"]
+            },
+            {
+              "questionId": 550002,
+              "question": "ViewModel.onCleared() ne zaman çağrılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Her recomposition",
+                "ViewModel yok edildiğinde (Activity/Fragment finish)",
+                "App background'a gittiğinde",
+                "Hiçbir zaman"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "onCleared(), ViewModel yok edildiğinde (Activity/Fragment finish) çağrılır. Cleanup işlemleri (coroutine iptal, listener çıkarma) burada yapılır.",
+              "tags": ["viewmodel", "oncleared"]
+            },
+            {
+              "questionId": 550003,
+              "question": "viewModelScope nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Global scope",
+                "ViewModel'e bağlı CoroutineScope, onCleared'da iptal edilir",
+                "Activity scope",
+                "Manuel scope"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "viewModelScope, ViewModel'e bağlı CoroutineScope'tur. ViewModel onCleared() çağrıldığında otomatik olarak iptal edilir. Memory leak önler.",
+              "tags": ["viewmodelscope", "coroutine"]
+            },
+            {
+              "questionId": 550004,
+              "question": "UI State pattern nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece state",
+                "Tüm UI state'ini tek bir data class'ta toplama (UiState)",
+                "Sadece LiveData",
+                "Hiçbiri"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "UI State pattern, tüm UI state'ini tek bir data class'ta toplar (örn: data class UiState(loading, error, data)). Single source of truth ve kollay state management sağlar.",
+              "tags": ["ui_state", "pattern"]
+            },
+            {
+              "questionId": 550005,
+              "question": "Shared ViewModel nasıl kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Kullanılamaz",
+                "viewModel(viewModelStoreOwner = ...) ile parent Activity/Navigation graph ViewModel'i paylaşılır",
+                "Sadece global",
+                "Her zaman ayrı"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Shared ViewModel, viewModel(viewModelStoreOwner = LocalContext.current as ComponentActivity) veya Navigation graph ile parent'ın ViewModel'i paylaşılır. Fragment'lar arası veri paylaşımında kullanılır.",
+              "tags": ["viewmodel", "shared"]
+            },
+            {
+              "questionId": 550006,
+              "question": "SavedStateHandle ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece state",
+                "Process death'de state'i korur (Bundle'a kaydeder)",
+                "Configuration change için",
+                "Hiçbir şey yapmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "SavedStateHandle, process death (sistem tarafından app kill) durumunda state'i korur. Bundle'a kaydeder. Configuration change'de ViewModel korunur ama process death'de SavedStateHandle gerekir.",
+              "tags": ["savedstatehandle", "process_death"]
+            },
+            {
+              "questionId": 550007,
+              "question": "ViewModel test ederken ne yapılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Test edilemez",
+                "Dependency'ler mock edilir, ViewModel Unit Test yapılır",
+                "Sadece UI test",
+                "Sadece manuel test"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "ViewModel Unit Test yapılır. Dependency'ler (Repository) mock edilir (Mockito/MockK), business logic ve state transformation test edilir. UI'dan bağımsız, hızlı test.",
+              "tags": ["viewmodel", "testing"]
+            },
+            {
+              "questionId": 550008,
+              "question": "repeatOnLifecycle ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece bir kez",
+                "Lifecycle belirli state'e geldiğinde coroutine başlatır, çıktığında iptal eder",
+                "Sadece repeat",
+                "Hiçbir şey yapmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "repeatOnLifecycle, lifecycle belirli state'e (örn: STARTED) geldiğinde coroutine başlatır, state'den çıktığında (örn: STOPPED) iptal eder. collectAsStateWithLifecycle içinde kullanılır.",
+              "tags": ["repeatonlifecycle", "lifecycle"]
+            },
+            {
+              "questionId": 550009,
+              "question": "Compose'da lifecycle event'leri nasıl dinlenir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Dinlenemez",
+                "DisposableEffect + LifecycleEventObserver ile",
+                "Sadece ViewModel",
+                "Otomatik"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "DisposableEffect içinde LifecycleEventObserver kullanarak lifecycle event'leri (onCreate, onStart, onResume, onPause, onStop, onDestroy) dinlenebilir.",
+              "tags": ["lifecycle", "event", "disposableeffect"]
+            },
+            {
+              "questionId": 550010,
+              "question": "Lifecycle.State.STARTED ve RESUMED farkı nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir fark yok",
+                "STARTED: visible but not interactive, RESUMED: visible and interactive",
+                "RESUMED daha önce",
+                "Aynı şey"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "STARTED: ekran görünür ama interactive değil (örn: dialog üstte). RESUMED: ekran görünür ve interactive. collectAsStateWithLifecycle varsayılan olarak STARTED kullanır (battery için).",
+              "tags": ["lifecycle", "state", "started", "resumed"]
+            }
+          ]
+        }
+      ],
+      "interviewQuestions": []
     }
   ]
 }
