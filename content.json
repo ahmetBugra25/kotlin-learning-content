@@ -14236,7 +14236,56 @@
                 "Okunabilir kod yapısı sağlar",
                 "Android tarafından resmi olarak desteklenir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 450101,
+                  "question": "Coroutines'in ana kullanım amacı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece UI çizmek",
+                    "Uzun süren işlemleri ana thread'i bloklamadan çalıştırmak",
+                    "Veritabanı oluşturmak",
+                    "Sadece animasyon"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Coroutines, uzun süren işlemleri (network, database) ana thread'i bloklamadan çalıştırmayı sağlayan Kotlin'in asenkron programlama çözümüdür.",
+                  "tags": ["coroutines", "temel"]
+                },
+                {
+                  "questionId": 450102,
+                  "question": "Coroutines hangi problemi çözer?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece performans",
+                    "Callback hell ve asenkron kod karmaşıklığı",
+                    "Sadece UI sorunu",
+                    "Hiçbir problem çözmez"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Coroutines, callback hell problemini çözer ve asenkron kodu senkron gibi okunabilir hale getirir.",
+                  "tags": ["coroutines", "callback_hell"]
+                },
+                {
+                  "questionId": 450103,
+                  "question": "Coroutines Android tarafından destekleniyor mu?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Hayır, üçüncü parti",
+                    "Evet, resmi olarak desteklenir",
+                    "Sadece Kotlin'de",
+                    "Kullanımdan kaldırıldı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Coroutines, Android tarafından resmi olarak desteklenir ve Room, Retrofit gibi kütüphanelerle entegredir.",
+                  "tags": ["coroutines", "android", "support"]
+                }
+              ]
             },
             {
               "topicId": 4502,
@@ -14258,7 +14307,72 @@
                 "GlobalScope önerilmez",
                 "UI güvenliğini artırır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 450201,
+                  "question": "Android'de en çok kullanılan lifecycle-aware scope'lar hangileridir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece GlobalScope",
+                    "viewModelScope ve lifecycleScope",
+                    "Sadece MainScope",
+                    "Hiçbiri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Android'de en çok kullanılan lifecycle-aware scope'lar viewModelScope (ViewModel için) ve lifecycleScope (Activity/Fragment için)'dur.",
+                  "tags": ["scope", "lifecycle"]
+                },
+                {
+                  "questionId": 450202,
+                  "question": "viewModelScope ne zaman iptal edilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir zaman",
+                    "ViewModel yok edildiğinde (onCleared)",
+                    "Activity kapandığında",
+                    "Manuel iptal edilmeli"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "viewModelScope, ViewModel yok edildiğinde (onCleared çağrıldığında) otomatik olarak iptal edilir ve içindeki tüm coroutine'ler durdurulur.",
+                  "tags": ["viewmodelscope", "lifecycle"]
+                },
+                {
+                  "questionId": 450203,
+                  "question": "GlobalScope kullanmanın dezavantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Hiçbir dezavantajı yok",
+                    "Lifecycle'a bağlı değildir, memory leak riski yüksektir",
+                    "Daha yavaştır",
+                    "Sadece test için kullanılır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "GlobalScope, uygulama yaşam döngüsü boyunca yaşar ve lifecycle'a bağlı değildir. Bu, memory leak riski yaratır ve önerilmez.",
+                  "tags": ["globalscope", "memory_leak"]
+                },
+                {
+                  "questionId": 450204,
+                  "question": "Aşağıdaki kodda coroutine ne zaman iptal edilir?",
+                  "questionType": "multiple_choice",
+                  "code": "viewModelScope.launch {\n    val users = repository.getUsers()\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hiçbir zaman",
+                    "ViewModel temizlendiğinde",
+                    "Activity kapandığında hemen",
+                    "Manuel iptal edilmeli"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "viewModelScope kullanıldığı için coroutine, ViewModel temizlendiğinde (onCleared) otomatik olarak iptal edilir.",
+                  "tags": ["viewmodelscope", "cancellation"]
+                }
+              ]
             },
             {
               "topicId": 4503,
@@ -14280,7 +14394,72 @@
                 "Doğru dispatcher performansı artırır",
                 "Yanlış kullanım ANR'a sebep olabilir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 450301,
+                  "question": "Dispatchers.Main ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Network işlemleri",
+                    "UI işlemleri ve kullanıcı etkileşimleri",
+                    "Veritabanı işlemleri",
+                    "Dosya okuma"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Dispatchers.Main, Android'in main (UI) thread'inde çalışır ve UI güncellemeleri için kullanılır.",
+                  "tags": ["dispatchers", "main"]
+                },
+                {
+                  "questionId": 450302,
+                  "question": "Dispatchers.IO ne tür işlemler için uygundur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "UI güncellemeleri",
+                    "Network istekleri ve veritabanı işlemleri",
+                    "Matematiksel hesaplamalar",
+                    "Sadece animasyon"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Dispatchers.IO, network istekleri, veritabanı okuma/yazma, dosya işlemleri gibi I/O operasyonları için optimize edilmiştir.",
+                  "tags": ["dispatchers", "io"]
+                },
+                {
+                  "questionId": 450303,
+                  "question": "Dispatchers.Default ne için kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "UI işlemleri",
+                    "CPU yoğun işlemler (sıralama, parsing, hesaplama)",
+                    "Network istekleri",
+                    "Veritabanı işlemleri"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Dispatchers.Default, CPU-intensive işlemler (büyük veri sıralama, JSON parsing, karmaşık hesaplamalar) için optimize edilmiştir.",
+                  "tags": ["dispatchers", "default"]
+                },
+                {
+                  "questionId": 450304,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "withContext(Dispatchers.IO) {\n    dao.getAllUsers()\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "UI thread'de veritabanı okur",
+                    "IO thread'de veritabanı okur, sonucu main thread'e döner",
+                    "Hata verir",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "withContext(Dispatchers.IO) ile veritabanı işlemi IO thread'de yapılır, işlem bitince sonuç otomatik olarak çağıran thread'e (genellikle Main) döner.",
+                  "tags": ["withcontext", "dispatchers", "io"]
+                }
+              ]
             },
             {
               "topicId": 4504,
@@ -14302,7 +14481,72 @@
                 "await ile senkron bekleme yapılır",
                 "Yanlış kullanım memory leak doğurabilir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 450401,
+                  "question": "launch ve async arasındaki temel fark nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir fark yok",
+                    "launch sonuç dönmez, async Deferred<T> döner",
+                    "async daha yavaştır",
+                    "launch kullanımdan kalkmıştır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "launch, Job döner ve sonuç beklenmez (fire-and-forget). async ise Deferred<T> döner ve await() ile sonuç alınabilir.",
+                  "tags": ["launch", "async", "difference"]
+                },
+                {
+                  "questionId": 450402,
+                  "question": "async ne zaman kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir zaman",
+                    "Sonuç döndürmesi gereken ve/veya paralel işlemler için",
+                    "Sadece UI için",
+                    "Her zaman launch yerine"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "async, sonuç döndürmesi gereken veya paralel olarak birden fazla işlem yapıp sonuçlarını toplamak için kullanılır.",
+                  "tags": ["async", "use_case"]
+                },
+                {
+                  "questionId": 450403,
+                  "question": "await() ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Coroutine'i iptal eder",
+                    "async'in sonucunu bekler ve alır",
+                    "Coroutine başlatır",
+                    "Thread bloklar"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "await(), async'den dönen Deferred'ın sonucunu bekler ve alır. Suspend fonksiyondur ve thread bloklamaz.",
+                  "tags": ["async", "await"]
+                },
+                {
+                  "questionId": 450404,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "val result = async { api.getData() }\nresult.await()",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hata verir",
+                    "API'den veri alır ve sonucu bekler",
+                    "Sadece coroutine başlatır",
+                    "Thread bloklar"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "async ile API çağrısı başlatılır, await() ile sonuç beklenir. async suspend olmadan başlatılabilir, await() suspend'dir.",
+                  "tags": ["async", "await", "example"]
+                }
+              ]
             },
             {
               "topicId": 4505,
@@ -14324,10 +14568,252 @@
                 "SupervisorJob izolasyon sağlar",
                 "Doğru hata yönetimi crash'i önler"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 450501,
+                  "question": "Coroutine'lerde exception handling nasıl yapılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Exception handle edilemez",
+                    "try-catch veya CoroutineExceptionHandler kullanılır",
+                    "Otomatik handle edilir",
+                    "Sadece log yazılır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Coroutine'lerde exception handling için try-catch bloğu veya CoroutineExceptionHandler kullanılır.",
+                  "tags": ["exception", "handling"]
+                },
+                {
+                  "questionId": 450502,
+                  "question": "launch ile başlatılan coroutine'de hata olursa ne olur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Hiçbir şey olmaz",
+                    "Hata parent scope'a yayılır ve tüm scope iptal olabilir",
+                    "Sadece o coroutine durur",
+                    "Uygulama crash olur"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "launch ile başlatılan coroutine'de yakalanmayan exception, parent scope'a yayılır ve structured concurrency gereği tüm scope iptal olabilir.",
+                  "tags": ["launch", "exception", "propagation"]
+                },
+                {
+                  "questionId": 450503,
+                  "question": "SupervisorJob ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece hız artırır",
+                    "Child coroutine hatalarını izole eder, parent'a yayılmasını engeller",
+                    "Coroutine başlatır",
+                    "Sadece test için"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "SupervisorJob, child coroutine'lerin hatalarını izole eder. Bir child'da hata olsa bile diğer child'lar ve parent etkilenmez.",
+                  "tags": ["supervisorjob", "isolation"]
+                },
+                {
+                  "questionId": 450504,
+                  "question": "async ile başlatılan coroutine'de hata ne zaman fırlatılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "async çağrıldığında",
+                    "await() çağrıldığında",
+                    "Hiçbir zaman",
+                    "Otomatik handle edilir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "async ile başlatılan coroutine'de exception, await() çağrıldığında fırlatılır. Bu nedenle await()'i try-catch içine almak gerekir.",
+                  "tags": ["async", "exception", "await"]
+                },
+                {
+                  "questionId": 450505,
+                  "question": "Aşağıdaki kod doğru exception handling yapıyor mu?",
+                  "questionType": "multiple_choice",
+                  "code": "viewModelScope.launch {\n    try {\n        api.getData()\n    } catch (e: Exception) {\n        // hata yönetimi\n    }\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hayır, hatalı",
+                    "Evet, doğru yaklaşım",
+                    "try-catch coroutine'de kullanılamaz",
+                    "Sadece async'de çalışır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu doğru bir exception handling yaklaşımıdır. Coroutine içinde try-catch kullanılarak exception yakalanabilir.",
+                  "tags": ["exception", "try_catch", "best_practice"]
+                }
+              ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+              "questionId": 450001,
+              "question": "lifecycleScope ne zaman kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece ViewModel'de",
+                "Activity ve Fragment'te UI ile ilgili işlemler için",
+                "Sadece Service'de",
+                "GlobalScope yerine"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "lifecycleScope, Activity ve Fragment'te kullanılır. Lifecycle'a bağlıdır ve Activity/Fragment yok olduğunda coroutine'ler otomatik iptal edilir.",
+              "tags": ["lifecyclescope", "lifecycle"]
+            },
+            {
+              "questionId": 450002,
+              "question": "Coroutine'de job.cancel() ne yapar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Coroutine'i duraklatır",
+                "Coroutine'i iptal eder ve CancellationException fırlatır",
+                "Coroutine'i yeniden başlatır",
+                "Hiçbir şey yapmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "job.cancel(), coroutine'i iptal eder ve CancellationException fırlatır. finally bloğunda cleanup yapılabilir.",
+              "tags": ["cancel", "job"]
+            },
+            {
+              "questionId": 450003,
+              "question": "Birden fazla async işlemini paralel çalıştırıp sonuçlarını almak için hangi pattern kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "launch kullanılır",
+                "Birden fazla async başlatılır, await() ile toplanır",
+                "Sadece sıralı çağrılır",
+                "Mümkün değil"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Paralel işlemler için birden fazla async başlatılır ve await() ile sonuçlar toplanır: val result1 = async { }, val result2 = async { }, result1.await() + result2.await()",
+              "tags": ["async", "parallel", "pattern"]
+            },
+            {
+              "questionId": 450004,
+              "question": "withTimeout() ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece hız artırır",
+                "Coroutine'e timeout ekler, süre aşımında TimeoutCancellationException fırlatır",
+                "Coroutine'i durdurur",
+                "Sadece test için"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "withTimeout(), coroutine'e zaman sınırı ekler. Belirtilen sürede tamamlanmazsa TimeoutCancellationException fırlatır ve coroutine iptal edilir.",
+              "tags": ["timeout", "withtimeout"]
+            },
+            {
+              "questionId": 450005,
+              "question": "CoroutineExceptionHandler ne zaman kullanılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Her zaman",
+                "launch ile başlatılan coroutine'lerde global exception handling için",
+                "Sadece async'de",
+                "Kullanılmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "CoroutineExceptionHandler, launch ile başlatılan coroutine'lerde global exception handling için kullanılır. async'de çalışmaz, await()'de exception fırlatılır.",
+              "tags": ["exception", "handler"]
+            },
+            {
+              "questionId": 450006,
+              "question": "runBlocking() ne işe yarar ve neden production kodda önerilmez?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Her zaman kullanılmalı",
+                "Coroutine başlatır ve thread'i bloklar; UI thread'de ANR riski yaratır",
+                "Sadece test için önerilir",
+                "Asenkron çalışır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "runBlocking(), coroutine başlatır ve çağıran thread'i bloklar. Production'da main thread'de kullanılırsa ANR riskine yol açar. Genellikle sadece test ve main fonksiyonlarda kullanılır.",
+              "tags": ["runblocking", "blocking"]
+            },
+            {
+              "questionId": 450007,
+              "question": "Coroutine'de isActive property'si ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Coroutine'i başlatır",
+                "Coroutine'in aktif olup olmadığını kontrol eder (iptal edilmemiş)",
+                "Coroutine'i iptal eder",
+                "Sadece log için"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "isActive, coroutine'in hala aktif olup olmadığını kontrol eder. Uzun döngülerde isActive kontrolü yaparak iptal durumuna responsive olmak gerekir.",
+              "tags": ["isactive", "cancellation"]
+            },
+            {
+              "questionId": 450008,
+              "question": "ensureActive() ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Coroutine'i başlatır",
+                "Coroutine iptal edilmişse CancellationException fırlatır",
+                "Coroutine'i duraklatır",
+                "Sadece log için"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "ensureActive(), coroutine iptal edilmişse hemen CancellationException fırlatır. Uzun işlemlerde düzenli olarak çağrılarak cancellation'a responsive olunur.",
+              "tags": ["ensureactive", "cancellation"]
+            },
+            {
+              "questionId": 450009,
+              "question": "Coroutine'de NonCancellable context ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Coroutine'i iptal edilemez yapar",
+                "finally bloğunda cleanup işlemleri için suspend fonksiyon çağırabilmeyi sağlar",
+                "Sadece hız artırır",
+                "Hiçbir işe yaramaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "NonCancellable, iptal edilmiş coroutine'de finally bloğunda suspend fonksiyon çağırabilmeyi sağlar. Cleanup işlemleri için kullanılır: withContext(NonCancellable) { }",
+              "tags": ["noncancellable", "cleanup"]
+            },
+            {
+              "questionId": 450010,
+              "question": "Coroutine context nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece dispatcher",
+                "Dispatcher, Job, CoroutineName gibi elementlerin birleşimi",
+                "Sadece scope",
+                "Sadece exception handler"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "CoroutineContext, Dispatcher, Job, CoroutineName, CoroutineExceptionHandler gibi elementlerin birleşimidir. + operatörü ile combine edilebilir.",
+              "tags": ["context", "coroutinecontext"]
+            }
+          ]
         },
         {
           "sectionId": 4600,
@@ -14349,7 +14835,56 @@
                 "Refactor sürecini güvenli hale getirir",
                 "Profesyonel projelerde zorunludur"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 460101,
+                  "question": "Testing (Test yazma) nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece debug yapmak",
+                    "Yazılan kodun beklenen şekilde çalışıp çalışmadığını doğrulamak",
+                    "Sadece UI çizmek",
+                    "Sadece performans ölçmek"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Testing, yazılan kodun beklenen şekilde çalışıp çalışmadığını doğrulamak için yapılan kontrollü test süreçleridir.",
+                  "tags": ["testing", "temel"]
+                },
+                {
+                  "questionId": 460102,
+                  "question": "Test yazmanın avantajları nelerdir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece daha fazla kod",
+                    "Hataları erken yakalar, kod kalitesini artırır, refactor'u güvenli hale getirir",
+                    "Sadece daha yavaş geliştirme",
+                    "Hiçbir avantajı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Test yazmak, hataları erken yakalar, kod kalitesini artırır ve refactor sürecini güvenli hale getirir. Büyük projelerde regresyon hatalarını önler.",
+                  "tags": ["testing", "advantages"]
+                },
+                {
+                  "questionId": 460103,
+                  "question": "Profesyonel yazılım geliştirmede test yazımı nasıl görülür?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Opsiyonel",
+                    "Vazgeçilmezdir ve zorunludur",
+                    "Sadece büyük şirketler için",
+                    "Gereksizdir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Profesyonel yazılım geliştirme süreçlerinde test yazımı vazgeçilmezdir ve zorunludur. Kod kalitesi ve güvenilirlik için kritik öneme sahiptir.",
+                  "tags": ["testing", "professional"]
+                }
+              ]
             },
             {
               "topicId": 4602,
@@ -14371,7 +14906,72 @@
                 "ViewModel için idealdir",
                 "Regression hatalarını önler"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 460201,
+                  "question": "Unit Test nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Tüm uygulamayı test etme",
+                    "En küçük test edilebilir birimleri (fonksiyon, ViewModel) izole şekilde test etme",
+                    "Sadece UI test",
+                    "Sadece database test"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Unit Test, uygulamadaki en küçük test edilebilir birimlerin (fonksiyon, ViewModel, UseCase) izole şekilde test edilmesini sağlar.",
+                  "tags": ["unit_test", "temel"]
+                },
+                {
+                  "questionId": 460202,
+                  "question": "Android'de Unit Test genellikle hangi bileşenler için yazılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece Activity",
+                    "ViewModel, UseCase ve business logic",
+                    "Sadece XML layout",
+                    "Sadece Manifest"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Android'de Unit Test genellikle ViewModel, UseCase ve business logic için yazılır. Bu bileşenler UI'dan bağımsızdır ve kolayca test edilebilir.",
+                  "tags": ["unit_test", "viewmodel"]
+                },
+                {
+                  "questionId": 460203,
+                  "question": "Unit Test'in avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece daha fazla kod",
+                    "Hızlı çalışır, UI bağımsız, regression hatalarını önler",
+                    "Sadece yavaş çalışır",
+                    "Hiçbir avantajı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Unit Test, UI bağımsız çalıştığı için çok hızlıdır (saniyeler içinde), regression hatalarını önler ve sürekli çalıştırılabilir.",
+                  "tags": ["unit_test", "advantages"]
+                },
+                {
+                  "questionId": 460204,
+                  "question": "Aşağıdaki test ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "@Test\nfun counter_increases_correctly() {\n    val vm = MainViewModel()\n    vm.increase()\n    assertEquals(1, vm.counter.value)\n}",
+                  "difficulty": "easy",
+                  "options": [
+                    "UI test yapar",
+                    "ViewModel'in increase fonksiyonunun counter'ı 1 artırdığını test eder",
+                    "Network testi yapar",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu Unit Test, MainViewModel'in increase() fonksiyonunu çağırır ve counter değerinin 1 olduğunu doğrular (assertEquals).",
+                  "tags": ["unit_test", "viewmodel", "example"]
+                }
+              ]
             },
             {
               "topicId": 4603,
@@ -14393,7 +14993,72 @@
                 "Gerçek API çağrısı yapılmaz",
                 "Test stabilitesini artırır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 460301,
+                  "question": "Mocking nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Gerçek API kullanma",
+                    "Gerçek bağımlılıkların yerine sahte (mock) nesneler kullanma",
+                    "Sadece UI çizme",
+                    "Veritabanı oluşturma"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Mocking, gerçek bağımlılıkların (Repository, API, Database) yerine sahte (mock) nesneler kullanarak izole test yazmayı sağlar.",
+                  "tags": ["mocking", "temel"]
+                },
+                {
+                  "questionId": 460302,
+                  "question": "Mocking neden kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece daha fazla kod",
+                    "Test izolasyonu, gerçek API çağrısı yapmadan test, stabilite",
+                    "Sadece hız artışı",
+                    "Hiçbir nedeni yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Mocking, bağımlılıkları izole eder, gerçek API/Database çağrısı yapmadan test yazılmasını sağlar ve test stabilitesini artırır.",
+                  "tags": ["mocking", "reasons"]
+                },
+                {
+                  "questionId": 460303,
+                  "question": "Android'de en yaygın mocking kütüphanesi hangisidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Glide",
+                    "Mockito",
+                    "Retrofit",
+                    "Room"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Mockito, Android'de en yaygın kullanılan mocking kütüphanesidir. MockK (Kotlin için) de popülerdir.",
+                  "tags": ["mocking", "mockito"]
+                },
+                {
+                  "questionId": 460304,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "val repo = mock(UserRepository::class.java)\n`when`(repo.getUsers()).thenReturn(listOf())",
+                  "difficulty": "medium",
+                  "options": [
+                    "Gerçek repository oluşturur",
+                    "Mock repository oluşturur ve getUsers() çağrıldığında boş liste döner",
+                    "Veritabanı oluşturur",
+                    "Hata verir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "mock() ile sahte repository oluşturulur. when().thenReturn() ile getUsers() çağrıldığında boş liste döndürülmesi sağlanır (mocking behavior).",
+                  "tags": ["mocking", "mockito", "example"]
+                }
+              ]
             },
             {
               "topicId": 4604,
@@ -14415,7 +15080,56 @@
                 "Yavaş çalışır ama etkilidir",
                 "Release öncesi kritik öneme sahiptir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 460401,
+                  "question": "UI Test (Espresso) ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece ViewModel test eder",
+                    "Uygulamanın kullanıcı arayüzünü otomatik olarak test eder",
+                    "Sadece network test eder",
+                    "Sadece veritabanı test eder"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "UI Test (Espresso), uygulamanın kullanıcı arayüzünün doğru çalışıp çalışmadığını otomatik olarak test etmeyi sağlar.",
+                  "tags": ["ui_test", "espresso"]
+                },
+                {
+                  "questionId": 460402,
+                  "question": "Espresso testleri nerede çalışır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece bilgisayarda",
+                    "Gerçek cihaz veya emülatör üzerinde",
+                    "Sadece cloud'da",
+                    "Hiçbir yerde"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Espresso testleri, gerçek cihaz veya emülatör üzerinde çalışır. Gerçek kullanıcı etkileşimlerini simüle eder.",
+                  "tags": ["espresso", "device"]
+                },
+                {
+                  "questionId": 460403,
+                  "question": "Aşağıdaki Espresso kodu ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "onView(withId(R.id.button)).perform(click())",
+                  "difficulty": "easy",
+                  "options": [
+                    "Button oluşturur",
+                    "ID'si button olan view'a tıklama işlemi yapar (simüle eder)",
+                    "Button siler",
+                    "Hata verir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "onView(withId(R.id.button)) ile button bulunur, perform(click()) ile tıklama işlemi simüle edilir. Gerçek kullanıcı etkileşimi test edilir.",
+                  "tags": ["espresso", "click", "example"]
+                }
+              ]
             },
             {
               "topicId": 4605,
@@ -14431,10 +15145,220 @@
                 "Bakım maliyetini düşürür",
                 "Doğru test stratejisi sağlar"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 460501,
+                  "question": "Test Pyramid nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "UI framework",
+                    "Test stratejisinde hangi test türüne ne kadar ağırlık verilmesi gerektiğini tanımlayan yapı",
+                    "Veritabanı şeması",
+                    "Network protokolü"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Test Pyramid, test stratejisinde hangi test türüne (Unit, Integration, UI) ne kadar ağırlık verilmesi gerektiğini tanımlar.",
+                  "tags": ["test_pyramid", "strategy"]
+                },
+                {
+                  "questionId": 460502,
+                  "question": "Test Pyramid'e göre hangi test türü en fazla olmalıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "UI Test",
+                    "Unit Test",
+                    "Integration Test",
+                    "Hepsi eşit"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Test Pyramid'e göre: Unit Test (en çok) → Integration Test (orta) → UI Test (en az). Unit test hızlı ve ucuzdur, UI test yavaş ve pahalıdır.",
+                  "tags": ["test_pyramid", "unit_test"]
+                },
+                {
+                  "questionId": 460503,
+                  "question": "Test Pyramid'in amacı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece görsel",
+                    "Test maliyetini optimize etmek ve doğru test stratejisi sağlamak",
+                    "Sadece UI test yazmak",
+                    "Test yazmamak"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Test Pyramid, test maliyetini (zaman, bakım) optimize eder ve doğru test stratejisi sağlar. Unit test ağırlıklı, UI test sınırlı tutulur.",
+                  "tags": ["test_pyramid", "optimization"]
+                }
+              ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+              "questionId": 460001,
+              "question": "JUnit nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "UI test framework",
+                "Java/Kotlin için Unit Test framework'ü",
+                "Network kütüphanesi",
+                "Veritabanı aracı"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "JUnit, Java ve Kotlin için en yaygın kullanılan Unit Test framework'üdür. @Test annotation'ı ile test fonksiyonları tanımlanır.",
+              "tags": ["junit", "framework"]
+            },
+            {
+              "questionId": 460002,
+              "question": "assertEquals() ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "İki değeri karşılaştırır ve eşit olup olmadığını kontrol eder",
+                "Değer atar",
+                "UI çizer",
+                "Network isteği yapar"
+              ],
+              "correctAnswerIndex": 0,
+              "explanation": "assertEquals(expected, actual), beklenen (expected) ve gerçek (actual) değerleri karşılaştırır. Eşit değilse test fail olur.",
+              "tags": ["assertion", "junit"]
+            },
+            {
+              "questionId": 460003,
+              "question": "TDD (Test-Driven Development) nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "UI tasarımı",
+                "Önce test yazıp sonra kodu yazma yaklaşımı",
+                "Sadece test yazmama",
+                "Manuel test"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "TDD, önce test yazıp (fail), sonra kodu yazarak (pass), son olarak refactor yapma yaklaşımıdır. Red-Green-Refactor cycle.",
+              "tags": ["tdd", "methodology"]
+            },
+            {
+              "questionId": 460004,
+              "question": "Integration Test nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece tek fonksiyon test",
+                "Birden fazla bileşenin birlikte çalışmasını test etme",
+                "Sadece UI test",
+                "Manuel test"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Integration Test, birden fazla bileşenin (örn: ViewModel + Repository + Database) birlikte doğru çalışıp çalışmadığını test eder.",
+              "tags": ["integration_test", "testing"]
+            },
+            {
+              "questionId": 460005,
+              "question": "ViewModel test ederken LiveData/StateFlow değerini nasıl kontrol ederiz?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Doğrudan kontrol edilemez",
+                "InstantTaskExecutorRule ve observeForever veya Flow.first() kullanılır",
+                "Sadece log yazılır",
+                "UI test gerekir"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "LiveData test için InstantTaskExecutorRule ve observeForever kullanılır. StateFlow için Flow.first() veya test observer kullanılır.",
+              "tags": ["viewmodel", "livedata", "testing"]
+            },
+            {
+              "questionId": 460006,
+              "question": "Espresso'da onView() ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "View oluşturur",
+                "Test edilecek view'ı bulur (matcher ile)",
+                "View siler",
+                "Layout inflate eder"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "onView() Espresso'da test edilecek view'ı bulmak için kullanılır. withId(), withText() gibi matcher'larla eşleşme yapılır.",
+              "tags": ["espresso", "onview"]
+            },
+            {
+              "questionId": 460007,
+              "question": "@Before annotation'ı ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Test sonrası çalışır",
+                "Her test öncesi çalışır (setup için)",
+                "Sadece ilk test öncesi",
+                "Hiçbir zaman çalışmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "@Before, her test fonksiyonu öncesinde çalışır. Test setup (örn: ViewModel oluşturma, mock ayarlama) için kullanılır.",
+              "tags": ["junit", "before", "annotation"]
+            },
+            {
+              "questionId": 460008,
+              "question": "@After annotation'ı ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Test öncesi çalışır",
+                "Her test sonrası çalışır (cleanup için)",
+                "Sadece son test sonrası",
+                "Hiçbir zaman çalışmaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "@After, her test fonksiyonu sonrasında çalışır. Cleanup (örn: database kapatma, resource temizleme) için kullanılır.",
+              "tags": ["junit", "after", "annotation"]
+            },
+            {
+              "questionId": 460009,
+              "question": "Code Coverage nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "UI tasarımı",
+                "Kodun ne kadarının test tarafından kapsandığını gösteren metrik",
+                "Sadece test sayısı",
+                "Network hızı"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Code Coverage, kodun ne kadarının test tarafından kapsandığını gösteren metrik'tir (%). %100 coverage her zaman iyi kod kalitesi anlamına gelmez.",
+              "tags": ["coverage", "metrics"]
+            },
+            {
+              "questionId": 460010,
+              "question": "Hangi durumlarda UI test (Espresso) yazmak şarttır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Her zaman",
+                "Kritik user flow'lar (login, checkout vb.) ve release öncesi",
+                "Hiçbir zaman",
+                "Sadece demo için"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "UI test, kritik user flow'lar (login, ödeme, kayıt) ve release öncesi yazılmalıdır. Her feature için UI test yazmak maliyetlidir, kritik noktalara odaklanılmalıdır.",
+              "tags": ["ui_test", "strategy"]
+            }
+          ]
         },
         {
           "sectionId": 4700,
@@ -14456,7 +15380,56 @@
                 "Performans doğrudan Play Store puanını etkiler",
                 "Profiling ile ölçülmelidir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 470101,
+                  "question": "Android'de performance (performans) ne anlama gelir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece hız",
+                    "Uygulamanın hızlı, akıcı ve kaynakları verimli kullanarak çalışması",
+                    "Sadece görsel kalite",
+                    "Sadece kod miktarı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Performance, bir Android uygulamasının hızlı, akıcı ve kaynakları (CPU, memory, disk, network) verimli kullanarak çalışmasıdır.",
+                  "tags": ["performance", "temel"]
+                },
+                {
+                  "questionId": 470102,
+                  "question": "Kötü performansın sonuçları nelerdir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir şey olmaz",
+                    "Kullanıcı kaybı, kötü Play Store puanı, ANR ve crash",
+                    "Sadece daha fazla bellek kullanımı",
+                    "Sadece pil tüketimi"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Kötü performans, kullanıcı kaybına, kötü Play Store puanlarına, ANR hatalarına ve crash'lere yol açar.",
+                  "tags": ["performance", "consequences"]
+                },
+                {
+                  "questionId": 470103,
+                  "question": "Akıcı UI için en kritik kural nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece hızlı kod yazmak",
+                    "Ana (main) thread'in bloklanmaması",
+                    "Sadece optimize edilmiş layout",
+                    "Sadece küçük resimler"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Akıcı UI için ana thread bloklanmamalıdır. Uzun süren işlemler (network, database) background thread'de yapılmalıdır.",
+                  "tags": ["performance", "main_thread"]
+                }
+              ]
             },
             {
               "topicId": 4702,
@@ -14478,7 +15451,72 @@
                 "Coroutines / WorkManager kullanılmalı",
                 "ANR Play Console'da raporlanır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 470201,
+                  "question": "ANR (Application Not Responding) ne demektir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece crash",
+                    "Ana thread uzun süre bloklandığında uygulamanın Android tarafından durdurulması",
+                    "Sadece slow performance",
+                    "Network hatası"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ANR, ana thread uzun süre (genellikle 5 saniye+) bloklandığında Android tarafından uygulamanın durdurulmasıdır. Kullanıcıya 'Uygulama Yanıt Vermiyor' dialogu gösterilir.",
+                  "tags": ["anr", "temel"]
+                },
+                {
+                  "questionId": 470202,
+                  "question": "ANR genellikle ne zaman oluşur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece crash durumunda",
+                    "Network, database veya heavy işlem ana thread'de yapıldığında",
+                    "Sadece bellek dolduğunda",
+                    "Hiçbir zaman oluşmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ANR, genellikle network istekleri, veritabanı işlemleri veya ağır hesaplamalar ana thread'de yapıldığında oluşur.",
+                  "tags": ["anr", "causes"]
+                },
+                {
+                  "questionId": 470203,
+                  "question": "ANR'ı önlemek için ne yapılmalıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir şey yapılmaz",
+                    "Uzun işlemler Coroutines, WorkManager ile background thread'e taşınmalı",
+                    "Sadece UI optimize edilmeli",
+                    "Sadece pil tasarrufu"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "ANR'ı önlemek için uzun süren işlemler Coroutines, WorkManager, AsyncTask (deprecated) gibi yapılarla background thread'de çalıştırılmalıdır.",
+                  "tags": ["anr", "prevention"]
+                },
+                {
+                  "questionId": 470204,
+                  "question": "Aşağıdaki kod neden ANR oluşturur?",
+                  "questionType": "multiple_choice",
+                  "code": "Thread.sleep(6000)",
+                  "difficulty": "easy",
+                  "options": [
+                    "Hata vermez",
+                    "Ana thread'i 6 saniye bloklar, 5 saniye limitini aşar",
+                    "Sadece yavaşlatır",
+                    "Sadece bellek kullanır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Thread.sleep(6000) ana thread'i 6 saniye bloklar. 5 saniye limitini aştığı için ANR dialogu gösterilir.",
+                  "tags": ["anr", "example", "thread_sleep"]
+                }
+              ]
             },
             {
               "topicId": 4703,
@@ -14500,7 +15538,88 @@
                 "LeakCanary ile tespit edilebilir",
                 "Static referanslardan kaçınılmalı"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 470301,
+                  "question": "Memory Leak nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece crash",
+                    "Artık kullanılmayan nesnelerin bellekten temizlenmemesi",
+                    "Sadece ANR",
+                    "Network hatası"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Memory Leak, artık kullanılmayan nesnelerin bellekten temizlenmemesi durumudur ve uygulamanın yavaşlamasına veya çökmesine (OutOfMemoryError) neden olur.",
+                  "tags": ["memory_leak", "temel"]
+                },
+                {
+                  "questionId": 470302,
+                  "question": "Memory Leak'in en sık nedenleri nelerdir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Sadece UI hatası",
+                    "Static Activity referansı, yanlış Context kullanımı, lifecycle'a bağlı olmayan observer'lar",
+                    "Sadece network hatası",
+                    "Hiçbir nedeni yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Memory Leak'in en sık nedenleri: Static Activity/Context referansı, yanlış Context kullanımı (Activity yerine Application), lifecycle'a bağlı olmayan observer/listener'lar.",
+                  "tags": ["memory_leak", "causes"]
+                },
+                {
+                  "questionId": 470303,
+                  "question": "Activity Context yerine hangi Context kullanılmalıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Her zaman Activity Context",
+                    "Singleton veya long-lived nesnelerde Application Context",
+                    "Fark etmez",
+                    "Context kullanılmamalı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Singleton veya uzun ömürlü nesnelerde Activity Context tutulursa memory leak oluşur. Application Context kullanılmalıdır çünkü uygulama boyunca yaşar.",
+                  "tags": ["memory_leak", "context"]
+                },
+                {
+                  "questionId": 470304,
+                  "question": "Aşağıdaki kod neden memory leak oluşturur?",
+                  "questionType": "multiple_choice",
+                  "code": "object Manager {\n    lateinit var context: Context\n}",
+                  "difficulty": "hard",
+                  "options": [
+                    "Hata vermez",
+                    "Singleton object Activity context'ini tutarsa, Activity yok olsa bile referans kalır (leak)",
+                    "Sadece yavaşlatır",
+                    "Hiçbir problem yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "object (Singleton) Activity context'ini tutarsa, Activity destroy olsa bile referans devam eder ve Garbage Collector Activity'yi temizleyemez (memory leak). Application Context kullanılmalı.",
+                  "tags": ["memory_leak", "singleton", "context"]
+                },
+                {
+                  "questionId": 470305,
+                  "question": "Memory Leak tespit etmek için hangi araç kullanılır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece log",
+                    "LeakCanary kütüphanesi",
+                    "Sadece crash report",
+                    "Tespit edilemez"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "LeakCanary, Android uygulamalarda memory leak'leri otomatik tespit eden ve raporlayan popüler bir kütüphanedir. Android Profiler'da da memory analiz edilebilir.",
+                  "tags": ["memory_leak", "leakcanary", "tools"]
+                }
+              ]
             },
             {
               "topicId": 4704,
@@ -14516,7 +15635,56 @@
                 "GC UI thread'i etkileyebilir",
                 "Profiling ile izlenmelidir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 470401,
+                  "question": "Garbage Collection (GC) nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Manuel bellek temizleme",
+                    "Kullanılmayan nesneleri bellekten otomatik olarak temizleyen mekanizma",
+                    "Sadece crash önleme",
+                    "Network yönetimi"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Garbage Collector, kullanılmayan nesneleri bellekten otomatik olarak temizleyen mekanizmadır. Developer'ın manuel müdahalesine gerek yoktur.",
+                  "tags": ["gc", "temel"]
+                },
+                {
+                  "questionId": 470402,
+                  "question": "Sık GC çalışmasının performans üzerindeki etkisi nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir etkisi yok",
+                    "Performans düşüşüne neden olur, UI thread'i etkileyebilir",
+                    "Performansı artırır",
+                    "Sadece bellek azalır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Sık GC çalışması performans düşüşüne neden olur ve UI thread'i etkileyebilir (frame drop). Aşırı nesne oluşturmaktan kaçınılmalıdır.",
+                  "tags": ["gc", "performance"]
+                },
+                {
+                  "questionId": 470403,
+                  "question": "GC baskısını azaltmak için ne yapılmalıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Hiçbir şey yapılmaz",
+                    "Aşırı nesne üretiminden kaçınılmalı, reusable objeler (object pool) tercih edilmeli",
+                    "Daha fazla nesne oluşturulmalı",
+                    "GC manuel çağrılmalı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "GC baskısını azaltmak için aşırı nesne üretiminden kaçınılmalı, özellikle loop içinde nesne yaratmaktan sakınılmalı ve mümkünse reusable objeler (object pool pattern) kullanılmalıdır.",
+                  "tags": ["gc", "optimization"]
+                }
+              ]
             },
             {
               "topicId": 4705,
@@ -14532,10 +15700,220 @@
                 "Bottleneck tespiti yapılır",
                 "Performans iyileştirme için şarttır"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 470501,
+                  "question": "Android Profiler ne işe yarar?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece kod yazma",
+                    "CPU, memory ve network kullanımını analiz etmek",
+                    "Sadece UI çizme",
+                    "Sadece crash report"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Android Profiler, CPU, memory ve network kullanımını gerçek zamanlı olarak analiz etmek için kullanılan resmi Android Studio aracıdır.",
+                  "tags": ["profiler", "tools"]
+                },
+                {
+                  "questionId": 470502,
+                  "question": "Android Profiler ile ne tür analizler yapılabilir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece CPU",
+                    "CPU, Memory, Network kullanımı, method trace, heap dump",
+                    "Sadece UI",
+                    "Sadece crash"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Android Profiler ile CPU kullanımı, Memory (heap) analizi, Network trafiği, method tracing ve allocation tracking yapılabilir. Memory leak ve performans bottleneck tespit edilir.",
+                  "tags": ["profiler", "features"]
+                },
+                {
+                  "questionId": 470503,
+                  "question": "Android Profiler kullanırken hangi öneri doğrudur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece emülatörde kullan",
+                    "Gerçek cihazda ölçüm yapılması önerilir",
+                    "Fark etmez",
+                    "Sadece debug build'de"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Android Profiler ile gerçek cihazda ölçüm yapılması önerilir çünkü emülatör performansı gerçek cihazdan farklı olabilir. Release build'de profiling daha doğru sonuç verir.",
+                  "tags": ["profiler", "best_practice"]
+                }
+              ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+              "questionId": 470001,
+              "question": "60 FPS (Frame Per Second) için her frame ne kadar sürede render edilmelidir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "100ms",
+                "16ms (1000ms / 60)",
+                "1ms",
+                "500ms"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "60 FPS için her frame 16ms'de (1000ms / 60 = 16.66ms) render edilmelidir. Bu süre aşılırsa frame drop (jank) oluşur ve UI akıcı olmaz.",
+              "tags": ["performance", "fps", "frame"]
+            },
+            {
+              "questionId": 470002,
+              "question": "StrictMode ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "UI çizer",
+                "Ana thread'de yapılan yanlış işlemleri (network, disk) tespit eder",
+                "Sadece crash önler",
+                "Bellek temizler"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "StrictMode, development sırasında ana thread'de yapılan yanlış işlemleri (network, disk I/O) tespit eder ve log/crash ile uyarır. Production'da kapatılmalıdır.",
+              "tags": ["strictmode", "debugging"]
+            },
+            {
+              "questionId": 470003,
+              "question": "ViewHolder pattern RecyclerView'da neden önemlidir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece görsel",
+                "findViewById çağrılarını önbelleğe alarak performansı artırır",
+                "Sadece bellek kullanır",
+                "Hiçbir önemi yok"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "ViewHolder pattern, findViewById çağrılarını önbelleğe alır. Her scroll'da tekrar findViewById çağrılmaz, view'lar reuse edilir, bu da büyük performans artışı sağlar.",
+              "tags": ["performance", "recyclerview", "viewholder"]
+            },
+            {
+              "questionId": 470004,
+              "question": "Bitmap kullanırken memory leak'ten kaçınmak için ne yapılmalıdır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir şey yapılmaz",
+                "Kullanılmayan bitmap'ler recycle() ile temizlenmeli (API 10 altı), image loading library (Glide, Coil) kullanılmalı",
+                "Daha fazla bitmap yükle",
+                "Static olarak tut"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Bitmap'ler çok yer kaplar. Modern yaklaşım Glide, Coil gibi kütüphaneler kullanmaktır (otomatik cache ve memory yönetimi). API 10 altında bitmap.recycle() kullanılırdı.",
+              "tags": ["memory", "bitmap", "leak"]
+            },
+            {
+              "questionId": 470005,
+              "question": "OutOfMemoryError (OOM) ne zaman oluşur?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Hiçbir zaman",
+                "Uygulama ayrılmış memory limitini aştığında",
+                "Sadece network hatası",
+                "Sadece UI hatası"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "OutOfMemoryError, uygulama ayrılmış memory limitini (device'a göre değişir, örn: 512MB) aştığında oluşur. Genellikle büyük bitmap'ler, memory leak veya aşırı nesne yaratma sebeptir.",
+              "tags": ["memory", "oom", "error"]
+            },
+            {
+              "questionId": 470006,
+              "question": "Layout performansını artırmak için hangi yaklaşım doğrudur?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Daha fazla nested layout kullan",
+                "ConstraintLayout kullan, nested layout'tan kaçın, ViewStub ile lazy loading yap",
+                "Sadece LinearLayout kullan",
+                "Hiçbir önlem alma"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Layout performansı için: ConstraintLayout kullan (flat hierarchy), nested layout'tan kaçın, ViewStub ile lazy loading yap, <merge> tag kullan, overdraw'dan kaçın.",
+              "tags": ["performance", "layout", "optimization"]
+            },
+            {
+              "questionId": 470007,
+              "question": "NetworkOnMainThreadException ne zaman fırlatılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Her zaman",
+                "Ana thread'de network işlemi yapılmaya çalışıldığında",
+                "Sadece emülatörde",
+                "Hiçbir zaman"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "NetworkOnMainThreadException, ana thread'de (Honeycomb/API 11+ sonrası) network işlemi yapılmaya çalışıldığında fırlatılır. Coroutine, AsyncTask (deprecated) kullanılmalıdır.",
+              "tags": ["network", "exception", "main_thread"]
+            },
+            {
+              "questionId": 470008,
+              "question": "Lazy initialization neden performans artırır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir etkisi yok",
+                "Nesne sadece gerektiğinde yaratılır, başlangıç süresi kısalır",
+                "Daha fazla bellek kullanır",
+                "Sadece görsel amaçlı"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Lazy initialization (Kotlin'de lazy { }), nesneyi sadece ilk kullanımda yaratır. Bu, uygulama başlangıç süresini kısaltır ve kullanılmayan nesneler için gereksiz initialization yapılmaz.",
+              "tags": ["performance", "lazy", "optimization"]
+            },
+            {
+              "questionId": 470009,
+              "question": "ProGuard/R8 ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece debug yapar",
+                "Kod obfuscation, shrinking ve optimization yapar (APK boyutunu azaltır)",
+                "Sadece crash report",
+                "Hiçbir işe yaramaz"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "ProGuard/R8, kod obfuscation (karıştırma), shrinking (kullanılmayan kod temizleme) ve optimization yapar. APK boyutunu küçültür ve reverse engineering'i zorlaştırır.",
+              "tags": ["performance", "proguard", "r8"]
+            },
+            {
+              "questionId": 470010,
+              "question": "App Startup time'ı optimize etmek için ne yapılmalıdır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir şey",
+                "Application onCreate'de heavy işlemlerden kaçın, lazy init kullan, WorkManager ile ertele",
+                "Daha fazla initialization",
+                "Tüm işleri başlangıçta yap"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "App Startup time optimize etmek için: Application onCreate'de heavy işlemlerden kaçın, lazy initialization kullan, gerekli olmayan işleri WorkManager ile ertele, ContentProvider sayısını azalt.",
+              "tags": ["performance", "startup", "optimization"]
+            }
+          ]
         },
         {
           "sectionId": 4800,
@@ -14557,7 +15935,56 @@
                 "Bağımlılık yönetimini iyileştirir",
                 "Büyük projeler için idealdir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 480101,
+                  "question": "Modularization (Modülerleştirme) nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece kod yazmak",
+                    "Uygulamayı bağımsız ve yeniden kullanılabilir modüllere bölme yaklaşımı",
+                    "Sadece veritabanı tasarımı",
+                    "Sadece UI tasarımı"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Modularization, bir Android uygulamasını bağımsız ve yeniden kullanılabilir modüllere bölme yaklaşımıdır. Büyük projelerde karmaşıklığı azaltır.",
+                  "tags": ["modularization", "temel"]
+                },
+                {
+                  "questionId": 480102,
+                  "question": "Modularization'ın avantajları nelerdir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece daha fazla dosya",
+                    "Kod karmaşıklığını azaltır, takım çalışmasını kolaylaştırır, build performansını artırır",
+                    "Sadece daha yavaş build",
+                    "Hiçbir avantajı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Modularization, kod karmaşıklığını azaltır, takım çalışmasını kolaylaştırır (parallel development), bağımlılık yönetimini iyileştirir ve build performansını artırır (incremental build).",
+                  "tags": ["modularization", "advantages"]
+                },
+                {
+                  "questionId": 480103,
+                  "question": "Modularization hangi büyüklükte projeler için uygundur?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Her proje için şart",
+                    "Orta ve büyük ölçekli projeler için idealdir",
+                    "Sadece küçük projeler",
+                    "Hiçbir proje için uygun değil"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Modularization, orta ve büyük ölçekli projeler için idealdir. Küçük projelerde gereksiz karmaşıklık yaratabilir (overengineering).",
+                  "tags": ["modularization", "project_size"]
+                }
+              ]
             },
             {
               "topicId": 4802,
@@ -14573,7 +16000,56 @@
                 "Feature module opsiyonel özellikler sunar",
                 "Dynamic Feature ile indirme boyutu küçülür"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 480201,
+                  "question": "Android'de kaç tür modül vardır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece 1 tür",
+                    "App Module, Library Module, Feature Module",
+                    "Sadece App Module",
+                    "10 tür"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Android'de temel modül türleri: App Module (uygulama giriş noktası), Library Module (yeniden kullanılabilir kod), Feature Module (opsiyonel özellikler, Dynamic Feature).",
+                  "tags": ["module", "types"]
+                },
+                {
+                  "questionId": 480202,
+                  "question": "App Module'ün görevi nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Sadece test yapar",
+                    "Uygulamanın giriş noktasıdır, diğer modülleri birleştirir",
+                    "Sadece UI çizer",
+                    "Veritabanı yönetir"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "App Module, uygulamanın giriş noktasıdır (Application class, MainActivity). Diğer modülleri birleştirir ve APK/AAB üretir.",
+                  "tags": ["app_module", "module"]
+                },
+                {
+                  "questionId": 480203,
+                  "question": "Dynamic Feature Module'ün avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece daha hızlı",
+                    "Opsiyonel özellikleri on-demand indirerek başlangıç APK boyutunu küçültür",
+                    "Sadece daha güvenli",
+                    "Hiçbir avantajı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Dynamic Feature Module, opsiyonel özellikleri (kamera filtreler, premium features) on-demand indirerek başlangıç APK boyutunu küçültür. Play Core Library ile yönetilir.",
+                  "tags": ["dynamic_feature", "module", "optimization"]
+                }
+              ]
             },
             {
               "topicId": 4803,
@@ -14595,7 +16071,72 @@
                 "Build süresi optimize edilir",
                 "Gradle yapılandırması kritik öneme sahiptir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 480301,
+                  "question": "Multi-module projede modüller hangi dosyada tanımlanır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "build.gradle",
+                    "settings.gradle",
+                    "AndroidManifest.xml",
+                    "gradle.properties"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Multi-module projede modüller settings.gradle (veya settings.gradle.kts) dosyasında include ile tanımlanır. Örnek: include ':app', ':core'",
+                  "tags": ["gradle", "settings"]
+                },
+                {
+                  "questionId": 480302,
+                  "question": "Bir modülün başka bir modüle bağımlılığı nasıl eklenir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "easy",
+                  "options": [
+                    "Otomatik eklenir",
+                    "implementation(project(':module_adi'))",
+                    "Eklenemez",
+                    "Sadece Manifest'e yazılır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Modüller arası bağımlılık, build.gradle dosyasında implementation(project(':module_adi')) ile eklenir.",
+                  "tags": ["gradle", "dependency"]
+                },
+                {
+                  "questionId": 480303,
+                  "question": "Circular dependency nedir ve neden problemlidir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Hiçbir problem değil",
+                    "İki modülün birbirine bağımlı olması; build hatası verir",
+                    "Sadece yavaşlatır",
+                    "Performans artırır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Circular dependency, iki modülün birbirine bağımlı olmasıdır (A → B ve B → A). Gradle build hatası verir. Çözüm: ortak kod yeni bir modüle taşınmalı (örn: :common).",
+                  "tags": ["gradle", "circular_dependency", "error"]
+                },
+                {
+                  "questionId": 480304,
+                  "question": "Aşağıdaki kod ne yapar?",
+                  "questionType": "multiple_choice",
+                  "code": "implementation(project(':core'))",
+                  "difficulty": "easy",
+                  "options": [
+                    "core modülünü siler",
+                    "core modülünü bağımlılık olarak ekler",
+                    "Hata verir",
+                    "Hiçbir şey yapmaz"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Bu kod, :core modülünü mevcut modüle bağımlılık olarak ekler. core modülündeki kodlar kullanılabilir hale gelir.",
+                  "tags": ["gradle", "implementation", "example"]
+                }
+              ]
             },
             {
               "topicId": 4804,
@@ -14611,7 +16152,72 @@
                 "Test yazımı kolaylaşır",
                 "Uzun vadeli sürdürülebilirlik sağlar"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 480401,
+                  "question": "Clean Architecture ile modülerleştirmede tipik modül yapısı nasıldır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Tek modül",
+                    ":app, :data, :domain, :presentation (veya feature modülleri)",
+                    "Sadece :app ve :test",
+                    "Rastgele modüller"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Clean Architecture ile modülerleştirmede tipik yapı: :app (giriş noktası), :data (repository impl), :domain (UseCase, Entity), :presentation veya feature bazlı modüller.",
+                  "tags": ["clean_architecture", "module", "structure"]
+                },
+                {
+                  "questionId": 480402,
+                  "question": "Domain modülü hangi özelliklere sahip olmalıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Android bağımlılıkları içermeli",
+                    "Hiçbir Android framework bağımlılığı içermemeli, saf Kotlin olmalı",
+                    "UI içermeli",
+                    "Sadece test için"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Domain modülü, hiçbir Android framework bağımlılığı içermemeli, saf Kotlin/Java olmalıdır. Bu, platform bağımsızlık ve test edilebilirlik sağlar.",
+                  "tags": ["domain", "module", "clean_architecture"]
+                },
+                {
+                  "questionId": 480403,
+                  "question": "Modüller arası bağımlılık yönü nasıl olmalıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Her yöne olabilir",
+                    "İçe doğru: app → presentation → domain ← data",
+                    "Dışa doğru",
+                    "Fark etmez"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Clean Architecture'da bağımlılık içe doğrudur: app → presentation → domain ← data. Domain katmanı hiçbir dış katmana bağımlı değildir (Dependency Inversion Principle).",
+                  "tags": ["dependency", "clean_architecture", "direction"]
+                },
+                {
+                  "questionId": 480404,
+                  "question": "Feature modül yaklaşımının avantajı nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Sadece daha fazla dosya",
+                    "Her feature bağımsız geliştirilebilir, parallel çalışma ve ownership kolaylaşır",
+                    "Sadece daha yavaş",
+                    "Hiçbir avantajı yok"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Feature modül yaklaşımı (:feature-login, :feature-profile), her feature'ın bağımsız geliştirilmesini sağlar. Takım üyeleri parallel çalışabilir, feature ownership net olur.",
+                  "tags": ["feature_module", "parallel_development"]
+                }
+              ]
             },
             {
               "topicId": 4805,
@@ -14627,10 +16233,542 @@
                 "Doğru planlama şarttır",
                 "Senior seviye mimari bilgisidir"
               ],
-              "questions": []
+              "questions": [
+                {
+                  "questionId": 480501,
+                  "question": "Modularization'ın build performansına etkisi nedir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Her zaman yavaşlatır",
+                    "Incremental build sayesinde daha hızlı build süresi (sadece değişen modüller build edilir)",
+                    "Hiçbir etkisi yok",
+                    "Sadece küçük projelerde hızlandırır"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Modularization, incremental build sayesinde build süresini kısaltır. Sadece değişen modüller yeniden build edilir, değişmeyen modüller cache'ten kullanılır.",
+                  "tags": ["modularization", "build_performance"]
+                },
+                {
+                  "questionId": 480502,
+                  "question": "Modularization'ın dezavantajları nelerdir?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "medium",
+                  "options": [
+                    "Hiçbir dezavantajı yok",
+                    "İlk kurulum karmaşık, küçük projeler için overengineering, Gradle yapılandırması dikkat gerektirir",
+                    "Sadece yavaş build",
+                    "Sadece daha fazla kod"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Modularization'ın dezavantajları: İlk kurulum karmaşık, küçük projeler için gereksiz (overengineering), Gradle yapılandırması ve bağımlılık yönetimi dikkat gerektirir.",
+                  "tags": ["modularization", "disadvantages"]
+                },
+                {
+                  "questionId": 480503,
+                  "question": "Modularization ne zaman uygulanmalıdır?",
+                  "questionType": "multiple_choice",
+                  "code": null,
+                  "difficulty": "hard",
+                  "options": [
+                    "Her projede hemen başta",
+                    "Büyük projelerde veya proje büyümeye başladığında, küçük projelerde gerekli değilse sonra",
+                    "Hiçbir zaman",
+                    "Sadece test projelerinde"
+                  ],
+                  "correctAnswerIndex": 1,
+                  "explanation": "Modularization, büyük projelerde baştan veya proje büyümeye başladığında uygulanmalıdır. Küçük/MVP projelerde başta gerekli değilse sonra refactor edilebilir. Ancak büyüyecek projelerde erken uygulamak migrasyonu kolaylaştırır.",
+                  "tags": ["modularization", "when", "strategy"]
+                }
+              ]
             }
           ],
-          "sectionMixedQuestions": []
+          "sectionMixedQuestions": [
+            {
+              "questionId": 480001,
+              "question": "Multi-module projede hangi modül APK/AAB üretir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "easy",
+              "options": [
+                "Her modül",
+                "Sadece App Module (com.android.application plugin'i olan)",
+                "Sadece Library Module",
+                "Feature Module"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Sadece App Module (com.android.application plugin'i olan) APK/AAB üretir. Library ve Feature modüller AAR (Android Archive) üretir.",
+              "tags": ["module", "apk", "app_module"]
+            },
+            {
+              "questionId": 480002,
+              "question": "api() ve implementation() arasındaki fark nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Hiçbir fark yok",
+                "api() bağımlılığı transitive (geçişli) olarak dışa açar, implementation() gizler",
+                "api() daha yavaştır",
+                "implementation() kullanımdan kalkmıştır"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "api(), bağımlılığı transitive olarak dışa açar (A→B→C hepsine erişir). implementation() gizler (A→B, ama A'dan C'ye direkt erişim yok). implementation() tercih edilir (daha hızlı build).",
+              "tags": ["gradle", "api", "implementation"]
+            },
+            {
+              "questionId": 480003,
+              "question": "Convention Plugin nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece UI plugin",
+                "Ortak Gradle yapılandırmasını tüm modüllerde paylaşmak için kullanılan custom plugin",
+                "Sadece test plugin",
+                "Android Studio plugin"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Convention Plugin, ortak Gradle yapılandırmasını (Kotlin version, dependencies, compiler options) tüm modüllerde paylaşmak için kullanılan custom plugin'dir. Kod tekrarını önler.",
+              "tags": ["gradle", "convention_plugin", "buildSrc"]
+            },
+            {
+              "questionId": 480004,
+              "question": "Version Catalog nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "UI komponenti",
+                "Dependency versiyonlarını merkezi yönetmek için kullanılan Gradle özelliği",
+                "Veritabanı",
+                "Test aracı"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Version Catalog (libs.versions.toml), dependency versiyonlarını merkezi yönetmek için kullanılan Gradle özelliğidir. Tüm modüllerde aynı version kullanımını garantiler.",
+              "tags": ["gradle", "version_catalog", "dependency"]
+            },
+            {
+              "questionId": 480005,
+              "question": "buildSrc klasörü ne işe yarar?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Sadece kaynak dosyaları",
+                "Gradle plugin ve convention plugin yazmak için kullanılan özel Gradle klasörü",
+                "Sadece test dosyaları",
+                "APK üretir"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "buildSrc, Gradle plugin ve convention plugin yazmak için kullanılan özel klasördür. Kotlin DSL ile custom logic yazılabilir ve tüm modüllerde kullanılabilir.",
+              "tags": ["gradle", "buildsrc", "plugin"]
+            },
+            {
+              "questionId": 480006,
+              "question": "Composite Build nedir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece UI build",
+                "Birden fazla Gradle projesini tek build içinde birleştirme",
+                "Sadece test build",
+                "APK oluşturma"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Composite Build, birden fazla bağımsız Gradle projesini (örn: app + shared library) tek build içinde birleştirmeyi sağlar. includeBuild() ile tanımlanır.",
+              "tags": ["gradle", "composite_build"]
+            },
+            {
+              "questionId": 480007,
+              "question": "Modüller arası navigation nasıl yönetilir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Doğrudan Activity çağrısı",
+                "Navigation Component + Deep Link veya Interface/Callback pattern",
+                "Sadece Intent",
+                "Yönetilemez"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Multi-module'de navigation için Navigation Component + Deep Link veya Interface/Callback pattern kullanılır. Bu, modüller arası sıkı bağımlılığı (tight coupling) önler.",
+              "tags": ["navigation", "multi_module", "deep_link"]
+            },
+            {
+              "questionId": 480008,
+              "question": "Modüller arası resource (R class) paylaşımı nasıl yapılır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Otomatik paylaşılır",
+                "Library module'deki resources implementation ile bağımlılık alan modülde kullanılabilir",
+                "Paylaşılamaz",
+                "Sadece copy-paste"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Library module'deki resources (drawable, string, style), implementation(project(':module')) ile bağımlılık alan modülde R.drawable.xxx şeklinde kullanılabilir.",
+              "tags": ["resource", "multi_module", "r_class"]
+            },
+            {
+              "questionId": 480009,
+              "question": "Parallel module build nasıl etkinleştirilir?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "medium",
+              "options": [
+                "Otomatik aktif",
+                "gradle.properties'e org.gradle.parallel=true eklenerek",
+                "AndroidManifest'e eklenerek",
+                "Etkinleştirilemez"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Parallel module build, gradle.properties dosyasına org.gradle.parallel=true eklenerek etkinleştirilir. Bu, bağımsız modüllerin paralel build edilmesini sağlar (daha hızlı build).",
+              "tags": ["gradle", "parallel", "performance"]
+            },
+            {
+              "questionId": 480010,
+              "question": "Multi-module projede test stratejisi nasıl olmalıdır?",
+              "questionType": "multiple_choice",
+              "code": null,
+              "difficulty": "hard",
+              "options": [
+                "Sadece app module'de test",
+                "Her modül kendi testlerini içermeli (unit, integration), app module end-to-end test",
+                "Test yazılmaz",
+                "Sadece UI test"
+              ],
+              "correctAnswerIndex": 1,
+              "explanation": "Multi-module'de her modül kendi testlerini içermelidir: domain (unit test), data (integration test), feature (unit + UI test), app module (end-to-end test). Bu, modüler test stratejisi sağlar.",
+              "tags": ["testing", "multi_module", "strategy"]
+            }
+          ]
+        }
+      ],
+      "interviewQuestions": [
+        {
+          "questionId": 490001,
+          "question": "Coroutine'lerde suspend function ne demektir ve neden önemlidir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Normal fonksiyon ile aynı",
+            "Coroutine içinde çalışabilen, thread bloklamadan askıya alınabilen fonksiyon",
+            "Sadece network için",
+            "Kullanımdan kalkmış"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Suspend function, coroutine içinde çalışabilen ve execution'ı askıya alabilen (pausable) fonksiyondur. Thread bloklamaz, asenkron işlemler için temeldir.",
+          "tags": ["coroutines", "suspend"]
+        },
+        {
+          "questionId": 490002,
+          "question": "Flow ve LiveData arasındaki temel fark nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Hiçbir fark yok",
+            "Flow coroutine tabanlı ve daha esnektir, LiveData lifecycle-aware'dır",
+            "LiveData daha modern",
+            "Flow kullanımdan kalkmış"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Flow, coroutine tabanlıdır ve map, filter gibi operatörlerle daha esnektir. LiveData ise lifecycle-aware'dır ancak sınırlıdır. Modern projelerde Flow (özellikle StateFlow) tercih edilir.",
+          "tags": ["flow", "livedata", "comparison"]
+        },
+        {
+          "questionId": 490003,
+          "question": "Hilt'te @HiltViewModel ve constructor injection kullanmanın avantajı nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Sadece daha hızlı",
+            "ViewModel bağımlılıkları otomatik sağlanır, test edilebilirlik artar, boilerplate azalır",
+            "Sadece görsel",
+            "Hiçbir avantajı yok"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Hilt ile ViewModel'de constructor injection kullanarak bağımlılıklar otomatik sağlanır, test edilebilirlik artar ve ViewModelProvider.Factory gibi boilerplate kodlar ortadan kalkar.",
+          "tags": ["hilt", "viewmodel", "dependency_injection"]
+        },
+        {
+          "questionId": 490004,
+          "question": "Clean Architecture'da bağımlılık yönü nasıl olmalıdır?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Her yöne olabilir",
+            "İçe doğru: Presentation → Domain ← Data (Domain hiçbir dış katmana bağımlı değil)",
+            "Dışa doğru",
+            "Fark etmez"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Clean Architecture'da bağımlılık kuralı: Dış katmanlar (Presentation, Data) iç katmana (Domain) bağımlıdır, tersi asla olmaz. Domain, framework bağımsızdır (Dependency Inversion Principle).",
+          "tags": ["clean_architecture", "dependency_rule"]
+        },
+        {
+          "questionId": 490005,
+          "question": "Dispatchers.IO ve Dispatchers.Default arasındaki fark nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "easy",
+          "options": [
+            "Hiçbir fark yok",
+            "IO: Network/Database, Default: CPU yoğun işlemler",
+            "Default daha yavaş",
+            "IO kullanımdan kalkmış"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Dispatchers.IO, I/O operasyonları (network, database, file) için optimize edilmiştir. Dispatchers.Default ise CPU-intensive işlemler (parsing, sıralama, hesaplama) için optimize edilmiştir.",
+          "tags": ["coroutines", "dispatchers"]
+        },
+        {
+          "questionId": 490006,
+          "question": "StateFlow'un hot stream olması ne anlama gelir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Daha hızlı",
+            "Collect edilmese bile aktiftir, yeni observer'a son değeri hemen verir",
+            "Sadece sıcak havalarda",
+            "Cold stream ile aynı"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Hot stream, collect edilmese bile aktiftir. StateFlow her zaman bir değer tutar ve yeni observer geldiğinde son değeri anında iletir. UI state yönetimi için idealdir.",
+          "tags": ["flow", "stateflow", "hot_stream"]
+        },
+        {
+          "questionId": 490007,
+          "question": "Test Pyramid'e göre hangi test türü en fazla olmalıdır?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "easy",
+          "options": [
+            "UI Test",
+            "Unit Test",
+            "Integration Test",
+            "Hepsi eşit"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Test Pyramid: Unit Test (en çok) → Integration Test (orta) → UI Test (en az). Unit test hızlı ve ucuzdur, UI test yavaş ve pahalıdır.",
+          "tags": ["testing", "test_pyramid"]
+        },
+        {
+          "questionId": 490008,
+          "question": "Memory Leak'in en sık nedenleri nelerdir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Sadece UI hatası",
+            "Static Activity referansı, yanlış Context kullanımı, lifecycle'a bağlı olmayan observer'lar",
+            "Sadece network hatası",
+            "Hiçbir nedeni yok"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Memory Leak'in en sık nedenleri: Static Activity/Context referansı, yanlış Context kullanımı (Activity yerine Application), lifecycle'a bağlı olmayan observer/listener'lar.",
+          "tags": ["performance", "memory_leak"]
+        },
+        {
+          "questionId": 490009,
+          "question": "UseCase nedir ve neden kullanılır?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "UI bileşeni",
+            "İş mantığını kapsülleyen, tek bir sorumluluğu olan sınıf (Clean Architecture - Domain)",
+            "Veritabanı tablosu",
+            "Network kütüphanesi"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "UseCase, Clean Architecture'ın Domain katmanında, uygulamanın iş mantığını (business logic) kapsülleyen, tek bir sorumluluğu olan (Single Responsibility) sınıftır.",
+          "tags": ["clean_architecture", "usecase", "domain"]
+        },
+        {
+          "questionId": 490010,
+          "question": "Mockito ile test yazmanın amacı nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Gerçek API kullanma",
+            "Bağımlılıkları mock ederek izole test yazma",
+            "Sadece UI test",
+            "Hiçbir amacı yok"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Mockito, bağımlılıkları (Repository, API, Database) mock ederek izole test yazılmasını sağlar. Gerçek API çağrısı yapmadan test yazılabilir, test stabilitesi artar.",
+          "tags": ["testing", "mockito", "mocking"]
+        },
+        {
+          "questionId": 490011,
+          "question": "ANR (Application Not Responding) ne zaman oluşur?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "easy",
+          "options": [
+            "Hiçbir zaman",
+            "Ana thread 5+ saniye bloklandığında",
+            "Sadece crash durumunda",
+            "Sadece bellek dolduğunda"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "ANR, ana thread uzun süre (genellikle 5 saniye+) bloklandığında Android tarafından uygulamanın durdurulmasıdır. Network, database veya heavy işlem ana thread'de yapılmamalıdır.",
+          "tags": ["performance", "anr"]
+        },
+        {
+          "questionId": 490012,
+          "question": "withContext() ne işe yarar?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Yeni scope oluşturur",
+            "Mevcut coroutine'in dispatcher'ını geçici olarak değiştirir",
+            "Coroutine'i iptal eder",
+            "Sadece hız artırır"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "withContext(), mevcut coroutine içinde dispatcher'ı geçici olarak değiştirmek için kullanılır. Örneğin IO'da çalışıp sonucu Main'de döndürmek için: withContext(Dispatchers.IO) { }",
+          "tags": ["coroutines", "withcontext"]
+        },
+        {
+          "questionId": 490013,
+          "question": "Repository pattern'in amacı nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Sadece veri saklar",
+            "Veri kaynaklarını (API, Database) soyutlar ve ViewModel'e tek bir veri akışı sunar",
+            "Sadece network işlemleri",
+            "UI çizer"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Repository pattern, veri kaynaklarını (Retrofit, Room, SharedPreferences) soyutlar ve ViewModel'e tek bir clean data interface sunar. Single source of truth ve abstraction sağlar.",
+          "tags": ["repository", "architecture", "mvvm"]
+        },
+        {
+          "questionId": 490014,
+          "question": "Hilt'te @Singleton scope ne anlama gelir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "easy",
+          "options": [
+            "Her seferinde yeni instance",
+            "Uygulama boyunca tek instance (Application lifecycle)",
+            "Activity başına bir instance",
+            "ViewModel başına bir instance"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "@Singleton scope, bağımlılığın uygulama boyunca tek bir instance olarak yaşamasını sağlar (Application lifecycle). Memory ve performans için önemlidir.",
+          "tags": ["hilt", "singleton", "scope"]
+        },
+        {
+          "questionId": 490015,
+          "question": "Modularization'ın build performansına etkisi nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Her zaman yavaşlatır",
+            "Incremental build sayesinde daha hızlı (sadece değişen modüller build edilir)",
+            "Hiçbir etkisi yok",
+            "Sadece küçük projelerde hızlandırır"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Modularization, incremental build sayesinde build süresini kısaltır. Sadece değişen modüller yeniden build edilir, değişmeyen modüller cache'ten kullanılır.",
+          "tags": ["modularization", "build_performance"]
+        },
+        {
+          "questionId": 490016,
+          "question": "viewModelScope'un lifecycleScope'a göre avantajı nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "medium",
+          "options": [
+            "Hiçbir fark yok",
+            "ViewModel configuration change'lerde hayatta kalır, lifecycleScope Activity/Fragment lifecycle'ına bağlı",
+            "lifecycleScope daha hızlı",
+            "viewModelScope kullanımdan kalkmış"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "viewModelScope, ViewModel'in lifecycle'ına bağlıdır ve configuration change'lerde (ekran döndürme) hayatta kalır. lifecycleScope ise Activity/Fragment lifecycle'ına bağlıdır ve yok olduğunda iptal edilir.",
+          "tags": ["coroutines", "viewmodelscope", "lifecycle"]
+        },
+        {
+          "questionId": 490017,
+          "question": "Clean Architecture'da DTO (Data Transfer Object) nedir ve hangi katmanda kullanılır?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Domain model, Domain'de",
+            "API response modeli, Data katmanında (Network'ten gelen ham veri)",
+            "UI modeli, Presentation'da",
+            "UseCase"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "DTO, API'den gelen ham veriyi temsil eder ve Data katmanında kullanılır. Data katmanında DTO'dan Domain Entity'ye mapping yapılır (toEntity()). Bu, katmanların bağımsız olmasını sağlar.",
+          "tags": ["clean_architecture", "dto", "data"]
+        },
+        {
+          "questionId": 490018,
+          "question": "SharedFlow ve StateFlow arasındaki fark nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Hiçbir fark yok",
+            "StateFlow her zaman bir state tutar, SharedFlow event-driven'dır",
+            "SharedFlow daha yavaş",
+            "StateFlow kullanımdan kalkmış"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "StateFlow her zaman bir state (değer) tutar ve yeni observer'a son değeri verir (UI state için). SharedFlow ise event-driven'dır, geçmiş değerleri tutmayabilir (one-time events, navigation için).",
+          "tags": ["flow", "stateflow", "sharedflow"]
+        },
+        {
+          "questionId": 490019,
+          "question": "Unit Test ve UI Test arasındaki temel fark nedir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "easy",
+          "options": [
+            "Hiçbir fark yok",
+            "Unit Test UI bağımsız ve hızlı, UI Test gerçek cihazda çalışır ve yavaş",
+            "UI Test daha önemli",
+            "Unit Test kullanımdan kalkmış"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Unit Test, UI bağımsız çalışır, çok hızlıdır (saniyeler) ve ViewModel/UseCase test eder. UI Test (Espresso), gerçek cihaz/emülatörde çalışır, yavaştır ama kullanıcı etkileşimini test eder.",
+          "tags": ["testing", "unit_test", "ui_test"]
+        },
+        {
+          "questionId": 490020,
+          "question": "Circular dependency nedir ve neden problemlidir?",
+          "questionType": "multiple_choice",
+          "code": null,
+          "difficulty": "hard",
+          "options": [
+            "Hiçbir problem değil",
+            "İki modülün birbirine bağımlı olması; Gradle build hatası verir",
+            "Sadece yavaşlatır",
+            "Performans artırır"
+          ],
+          "correctAnswerIndex": 1,
+          "explanation": "Circular dependency, iki modülün birbirine bağımlı olmasıdır (A → B ve B → A). Gradle build hatası verir. Çözüm: ortak kod yeni bir modüle (örn: :common) taşınmalı.",
+          "tags": ["modularization", "circular_dependency", "gradle"]
         }
       ]
     }
